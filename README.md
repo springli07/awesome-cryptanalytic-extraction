@@ -1,297 +1,181 @@
 <p align="center">
-  <img src="assets/taxonomy.png" alt="Hand-drawn analogy between neural networks and block ciphers" width="100%">
+  <img src="assets/taxonomy.png" alt="Neural-network and block-cipher structural analogy" width="100%">
 </p>
 
-# Awesome Cryptanalytic Model Extraction
+# Awesome Cryptanalytic Extraction
 
-A curated list of papers, code, taxonomies, and open problems on **cryptanalytic neural-network model extraction**.
+A curated bibliography of **cryptanalytic neural-network extraction**, structural and parameter recovery, reproducibility code, limitations, and defenses.
 
-This repository focuses on extraction attacks that try to recover parameters, signatures, signs, decision-boundary geometry, or functionally equivalent models from oracle access. This is different from ordinary model stealing, which often only trains a surrogate with high test-set fidelity.
+[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [Search audit](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json)
 
-[中文版](README_zh-CN.md)
+**Updated 2026-09-17 · 48 unique works · 13 categories.** Includes preprints, selected adjacent theory, two surveys, and one explicitly labeled course report. This is a broad, source-checked collection, not a claim of exhaustive coverage of all model stealing.
 
-## Scope
+## Recent Developments
 
-Cryptanalytic model extraction treats a neural network as a cryptographic object:
+- **Unknown architecture:** September's [guess-and-determine extraction](https://arxiv.org/abs/2609.14379) jointly recovers ReLU fully connected architectures and parameters. This does not establish arbitrary CNN/Transformer extraction; earlier [geometric reverse engineering](https://arxiv.org/abs/1910.00744) is included for context.
+- **Numerical feasibility:** [Finite-Precision Error Analysis](https://eprint.iacr.org/2026/1943) studies numerical error in cryptanalytic primitives. [Output Rounding](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf) evaluates an adapted attack on rounded outputs. Neither supports a universal precision threshold for all networks.
+- **Beyond ReLU MLPs:** the catalog now covers [softmax attention](https://eprint.iacr.org/2026/1678), [multi-head query learning](https://arxiv.org/abs/2608.03294), [isolated GLU blocks](https://arxiv.org/abs/2608.06631), RNNs, GNNs, CNN pooling and smooth activations. Block-level recovery is not full-LLM extraction.
+- **Hard-label progress and limits:** [algebraic signatures](https://eprint.iacr.org/2026/1164) include max-pooling CNN experiments, while [cross-layer extraction and polynomiality analysis](https://eprint.iacr.org/2025/1868) expose important persistent/dead-neuron caveats. Signature recovery, sign recovery and end-to-end executable recovery remain different outcomes.
 
-- the model parameters are the secret key;
-- queries are chosen inputs;
-- labels, probabilities, or logits are oracle outputs;
-- critical points, transition points, dual points, and boundary normals are the leakage signals;
-- extraction aims to recover hidden structure, not merely imitate the model on natural data.
+## Scope and Reading Guide
 
-This list mainly covers:
+The cryptanalytic analogy treats weights as hidden parameters and inputs as chosen queries. Differential, geometric or algebraic leakage can expose more than ordinary test-set imitation. It is an analogy, not an assertion that a network is a secure cipher.
 
-- ReLU and piecewise-linear neural networks;
-- raw-output, soft-label, and hard-label oracles;
-- MLP, CNN, RNN, GNN, PReLU, non-linear activation, max-pooling, and PPML settings;
-- cryptanalytic attacks, reproducibility code, limitations, and defenses.
+1. Start with **foundations**, then CRYPTO 2020, EUROCRYPT 2024 and the raw-output improvements.
+2. Read **hard-label extraction** together with its partial-layer and polynomiality limitations.
+3. Compare **CNN/pooling, activation, RNN/GNN and attention** results under their exact oracle assumptions.
+4. Read **finite precision and defenses** before treating an idealized recovery theorem as a deployable attack.
+5. Use **related theory, partial LLM extraction and side-channel work** as explicitly separated context, not interchangeable threat models.
 
-It does not aim to be a complete list of all black-box model stealing papers.
-
-## Reading Roadmap
-
-If you are new to this area, read in this order.
-
-1. **Raw-output extraction for ReLU MLPs**
-   - Start with Carlini, Jagielski, and Mironov's CRYPTO 2020 paper.
-   - Then read the polynomial-time improvements from EUROCRYPT 2024.
-
-2. **Hard-label extraction**
-   - Read the early hard-label formulation.
-   - Then read the dual-point and boundary-geometry based hard-label extraction line.
-   - Follow with algebraic hard-label extraction, which targets the SVD-heavy dual-point clustering bottleneck.
-   - Finally read follow-up papers on output-layer recovery, persistent/dead neurons, and polynomiality limitations.
-
-3. **CNN extraction**
-   - Read the average-pooling CNN extraction work.
-   - Then read max-pooling extraction papers.
-   - Pay attention to whether the oracle is hard-label, soft-label, or raw-logit.
-
-4. **Activation and architecture extensions**
-   - PReLU, LeakyReLU, HardTanh, Step, and other activation functions.
-   - RNN and GNN extraction.
-   - PPML and side-channel assisted extraction.
-
-5. **Open problems and defenses**
-   - Train-time defenses such as neuron-similarity regularization.
-   - Output rounding and adapted attacks against rounded oracles.
-   - Hard-label CNN with max-pooling.
-   - Unknown or weak architecture knowledge.
-   - Event observability under top-1 labels.
-   - Defenses against full-domain geometric extraction.
-
-## Core Analogy and Taxonomy
-
-The central analogy is that neural networks and block ciphers both alternate between secret linear transformations and public nonlinear operations. In block ciphers, the secret material is the round key; in neural networks, it is the learned weights and biases. Cryptanalytic extraction attacks exploit this structure by querying the model and recovering hidden geometric or algebraic information.
-
-Cryptanalytic extraction papers can be organized along four axes:
-
-| Axis | Typical values |
+| Axis | Distinctions to retain |
 |---|---|
-| Oracle | Hard label, soft label, top-k scores, probabilities, raw logits |
-| Signal | Critical points, transition points, dual points, boundary normals, side-channel leakage |
-| Target | Neuron signatures, signs, layer parameters, functional equivalence, geometric substitutes |
-| Architecture | MLP, CNN, RNN, GNN, PReLU/non-ReLU networks, PPML/deployed systems |
+| Oracle | Raw real-valued outputs; probabilities/top-k scores; top-1 label only; explanations; physical leakage |
+| Recovery | Architecture; signature up to scale/sign; oriented parameters; canonical equivalent function; partial block; whole executable model |
+| Assumptions | Known structure; generic position; identifiable neurons; chosen continuous inputs; finite precision; access to intermediate blocks |
+| Evidence | Theorem under stated assumptions; query count; wall-clock time; sampled fidelity; parameter error; certified equivalence |
 
-## Code Status Legend
+## Catalog Conventions
 
-| Label | Meaning |
-|---|---|
-| Official | Code released by the paper authors. |
-| Unofficial | Third-party implementation or reproduction. |
-| Mirror | Fork or mirror for archival convenience. |
-| Gone | The paper links code, but the link is no longer reachable. |
-| Announced | The paper says code will be released, but no usable URL is available. |
-| Not found | No public source-code URL found. |
+**¹ Year** is the archive/report year; venue year is shown separately. Revised titles and cross-listed ePrint/arXiv versions count once. Linked PDFs are archive copies, not necessarily publisher-final layouts. Versions, page counts and SHA-256 hashes of the reviewed PDFs are in the JSON catalog.
 
-## Paper List
+**² Code** means an author/paper-linked repository unless labeled otherwise. `404` means unavailable at checking time, not proof of deletion; anonymous `410` means the service reports expiration. Supplementary code, author forks and reading resources are distinguished from complete attack implementations. `Not located` means no usable author-linked URL was found, not that no code exists. Accessibility checks are **not** execution or reproduction of results.
 
-Papers are grouped by primary research line. Inside each group, entries are ordered by year.
+## Paper Catalog
 
-### Raw-Output ReLU MLP Extraction
+### Foundations (3)
+
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2019 | [Reverse-Engineering Deep ReLU Networks](https://arxiv.org/abs/1910.00744) · [PDF](https://arxiv.org/pdf/1910.00744) | ICML 2020 | Real-valued queries<br>Deep ReLU | Boundary geometry recovers structure and parameters up to network symmetries under assumptions. | Not located |
+| 2019 | [High Accuracy and High Fidelity Extraction of Neural Networks](https://arxiv.org/abs/1909.01838) · [PDF](https://arxiv.org/pdf/1909.01838) | USENIX Security 2020 | Raw outputs / prediction queries<br>Shallow and deep NN | Separates accuracy from fidelity; functional-equivalent shallow recovery and hybrid attacks. | Not located |
+| 2016 | [Stealing Machine Learning Models via Prediction APIs](https://arxiv.org/abs/1609.02943) · [PDF](https://arxiv.org/pdf/1609.02943) | USENIX Security 2016 | Prediction scores / labels<br>Classical ML / shallow NN | Equation-solving and early API extraction; not general deep exact recovery. | [Official](https://github.com/ftramer/Steal-ML) |
+
+### Raw-Output ReLU Extraction (6)
+
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Navigating the Deep: End-to-End Extraction on Deep Neural Networks](https://eprint.iacr.org/2026/296) · [PDF](https://eprint.iacr.org/2026/296.pdf) | EUROCRYPT 2026 | Raw outputs<br>Deep ReLU MLP | End-to-end extraction with techniques for deeper-layer recovery. | [Official](https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction) |
+| 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) · [PDF](https://eprint.iacr.org/2026/1025.pdf) | Preprint | Raw outputs<br>ReLU networks | Geometric critical-point screening avoids the clustering stage. | [Official](https://github.com/1983321048/Geometric-Critical-Point-Screening) |
+| 2026 | [Cryptanalytic Extraction of Neural Networks Without Known Architecture Assumption](https://arxiv.org/abs/2609.14379) · [PDF](https://arxiv.org/pdf/2609.14379) | Preprint | Raw outputs; architecture unknown<br>ReLU fully connected networks | Guess-and-determine jointly recovers architecture and parameters; not arbitrary CNN/Transformer recovery. | Not located |
+| 2024 | [Beyond Slow Signs in High-fidelity Model Extraction](https://arxiv.org/abs/2406.10011) · [PDF](https://arxiv.org/pdf/2406.10011) | NeurIPS 2024 | Raw outputs<br>ReLU MLP | Practical sign-recovery improvements; distinguish runtime from query count. | [Official](https://github.com/hannafoe/cryptanalytical-extraction) |
+| 2023 | [Polynomial Time Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2023/1526) · [PDF](https://eprint.iacr.org/2023/1526.pdf) | EUROCRYPT 2024 | Raw outputs<br>ReLU MLP | Polynomial-time sign recovery improves the original cryptanalytic pipeline. | [Official](https://github.com/Crypto-TII/deti) |
+| 2020 | [Cryptanalytic Extraction of Neural Network Models](https://arxiv.org/abs/2003.04884) · [PDF](https://arxiv.org/pdf/2003.04884) | CRYPTO 2020 | Raw outputs<br>ReLU MLP | Differential critical-point extraction; signatures, signs and final parameter recovery. | [Official](https://github.com/google-research/cryptanalytic-model-extraction) |
 
-| Year | Paper | Archive / venue | Oracle | Architecture | Main idea | Code |
-|---|---|---|---|---|---|---|
-| 2020 | [Cryptanalytic Extraction of Neural Network Models](https://arxiv.org/abs/2003.04884) | CRYPTO 2020 / arXiv | Raw logits | ReLU MLP | Critical-point based differential extraction | [Official](https://github.com/google-research/cryptanalytic-model-extraction) |
-| 2023 | [Polynomial Time Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2023/1526) | ePrint 2023/1526 / EUROCRYPT 2024 line | Raw logits | ReLU MLP | Polynomial-time sign recovery and extraction improvements | [Official](https://github.com/Crypto-TII/deti) |
-| 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) | ePrint 2026/1025 | Raw logits | ReLU networks | Geometric screening of useful critical points | [Official](https://github.com/1983321048/Geometric-CriticalPoint-Screening) |
-| 2026 | [Navigating the Deep End: End-to-End Extraction on Deep Neural Networks](https://eprint.iacr.org/2026/296) | ePrint 2026/296 | Raw logits | Deep ReLU MLP | End-to-end extraction beyond early layers | [Official](https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction) |
+### Hard-Label Extraction (5)
+
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) · [PDF](https://eprint.iacr.org/2026/1164.pdf) | Preprint | Top-1 label only<br>FCNN / max-pooling CNN | Algebraic signature vectors replace SVD-heavy clustering; experiments include early FC layers and LeNet-5 signatures, not universal full recovery. | Announced; placeholder URL |
+| 2025 | [Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?](https://eprint.iacr.org/2025/1868) · [PDF](https://eprint.iacr.org/2025/1868.pdf) | CRYPTO 2026 | Top-1 label only<br>ReLU MLP | Persistent/dead neurons challenge polynomiality claims; cross-layer extraction addresses limitations. | [Paper-linked; 404](https://github.com/ECSIS-lab/hard-label-cross-layer-extraction) |
+| 2025 | [Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2025/1118) · [PDF](https://eprint.iacr.org/2025/1118.pdf) | LATINCRYPT 2025 | Top-1 label only<br>ReLU MLP | Partial/output-layer recovery under structural conditions, not unrestricted end-to-end extraction. | [Official](https://github.com/deividafonso281/hard-label-contract-output) |
+| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | Dual points, signatures and signs; recovery depends on structural and geometric conditions. | [Official](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
+| 2024 | [Hard-Label Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2024/1403) · [PDF](https://eprint.iacr.org/2024/1403.pdf) | ASIACRYPT 2024 | Top-1 label only<br>ReLU MLP | Label-only cryptanalytic extraction from decision-boundary geometry. | [Official](https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction) |
 
-### Hard-Label ReLU MLP Extraction
+### CNN and Pooling (4)
 
-| Year | Paper | Archive / venue | Oracle | Architecture | Main idea | Code |
-|---|---|---|---|---|---|---|
-| 2024 | [Hard-Label Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2024/1403) | ePrint 2024/1403 | Hard label | ReLU MLP | Functionally equivalent extraction from label-only access | [Official](https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction) |
-| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2024/1580) | ePrint 2024/1580 / EUROCRYPT 2025 line | Hard label | Deep ReLU MLP | Transition points, dual points, signature and sign recovery | [Official](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
-| 2025 | [Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2025/1118) | ePrint 2025/1118 | Hard label | ReLU MLP | Output-layer and partial-layer extraction under structural conditions | [Official](https://github.com/deividafonso281/hard-label-contract-output), [Related](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
-| 2025 | [Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?](https://eprint.iacr.org/2025/1868) | ePrint 2025/1868 | Hard label | ReLU MLP | Persistent/dead neuron limitations and polynomiality critique | Not found |
-| 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) | ePrint 2026/1164 | Hard label | ReLU neural networks | Algebraic reformulation of hard-label extraction that avoids SVD-heavy dual-point clustering | Not found |
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [End-to-End Polynomial-Time Cryptanalytic Extraction of Convolutional Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2026/902) · [PDF](https://eprint.iacr.org/2026/902.pdf) | Preprint | Top-1 label only<br>Average-pooling CNN; known architecture | End-to-end pipeline; retained-candidate and structural assumptions remain material. | [Anonymous attachment](https://anonymous.4open.science/r/cnn_hard_label_extraction-83F4) |
+| 2026 | [Model Extraction of Convolutional Neural Networks with Max-Pooling](https://eprint.iacr.org/2026/464) · [PDF](https://eprint.iacr.org/2026/464.pdf) | ToSC 2026 | Raw outputs<br>Max-pooling CNN | Pooling-aware extraction and receptive-field structure. | [Official](https://github.com/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling) |
+| 2026 | [Algebraic Attack on Convolutional Neural Networks with Max Pooling](https://eprint.iacr.org/2026/241) · [PDF](https://eprint.iacr.org/2026/241.pdf) | CRYPTO 2026 | Raw outputs<br>Max-pooling CNN | Algebraic extraction handles pooling switches; raw-output results do not automatically transfer to label-only access. | [Paper-linked; 404](https://github.com/czr-eric/Algebraic-Attack-on-CNN) |
+| 2026 | [Cryptanalytic Extraction of Convolutional Neural Networks](https://eprint.iacr.org/2026/139) · [PDF](https://eprint.iacr.org/2026/139.pdf) | ACISP 2026 | Top-1 label only<br>Average-pooling CNN | Uses convolutional structure for kernel recovery. | [Expired; 410](https://anonymous.4open.science/r/cnn-extraction-93C4) |
 
-### CNN and Pooling Extraction
+### Activation Extensions (4)
 
-| Year | Paper | Archive / venue | Oracle | Architecture | Main idea | Code |
-|---|---|---|---|---|---|---|
-| 2026 | [Cryptanalytic Extraction of Convolutional Neural Networks](https://eprint.iacr.org/2026/139) | ePrint 2026/139 | Hard label | CNN with average pooling | CNN extraction via convolutional structure and kernel recovery | Gone: anonymous 4open link returns 410 |
-| 2026 | [Algebraic Attack on Convolutional Neural Network with Max Pooling](https://eprint.iacr.org/2026/241) | ePrint 2026/241 | Raw / soft-output line | CNN with max pooling | PSP/RPCP style max-pooling extraction | Announced, no URL |
-| 2026 | [Model Extraction of Convolutional Neural Networks with Max-Pooling](https://eprint.iacr.org/2026/464) | ePrint 2026/464 | Raw / soft-output line | CNN with max pooling | Max-pooling CNN extraction and receptive-field structure | Not found |
-| 2026 | [End-to-End Polynomial-Time Cryptanalytic Extraction of Convolutional Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2026/902) | ePrint 2026/902 | Hard label | CNN with average pooling | End-to-end hard-label CNN extraction | Announced, no URL found |
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Cryptanalytic Extraction of Deep Neural Networks with Non-Linear Activations](https://eprint.iacr.org/2026/253) · [PDF](https://eprint.iacr.org/2026/253.pdf) | CRYPTO 2026 | Raw outputs<br>Smooth/non-linear activations | Higher-order/near-linear geometry enables recovery for studied non-linear activations; not every smooth function. | [Official](https://github.com/mstealercryptocrypto-ops/mod_stealer26) |
+| 2026 | [Cryptanalytic Extraction of Neural Networks with Various Activation Functions](https://eprint.iacr.org/2026/178) · [PDF](https://eprint.iacr.org/2026/178.pdf) | ToSC 2026 | Raw outputs / hard labels (variant-dependent)<br>PReLU / LeakyReLU / HardTanh / Step | Extends extraction to several activation families; oracle assumptions differ by variant. | [Official](https://github.com/qixiaokang1-stack/cryptanalytic-model-various-functions) |
+| 2026 | [Breaking Slope and Structure Restrictions: Broadening Hard-Label Cryptanalytic Extraction of PReLU Neural Networks](https://eprint.iacr.org/2026/1066) · [PDF](https://eprint.iacr.org/2026/1066.pdf) | Preprint | Top-1 label only<br>PReLU | Broadens allowable slopes and architectures for hard-label extraction. | Not located |
+| 2025 | [Delving into Cryptanalytic Extraction of PReLU Neural Networks](https://eprint.iacr.org/2025/1970) · [PDF](https://eprint.iacr.org/2025/1970.pdf) | ASIACRYPT 2025 | Raw outputs / top-m probabilities<br>PReLU | Recovers PReLU parameters under stated conditions; not a label-only result. | [Official](https://github.com/AI-Lab-Y/Extracting_PReLU_NN) |
 
-### Activation Function Extensions
+### RNN and GNN (2)
 
-| Year | Paper | Archive / venue | Oracle | Architecture | Main idea | Code |
-|---|---|---|---|---|---|---|
-| 2025 | [Delving into Cryptanalytic Extraction of PReLU Neural Networks](https://eprint.iacr.org/2025/1970) | ePrint 2025/1970 | Raw / hard-label line | PReLU networks | PReLU-specific extraction and limitations | [Official](https://github.com/AI-Lab-Y/Extracting_PReLU_NN) |
-| 2026 | [Breaking Slope and Structure Restrictions: Broadening Hard-Label Cryptanalytic Extraction of PReLU Neural Networks](https://eprint.iacr.org/2026/1066) | ePrint 2026/1066 | Hard label | PReLU networks | Removes slope and structure restrictions in PReLU extraction | Not found |
-| 2026 | [Cryptanalytic Extraction of Neural Networks with Various Activation Functions](https://eprint.iacr.org/2026/178) | ePrint 2026/178 | Raw / hard-label line | Various activations | Extraction beyond standard ReLU | [Official](https://github.com/qixiaokang1-stack/cryptanalytic-model-various-functions) |
-| 2026 | [Cryptanalytic Extraction of Deep Neural Networks with Non-Linear Activations](https://eprint.iacr.org/2026/253) | ePrint 2026/253 | Raw-output line | Non-linear activations | Extraction with pseudo-normal and non-linear activation handling | [Official](https://github.com/mstealercryptocrypto-ops/mod_stealer26) |
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Polynomial-Time Cryptanalytic Extraction of Graph Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2026/719) · [PDF](https://eprint.iacr.org/2026/719.pdf) | Preprint | Top-1 label only<br>Message-passing GNN | Graph/message-passing structure supports extraction under the stated model. | [Official](https://github.com/springli07/GNN_MP_CEA) |
+| 2026 | [Cryptanalytic Extraction of Recurrent Neural Network Models](https://eprint.iacr.org/2026/168) · [PDF](https://eprint.iacr.org/2026/168.pdf) | Preprint | Raw outputs / top-1 labels<br>RNN | Exploits recurrence; long unrollings share weights and are not independent deep layers. | Not located |
 
-### Other Architectures and Deployment Settings
+### Attention and GLU Blocks (4)
 
-| Year | Paper | Archive / venue | Oracle | Architecture | Main idea | Code |
-|---|---|---|---|---|---|---|
-| 2024 | [A Hard-Label Cryptanalytic Extraction of Non-Fully Connected Deep Neural Networks using Side-Channel Attacks](https://eprint.iacr.org/2024/1870) | ePrint 2024/1870 | Hard label + side channel | Non-FC DNN / CNN-like models | Side-channel assisted extraction of non-FC components | [Official](https://github.com/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN) |
-| 2026 | [Cryptanalytic Extraction of Recurrent Neural Network Models](https://eprint.iacr.org/2026/168) | ePrint 2026/168 | Raw / hard-label line | RNN | Extends cryptanalytic extraction to recurrent models | Not found |
-| 2026 | [Polynomial-Time Cryptanalytic Extraction of Graph Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2026/719) | ePrint 2026/719 | Hard label | GNN | Message-passing and graph-structure extraction | [Official](https://github.com/springli07/GNN_MP_CEA) |
-| 2026 | [PPML Is More Vulnerable to Cryptanalytic Extraction Attacks](https://eprint.iacr.org/2026/848) | ePrint 2026/848 | PPML setting | Protected inference systems | Extraction risks in privacy-preserving ML deployments | Not found |
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Cryptanalytic Extraction of Multi-Head Softmax Attention Models](https://eprint.iacr.org/2026/1678) · [PDF](https://eprint.iacr.org/2026/1678.pdf) | Preprint | Raw outputs / chosen continuous inputs<br>Multi-head softmax attention | Recovers a canonical equivalent representation; Q/K/V factors have gauge ambiguity. | Not located |
+| 2026 | [Cryptanalytic Extraction of Isolated Bias-Free GLU Feed-Forward Blocks by Antipodal Separation](https://arxiv.org/abs/2608.06631) · [PDF](https://arxiv.org/pdf/2608.06631) | Preprint | Direct queries to an isolated block<br>Bias-free GLU FFN | Antipodal separation for isolated blocks; not extraction of a complete LLM through its token API. | Not located |
+| 2026 | [Provably Learning Multi-Head Attention with Queries](https://arxiv.org/abs/2608.03294) · [PDF](https://arxiv.org/pdf/2608.03294) | Preprint | Chosen real-valued queries<br>Multi-head attention / restricted one-layer Transformer | Canonical head recovery; additional assumptions for the Transformer extension. | Not located |
+| 2026 | [Provably Learning Attention with Queries](https://arxiv.org/abs/2601.16873) · [PDF](https://arxiv.org/pdf/2601.16873) | ICML 2026 | Chosen real-valued queries<br>Attention | Query-learning guarantees under attention-model assumptions. | Not located |
 
-### Defenses and Defense Evaluations
+### Partial LLM and Output-Space Extraction (2)
 
-| Year | Paper | Archive / venue | Oracle | Architecture | Main idea | Code |
-|---|---|---|---|---|---|---|
-| 2025 | [Train to Defend: First Defense Against Cryptanalytic Neural Network Parameter Extraction Attacks](https://arxiv.org/abs/2509.16546) | NeurIPS 2025 / arXiv | Defense against cryptanalytic extraction | ReLU MLP | Extraction-aware training that reduces neuron uniqueness via weight-similarity regularization | [Official](https://github.com/anonymous-123-code/anonymouscode) |
-| 2026 | [Output Rounding Is Not a Free Defense Against Cryptanalytic Neural Network Extraction](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf) | MIT 6.5610 Spring 2026 report | Rounded raw output | ReLU MLP | Studies output rounding as a defense and introduces a step-spacing attack against rounded oracles | Not found |
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2024 | [Logits of API-Protected LLMs Leak Proprietary Information](https://arxiv.org/abs/2403.09539) · [PDF](https://arxiv.org/pdf/2403.09539) | COLM 2024 | Logprobs / restricted API<br>LLM output subspace | Softmax bottleneck reveals hidden dimension and output-space information, not full-network recovery. | Not located |
+| 2024 | [Stealing Part of a Production Language Model](https://arxiv.org/abs/2403.06634) · [PDF](https://arxiv.org/pdf/2403.06634) | ICML 2024 | Restricted logprobs / logit-bias API<br>LLM output projection | Partial projection recovery up to symmetries, not all model weights; released code is supplementary. | [Official supplementary](https://github.com/dpaleka/stealing-part-lm-supplementary) |
 
-## By Oracle Model
+### PPML and Stronger Side-Channel Oracles (5)
 
-### Raw logits
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [PPML Is More Vulnerable to Cryptanalytic Extraction Attacks](https://eprint.iacr.org/2026/848) · [PDF](https://eprint.iacr.org/2026/848.pdf) | Preprint | Finite-ring/fixed-point inference; variants include top-1 + probability<br>PPML neural inference | Modular wraparound creates exploitable geometry; not a break of encryption or label-only access in every variant. | [Anonymous attachment](https://anonymous.4open.science/r/PPML_Model_Extraction_Attack) |
+| 2025 | [Activation Functions Considered Harmful: Recovering Neural Network Weights through Controlled Channels](https://arxiv.org/abs/2503.19142) · [PDF](https://arxiv.org/pdf/2503.19142) | Preprint | SGX controlled channels<br>DNN activation implementation | Activation-access leakage supports weight recovery; first-layer and deeper-layer outcomes differ. | [Official](https://github.com/heavyimage/afch_paper) |
+| 2024 | [A Divide-and-Conquer Strategy for Hard-Label Extraction of Deep Neural Networks via Side-Channel Attacks](https://eprint.iacr.org/2024/1870) · [PDF](https://eprint.iacr.org/2024/1870.pdf) | TCHES 2026; revised title | Top-1 labels + side channel<br>Deep NN / non-FC components | Divide-and-conquer with physical leakage; stronger than black-box label access. | [Official](https://github.com/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN) |
+| 2020 | [SNIFF: Reverse Engineering of Neural Networks with Fault Attacks](https://arxiv.org/abs/2002.11021) · [PDF](https://arxiv.org/pdf/2002.11021) | Preprint / IEEE Transactions on Reliability | Fault injection + outputs<br>Neural networks | Sign-bit fault attacks use a stronger attacker than ordinary API queries. | Not located |
+| 2018 | [CSI Neural Network: Using Side-channels to Recover Your Artificial Neural Network Information](https://arxiv.org/abs/1810.09076) · [PDF](https://arxiv.org/pdf/1810.09076) | USENIX Security 2019; published title differs | Power / EM side channels<br>Embedded neural networks | Architecture/parameter leakage via physical observations; selected historical context. | Not located |
 
-Raw-logit attacks are closest to the original CRYPTO 2020 setting. They can detect derivative discontinuities directly and often recover neuron signatures from critical points.
+### Finite Precision and Feasibility (1)
 
-Representative papers:
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Finite-Precision Error Analysis of Cryptanalytic Model Extraction](https://eprint.iacr.org/2026/1943) · [PDF](https://eprint.iacr.org/2026/1943.pdf) | Preprint; ASIACRYPT 2026 acceptance author-listed | Finite-precision raw outputs<br>Cryptanalytic signature recovery | Quantifies numerical error in extraction primitives; neither universal impossibility nor a proven generic defense. | [Paper-linked; 404](https://github.com/CryptAnalystDesigner/Finite-Precision-Feasibility-of-Cryptanalytic-Model-Extraction) |
 
-- CRYPTO 2020 cryptanalytic extraction.
-- Polynomial-time raw-output extraction.
-- Deep end-to-end extraction.
-- CNN and max-pooling extraction in raw/soft-output settings.
+### Defenses and Adaptive Evaluations (2)
 
-### Hard label
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2026 | [Output Rounding Is Not a Free Defense Against Cryptanalytic Neural Network Extraction](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf) · [PDF](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf) | MIT 6.5610 Spring 2026 course report | Rounded raw outputs<br>Small ReLU MLP | Step-spacing adapts to rounding; empirical small-model evidence, not a universal security threshold. | Supplement mentioned; URL not located |
+| 2025 | [Train to Defend: First Defense Against Cryptanalytic Neural Network Parameter Extraction Attacks](https://arxiv.org/abs/2509.16546) · [PDF](https://arxiv.org/pdf/2509.16546) | NeurIPS 2025 | Defense against parameter extraction<br>ReLU MLP | Training-time neuron-similarity regularization; evaluate against adapted attacks. | [Official](https://github.com/anonymous-123-code/anonymouscode) |
 
-Hard-label attacks only observe the top-1 class. They must infer useful geometry from decision boundaries, transition points, and dual points.
+### Related Identifiability and Learning Theory (8)
 
-Representative papers:
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2025 | [Data Augmentation Techniques to Reverse-Engineer Neural Network Weights from Input-Output Queries](https://arxiv.org/abs/2511.20312) · [PDF](https://arxiv.org/pdf/2511.20312) | UniReps 2025 workshop | Input-output queries<br>Teacher-student parameter recovery | Data augmentation improves Expand-and-Cluster; linked code is the authors' extension fork. | [Author extension fork](https://github.com/alexl4123/expand-and-cluster) |
+| 2024 | [Model Stealing for Any Low-Rank Language Model](https://arxiv.org/abs/2411.07536) · [PDF](https://arxiv.org/pdf/2411.07536) | Preprint | Conditional queries<br>Low-rank sequence distributions / HMM | Learns low-rank output distributions, not arbitrary Transformer weights. | Not located |
+| 2024 | [Provably learning a multi-head attention layer](https://arxiv.org/abs/2402.04084) · [PDF](https://arxiv.org/pdf/2402.04084) | STOC 2025 | Random examples (not chosen queries)<br>Multi-head attention | Learning theory under nondegeneracy; not a practical full-model API extraction demonstration. | Not located |
+| 2023 | [Reverse Engineering Deep ReLU Networks An Optimization-based Algorithm](https://arxiv.org/abs/2312.04675) · [PDF](https://arxiv.org/pdf/2312.04675) | Preprint | Input-output queries<br>Deep ReLU | Optimization-based reverse engineering; distinguish proposed guarantees from demonstrated scalability. | Not located |
+| 2023 | [Expand-and-Cluster: Parameter Recovery of Neural Networks](https://arxiv.org/abs/2304.12794) · [PDF](https://arxiv.org/pdf/2304.12794) | ICML 2024 | Input-output samples<br>Neural networks | Overparameterized students plus clustering recover parameters; related to, but not the same as, differential extraction. | [Official](https://github.com/flavio-martinelli/expand-and-cluster) |
+| 2022 | [Finite Sample Identification of Wide Shallow Neural Networks with Biases](https://arxiv.org/abs/2211.04589) · [PDF](https://arxiv.org/pdf/2211.04589) | Preprint | Finite input-output samples / queries<br>Wide shallow networks with biases | Identification of directions and biases under model and sampling conditions. | Not located |
+| 2021 | [An Exact Poly-Time Membership-Queries Algorithm for Extraction a three-Layer ReLU Network](https://arxiv.org/abs/2105.09673) · [PDF](https://arxiv.org/pdf/2105.09673) | ICLR 2023 | Membership / real-valued queries<br>Three-layer ReLU | Exact polynomial-query recovery under depth/generic-position assumptions. | Not located |
+| 2018 | [Model Reconstruction from Model Explanations](https://arxiv.org/abs/1807.05185) · [PDF](https://arxiv.org/pdf/1807.05185) | FAT* 2019 | Gradient/explanation oracle<br>Neural networks | Reconstruction with explanations uses a stronger oracle than ordinary predictions. | Not located |
 
-- Hard-label cryptanalytic extraction.
-- Polynomial-time hard-label deep extraction.
-- Algebraic hard-label extraction.
-- Partial/output-layer hard-label extraction.
-- Hard-label CNN and GNN extraction.
+### Surveys and Reading Resources (2)
 
-### Soft labels and probabilities
+| Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
+|---|---|---|---|---|---|
+| 2025 | [A Systematic Survey of Model Extraction Attacks and Defenses: State-of-the-Art and Perspectives](https://arxiv.org/abs/2508.15031) · [PDF](https://arxiv.org/pdf/2508.15031) | Preprint survey | Multiple<br>Multiple | Broad model-extraction survey; includes surrogate stealing outside this repository's core scope. | [Reading list, not attack code](https://github.com/kzhao5/ModelExtractionPapers) |
+| 2025 | [A Survey on Model Extraction Attacks and Defenses for Large Language Models](https://arxiv.org/abs/2506.22521) · [PDF](https://arxiv.org/pdf/2506.22521) | Preprint survey | Multiple LLM APIs<br>LLM | Contextual survey of LLM extraction and defenses; not an exact-recovery attack. | [Reading list, not attack code](https://github.com/kzhao5/ModelExtractionPapers) |
 
-Soft-label settings sit between hard-label and raw-logit extraction. They leak more than top-1 labels but less than exact pre-softmax logits.
 
-Important question:
+## Open Questions After These Results
 
-- Which critical or pooling events remain observable after softmax or top-k truncation?
+- **Unknown general architectures:** no longer untouched for ReLU fully connected models. Mixed operators, residual paths and weak prior knowledge still require separate evidence.
+- **Hard-label max-pooling:** no longer an empty category. Robust full-layer/sign/bias recovery, winner switches and event observability should be evaluated beyond small signature-recovery demonstrations.
+- **Practical precision and cost:** relate numerical stability to query budgets, conditioning, rate limits, abstentions and probability truncation; do not equate real-arithmetic polynomiality with cheap extraction.
+- **Identifiability:** report dead/persistent neurons, equivalent parameterizations and canonicalization explicitly. A failure to recover one parameterization is not automatically security.
+- **Adaptive defenses:** evaluate training regularization and output modifications against adapted attacks, with utility loss and attack budget fixed. Small-model experiments do not establish universal security.
+- **Composition:** recovering attention, output projections or isolated GLU blocks does not establish recovery of their composition through an ordinary token API.
 
-### Defenses and mitigations
+## Contributing and Maintenance
 
-Defenses are still sparse compared with attacks. The current line includes training-time defenses that reduce neuron uniqueness and output-side defenses such as rounding. The key lesson from the rounding report is that a defense that breaks the original finite-difference primitive may still be vulnerable to an adapted attack that treats the modified oracle as part of the threat model.
+Edit [data/papers.json](data/papers.json), including official title/authors, source, venue/status, oracle, scope limits, code provenance and PDF version fingerprint. Edit the [English template](docs/readme_en.template.md) or [Chinese template](docs/readme_zh.template.md) for prose, then run:
 
-Representative works:
+```console
+python scripts/render_catalog.py
+python scripts/render_catalog.py --check
+```
 
-- Train to Defend.
-- Output rounding and step-spacing extraction.
-- Full-domain geometry masking and event-purity defenses remain open.
-
-## By Architecture
-
-| Architecture | Status | Representative papers |
-|---|---|---|
-| ReLU MLP | Most mature | CRYPTO 2020, EUROCRYPT 2024, hard-label deep extraction |
-| Deep MLP | Active | End-to-end extraction, algebraic hard-label extraction, persistent/dead neuron analysis |
-| CNN with average pooling | Emerging | CNN extraction, end-to-end hard-label CNN extraction |
-| CNN with max pooling | Open and difficult | Algebraic max-pooling attack, max-pooling extraction |
-| PReLU / non-ReLU activations | Active | PReLU extraction, various activation functions, non-linear activations |
-| RNN | Early | RNN extraction |
-| GNN | Emerging | Hard-label GNN extraction |
-| PPML / deployed systems | Early | PPML vulnerability, side-channel extraction |
-
-## Open Problems
-
-### 1. Hard-label CNNs with max-pooling
-
-Hard-label CNN extraction is strongest for average pooling. Max-pooling extraction has stronger results under raw or soft outputs. Under top-1 labels, PSP/RPCP observability, winner-pattern localization, and event purity remain difficult.
-
-Useful questions:
-
-- Are max-pooling switch points observable from top-1 labels alone?
-- Can boundary-walking isolate pooling events without raw logits?
-- Is there an event-observability barrier for hard-label max-pooling?
-
-### 2. Unknown architecture or weak architecture knowledge
-
-Most strong extraction results assume the architecture is known. A more realistic API threat model should infer architecture before parameter extraction.
-
-Useful questions:
-
-- Can layer type, width, kernel size, stride, and pooling type be inferred from boundary geometry?
-- Can architecture recovery be connected to cryptanalytic extraction pipelines?
-- What is the minimum architecture knowledge needed for each attack?
-
-### 3. Event purity and false critical points
-
-Modern extraction attacks often depend on collecting clean critical, transition, or dual points. Spurious events can destroy clustering or sign recovery.
-
-Useful questions:
-
-- How robust are extraction pipelines to artificial or naturally occurring event pollution?
-- Can event purity be measured independently of full extraction success?
-- Can defenses target event purity without degrading clean accuracy?
-
-### 4. Defenses against full-domain geometric extraction
-
-A model's behavior on the data manifold does not uniquely determine its full-domain piecewise-linear extension. Cryptanalytic extraction often relies on that extension.
-
-Useful questions:
-
-- Can a defender preserve clean behavior while masking off-manifold geometry?
-- Can dormant chaff neurons or normal-jet masking amplify extraction cost?
-- How should we evaluate the difference between behavioral fidelity and geometric utility?
-- How should train-time defenses such as neuron-similarity regularization be combined with deployment-time defenses?
-- Can output rounding be made robust against adapted step-spacing attacks without unacceptable utility loss?
-
-### 5. Realistic APIs
-
-Many papers use idealized or high-precision oracle assumptions.
-
-Useful questions:
-
-- What happens under rate limits, quantized outputs, randomized preprocessing, batching, or abstention?
-- Which attacks survive common commercial API constraints?
-- Can extraction still recover useful white-box substitutes under realistic noise?
-
-## Recommended Repository Policy
-
-This repository should link official code rather than vendoring all source code.
-
-Reasons:
-
-- licenses differ across projects;
-- direct vendoring makes the repository too large;
-- upstream repositories may update;
-- paper lists are easier to maintain when they remain lightweight.
-
-Recommended policy:
-
-- link the official source repository when available;
-- optionally fork important repositories for archival purposes;
-- mark forks as mirrors, not original code;
-- do not use submodules unless this repository becomes a reproducibility benchmark.
-
-## Contributing
-
-Contributions are welcome.
-
-Please include:
-
-- paper title;
-- year and venue/archive;
-- paper URL;
-- oracle model;
-- target architecture;
-- extraction target;
-- main technical idea;
-- code URL and whether it is official;
-- a short note on assumptions or limitations.
-
-For code links, prefer official repositories. If the link is dead, mark it as `Gone` and include the last known URL.
-
-## BibTeX
-
-BibTeX entries will be added in `bib/cryptanalytic_extraction.bib`.
+Keep preprints and course reports visibly labeled. Prefer primary sources and author-linked code; do not vendor third-party implementations or copyrighted PDFs into this repository. A local `ref` corpus can use the filenames, official PDF URLs and hashes in the catalog. No code release is implied by a paper's promise to publish it.
 
 ## Disclaimer
 
-This repository is for academic research and defensive analysis. The goal is to understand model-extraction risks, assumptions, reproducibility, and defenses.
+For academic research and defensive analysis on authorized models and systems. Listing a paper does not independently validate its claims or endorse an attack against a third-party service.

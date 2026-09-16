@@ -1,0 +1,1780 @@
+{
+  "updated": "2026-09-17",
+  "scope": "Core cryptanalytic extraction plus explicitly separated related work, surveys and one course report",
+  "categories": [
+    {
+      "id": "foundations",
+      "en": "Foundations",
+      "zh": "基础与早期工作"
+    },
+    {
+      "id": "raw",
+      "en": "Raw-Output ReLU Extraction",
+      "zh": "原始输出 ReLU 提取"
+    },
+    {
+      "id": "hard",
+      "en": "Hard-Label Extraction",
+      "zh": "仅标签提取"
+    },
+    {
+      "id": "cnn",
+      "en": "CNN and Pooling",
+      "zh": "CNN 与池化"
+    },
+    {
+      "id": "activation",
+      "en": "Activation Extensions",
+      "zh": "激活函数扩展"
+    },
+    {
+      "id": "recurrent",
+      "en": "RNN and GNN",
+      "zh": "RNN 与 GNN"
+    },
+    {
+      "id": "attention",
+      "en": "Attention and GLU Blocks",
+      "zh": "注意力与 GLU 模块"
+    },
+    {
+      "id": "language",
+      "en": "Partial LLM and Output-Space Extraction",
+      "zh": "LLM 部分结构与输出空间提取"
+    },
+    {
+      "id": "systems",
+      "en": "PPML and Stronger Side-Channel Oracles",
+      "zh": "PPML 与更强侧信道预言机"
+    },
+    {
+      "id": "precision",
+      "en": "Finite Precision and Feasibility",
+      "zh": "有限精度与可行性"
+    },
+    {
+      "id": "defense",
+      "en": "Defenses and Adaptive Evaluations",
+      "zh": "防御与适应性评价"
+    },
+    {
+      "id": "theory",
+      "en": "Related Identifiability and Learning Theory",
+      "zh": "相关可辨识性与学习理论"
+    },
+    {
+      "id": "survey",
+      "en": "Surveys and Reading Resources",
+      "zh": "综述与阅读资源"
+    }
+  ],
+  "papers": [
+    {
+      "id": "arxiv-1609.02943",
+      "title": "Stealing Machine Learning Models via Prediction APIs",
+      "authors": [
+        "Tramèr, Florian",
+        "Zhang, Fan",
+        "Juels, Ari",
+        "Reiter, Michael K.",
+        "Ristenpart, Thomas"
+      ],
+      "year": 2016,
+      "category": "foundations",
+      "venue_status": "USENIX Security 2016",
+      "oracle": "Prediction scores / labels",
+      "architecture": "Classical ML / shallow NN",
+      "summary_en": "Equation-solving and early API extraction; not general deep exact recovery.",
+      "summary_zh": "方程求解及早期 API 提取，不是任意深网的精确恢复。",
+      "url": "https://arxiv.org/abs/1609.02943",
+      "pdf_url": "https://arxiv.org/pdf/1609.02943",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/ftramer/Steal-ML",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/1609.02943",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2016/09/09",
+      "version_history": "[v1] Fri, 9 Sep 2016 20:39:20 UTC (1,413 KB)  [v2] Mon, 3 Oct 2016 02:44:14 UTC (1,413 KB) ",
+      "pdf": {
+        "filename": "2016-arxiv-1609.02943_Stealing_Machine_Learning_Models_via_Prediction_APIs.pdf",
+        "pages": 19,
+        "bytes": 1998044,
+        "sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+      }
+    },
+    {
+      "id": "arxiv-1909.01838",
+      "title": "High Accuracy and High Fidelity Extraction of Neural Networks",
+      "authors": [
+        "Jagielski, Matthew",
+        "Carlini, Nicholas",
+        "Berthelot, David",
+        "Kurakin, Alex",
+        "Papernot, Nicolas"
+      ],
+      "year": 2019,
+      "category": "foundations",
+      "venue_status": "USENIX Security 2020",
+      "oracle": "Raw outputs / prediction queries",
+      "architecture": "Shallow and deep NN",
+      "summary_en": "Separates accuracy from fidelity; functional-equivalent shallow recovery and hybrid attacks.",
+      "summary_zh": "区分准确率与保真度，包含浅层等价恢复和混合攻击。",
+      "url": "https://arxiv.org/abs/1909.01838",
+      "pdf_url": "https://arxiv.org/pdf/1909.01838",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2019/09/03",
+      "version_history": "[v1] Tue, 3 Sep 2019 17:33:09 UTC (636 KB)  [v2] Tue, 3 Mar 2020 22:08:02 UTC (323 KB) ",
+      "pdf": {
+        "filename": "2019-arxiv-1909.01838_High_Accuracy_and_High_Fidelity_Extraction_of_Neural_Networks.pdf",
+        "pages": 18,
+        "bytes": 411602,
+        "sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+      }
+    },
+    {
+      "id": "arxiv-1910.00744",
+      "title": "Reverse-Engineering Deep ReLU Networks",
+      "authors": [
+        "Rolnick, David",
+        "Kording, Konrad P."
+      ],
+      "year": 2019,
+      "category": "foundations",
+      "venue_status": "ICML 2020",
+      "oracle": "Real-valued queries",
+      "architecture": "Deep ReLU",
+      "summary_en": "Boundary geometry recovers structure and parameters up to network symmetries under assumptions.",
+      "summary_zh": "在假设下利用边界几何恢复结构及参数，允许网络对称性。",
+      "url": "https://arxiv.org/abs/1910.00744",
+      "pdf_url": "https://arxiv.org/pdf/1910.00744",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2019/10/02",
+      "version_history": "[v1] Wed, 2 Oct 2019 01:53:15 UTC (4,077 KB)  [v2] Sat, 22 Feb 2020 16:40:31 UTC (3,122 KB) ",
+      "pdf": {
+        "filename": "2019-arxiv-1910.00744_Reverse_Engineering_Deep_ReLU_Networks.pdf",
+        "pages": 18,
+        "bytes": 5990088,
+        "sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+      }
+    },
+    {
+      "id": "arxiv-2003.04884",
+      "title": "Cryptanalytic Extraction of Neural Network Models",
+      "authors": [
+        "Carlini, Nicholas",
+        "Jagielski, Matthew",
+        "Mironov, Ilya"
+      ],
+      "year": 2020,
+      "category": "raw",
+      "venue_status": "CRYPTO 2020",
+      "oracle": "Raw outputs",
+      "architecture": "ReLU MLP",
+      "summary_en": "Differential critical-point extraction; signatures, signs and final parameter recovery.",
+      "summary_zh": "差分临界点提取，依次恢复签名、符号与参数。",
+      "url": "https://arxiv.org/abs/2003.04884",
+      "pdf_url": "https://arxiv.org/pdf/2003.04884",
+      "aliases": [
+        "https://eprint.iacr.org/2020/107"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/google-research/cryptanalytic-model-extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2003.04884",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2020/03/10",
+      "version_history": "[v1] Tue, 10 Mar 2020 17:57:14 UTC (143 KB)  [v2] Wed, 22 Jul 2020 16:58:14 UTC (131 KB) ",
+      "pdf": {
+        "filename": "2020-arxiv-2003.04884_Cryptanalytic_Extraction_of_Neural_Network_Models.pdf",
+        "pages": 30,
+        "bytes": 587902,
+        "sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+      }
+    },
+    {
+      "id": "eprint-2023-1526",
+      "title": "Polynomial Time Cryptanalytic Extraction of Neural Network Models",
+      "authors": [
+        "Isaac A. Canales-Martínez",
+        "Jorge Chavez-Saab",
+        "Anna Hambitzer",
+        "Francisco Rodríguez-Henríquez",
+        "Nitin Satpute",
+        "Adi Shamir"
+      ],
+      "year": 2023,
+      "category": "raw",
+      "venue_status": "EUROCRYPT 2024",
+      "oracle": "Raw outputs",
+      "architecture": "ReLU MLP",
+      "summary_en": "Polynomial-time sign recovery improves the original cryptanalytic pipeline.",
+      "summary_zh": "多项式时间符号恢复，改进原始密码分析提取流程。",
+      "url": "https://eprint.iacr.org/2023/1526",
+      "pdf_url": "https://eprint.iacr.org/2023/1526.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2310.08708"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/Crypto-TII/deti",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2023/1526",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2024-06-11: last of 8 revisions 2023-10-06: received",
+      "pdf": {
+        "filename": "2023-1526_Polynomial_Time_Cryptanalytic_Extraction_of_Neural_Network_Models.pdf",
+        "pages": 32,
+        "bytes": 693173,
+        "sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+      }
+    },
+    {
+      "id": "arxiv-2406.10011",
+      "title": "Beyond Slow Signs in High-fidelity Model Extraction",
+      "authors": [
+        "Foerster, Hanna",
+        "Mullins, Robert",
+        "Shumailov, Ilia",
+        "Hayes, Jamie"
+      ],
+      "year": 2024,
+      "category": "raw",
+      "venue_status": "NeurIPS 2024",
+      "oracle": "Raw outputs",
+      "architecture": "ReLU MLP",
+      "summary_en": "Practical sign-recovery improvements; distinguish runtime from query count.",
+      "summary_zh": "加速实际符号恢复，运行时间与查询量需分别评价。",
+      "url": "https://arxiv.org/abs/2406.10011",
+      "pdf_url": "https://arxiv.org/pdf/2406.10011",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/hannafoe/cryptanalytical-extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2406.10011",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2024/06/14",
+      "version_history": "[v1] Fri, 14 Jun 2024 13:24:07 UTC (48 KB) ",
+      "pdf": {
+        "filename": "2024-arxiv-2406.10011_Beyond_Slow_Signs_in_High_fidelity_Model_Extraction.pdf",
+        "pages": 19,
+        "bytes": 453649,
+        "sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+      }
+    },
+    {
+      "id": "eprint-2026-296",
+      "title": "Navigating the Deep: End-to-End Extraction on Deep Neural Networks",
+      "authors": [
+        "Haolin Liu",
+        "Adrien Siproudhis",
+        "Samuel Experton",
+        "Peter Lorenz",
+        "Christina Boura",
+        "Thomas Peyrin"
+      ],
+      "year": 2026,
+      "category": "raw",
+      "venue_status": "EUROCRYPT 2026",
+      "oracle": "Raw outputs",
+      "architecture": "Deep ReLU MLP",
+      "summary_en": "End-to-end extraction with techniques for deeper-layer recovery.",
+      "summary_zh": "针对深层恢复瓶颈的端到端提取。",
+      "url": "https://eprint.iacr.org/2026/296",
+      "pdf_url": "https://eprint.iacr.org/2026/296.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/296",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-02-18: approved 2026-02-18: received",
+      "pdf": {
+        "filename": "2026-296_Navigating_the_Deep_End_to_End_Extraction_on_Deep_Neural_Networks.pdf",
+        "pages": 42,
+        "bytes": 739062,
+        "sha256": "b3bdc1253cfcb6f217a32a5403b931c690982280ad9c48f8b6bf54c83f07d73e"
+      }
+    },
+    {
+      "id": "eprint-2026-1025",
+      "title": "Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models",
+      "authors": [
+        "Ming Duan",
+        "Peiyao Tang"
+      ],
+      "year": 2026,
+      "category": "raw",
+      "venue_status": "Preprint",
+      "oracle": "Raw outputs",
+      "architecture": "ReLU networks",
+      "summary_en": "Geometric critical-point screening avoids the clustering stage.",
+      "summary_zh": "几何临界点筛选，避免聚类阶段。",
+      "url": "https://eprint.iacr.org/2026/1025",
+      "pdf_url": "https://eprint.iacr.org/2026/1025.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/1983321048/Geometric-Critical-Point-Screening",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/1025",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-05-24: approved 2026-05-22: received",
+      "pdf": {
+        "filename": "2026-1025_Geometric_Critical_Point_Screening_Clustering_Free_Cryptanalytic_Extraction_of_Neural_Network_Models.pdf",
+        "pages": 20,
+        "bytes": 551762,
+        "sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+      }
+    },
+    {
+      "id": "arxiv-2609.14379",
+      "title": "Cryptanalytic Extraction of Neural Networks Without Known Architecture Assumption",
+      "authors": [
+        "Shen, Yantian",
+        "Chen, Yi",
+        "Wang, Anyu",
+        "Yu, Hongbo",
+        "Wang, Xiaoyun"
+      ],
+      "year": 2026,
+      "category": "raw",
+      "venue_status": "Preprint",
+      "oracle": "Raw outputs; architecture unknown",
+      "architecture": "ReLU fully connected networks",
+      "summary_en": "Guess-and-determine jointly recovers architecture and parameters; not arbitrary CNN/Transformer recovery.",
+      "summary_zh": "猜测确定法联合恢复结构及参数；不等于任意 CNN 或 Transformer 恢复。",
+      "url": "https://arxiv.org/abs/2609.14379",
+      "pdf_url": "https://arxiv.org/pdf/2609.14379",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2026/09/13",
+      "version_history": "[v1] Sun, 13 Sep 2026 08:28:34 UTC (250 KB) ",
+      "pdf": {
+        "filename": "2026-arxiv-2609.14379_Cryptanalytic_Extraction_of_Neural_Networks_Without_Known_Architecture_Assumption.pdf",
+        "pages": 35,
+        "bytes": 557590,
+        "sha256": "4f62618e85427fbfff5dfc00fc635001404204852a7147685397b5d5372ba452"
+      }
+    },
+    {
+      "id": "eprint-2024-1403",
+      "title": "Hard-Label Cryptanalytic Extraction of Neural Network Models",
+      "authors": [
+        "Yi Chen",
+        "Xiaoyang Dong",
+        "Jian Guo",
+        "Yantian Shen",
+        "Anyu Wang",
+        "Xiaoyun Wang"
+      ],
+      "year": 2024,
+      "category": "hard",
+      "venue_status": "ASIACRYPT 2024",
+      "oracle": "Top-1 label only",
+      "architecture": "ReLU MLP",
+      "summary_en": "Label-only cryptanalytic extraction from decision-boundary geometry.",
+      "summary_zh": "从决策边界几何开展仅标签密码分析提取。",
+      "url": "https://eprint.iacr.org/2024/1403",
+      "pdf_url": "https://eprint.iacr.org/2024/1403.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2409.11646"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2024/1403",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2024-09-11: approved 2024-09-08: received",
+      "pdf": {
+        "filename": "2024-1403_Hard_Label_Cryptanalytic_Extraction_of_Neural_Network_Models.pdf",
+        "pages": 30,
+        "bytes": 617820,
+        "sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+      }
+    },
+    {
+      "id": "eprint-2024-1580",
+      "title": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)",
+      "authors": [
+        "Nicholas Carlini",
+        "Jorge Chávez-Saab",
+        "Anna Hambitzer",
+        "Francisco Rodríguez-Henríquez",
+        "Adi Shamir"
+      ],
+      "year": 2024,
+      "category": "hard",
+      "venue_status": "EUROCRYPT 2025; extended version",
+      "oracle": "Top-1 label only",
+      "architecture": "Deep ReLU MLP",
+      "summary_en": "Dual points, signatures and signs; recovery depends on structural and geometric conditions.",
+      "summary_zh": "双点、签名与符号恢复，依赖结构和几何条件。",
+      "url": "https://eprint.iacr.org/2024/1580",
+      "pdf_url": "https://eprint.iacr.org/2024/1580.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2410.05750"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/Jchavezsaab/hard-label-dnn-extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2024/1580",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-09-07: last of 2 revisions 2024-10-07: received",
+      "pdf": {
+        "filename": "2024-1580_Polynomial_Time_Cryptanalytic_Extraction_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 48,
+        "bytes": 1817048,
+        "sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+      }
+    },
+    {
+      "id": "eprint-2025-1118",
+      "title": "Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting",
+      "authors": [
+        "Isaac A. Canales-Martínez",
+        "David Santos"
+      ],
+      "year": 2025,
+      "category": "hard",
+      "venue_status": "LATINCRYPT 2025",
+      "oracle": "Top-1 label only",
+      "architecture": "ReLU MLP",
+      "summary_en": "Partial/output-layer recovery under structural conditions, not unrestricted end-to-end extraction.",
+      "summary_zh": "结构条件下的部分层及输出层恢复，并非无条件端到端提取。",
+      "url": "https://eprint.iacr.org/2025/1118",
+      "pdf_url": "https://eprint.iacr.org/2025/1118.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/deividafonso281/hard-label-contract-output",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2025/1118",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-02-16: revised 2025-06-13: received",
+      "pdf": {
+        "filename": "2025-1118_Extracting_Some_Layers_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 24,
+        "bytes": 526284,
+        "sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+      }
+    },
+    {
+      "id": "eprint-2025-1868",
+      "title": "Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?",
+      "authors": [
+        "Akira Ito",
+        "Takayuki Miura",
+        "Yosuke Todo"
+      ],
+      "year": 2025,
+      "category": "hard",
+      "venue_status": "CRYPTO 2026",
+      "oracle": "Top-1 label only",
+      "architecture": "ReLU MLP",
+      "summary_en": "Persistent/dead neurons challenge polynomiality claims; cross-layer extraction addresses limitations.",
+      "summary_zh": "持久及死亡神经元限制多项式性论断，并提出跨层提取。",
+      "url": "https://eprint.iacr.org/2025/1868",
+      "pdf_url": "https://eprint.iacr.org/2025/1868.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2510.06692"
+      ],
+      "code": {
+        "status": "unavailable_404",
+        "url": "https://github.com/ECSIS-lab/hard-label-cross-layer-extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2025/1868",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-08-24: last of 2 revisions 2025-10-08: received",
+      "pdf": {
+        "filename": "2025-1868_Is_the_Hard_Label_Cryptanalytic_Model_Extraction_Really_Polynomial.pdf",
+        "pages": 35,
+        "bytes": 2712670,
+        "sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+      }
+    },
+    {
+      "id": "eprint-2026-1164",
+      "title": "Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks",
+      "authors": [
+        "Zirui Chen",
+        "Shi Tang",
+        "Zhengchao Gao",
+        "Yongjia Su",
+        "Lingyue Qin",
+        "Xiaoyang Dong"
+      ],
+      "year": 2026,
+      "category": "hard",
+      "venue_status": "Preprint",
+      "oracle": "Top-1 label only",
+      "architecture": "FCNN / max-pooling CNN",
+      "summary_en": "Algebraic signature vectors replace SVD-heavy clustering; experiments include early FC layers and LeNet-5 signatures, not universal full recovery.",
+      "summary_zh": "代数签名向量替代高代价 SVD 聚类；实验含 FC 前层及 LeNet-5 签名，不是任意网络完整恢复。",
+      "url": "https://eprint.iacr.org/2026/1164",
+      "pdf_url": "https://eprint.iacr.org/2026/1164.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2608.05736"
+      ],
+      "code": {
+        "status": "announced",
+        "note": "PDF p.4 uses XXX instead of a repository URL."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-06-08: approved 2026-06-04: received",
+      "pdf": {
+        "filename": "2026-1164_Algebraic_Cryptanalytic_Extraction_on_Hard_Label_Neural_Networks.pdf",
+        "pages": 47,
+        "bytes": 1144696,
+        "sha256": "0c95c64f994d6ab7ebea85eb77cb5c5f03edb073353192eaf9b6ba90ffea0547"
+      }
+    },
+    {
+      "id": "eprint-2026-139",
+      "title": "Cryptanalytic Extraction of Convolutional Neural Networks",
+      "authors": [
+        "Xiaohan Sun",
+        "Hao Lei",
+        "Longxiang Wei",
+        "Xiaokang Qi",
+        "Kai Hu",
+        "Meiqin Wang",
+        "Wei Wang"
+      ],
+      "year": 2026,
+      "category": "cnn",
+      "venue_status": "ACISP 2026",
+      "oracle": "Top-1 label only",
+      "architecture": "Average-pooling CNN",
+      "summary_en": "Uses convolutional structure for kernel recovery.",
+      "summary_zh": "利用卷积结构恢复卷积核。",
+      "url": "https://eprint.iacr.org/2026/139",
+      "pdf_url": "https://eprint.iacr.org/2026/139.pdf",
+      "aliases": [],
+      "code": {
+        "status": "expired_410",
+        "url": "https://anonymous.4open.science/r/cnn-extraction-93C4",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/139",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-01-29: revised 2026-01-29: received",
+      "pdf": {
+        "filename": "2026-139_Cryptanalytic_Extraction_of_Convolutional_Neural_Networks.pdf",
+        "pages": 25,
+        "bytes": 780926,
+        "sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+      }
+    },
+    {
+      "id": "eprint-2026-241",
+      "title": "Algebraic Attack on Convolutional Neural Networks with Max Pooling",
+      "authors": [
+        "Zirui Chen",
+        "Shi Tang",
+        "Zhengchao Gao",
+        "Yongjia Su",
+        "Lingyue Qin",
+        "Xiaoyang Dong"
+      ],
+      "year": 2026,
+      "category": "cnn",
+      "venue_status": "CRYPTO 2026",
+      "oracle": "Raw outputs",
+      "architecture": "Max-pooling CNN",
+      "summary_en": "Algebraic extraction handles pooling switches; raw-output results do not automatically transfer to label-only access.",
+      "summary_zh": "代数方法处理池化切换；原始输出结果不能直接迁移至仅标签场景。",
+      "url": "https://eprint.iacr.org/2026/241",
+      "pdf_url": "https://eprint.iacr.org/2026/241.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2608.08030"
+      ],
+      "code": {
+        "status": "unavailable_404",
+        "url": "https://github.com/czr-eric/Algebraic-Attack-on-CNN",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/241",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-06-02: last of 2 revisions 2026-02-13: received",
+      "pdf": {
+        "filename": "2026-241_Algebraic_Attack_on_Convolutional_Neural_Network_with_Max_Pooling.pdf",
+        "pages": 59,
+        "bytes": 1068531,
+        "sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+      }
+    },
+    {
+      "id": "eprint-2026-464",
+      "title": "Model Extraction of Convolutional Neural Networks with Max-Pooling",
+      "authors": [
+        "Haolin Liu",
+        "Adrien Siproudhis",
+        "Christina Boura",
+        "Thomas Peyrin"
+      ],
+      "year": 2026,
+      "category": "cnn",
+      "venue_status": "ToSC 2026",
+      "oracle": "Raw outputs",
+      "architecture": "Max-pooling CNN",
+      "summary_en": "Pooling-aware extraction and receptive-field structure.",
+      "summary_zh": "利用池化信息与感受野结构开展提取。",
+      "url": "https://eprint.iacr.org/2026/464",
+      "pdf_url": "https://eprint.iacr.org/2026/464.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/464",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-08-23: revised 2026-03-05: received",
+      "pdf": {
+        "filename": "2026-464_Model_Extraction_of_Convolutional_Neural_Networks_with_Max_Pooling.pdf",
+        "pages": 42,
+        "bytes": 772746,
+        "sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+      }
+    },
+    {
+      "id": "eprint-2026-902",
+      "title": "End-to-End Polynomial-Time Cryptanalytic Extraction of Convolutional Neural Networks in the Hard-Label Setting",
+      "authors": [
+        "Chun Li",
+        "Zheng Gong",
+        "Di Li",
+        "Liping Zhuang",
+        "Yufeng Tang",
+        "Yin Lv",
+        "Xingfu Yan"
+      ],
+      "year": 2026,
+      "category": "cnn",
+      "venue_status": "Preprint",
+      "oracle": "Top-1 label only",
+      "architecture": "Average-pooling CNN; known architecture",
+      "summary_en": "End-to-end pipeline; retained-candidate and structural assumptions remain material.",
+      "summary_zh": "端到端流程仍依赖保留正确候选等结构性假设。",
+      "url": "https://eprint.iacr.org/2026/902",
+      "pdf_url": "https://eprint.iacr.org/2026/902.pdf",
+      "aliases": [],
+      "code": {
+        "status": "anonymous_attachment",
+        "url": "https://anonymous.4open.science/r/cnn_hard_label_extraction-83F4",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/902",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-05-10: approved 2026-05-08: received",
+      "pdf": {
+        "filename": "2026-902_End_to_End_Polynomial_Time_Cryptanalytic_Extraction_of_Convolutional_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 24,
+        "bytes": 3873156,
+        "sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+      }
+    },
+    {
+      "id": "eprint-2025-1970",
+      "title": "Delving into Cryptanalytic Extraction of PReLU Neural Networks",
+      "authors": [
+        "Yi Chen",
+        "Xiaoyang Dong",
+        "Ruijie Ma",
+        "Yantian Shen",
+        "Anyu Wang",
+        "Hongbo Yu",
+        "Xiaoyun Wang"
+      ],
+      "year": 2025,
+      "category": "activation",
+      "venue_status": "ASIACRYPT 2025",
+      "oracle": "Raw outputs / top-m probabilities",
+      "architecture": "PReLU",
+      "summary_en": "Recovers PReLU parameters under stated conditions; not a label-only result.",
+      "summary_zh": "在给定条件下恢复 PReLU 参数，不是仅标签结果。",
+      "url": "https://eprint.iacr.org/2025/1970",
+      "pdf_url": "https://eprint.iacr.org/2025/1970.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2509.16620"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/AI-Lab-Y/Extracting_PReLU_NN",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2025/1970",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2025-10-24: approved 2025-10-21: received",
+      "pdf": {
+        "filename": "2025-1970_Delving_into_Cryptanalytic_Extraction_of_PReLU_Neural_Networks.pdf",
+        "pages": 32,
+        "bytes": 707456,
+        "sha256": "db9a8d51e1093083d3e200d3728c5b2c6a87a7673347e27835d8db62e38e52eb"
+      }
+    },
+    {
+      "id": "eprint-2026-178",
+      "title": "Cryptanalytic Extraction of Neural Networks with Various Activation Functions",
+      "authors": [
+        "Xiaokang Qi",
+        "Hao Lei",
+        "Longxiang Wei",
+        "Xiaohan Sun",
+        "Meiqin Wang"
+      ],
+      "year": 2026,
+      "category": "activation",
+      "venue_status": "ToSC 2026",
+      "oracle": "Raw outputs / hard labels (variant-dependent)",
+      "architecture": "PReLU / LeakyReLU / HardTanh / Step",
+      "summary_en": "Extends extraction to several activation families; oracle assumptions differ by variant.",
+      "summary_zh": "扩展到多种激活函数，各变体的预言机假设不同。",
+      "url": "https://eprint.iacr.org/2026/178",
+      "pdf_url": "https://eprint.iacr.org/2026/178.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/qixiaokang1-stack/cryptanalytic-model-various-functions",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/178",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-02-06: approved 2026-02-03: received",
+      "pdf": {
+        "filename": "2026-178_Cryptanalytic_Extraction_of_Neural_Networks_with_Various_Activation_Functions.pdf",
+        "pages": 39,
+        "bytes": 4340520,
+        "sha256": "27557ffbae790abcba5b8a69a24adbcedd58bf07e32c9309ebe1fb184775f88b"
+      }
+    },
+    {
+      "id": "eprint-2026-253",
+      "title": "Cryptanalytic Extraction of Deep Neural Networks with Non-Linear Activations",
+      "authors": [
+        "Roderick Asselineau",
+        "Patrick Derbez",
+        "Pierre-Alain Fouque",
+        "Brice Minaud"
+      ],
+      "year": 2026,
+      "category": "activation",
+      "venue_status": "CRYPTO 2026",
+      "oracle": "Raw outputs",
+      "architecture": "Smooth/non-linear activations",
+      "summary_en": "Higher-order/near-linear geometry enables recovery for studied non-linear activations; not every smooth function.",
+      "summary_zh": "高阶及近线性几何支持所研究非线性激活的恢复，不代表任意光滑函数。",
+      "url": "https://eprint.iacr.org/2026/253",
+      "pdf_url": "https://eprint.iacr.org/2026/253.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/mstealercryptocrypto-ops/mod_stealer26",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/253",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-02-16: approved 2026-02-13: received",
+      "pdf": {
+        "filename": "2026-253_Cryptanalytic_Extraction_of_Deep_Neural_Networks_with_Non_Linear_Activations.pdf",
+        "pages": 33,
+        "bytes": 1878987,
+        "sha256": "ebe4080c30a61c1ce1ca3a1699009c9a07b8194a57ffc2be7ebbab194d8eaf78"
+      }
+    },
+    {
+      "id": "eprint-2026-1066",
+      "title": "Breaking Slope and Structure Restrictions: Broadening Hard-Label Cryptanalytic Extraction of PReLU Neural Networks",
+      "authors": [
+        "Ruijie Ma",
+        "Yi Chen",
+        "Jiarui Zhang",
+        "Hongbo Yu",
+        "Xiaoyun Wang"
+      ],
+      "year": 2026,
+      "category": "activation",
+      "venue_status": "Preprint",
+      "oracle": "Top-1 label only",
+      "architecture": "PReLU",
+      "summary_en": "Broadens allowable slopes and architectures for hard-label extraction.",
+      "summary_zh": "放宽仅标签提取中的斜率及结构限制。",
+      "url": "https://eprint.iacr.org/2026/1066",
+      "pdf_url": "https://eprint.iacr.org/2026/1066.pdf",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-05-31: approved 2026-05-27: received",
+      "pdf": {
+        "filename": "2026-1066_Breaking_Slope_and_Structure_Restrictions_Broadening_Hard_Label_Cryptanalytic_Extraction_of_PReLU_Neural_Networks.pdf",
+        "pages": 31,
+        "bytes": 708307,
+        "sha256": "f771f5abd060140eed2c0e5daa7003ba2041cea03fcee7bb6aa28fc63d8a0335"
+      }
+    },
+    {
+      "id": "eprint-2026-168",
+      "title": "Cryptanalytic Extraction of Recurrent Neural Network Models",
+      "authors": [
+        "Longxiang Wei",
+        "Hao Lei",
+        "Xiaokang Qi",
+        "Xiaohan Sun",
+        "Lei Gao",
+        "Kai Hu",
+        "Wei Wang",
+        "Meiqin Wang"
+      ],
+      "year": 2026,
+      "category": "recurrent",
+      "venue_status": "Preprint",
+      "oracle": "Raw outputs / top-1 labels",
+      "architecture": "RNN",
+      "summary_en": "Exploits recurrence; long unrollings share weights and are not independent deep layers.",
+      "summary_zh": "利用循环结构；长展开序列共享权重，不能等同于独立深层。",
+      "url": "https://eprint.iacr.org/2026/168",
+      "pdf_url": "https://eprint.iacr.org/2026/168.pdf",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-02-04: approved 2026-02-01: received",
+      "pdf": {
+        "filename": "2026-168_Cryptanalytic_Extraction_of_Recurrent_Neural_Network_Models.pdf",
+        "pages": 34,
+        "bytes": 1050687,
+        "sha256": "fc39c1f1ffb4c54c83d247b992e65def6b8885699ee3d74547e5fbc10f1a3c18"
+      }
+    },
+    {
+      "id": "eprint-2026-719",
+      "title": "Polynomial-Time Cryptanalytic Extraction of Graph Neural Networks in the Hard-Label Setting",
+      "authors": [
+        "Chun li",
+        "Liping Zhuang",
+        "Di Li",
+        "Yufeng Tang",
+        "Zheng Gong"
+      ],
+      "year": 2026,
+      "category": "recurrent",
+      "venue_status": "Preprint",
+      "oracle": "Top-1 label only",
+      "architecture": "Message-passing GNN",
+      "summary_en": "Graph/message-passing structure supports extraction under the stated model.",
+      "summary_zh": "在文中模型下利用图与消息传递结构开展提取。",
+      "url": "https://eprint.iacr.org/2026/719",
+      "pdf_url": "https://eprint.iacr.org/2026/719.pdf",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/springli07/GNN_MP_CEA",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/719",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-04-19: approved 2026-04-13: received",
+      "pdf": {
+        "filename": "2026-719_Polynomial_Time_Cryptanalytic_Extraction_of_Graph_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 20,
+        "bytes": 2247591,
+        "sha256": "b2791b2be9d9fde33c3fb8be5015442a8f922af40a6b162ccdb454ed3e21181c"
+      }
+    },
+    {
+      "id": "arxiv-2601.16873",
+      "title": "Provably Learning Attention with Queries",
+      "authors": [
+        "Bhattamishra, Satwik",
+        "Shah, Kulin",
+        "Hahn, Michael",
+        "Kanade, Varun"
+      ],
+      "year": 2026,
+      "category": "attention",
+      "venue_status": "ICML 2026",
+      "oracle": "Chosen real-valued queries",
+      "architecture": "Attention",
+      "summary_en": "Query-learning guarantees under attention-model assumptions.",
+      "summary_zh": "注意力模型假设下的查询学习保证。",
+      "url": "https://arxiv.org/abs/2601.16873",
+      "pdf_url": "https://arxiv.org/pdf/2601.16873",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2026/01/23",
+      "version_history": "[v1] Fri, 23 Jan 2026 16:28:22 UTC (28 KB)  [v2] Mon, 4 May 2026 15:43:18 UTC (64 KB) ",
+      "pdf": {
+        "filename": "2026-arxiv-2601.16873_Provably_Learning_Attention_with_Queries.pdf",
+        "pages": 18,
+        "bytes": 466454,
+        "sha256": "e5221682c1da801dbae06aa21ab2d8469839d49cba2f623ae12b770fbe5a76f8"
+      }
+    },
+    {
+      "id": "arxiv-2608.03294",
+      "title": "Provably Learning Multi-Head Attention with Queries",
+      "authors": [
+        "Kim, Sunyeop",
+        "Kim, Insung"
+      ],
+      "year": 2026,
+      "category": "attention",
+      "venue_status": "Preprint",
+      "oracle": "Chosen real-valued queries",
+      "architecture": "Multi-head attention / restricted one-layer Transformer",
+      "summary_en": "Canonical head recovery; additional assumptions for the Transformer extension.",
+      "summary_zh": "恢复规范化注意力头；单层 Transformer 扩展有额外假设。",
+      "url": "https://arxiv.org/abs/2608.03294",
+      "pdf_url": "https://arxiv.org/pdf/2608.03294",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2026/08/04",
+      "version_history": "[v1] Tue, 4 Aug 2026 08:06:15 UTC (76 KB)  [v2] Fri, 7 Aug 2026 05:20:15 UTC (76 KB)  [v3] Mon, 24 Aug 2026 07:43:00 UTC (76 KB) ",
+      "pdf": {
+        "filename": "2026-arxiv-2608.03294_Provably_Learning_Multi_Head_Attention_with_Queries.pdf",
+        "pages": 39,
+        "bytes": 574665,
+        "sha256": "7d08f64a35f9d3b3268759a8ddd2199c32caaffd5195545dd920d57db25e5bc1"
+      }
+    },
+    {
+      "id": "eprint-2026-1678",
+      "title": "Cryptanalytic Extraction of Multi-Head Softmax Attention Models",
+      "authors": [
+        "Sunan Wang",
+        "Hao Lei",
+        "Longxiang Wei",
+        "Qun Liu",
+        "Kai Hu",
+        "Meiqin Wang"
+      ],
+      "year": 2026,
+      "category": "attention",
+      "venue_status": "Preprint",
+      "oracle": "Raw outputs / chosen continuous inputs",
+      "architecture": "Multi-head softmax attention",
+      "summary_en": "Recovers a canonical equivalent representation; Q/K/V factors have gauge ambiguity.",
+      "summary_zh": "恢复规范等价表示；Q/K/V 分解存在规范自由度。",
+      "url": "https://eprint.iacr.org/2026/1678",
+      "pdf_url": "https://eprint.iacr.org/2026/1678.pdf",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-08-15: revised 2026-08-13: received",
+      "pdf": {
+        "filename": "2026-1678_Cryptanalytic_Extraction_of_Multi_Head_Softmax_Attention_Models.pdf",
+        "pages": 31,
+        "bytes": 241403,
+        "sha256": "9dcc514494113a6c7135fbb594d364f0c00730c4f671011981b0e95b47ecf45d"
+      }
+    },
+    {
+      "id": "arxiv-2608.06631",
+      "title": "Cryptanalytic Extraction of Isolated Bias-Free GLU Feed-Forward Blocks by Antipodal Separation",
+      "authors": [
+        "Shi, Chunhui",
+        "Fu, Xinwen"
+      ],
+      "year": 2026,
+      "category": "attention",
+      "venue_status": "Preprint",
+      "oracle": "Direct queries to an isolated block",
+      "architecture": "Bias-free GLU FFN",
+      "summary_en": "Antipodal separation for isolated blocks; not extraction of a complete LLM through its token API.",
+      "summary_zh": "对孤立无偏置模块做对踵分离，不是经 token API 提取完整 LLM。",
+      "url": "https://arxiv.org/abs/2608.06631",
+      "pdf_url": "https://arxiv.org/pdf/2608.06631",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2026/08/06",
+      "version_history": "[v1] Thu, 6 Aug 2026 22:41:40 UTC (27 KB) ",
+      "pdf": {
+        "filename": "2026-arxiv-2608.06631_Cryptanalytic_Extraction_of_Isolated_Bias_Free_GLU_Feed_Forward_Blocks_by_Antipodal_Separation.pdf",
+        "pages": 11,
+        "bytes": 542635,
+        "sha256": "f2a72cd14354a5920165c014bb2f5f637bbfde0f2c111c9eda50c4ebdff797f7"
+      }
+    },
+    {
+      "id": "arxiv-2403.06634",
+      "title": "Stealing Part of a Production Language Model",
+      "authors": [
+        "Carlini, Nicholas",
+        "Paleka, Daniel",
+        "Dvijotham, Krishnamurthy Dj",
+        "Steinke, Thomas",
+        "Hayase, Jonathan",
+        "Cooper, A. Feder",
+        "Lee, Katherine",
+        "Jagielski, Matthew",
+        "Nasr, Milad",
+        "Conmy, Arthur",
+        "Yona, Itay",
+        "Wallace, Eric",
+        "Rolnick, David",
+        "Tramèr, Florian"
+      ],
+      "year": 2024,
+      "category": "language",
+      "venue_status": "ICML 2024",
+      "oracle": "Restricted logprobs / logit-bias API",
+      "architecture": "LLM output projection",
+      "summary_en": "Partial projection recovery up to symmetries, not all model weights; released code is supplementary.",
+      "summary_zh": "恢复带对称性的部分输出投影，不是全部权重；公开代码为补充材料。",
+      "url": "https://arxiv.org/abs/2403.06634",
+      "pdf_url": "https://arxiv.org/pdf/2403.06634",
+      "aliases": [],
+      "code": {
+        "status": "supplementary",
+        "url": "https://github.com/dpaleka/stealing-part-lm-supplementary",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2403.06634",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2024/03/11",
+      "version_history": "[v1] Mon, 11 Mar 2024 11:46:12 UTC (697 KB)  [v2] Tue, 9 Jul 2024 17:44:00 UTC (724 KB) ",
+      "pdf": {
+        "filename": "2024-arxiv-2403.06634_Stealing_Part_of_a_Production_Language_Model.pdf",
+        "pages": 27,
+        "bytes": 980686,
+        "sha256": "65e2ade24ecefc77ab5eaab511b744a611bbc7efd0ec9ad6d434a3f23003be3c"
+      }
+    },
+    {
+      "id": "arxiv-2403.09539",
+      "title": "Logits of API-Protected LLMs Leak Proprietary Information",
+      "authors": [
+        "Finlayson, Matthew",
+        "Ren, Xiang",
+        "Swayamdipta, Swabha"
+      ],
+      "year": 2024,
+      "category": "language",
+      "venue_status": "COLM 2024",
+      "oracle": "Logprobs / restricted API",
+      "architecture": "LLM output subspace",
+      "summary_en": "Softmax bottleneck reveals hidden dimension and output-space information, not full-network recovery.",
+      "summary_zh": "softmax 瓶颈泄露隐藏维度及输出子空间信息，不是全网恢复。",
+      "url": "https://arxiv.org/abs/2403.09539",
+      "pdf_url": "https://arxiv.org/pdf/2403.09539",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2024/03/14",
+      "version_history": "[v1] Thu, 14 Mar 2024 16:27:49 UTC (1,651 KB)  [v2] Fri, 15 Mar 2024 02:07:30 UTC (1,651 KB)  [v3] Fri, 8 Nov 2024 18:56:41 UTC (1,197 KB) ",
+      "pdf": {
+        "filename": "2024-arxiv-2403.09539_Logits_of_API_Protected_LLMs_Leak_Proprietary_Information.pdf",
+        "pages": 15,
+        "bytes": 1324412,
+        "sha256": "a5a1d06963f2b2cf82faca2589417c5a4cb50f7fd5779b4ce60af1d22e410341"
+      }
+    },
+    {
+      "id": "eprint-2026-848",
+      "title": "PPML Is More Vulnerable to Cryptanalytic Extraction Attacks",
+      "authors": [
+        "Wen Zhang",
+        "Bingsheng Zhang",
+        "Tianpei Lu",
+        "Kui Ren"
+      ],
+      "year": 2026,
+      "category": "systems",
+      "venue_status": "Preprint",
+      "oracle": "Finite-ring/fixed-point inference; variants include top-1 + probability",
+      "architecture": "PPML neural inference",
+      "summary_en": "Modular wraparound creates exploitable geometry; not a break of encryption or label-only access in every variant.",
+      "summary_zh": "模回绕产生可利用几何，不等于破解加密；部分变体还需要概率值。",
+      "url": "https://eprint.iacr.org/2026/848",
+      "pdf_url": "https://eprint.iacr.org/2026/848.pdf",
+      "aliases": [],
+      "code": {
+        "status": "anonymous_attachment",
+        "url": "https://anonymous.4open.science/r/PPML_Model_Extraction_Attack",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/848",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-05-12: last of 3 revisions 2026-04-30: received",
+      "pdf": {
+        "filename": "2026-848_PPML_Is_More_Vulnerable_to_Cryptanalytic_Extraction_Attacks.pdf",
+        "pages": 51,
+        "bytes": 524522,
+        "sha256": "3f6bceca978b70f2a23248c89fbc62d6db32c7a3e87d939d2e84413422abafcf"
+      }
+    },
+    {
+      "id": "eprint-2024-1870",
+      "title": "A Divide-and-Conquer Strategy for Hard-Label Extraction of Deep Neural Networks via Side-Channel Attacks",
+      "authors": [
+        "Benoit Coqueret",
+        "Mathieu Carbone",
+        "Olivier Sentieys",
+        "Gabriel Zaid"
+      ],
+      "year": 2024,
+      "category": "systems",
+      "venue_status": "TCHES 2026; revised title",
+      "oracle": "Top-1 labels + side channel",
+      "architecture": "Deep NN / non-FC components",
+      "summary_en": "Divide-and-conquer with physical leakage; stronger than black-box label access.",
+      "summary_zh": "利用物理泄漏分治，能力强于纯黑盒仅标签访问。",
+      "url": "https://eprint.iacr.org/2024/1870",
+      "pdf_url": "https://eprint.iacr.org/2024/1870.pdf",
+      "aliases": [
+        "https://arxiv.org/abs/2411.10174"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2024/1870",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-04-09: last of 2 revisions 2024-11-15: received",
+      "pdf": {
+        "filename": "2024-1870_A_Hard_Label_Cryptanalytic_Extraction_of_Non_Fully_Connected_Deep_Neural_Networks_using_Side_Channel_Attacks.pdf",
+        "pages": 33,
+        "bytes": 1504359,
+        "sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+      }
+    },
+    {
+      "id": "arxiv-1810.09076",
+      "title": "CSI Neural Network: Using Side-channels to Recover Your Artificial Neural Network Information",
+      "authors": [
+        "Batina, Lejla",
+        "Bhasin, Shivam",
+        "Jap, Dirmanto",
+        "Picek, Stjepan"
+      ],
+      "year": 2018,
+      "category": "systems",
+      "venue_status": "USENIX Security 2019; published title differs",
+      "oracle": "Power / EM side channels",
+      "architecture": "Embedded neural networks",
+      "summary_en": "Architecture/parameter leakage via physical observations; selected historical context.",
+      "summary_zh": "物理观测泄露结构及参数，作为历史背景收录。",
+      "url": "https://arxiv.org/abs/1810.09076",
+      "pdf_url": "https://arxiv.org/pdf/1810.09076",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2018/10/22",
+      "version_history": "[v1] Mon, 22 Oct 2018 04:13:17 UTC (3,598 KB) ",
+      "pdf": {
+        "filename": "2018-arxiv-1810.09076_CSI_Neural_Network_Using_Side_channels_to_Recover_Your_Artificial_Neural_Network_Information.pdf",
+        "pages": 15,
+        "bytes": 4728321,
+        "sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba"
+      }
+    },
+    {
+      "id": "arxiv-2002.11021",
+      "title": "SNIFF: Reverse Engineering of Neural Networks with Fault Attacks",
+      "authors": [
+        "Breier, Jakub",
+        "Jap, Dirmanto",
+        "Hou, Xiaolu",
+        "Bhasin, Shivam",
+        "Liu, Yang"
+      ],
+      "year": 2020,
+      "category": "systems",
+      "venue_status": "Preprint / IEEE Transactions on Reliability",
+      "oracle": "Fault injection + outputs",
+      "architecture": "Neural networks",
+      "summary_en": "Sign-bit fault attacks use a stronger attacker than ordinary API queries.",
+      "summary_zh": "符号位故障攻击的攻击者能力强于普通 API 查询。",
+      "url": "https://arxiv.org/abs/2002.11021",
+      "pdf_url": "https://arxiv.org/pdf/2002.11021",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2020/02/23",
+      "version_history": "[v1] Sun, 23 Feb 2020 05:39:54 UTC (645 KB)  [v2] Tue, 28 Feb 2023 14:09:29 UTC (4,669 KB) ",
+      "pdf": {
+        "filename": "2020-arxiv-2002.11021_SNIFF_Reverse_Engineering_of_Neural_Networks_with_Fault_Attacks.pdf",
+        "pages": 14,
+        "bytes": 1642200,
+        "sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+      }
+    },
+    {
+      "id": "arxiv-2503.19142",
+      "title": "Activation Functions Considered Harmful: Recovering Neural Network Weights through Controlled Channels",
+      "authors": [
+        "Spielman, Jesse",
+        "Oswald, David",
+        "Ryan, Mark",
+        "Van Bulck, Jo"
+      ],
+      "year": 2025,
+      "category": "systems",
+      "venue_status": "Preprint",
+      "oracle": "SGX controlled channels",
+      "architecture": "DNN activation implementation",
+      "summary_en": "Activation-access leakage supports weight recovery; first-layer and deeper-layer outcomes differ.",
+      "summary_zh": "激活访存泄漏支持权重恢复，第一层及后续层恢复程度不同。",
+      "url": "https://arxiv.org/abs/2503.19142",
+      "pdf_url": "https://arxiv.org/pdf/2503.19142",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/heavyimage/afch_paper",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2503.19142",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2025/03/24",
+      "version_history": "[v1] Mon, 24 Mar 2025 20:55:18 UTC (280 KB)  [v2] Thu, 2 Oct 2025 18:36:20 UTC (302 KB) ",
+      "pdf": {
+        "filename": "2025-arxiv-2503.19142_Activation_Functions_Considered_Harmful_Recovering_Neural_Network_Weights_through_Controlled_Channels.pdf",
+        "pages": 20,
+        "bytes": 633905,
+        "sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+      }
+    },
+    {
+      "id": "eprint-2026-1943",
+      "title": "Finite-Precision Error Analysis of Cryptanalytic Model Extraction",
+      "authors": [
+        "Duo Xu",
+        "Liu Zhang",
+        "Zilong Wang"
+      ],
+      "year": 2026,
+      "category": "precision",
+      "venue_status": "Preprint; ASIACRYPT 2026 acceptance author-listed",
+      "oracle": "Finite-precision raw outputs",
+      "architecture": "Cryptanalytic signature recovery",
+      "summary_en": "Quantifies numerical error in extraction primitives; neither universal impossibility nor a proven generic defense.",
+      "summary_zh": "量化提取原语的数值误差，不是普遍不可能性或通用防御证明。",
+      "url": "https://eprint.iacr.org/2026/1943",
+      "pdf_url": "https://eprint.iacr.org/2026/1943.pdf",
+      "aliases": [],
+      "code": {
+        "status": "unavailable_404",
+        "url": "https://github.com/CryptAnalystDesigner/Finite-Precision-Feasibility-of-Cryptanalytic-Model-Extraction",
+        "checked": "2026-09-17",
+        "evidence": "https://eprint.iacr.org/2026/1943",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "2026-09-14: revised 2026-09-09: received",
+      "pdf": {
+        "filename": "2026-1943_Finite_Precision_Error_Analysis_of_Cryptanalytic_Model_Extraction.pdf",
+        "pages": 45,
+        "bytes": 1628878,
+        "sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+      }
+    },
+    {
+      "id": "arxiv-2509.16546",
+      "title": "Train to Defend: First Defense Against Cryptanalytic Neural Network Parameter Extraction Attacks",
+      "authors": [
+        "Kurian, Ashley",
+        "Aysu, Aydin"
+      ],
+      "year": 2025,
+      "category": "defense",
+      "venue_status": "NeurIPS 2025",
+      "oracle": "Defense against parameter extraction",
+      "architecture": "ReLU MLP",
+      "summary_en": "Training-time neuron-similarity regularization; evaluate against adapted attacks.",
+      "summary_zh": "训练时神经元相似性正则化，需针对适应性攻击评价。",
+      "url": "https://arxiv.org/abs/2509.16546",
+      "pdf_url": "https://arxiv.org/pdf/2509.16546",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/anonymous-123-code/anonymouscode",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2509.16546",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2025/09/20",
+      "version_history": "[v1] Sat, 20 Sep 2025 06:05:23 UTC (518 KB) ",
+      "pdf": {
+        "filename": "2025-arxiv-2509.16546_Train_to_Defend_First_Defense_Against_Cryptanalytic_Neural_Network_Parameter_Extraction_Attacks.pdf",
+        "pages": 18,
+        "bytes": 823868,
+        "sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+      }
+    },
+    {
+      "id": "mit-2026-rounding",
+      "title": "Output Rounding Is Not a Free Defense Against Cryptanalytic Neural Network Extraction",
+      "authors": [
+        "Iliyas Noman",
+        "Mateja Vukelic",
+        "Vidur Jasuja"
+      ],
+      "year": 2026,
+      "category": "defense",
+      "venue_status": "MIT 6.5610 Spring 2026 course report",
+      "oracle": "Rounded raw outputs",
+      "architecture": "Small ReLU MLP",
+      "summary_en": "Step-spacing adapts to rounding; empirical small-model evidence, not a universal security threshold.",
+      "summary_zh": "步间距攻击适应输出舍入；是小模型实验证据，不是通用安全阈值。",
+      "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+      "pdf_url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+      "aliases": [],
+      "code": {
+        "status": "mentioned",
+        "note": "Supplementary code mentioned in PDF p.6; usable URL not located."
+      },
+      "checked": "2026-09-17",
+      "archive_date": null,
+      "version_history": "",
+      "pdf": {
+        "filename": "2026-mit-65610_Output_Rounding_Is_Not_a_Free_Defense_Against_Cryptanalytic_Neural_Network_Extraction.pdf",
+        "pages": 12,
+        "bytes": 762663,
+        "sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+      }
+    },
+    {
+      "id": "arxiv-1807.05185",
+      "title": "Model Reconstruction from Model Explanations",
+      "authors": [
+        "Milli, Smitha",
+        "Schmidt, Ludwig",
+        "Dragan, Anca D.",
+        "Hardt, Moritz"
+      ],
+      "year": 2018,
+      "category": "theory",
+      "venue_status": "FAT* 2019",
+      "oracle": "Gradient/explanation oracle",
+      "architecture": "Neural networks",
+      "summary_en": "Reconstruction with explanations uses a stronger oracle than ordinary predictions.",
+      "summary_zh": "解释及梯度预言机提供强于普通预测的恢复能力。",
+      "url": "https://arxiv.org/abs/1807.05185",
+      "pdf_url": "https://arxiv.org/pdf/1807.05185",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2018/07/13",
+      "version_history": "[v1] Fri, 13 Jul 2018 17:15:00 UTC (1,300 KB) ",
+      "pdf": {
+        "filename": "2018-arxiv-1807.05185_Model_Reconstruction_from_Model_Explanations.pdf",
+        "pages": 26,
+        "bytes": 1900973,
+        "sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+      }
+    },
+    {
+      "id": "arxiv-2105.09673",
+      "title": "An Exact Poly-Time Membership-Queries Algorithm for Extraction a three-Layer ReLU Network",
+      "authors": [
+        "Daniely, Amit",
+        "Granot, Elad"
+      ],
+      "year": 2021,
+      "category": "theory",
+      "venue_status": "ICLR 2023",
+      "oracle": "Membership / real-valued queries",
+      "architecture": "Three-layer ReLU",
+      "summary_en": "Exact polynomial-query recovery under depth/generic-position assumptions.",
+      "summary_zh": "深度及一般位置假设下的精确多项式查询恢复。",
+      "url": "https://arxiv.org/abs/2105.09673",
+      "pdf_url": "https://arxiv.org/pdf/2105.09673",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2021/05/20",
+      "version_history": "[v1] Thu, 20 May 2021 11:24:08 UTC (187 KB)  [v2] Wed, 16 Feb 2022 20:55:52 UTC (199 KB)  [v3] Sun, 29 May 2022 14:16:08 UTC (234 KB)  [v4] Tue, 14 Feb 2023 13:38:23 UTC (290 KB)  [v5] Sat, 4 Mar 2023 16:46:42 UTC (290 KB) ",
+      "pdf": {
+        "filename": "2021-arxiv-2105.09673_An_Exact_Poly_Time_Membership_Queries_Algorithm_for_Extraction_a_three_Layer_ReLU_Network.pdf",
+        "pages": 22,
+        "bytes": 533369,
+        "sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+      }
+    },
+    {
+      "id": "arxiv-2211.04589",
+      "title": "Finite Sample Identification of Wide Shallow Neural Networks with Biases",
+      "authors": [
+        "Fornasier, Massimo",
+        "Klock, Timo",
+        "Mondelli, Marco",
+        "Rauchensteiner, Michael"
+      ],
+      "year": 2022,
+      "category": "theory",
+      "venue_status": "Preprint",
+      "oracle": "Finite input-output samples / queries",
+      "architecture": "Wide shallow networks with biases",
+      "summary_en": "Identification of directions and biases under model and sampling conditions.",
+      "summary_zh": "模型及采样条件下的方向、偏置辨识。",
+      "url": "https://arxiv.org/abs/2211.04589",
+      "pdf_url": "https://arxiv.org/pdf/2211.04589",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2022/11/08",
+      "version_history": "[v1] Tue, 8 Nov 2022 22:10:32 UTC (941 KB) ",
+      "pdf": {
+        "filename": "2022-arxiv-2211.04589_Finite_Sample_Identification_of_Wide_Shallow_Neural_Networks_with_Biases.pdf",
+        "pages": 46,
+        "bytes": 1340618,
+        "sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+      }
+    },
+    {
+      "id": "arxiv-2304.12794",
+      "title": "Expand-and-Cluster: Parameter Recovery of Neural Networks",
+      "authors": [
+        "Martinelli, Flavio",
+        "Simsek, Berfin",
+        "Gerstner, Wulfram",
+        "Brea, Johanni"
+      ],
+      "year": 2023,
+      "category": "theory",
+      "venue_status": "ICML 2024",
+      "oracle": "Input-output samples",
+      "architecture": "Neural networks",
+      "summary_en": "Overparameterized students plus clustering recover parameters; related to, but not the same as, differential extraction.",
+      "summary_zh": "过参数化学生网络及聚类恢复参数，与差分提取相关但并不相同。",
+      "url": "https://arxiv.org/abs/2304.12794",
+      "pdf_url": "https://arxiv.org/pdf/2304.12794",
+      "aliases": [],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/flavio-martinelli/expand-and-cluster",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2304.12794",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2023/04/25",
+      "version_history": "[v1] Tue, 25 Apr 2023 13:14:20 UTC (21,883 KB)  [v2] Tue, 30 May 2023 16:24:25 UTC (23,875 KB)  [v3] Tue, 6 Feb 2024 10:40:34 UTC (19,920 KB)  [v4] Thu, 27 Jun 2024 06:32:35 UTC (6,960 KB) ",
+      "pdf": {
+        "filename": "2023-arxiv-2304.12794_Expand_and_Cluster_Parameter_Recovery_of_Neural_Networks.pdf",
+        "pages": 25,
+        "bytes": 7660126,
+        "sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+      }
+    },
+    {
+      "id": "arxiv-2312.04675",
+      "title": "Reverse Engineering Deep ReLU Networks An Optimization-based Algorithm",
+      "authors": [
+        "Hamidi, Mehrab"
+      ],
+      "year": 2023,
+      "category": "theory",
+      "venue_status": "Preprint",
+      "oracle": "Input-output queries",
+      "architecture": "Deep ReLU",
+      "summary_en": "Optimization-based reverse engineering; distinguish proposed guarantees from demonstrated scalability.",
+      "summary_zh": "基于优化的逆向工程，区分所提保证与已展示的可扩展性。",
+      "url": "https://arxiv.org/abs/2312.04675",
+      "pdf_url": "https://arxiv.org/pdf/2312.04675",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2023/12/07",
+      "version_history": "[v1] Thu, 7 Dec 2023 20:15:06 UTC (18 KB) ",
+      "pdf": {
+        "filename": "2023-arxiv-2312.04675_Reverse_Engineering_Deep_ReLU_Networks_An_Optimization_based_Algorithm.pdf",
+        "pages": 11,
+        "bytes": 168862,
+        "sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+      }
+    },
+    {
+      "id": "arxiv-2402.04084",
+      "title": "Provably learning a multi-head attention layer",
+      "authors": [
+        "Chen, Sitan",
+        "Li, Yuanzhi"
+      ],
+      "year": 2024,
+      "category": "theory",
+      "venue_status": "STOC 2025",
+      "oracle": "Random examples (not chosen queries)",
+      "architecture": "Multi-head attention",
+      "summary_en": "Learning theory under nondegeneracy; not a practical full-model API extraction demonstration.",
+      "summary_zh": "非退化假设下的学习理论，不是实用全模型 API 提取演示。",
+      "url": "https://arxiv.org/abs/2402.04084",
+      "pdf_url": "https://arxiv.org/pdf/2402.04084",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2024/02/06",
+      "version_history": "[v1] Tue, 6 Feb 2024 15:39:09 UTC (421 KB) ",
+      "pdf": {
+        "filename": "2024-arxiv-2402.04084_Provably_learning_a_multi_head_attention_layer.pdf",
+        "pages": 105,
+        "bytes": 1240789,
+        "sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+      }
+    },
+    {
+      "id": "arxiv-2411.07536",
+      "title": "Model Stealing for Any Low-Rank Language Model",
+      "authors": [
+        "Liu, Allen",
+        "Moitra, Ankur"
+      ],
+      "year": 2024,
+      "category": "theory",
+      "venue_status": "Preprint",
+      "oracle": "Conditional queries",
+      "architecture": "Low-rank sequence distributions / HMM",
+      "summary_en": "Learns low-rank output distributions, not arbitrary Transformer weights.",
+      "summary_zh": "学习低秩输出分布，不是任意 Transformer 权重恢复。",
+      "url": "https://arxiv.org/abs/2411.07536",
+      "pdf_url": "https://arxiv.org/pdf/2411.07536",
+      "aliases": [],
+      "code": {
+        "status": "not_found",
+        "note": "No author-linked implementation located; not proof that none exists."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2024/11/12",
+      "version_history": "[v1] Tue, 12 Nov 2024 04:25:31 UTC (50 KB) ",
+      "pdf": {
+        "filename": "2024-arxiv-2411.07536_Model_Stealing_for_Any_Low_Rank_Language_Model.pdf",
+        "pages": 41,
+        "bytes": 440477,
+        "sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+      }
+    },
+    {
+      "id": "arxiv-2511.20312",
+      "title": "Data Augmentation Techniques to Reverse-Engineer Neural Network Weights from Input-Output Queries",
+      "authors": [
+        "Beiser, Alexander",
+        "Martinelli, Flavio",
+        "Gerstner, Wulfram",
+        "Brea, Johanni"
+      ],
+      "year": 2025,
+      "category": "theory",
+      "venue_status": "UniReps 2025 workshop",
+      "oracle": "Input-output queries",
+      "architecture": "Teacher-student parameter recovery",
+      "summary_en": "Data augmentation improves Expand-and-Cluster; linked code is the authors' extension fork.",
+      "summary_zh": "数据增强改进 Expand-and-Cluster，代码为作者扩展分支。",
+      "url": "https://arxiv.org/abs/2511.20312",
+      "pdf_url": "https://arxiv.org/pdf/2511.20312",
+      "aliases": [],
+      "code": {
+        "status": "author_extension_fork",
+        "url": "https://github.com/alexl4123/expand-and-cluster",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2511.20312",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2025/11/25",
+      "version_history": "[v1] Tue, 25 Nov 2025 13:49:48 UTC (952 KB) ",
+      "pdf": {
+        "filename": "2025-arxiv-2511.20312_Data_Augmentation_Techniques_to_Reverse_Engineer_Neural_Network_Weights_from_Input_Output_Queries.pdf",
+        "pages": 13,
+        "bytes": 1498897,
+        "sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+      }
+    },
+    {
+      "id": "arxiv-2508.15031",
+      "title": "A Systematic Survey of Model Extraction Attacks and Defenses: State-of-the-Art and Perspectives",
+      "authors": [
+        "Zhao, Kaixiang",
+        "Li, Lincan",
+        "Ding, Kaize",
+        "Gong, Neil Zhenqiang",
+        "Zhao, Yue",
+        "Dong, Yushun"
+      ],
+      "year": 2025,
+      "category": "survey",
+      "venue_status": "Preprint survey",
+      "oracle": "Multiple",
+      "architecture": "Multiple",
+      "summary_en": "Broad model-extraction survey; includes surrogate stealing outside this repository's core scope.",
+      "summary_zh": "广义模型提取综述，也涵盖本仓库核心范围之外的替代模型窃取。",
+      "url": "https://arxiv.org/abs/2508.15031",
+      "pdf_url": "https://arxiv.org/pdf/2508.15031",
+      "aliases": [],
+      "code": {
+        "status": "reading_resource",
+        "url": "https://github.com/kzhao5/ModelExtractionPapers",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2508.15031",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2025/08/20",
+      "version_history": "[v1] Wed, 20 Aug 2025 19:49:59 UTC (970 KB)  [v2] Wed, 27 Aug 2025 05:10:26 UTC (971 KB) ",
+      "pdf": {
+        "filename": "2025-arxiv-2508.15031_A_Systematic_Survey_of_Model_Extraction_Attacks_and_Defenses_State_of_the_Art_and_Perspectives.pdf",
+        "pages": 55,
+        "bytes": 3891976,
+        "sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b"
+      }
+    },
+    {
+      "id": "arxiv-2506.22521",
+      "title": "A Survey on Model Extraction Attacks and Defenses for Large Language Models",
+      "authors": [
+        "Zhao, Kaixiang",
+        "Li, Lincan",
+        "Ding, Kaize",
+        "Gong, Neil Zhenqiang",
+        "Zhao, Yue",
+        "Dong, Yushun"
+      ],
+      "year": 2025,
+      "category": "survey",
+      "venue_status": "Preprint survey",
+      "oracle": "Multiple LLM APIs",
+      "architecture": "LLM",
+      "summary_en": "Contextual survey of LLM extraction and defenses; not an exact-recovery attack.",
+      "summary_zh": "LLM 提取及防御背景综述，不是精确恢复攻击。",
+      "url": "https://arxiv.org/abs/2506.22521",
+      "pdf_url": "https://arxiv.org/pdf/2506.22521",
+      "aliases": [],
+      "code": {
+        "status": "reading_resource",
+        "url": "https://github.com/kzhao5/ModelExtractionPapers",
+        "checked": "2026-09-17",
+        "evidence": "https://arxiv.org/abs/2506.22521",
+        "note": "Repository availability checked, code not executed or scientifically reproduced."
+      },
+      "checked": "2026-09-17",
+      "archive_date": "2025/06/26",
+      "version_history": "[v1] Thu, 26 Jun 2025 22:02:01 UTC (319 KB) ",
+      "pdf": {
+        "filename": "2025-arxiv-2506.22521_A_Survey_on_Model_Extraction_Attacks_and_Defenses_for_Large_Language_Models.pdf",
+        "pages": 10,
+        "bytes": 889080,
+        "sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec"
+      }
+    }
+  ]
+}
