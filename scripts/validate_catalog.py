@@ -20,7 +20,7 @@ def main():
     papers = data["papers"]
     identities = [u for p in papers for u in [p["url"], *p["aliases"]]]
     assert len(identities) == len(set(identities)), "Alias duplicates another work"
-    for name in ["README.md", "README_zh-CN.md", "docs/progress-2026-09.md", "docs/search-audit-2026-09-17.md"]:
+    for name in ["README.md", "README_zh-CN.md", "docs/progress-2026-09.md", "docs/search-audit-2026-09-17.md", "docs/update-2026-09-18.md"]:
         file = ROOT / name
         text = file.read_text(encoding="utf-8")
         assert "awesome-cryptanalytic-model-extraction" not in text

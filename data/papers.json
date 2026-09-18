@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "scope": "Core cryptanalytic extraction plus explicitly separated related work, surveys and one course report",
   "categories": [
     {
@@ -1163,7 +1163,7 @@
     },
     {
       "id": "eprint-2026-848",
-      "title": "PPML Is More Vulnerable to Cryptanalytic Extraction Attacks",
+      "title": "Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning",
       "authors": [
         "Wen Zhang",
         "Bingsheng Zhang",
@@ -1175,27 +1175,30 @@
       "venue_status": "Preprint",
       "oracle": "Finite-ring/fixed-point inference; variants include top-1 + probability",
       "architecture": "PPML neural inference",
-      "summary_en": "Modular wraparound creates exploitable geometry; not a break of encryption or label-only access in every variant.",
-      "summary_zh": "模回绕产生可利用几何，不等于破解加密；部分变体还需要概率值。",
+      "summary_en": "Revised Sep 17: multi-point projection aggregation for expansive networks and optimal sign probes; reports 30%-74% fewer sign-recovery queries than Neuron Wiggle on its benchmark, not a universal reduction or encryption break.",
+      "summary_zh": "9 月 17 日修订：多点投影聚合支持扩张网络，并优化符号探测方向；文中基准的符号恢复查询较 Neuron Wiggle 减少 30%-74%，不是通用降幅或加密破解。",
       "url": "https://eprint.iacr.org/2026/848",
       "pdf_url": "https://eprint.iacr.org/2026/848.pdf",
       "aliases": [],
       "code": {
         "status": "anonymous_attachment",
         "url": "https://anonymous.4open.science/r/PPML_Model_Extraction_Attack",
-        "checked": "2026-09-17",
-        "evidence": "https://eprint.iacr.org/2026/848",
-        "note": "Repository availability checked, code not executed or scientifically reproduced."
+        "checked": "2026-09-18",
+        "evidence": "https://eprint.iacr.org/2026/848.pdf",
+        "note": "Latest PDF p.6 links anonymous repository; file-list API returned 200 on 2026-09-18. Code not executed."
       },
-      "checked": "2026-09-17",
+      "checked": "2026-09-18",
       "archive_date": null,
-      "version_history": "2026-05-12: last of 3 revisions 2026-04-30: received",
+      "version_history": "2026-09-17: last of 4 revisions; 2026-04-30: received",
       "pdf": {
         "filename": "2026-848_PPML_Is_More_Vulnerable_to_Cryptanalytic_Extraction_Attacks.pdf",
-        "pages": 51,
-        "bytes": 524522,
-        "sha256": "3f6bceca978b70f2a23248c89fbc62d6db32c7a3e87d939d2e84413422abafcf"
-      }
+        "pages": 52,
+        "bytes": 941743,
+        "sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+      },
+      "former_titles": [
+        "PPML Is More Vulnerable to Cryptanalytic Extraction Attacks"
+      ]
     },
     {
       "id": "eprint-2024-1870",
@@ -1774,6 +1777,43 @@
         "pages": 10,
         "bytes": 889080,
         "sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec"
+      }
+    },
+    {
+      "id": "arxiv-2609.18751",
+      "year": 2026,
+      "category": "hard",
+      "venue_status": "Preprint",
+      "oracle": "Top-1 label only; sign-recovery stage",
+      "architecture": "Deep ReLU MLP",
+      "aliases": [],
+      "title": "Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks",
+      "authors": [
+        "Tang, Shi",
+        "Chen, Zirui",
+        "Su, Yongjia",
+        "Gao, Zhengchao",
+        "Qin, Lingyue",
+        "Dong, Xiaoyang"
+      ],
+      "url": "https://arxiv.org/abs/2609.18751",
+      "pdf_url": "https://arxiv.org/pdf/2609.18751",
+      "checked": "2026-09-18",
+      "summary_en": "Normal-signature alignment plus eSOE recovers 512/512 and 320/320 signs in the reported models; sign recovery, not a demonstrated complete end-to-end attack.",
+      "summary_zh": "法向量与签名对齐结合 eSOE，在报告模型中恢复 512/512、320/320 个符号；属于符号恢复，非已展示的完整端到端攻击。",
+      "archive_date": "2026/09/16",
+      "version_history": "v1: 2026-09-16 14:42:58 UTC",
+      "code": {
+        "status": "announced",
+        "checked": "2026-09-18",
+        "evidence": "https://arxiv.org/pdf/2609.18751",
+        "note": "PDF p.5 gives XXX as source-code URL; no usable link located."
+      },
+      "pdf": {
+        "filename": "2026-arxiv-2609.18751_Normal_Alignment_Improved_Cryptanalytic_Sign_Recovery_on_Hard_Label_Networks.pdf",
+        "pages": 34,
+        "bytes": 782984,
+        "sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
       }
     }
   ]

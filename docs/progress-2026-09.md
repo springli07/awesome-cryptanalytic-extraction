@@ -1,6 +1,12 @@
 # Research Progress / 近期研究进展
 
-Snapshot: **2026-09-17**. This synthesis distinguishes published papers, preprints and a course report. It reports the scope of the cited work, not independent reproduction. See the [complete catalog](../README.md) and [Chinese catalog](../README_zh-CN.md).
+Snapshot: **2026-09-17**, with a **September 18 targeted addendum**. This synthesis distinguishes published papers, preprints and a course report. It reports the scope of the cited work, not independent reproduction. See the [complete catalog](../README.md) and [Chinese catalog](../README_zh-CN.md).
+
+## September 18 Addendum / 9 月 18 日增补
+
+Added Normal Alignment (hard-label sign recovery) and replaced the existing PPML entry with its September 17 revision and new title. Sign-stage success is not complete model extraction; the PPML query reduction is benchmark- and stage-specific. See the [bilingual update with sources and code status](update-2026-09-18.md).
+
+新增 Normal Alignment，仅标签符号恢复与完整模型提取分别记述。PPML 按同一论文的修订更新题名、版本与实验摘要；查询降幅只适用于报告基准的符号阶段，详见上方双语更新记录。
 
 ## September: Architecture Knowledge and Finite Precision
 

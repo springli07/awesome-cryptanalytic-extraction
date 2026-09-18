@@ -12,6 +12,8 @@ A curated bibliography of **cryptanalytic neural-network extraction**, structura
 
 ## Recent Developments
 
+- **September 18 update:** added [Normal Alignment](https://arxiv.org/abs/2609.18751) for hard-label sign recovery and refreshed [ePrint 2026/848](https://eprint.iacr.org/2026/848), now titled *Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning*. This is one new work plus one major revision. [Results, code status and limits](docs/update-2026-09-18.md).
+
 - **Unknown architecture:** September's [guess-and-determine extraction](https://arxiv.org/abs/2609.14379) jointly recovers ReLU fully connected architectures and parameters. This does not establish arbitrary CNN/Transformer extraction; earlier [geometric reverse engineering](https://arxiv.org/abs/1910.00744) is included for context.
 - **Numerical feasibility:** [Finite-Precision Error Analysis](https://eprint.iacr.org/2026/1943) studies numerical error in cryptanalytic primitives. [Output Rounding](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf) evaluates an adapted attack on rounded outputs. Neither supports a universal precision threshold for all networks.
 - **Beyond ReLU MLPs:** the catalog now covers [softmax attention](https://eprint.iacr.org/2026/1678), [multi-head query learning](https://arxiv.org/abs/2608.03294), [isolated GLU blocks](https://arxiv.org/abs/2608.06631), RNNs, GNNs, CNN pooling and smooth activations. Block-level recovery is not full-LLM extraction.
