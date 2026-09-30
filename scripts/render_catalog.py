@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LABELS = {
+    "placeholder_repository": ("Paper-linked placeholder repository", "论文链接占位仓库"),
     "official": ("Official", "官方"),
     "anonymous_attachment": ("Anonymous attachment", "匿名附件"),
     "unavailable_404": ("Paper-linked; 404", "论文所链；404"),

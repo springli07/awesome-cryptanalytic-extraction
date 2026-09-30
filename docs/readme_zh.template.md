@@ -12,9 +12,11 @@
 
 ## 近期进展
 
+- **9 月 30 日更新：** 新增[有限架构知识](https://eprint.iacr.org/2026/2127)、[端到端硬标签提取](https://arxiv.org/abs/2609.21941)和[未知架构 CNN](https://arxiv.org/abs/2609.27427)三篇预印本。已有 arXiv:2609.14379 仅计一次；ePrint 2026/2161 作为别名，不新增计数。[来源审计与边界](docs/update-2026-09-30.md)。
+
 - **9 月 18 日更新：** 新增仅标签符号恢复论文 [Normal Alignment](https://arxiv.org/abs/2609.18751)，更新 [ePrint 2026/848](https://eprint.iacr.org/2026/848)，后者现题为 *Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning*。这是 1 篇新增和 1 篇重大修订，不重复计数。[结果、代码状态及边界](docs/update-2026-09-18.md)。
 
-- **未知结构：** 九月的[猜测确定法](https://arxiv.org/abs/2609.14379)联合恢复 ReLU 全连接网络结构及参数，不代表任意 CNN 或 Transformer 已可恢复；同时收录早期[几何逆向工作](https://arxiv.org/abs/1910.00744)，避免忽略历史背景。
+- **未知结构：** [猜测确定法](https://arxiv.org/abs/2609.14379)与[有限知识恢复](https://eprint.iacr.org/2026/2127)在不同先验下处理 ReLU 全连接网络；[CNN 空间几何](https://arxiv.org/abs/2609.27427)将架构恢复扩展到研究的卷积/池化网络，并继承参数攻击的假设。尚不代表任意混合网络或 Transformer 恢复。
 - **数值可行性：** [有限精度误差分析](https://eprint.iacr.org/2026/1943)研究提取原语的数值误差；[输出舍入报告](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf)评价适应舍入后的攻击。二者均不能给出所有网络通用的安全精度阈值。
 - **超越 ReLU MLP：** 已纳入 [softmax 注意力](https://eprint.iacr.org/2026/1678)、[多头注意力查询学习](https://arxiv.org/abs/2608.03294)、[孤立 GLU 模块](https://arxiv.org/abs/2608.06631)、RNN、GNN、CNN 池化及光滑激活。模块级恢复不是完整 LLM 提取。
 - **仅标签的进展与限制：** [代数签名](https://eprint.iacr.org/2026/1164)已包含 max-pooling CNN 实验；[跨层提取与多项式性分析](https://eprint.iacr.org/2025/1868)指出持久及死亡神经元问题。签名、符号及端到端可执行模型恢复必须分别陈述。
@@ -46,7 +48,7 @@
 
 ## 更新后的开放问题
 
-- **一般未知结构：** ReLU 全连接网络已有进展，不应再称完全空白；混合算子、残差路径和极弱先验仍需独立证据。
+- **一般未知结构：** 已研究的 ReLU 全连接与卷积/池化模型已有架构恢复结果；混合算子、残差路径、弱规模先验及模块组合仍需独立证据。
 - **仅标签 max-pooling：** 已有相关实验，不能笼统称尚无结果；需要超越小规模签名演示，评估全层、符号、偏置、池化赢家切换与事件可观测性。
 - **实际精度与代价：** 同时评估条件数、查询预算、限流、拒答和概率截断，不把实数运算模型中的多项式性等同于低成本提取。
 - **可辨识性：** 明确死亡/持久神经元、等价参数化及规范化。某一参数表示恢复失败不自动构成安全性。

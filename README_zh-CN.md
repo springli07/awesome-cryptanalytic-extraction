@@ -8,13 +8,15 @@
 
 [English](README.md) · [九月进展](docs/progress-2026-09.md) · [检索审计](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json)
 
-**更新于 2026-09-18 · 49 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
+**更新于 2026-09-30 · 52 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
 
 ## 近期进展
 
+- **9 月 30 日更新：** 新增[有限架构知识](https://eprint.iacr.org/2026/2127)、[端到端硬标签提取](https://arxiv.org/abs/2609.21941)和[未知架构 CNN](https://arxiv.org/abs/2609.27427)三篇预印本。已有 arXiv:2609.14379 仅计一次；ePrint 2026/2161 作为别名，不新增计数。[来源审计与边界](docs/update-2026-09-30.md)。
+
 - **9 月 18 日更新：** 新增仅标签符号恢复论文 [Normal Alignment](https://arxiv.org/abs/2609.18751)，更新 [ePrint 2026/848](https://eprint.iacr.org/2026/848)，后者现题为 *Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning*。这是 1 篇新增和 1 篇重大修订，不重复计数。[结果、代码状态及边界](docs/update-2026-09-18.md)。
 
-- **未知结构：** 九月的[猜测确定法](https://arxiv.org/abs/2609.14379)联合恢复 ReLU 全连接网络结构及参数，不代表任意 CNN 或 Transformer 已可恢复；同时收录早期[几何逆向工作](https://arxiv.org/abs/1910.00744)，避免忽略历史背景。
+- **未知结构：** [猜测确定法](https://arxiv.org/abs/2609.14379)与[有限知识恢复](https://eprint.iacr.org/2026/2127)在不同先验下处理 ReLU 全连接网络；[CNN 空间几何](https://arxiv.org/abs/2609.27427)将架构恢复扩展到研究的卷积/池化网络，并继承参数攻击的假设。尚不代表任意混合网络或 Transformer 恢复。
 - **数值可行性：** [有限精度误差分析](https://eprint.iacr.org/2026/1943)研究提取原语的数值误差；[输出舍入报告](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf)评价适应舍入后的攻击。二者均不能给出所有网络通用的安全精度阈值。
 - **超越 ReLU MLP：** 已纳入 [softmax 注意力](https://eprint.iacr.org/2026/1678)、[多头注意力查询学习](https://arxiv.org/abs/2608.03294)、[孤立 GLU 模块](https://arxiv.org/abs/2608.06631)、RNN、GNN、CNN 池化及光滑激活。模块级恢复不是完整 LLM 提取。
 - **仅标签的进展与限制：** [代数签名](https://eprint.iacr.org/2026/1164)已包含 max-pooling CNN 实验；[跨层提取与多项式性分析](https://eprint.iacr.org/2025/1868)指出持久及死亡神经元问题。签名、符号及端到端可执行模型恢复必须分别陈述。
@@ -52,29 +54,31 @@
 | 2019 | [High Accuracy and High Fidelity Extraction of Neural Networks](https://arxiv.org/abs/1909.01838) · [PDF](https://arxiv.org/pdf/1909.01838) | USENIX Security 2020 | Raw outputs / prediction queries<br>Shallow and deep NN | 区分准确率与保真度，包含浅层等价恢复和混合攻击。 | 未检索到 |
 | 2016 | [Stealing Machine Learning Models via Prediction APIs](https://arxiv.org/abs/1609.02943) · [PDF](https://arxiv.org/pdf/1609.02943) | USENIX Security 2016 | Prediction scores / labels<br>Classical ML / shallow NN | 方程求解及早期 API 提取，不是任意深网的精确恢复。 | [官方](https://github.com/ftramer/Steal-ML) |
 
-### 原始输出 ReLU 提取 (6)
+### 原始输出 ReLU 提取 (7)
 
 | 年份¹ | 论文与 PDF | 发表状态 | 预言机 / 架构 | 恢复目标与边界 | 代码² |
 |---|---|---|---|---|---|
 | 2026 | [Navigating the Deep: End-to-End Extraction on Deep Neural Networks](https://eprint.iacr.org/2026/296) · [PDF](https://eprint.iacr.org/2026/296.pdf) | EUROCRYPT 2026 | Raw outputs<br>Deep ReLU MLP | 针对深层恢复瓶颈的端到端提取。 | [官方](https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction) |
+| 2026 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Limited Architecture Knowledge Setting](https://eprint.iacr.org/2026/2127) · [PDF](https://eprint.iacr.org/2026/2127.pdf) | Preprint | Raw logits; limited architecture knowledge<br>ReLU MLP; approximate total neuron count assumed | 检测遗漏神经元并回溯参数恢复；仍需大致规模先验，未报告总体运行时间与查询成本。 | [论文链接占位仓库](https://github.com/CryptoAiLi/DNNExtractionLAK) |
 | 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) · [PDF](https://eprint.iacr.org/2026/1025.pdf) | Preprint | Raw outputs<br>ReLU networks | 几何临界点筛选，避免聚类阶段。 | [官方](https://github.com/1983321048/Geometric-Critical-Point-Screening) |
 | 2026 | [Cryptanalytic Extraction of Neural Networks Without Known Architecture Assumption](https://arxiv.org/abs/2609.14379) · [PDF](https://arxiv.org/pdf/2609.14379) | Preprint | Raw outputs; architecture unknown<br>ReLU fully connected networks | 猜测确定法联合恢复结构及参数；不等于任意 CNN 或 Transformer 恢复。 | 未检索到 |
 | 2024 | [Beyond Slow Signs in High-fidelity Model Extraction](https://arxiv.org/abs/2406.10011) · [PDF](https://arxiv.org/pdf/2406.10011) | NeurIPS 2024 | Raw outputs<br>ReLU MLP | 加速实际符号恢复，运行时间与查询量需分别评价。 | [官方](https://github.com/hannafoe/cryptanalytical-extraction) |
 | 2023 | [Polynomial Time Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2023/1526) · [PDF](https://eprint.iacr.org/2023/1526.pdf) | EUROCRYPT 2024 | Raw outputs<br>ReLU MLP | 多项式时间符号恢复，改进原始密码分析提取流程。 | [官方](https://github.com/Crypto-TII/deti) |
 | 2020 | [Cryptanalytic Extraction of Neural Network Models](https://arxiv.org/abs/2003.04884) · [PDF](https://arxiv.org/pdf/2003.04884) | CRYPTO 2020 | Raw outputs<br>ReLU MLP | 差分临界点提取，依次恢复签名、符号与参数。 | [官方](https://github.com/google-research/cryptanalytic-model-extraction) |
 
-### 仅标签提取 (6)
+### 仅标签提取 (7)
 
 | 年份¹ | 论文与 PDF | 发表状态 | 预言机 / 架构 | 恢复目标与边界 | 代码² |
 |---|---|---|---|---|---|
 | 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) · [PDF](https://eprint.iacr.org/2026/1164.pdf) | Preprint | Top-1 label only<br>FCNN / max-pooling CNN | 代数签名向量替代高代价 SVD 聚类；实验含 FC 前层及 LeNet-5 签名，不是任意网络完整恢复。 | 已宣告；URL 为占位符 |
+| 2026 | [End-to-End Hard-Label Cryptanalytic Model Extraction Using Efficient Sign Recovery](https://arxiv.org/abs/2609.21941) · [PDF](https://arxiv.org/pdf/2609.21941v1) | Preprint | Top-1 label only; known architecture<br>Trained ReLU MLP; width 16, four/six hidden layers | 余弦/投影符号恢复复用交空间；无需专门查询仅指该阶段。端到端采样标签一致率不涵盖死亡/近死亡神经元，也不认证严格等价。 | 未检索到 |
 | 2026 | [Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks](https://arxiv.org/abs/2609.18751) · [PDF](https://arxiv.org/pdf/2609.18751) | Preprint | Top-1 label only; sign-recovery stage<br>Deep ReLU MLP | 法向量与签名对齐结合 eSOE，在报告模型中恢复 512/512、320/320 个符号；属于符号恢复，非已展示的完整端到端攻击。 | 已宣告；URL 为占位符 |
 | 2025 | [Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?](https://eprint.iacr.org/2025/1868) · [PDF](https://eprint.iacr.org/2025/1868.pdf) | CRYPTO 2026 | Top-1 label only<br>ReLU MLP | 持久及死亡神经元限制多项式性论断，并提出跨层提取。 | [论文所链；404](https://github.com/ECSIS-lab/hard-label-cross-layer-extraction) |
 | 2025 | [Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2025/1118) · [PDF](https://eprint.iacr.org/2025/1118.pdf) | LATINCRYPT 2025 | Top-1 label only<br>ReLU MLP | 结构条件下的部分层及输出层恢复，并非无条件端到端提取。 | [官方](https://github.com/deividafonso281/hard-label-contract-output) |
 | 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | 双点、签名与符号恢复，依赖结构和几何条件。 | [官方](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
 | 2024 | [Hard-Label Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2024/1403) · [PDF](https://eprint.iacr.org/2024/1403.pdf) | ASIACRYPT 2024 | Top-1 label only<br>ReLU MLP | 从决策边界几何开展仅标签密码分析提取。 | [官方](https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction) |
 
-### CNN 与池化 (4)
+### CNN 与池化 (5)
 
 | 年份¹ | 论文与 PDF | 发表状态 | 预言机 / 架构 | 恢复目标与边界 | 代码² |
 |---|---|---|---|---|---|
@@ -82,6 +86,7 @@
 | 2026 | [Model Extraction of Convolutional Neural Networks with Max-Pooling](https://eprint.iacr.org/2026/464) · [PDF](https://eprint.iacr.org/2026/464.pdf) | ToSC 2026 | Raw outputs<br>Max-pooling CNN | 利用池化信息与感受野结构开展提取。 | [官方](https://github.com/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling) |
 | 2026 | [Algebraic Attack on Convolutional Neural Networks with Max Pooling](https://eprint.iacr.org/2026/241) · [PDF](https://eprint.iacr.org/2026/241.pdf) | CRYPTO 2026 | Raw outputs<br>Max-pooling CNN | 代数方法处理池化切换；原始输出结果不能直接迁移至仅标签场景。 | [论文所链；404](https://github.com/czr-eric/Algebraic-Attack-on-CNN) |
 | 2026 | [Cryptanalytic Extraction of Convolutional Neural Networks](https://eprint.iacr.org/2026/139) · [PDF](https://eprint.iacr.org/2026/139.pdf) | ACISP 2026 | Top-1 label only<br>Average-pooling CNN | 利用卷积结构恢复卷积核。 | [已过期；410](https://anonymous.4open.science/r/cnn-extraction-93C4) |
+| 2026 | [Extracting CNNs in the Unknown-Architecture and Feedback-Agnostic Setting](https://arxiv.org/abs/2609.27427) · [PDF](https://arxiv.org/pdf/2609.27427v1) | Preprint | Raw outputs / top-1 labels; architecture unknown<br>Max-/average-pooling CNN | 由已恢复向量的空间几何推断卷积/池化结构，继承上游参数恢复假设。两卷积端到端及三卷积逐层结果不等于任意 CNN 的硬标签全网恢复。 | 未检索到 |
 
 ### 激活函数扩展 (4)
 
@@ -161,7 +166,7 @@
 
 ## 更新后的开放问题
 
-- **一般未知结构：** ReLU 全连接网络已有进展，不应再称完全空白；混合算子、残差路径和极弱先验仍需独立证据。
+- **一般未知结构：** 已研究的 ReLU 全连接与卷积/池化模型已有架构恢复结果；混合算子、残差路径、弱规模先验及模块组合仍需独立证据。
 - **仅标签 max-pooling：** 已有相关实验，不能笼统称尚无结果；需要超越小规模签名演示，评估全层、符号、偏置、池化赢家切换与事件可观测性。
 - **实际精度与代价：** 同时评估条件数、查询预算、限流、拒答和概率截断，不把实数运算模型中的多项式性等同于低成本提取。
 - **可辨识性：** 明确死亡/持久神经元、等价参数化及规范化。某一参数表示恢复失败不自动构成安全性。

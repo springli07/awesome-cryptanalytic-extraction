@@ -20,14 +20,15 @@ def main():
     papers = data["papers"]
     identities = [u for p in papers for u in [p["url"], *p["aliases"]]]
     assert len(identities) == len(set(identities)), "Alias duplicates another work"
-    for name in ["README.md", "README_zh-CN.md", "docs/progress-2026-09.md", "docs/search-audit-2026-09-17.md", "docs/update-2026-09-18.md"]:
+    for name in ["README.md", "README_zh-CN.md", "docs/progress-2026-09.md", "docs/search-audit-2026-09-17.md", "docs/update-2026-09-18.md", "docs/update-2026-09-30.md", "docs/readme_en.template.md", "docs/readme_zh.template.md"]:
         file = ROOT / name
         text = file.read_text(encoding="utf-8")
+        link_base = ROOT if name.endswith(".template.md") else file.parent
         assert "awesome-cryptanalytic-model-extraction" not in text
         assert "\ufffd" not in text
         for link in re.findall(r"\]\(([^)]+)\)", text):
             if not urlparse(link).scheme and not link.startswith("#"):
-                assert (file.parent / unquote(link.split("#")[0])).exists(), (name, link)
+                assert (link_base / unquote(link.split("#")[0])).exists(), (name, link)
         if name.startswith("README"):
             rows = [line for line in text.splitlines() if re.match(r"\| 20\d\d \|", line)]
             assert len(rows) == len(papers)

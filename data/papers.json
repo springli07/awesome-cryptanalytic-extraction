@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18",
+  "updated": "2026-09-30",
   "scope": "Core cryptanalytic extraction plus explicitly separated related work, surveys and one course report",
   "categories": [
     {
@@ -1814,6 +1814,112 @@
         "pages": 34,
         "bytes": 782984,
         "sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+      }
+    },
+    {
+      "id": "eprint-2026-2127",
+      "title": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Limited Architecture Knowledge Setting",
+      "authors": [
+        "Li, Yiqing",
+        "Wang, Gaoli"
+      ],
+      "category": "raw",
+      "oracle": "Raw logits; limited architecture knowledge",
+      "architecture": "ReLU MLP; approximate total neuron count assumed",
+      "summary_en": "Detects omitted neurons and backtracks parameter recovery; rough size knowledge remains necessary. Overall runtime/query costs are not reported.",
+      "summary_zh": "检测遗漏神经元并回溯参数恢复；仍需大致规模先验，未报告总体运行时间与查询成本。",
+      "url": "https://eprint.iacr.org/2026/2127",
+      "pdf_url": "https://eprint.iacr.org/2026/2127.pdf",
+      "aliases": [],
+      "archive_date": "2026/09/20",
+      "version_history": "Received 2026-09-20; approved 2026-09-22; PDF downloaded 2026-09-30.",
+      "code": {
+        "status": "placeholder_repository",
+        "url": "https://github.com/CryptoAiLi/DNNExtractionLAK",
+        "checked": "2026-09-30",
+        "evidence": "https://eprint.iacr.org/2026/2127.pdf",
+        "note": "Paper-linked repository reachable; HEAD da4fa69cb63bd6868b786db70af455bec7b65344 contains only .idea metadata, no attack implementation located."
+      },
+      "year": 2026,
+      "venue_status": "Preprint",
+      "checked": "2026-09-30",
+      "pdf": {
+        "filename": "2026-eprint-2026-2127.pdf",
+        "pages": 23,
+        "bytes": 526372,
+        "sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+      }
+    },
+    {
+      "id": "arxiv-2609.21941",
+      "title": "End-to-End Hard-Label Cryptanalytic Model Extraction Using Efficient Sign Recovery",
+      "authors": [
+        "Ito, Akira",
+        "Miura, Takayuki",
+        "Todo, Yosuke"
+      ],
+      "category": "hard",
+      "oracle": "Top-1 label only; known architecture",
+      "architecture": "Trained ReLU MLP; width 16, four/six hidden layers",
+      "summary_en": "Cosine/projection sign recovery reuses intersection spaces; no dedicated queries applies to that stage. End-to-end sampled label agreement excludes dead/almost-dead neurons and does not certify exact equivalence.",
+      "summary_zh": "余弦/投影符号恢复复用交空间；无需专门查询仅指该阶段。端到端采样标签一致率不涵盖死亡/近死亡神经元，也不认证严格等价。",
+      "url": "https://arxiv.org/abs/2609.21941",
+      "pdf_url": "https://arxiv.org/pdf/2609.21941v1",
+      "aliases": [],
+      "archive_date": "2026/09/18",
+      "version_history": "v1: 2026-09-18 15:56:29 UTC",
+      "code": {
+        "status": "not_found",
+        "checked": "2026-09-30",
+        "evidence": "https://arxiv.org/pdf/2609.21941v1",
+        "note": "No usable author-linked implementation URL located in reviewed paper or title search."
+      },
+      "year": 2026,
+      "venue_status": "Preprint",
+      "checked": "2026-09-30",
+      "pdf": {
+        "filename": "2026-arxiv-2609.21941.pdf",
+        "pages": 41,
+        "bytes": 4901755,
+        "sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+      }
+    },
+    {
+      "id": "arxiv-2609.27427",
+      "title": "Extracting CNNs in the Unknown-Architecture and Feedback-Agnostic Setting",
+      "authors": [
+        "Liu, Jiashuo",
+        "Ma, Ruijie",
+        "Li, Manman",
+        "Chen, Yi",
+        "Chen, Shaozhen"
+      ],
+      "category": "cnn",
+      "oracle": "Raw outputs / top-1 labels; architecture unknown",
+      "architecture": "Max-/average-pooling CNN",
+      "summary_en": "Spatial geometry of recovered vectors reveals convolution/pooling structure; inherits upstream parameter-recovery assumptions. Two-convolution end-to-end and three-convolution layer-wise results do not establish arbitrary CNN hard-label recovery.",
+      "summary_zh": "由已恢复向量的空间几何推断卷积/池化结构，继承上游参数恢复假设。两卷积端到端及三卷积逐层结果不等于任意 CNN 的硬标签全网恢复。",
+      "url": "https://arxiv.org/abs/2609.27427",
+      "pdf_url": "https://arxiv.org/pdf/2609.27427v1",
+      "aliases": [
+        "https://eprint.iacr.org/2026/2161"
+      ],
+      "archive_date": "2026/09/23",
+      "version_history": "arXiv v1: 2026-09-23 06:45:53 UTC; cross-listed as ePrint 2026/2161.",
+      "code": {
+        "status": "not_found",
+        "checked": "2026-09-30",
+        "evidence": "https://arxiv.org/pdf/2609.27427v1",
+        "note": "Paper states source code and experimental data are released; no reliable author repository URL located."
+      },
+      "year": 2026,
+      "venue_status": "Preprint",
+      "checked": "2026-09-30",
+      "pdf": {
+        "filename": "2026-arxiv-2609.27427.pdf",
+        "pages": 31,
+        "bytes": 1909458,
+        "sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
       }
     }
   ]

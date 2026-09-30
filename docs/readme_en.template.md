@@ -12,9 +12,11 @@ A curated bibliography of **cryptanalytic neural-network extraction**, structura
 
 ## Recent Developments
 
+- **September 30 update:** added three preprints on [limited architecture knowledge](https://eprint.iacr.org/2026/2127), [end-to-end hard-label extraction](https://arxiv.org/abs/2609.21941), and [unknown-architecture CNNs](https://arxiv.org/abs/2609.27427). Existing arXiv:2609.14379 is retained once; ePrint 2026/2161 is an alias, not another work. [Source audit and limitations](docs/update-2026-09-30.md).
+
 - **September 18 update:** added [Normal Alignment](https://arxiv.org/abs/2609.18751) for hard-label sign recovery and refreshed [ePrint 2026/848](https://eprint.iacr.org/2026/848), now titled *Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning*. This is one new work plus one major revision. [Results, code status and limits](docs/update-2026-09-18.md).
 
-- **Unknown architecture:** September's [guess-and-determine extraction](https://arxiv.org/abs/2609.14379) jointly recovers ReLU fully connected architectures and parameters. This does not establish arbitrary CNN/Transformer extraction; earlier [geometric reverse engineering](https://arxiv.org/abs/1910.00744) is included for context.
+- **Unknown architecture:** [guess-and-determine extraction](https://arxiv.org/abs/2609.14379) and [limited-knowledge recovery](https://eprint.iacr.org/2026/2127) address ReLU fully connected networks under different priors. [CNN spatial geometry](https://arxiv.org/abs/2609.27427) extends architecture recovery to studied convolution/pooling networks, inheriting the parameter attack’s assumptions. These results do not establish arbitrary mixed-network or Transformer recovery.
 - **Numerical feasibility:** [Finite-Precision Error Analysis](https://eprint.iacr.org/2026/1943) studies numerical error in cryptanalytic primitives. [Output Rounding](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf) evaluates an adapted attack on rounded outputs. Neither supports a universal precision threshold for all networks.
 - **Beyond ReLU MLPs:** the catalog now covers [softmax attention](https://eprint.iacr.org/2026/1678), [multi-head query learning](https://arxiv.org/abs/2608.03294), [isolated GLU blocks](https://arxiv.org/abs/2608.06631), RNNs, GNNs, CNN pooling and smooth activations. Block-level recovery is not full-LLM extraction.
 - **Hard-label progress and limits:** [algebraic signatures](https://eprint.iacr.org/2026/1164) include max-pooling CNN experiments, while [cross-layer extraction and polynomiality analysis](https://eprint.iacr.org/2025/1868) expose important persistent/dead-neuron caveats. Signature recovery, sign recovery and end-to-end executable recovery remain different outcomes.
@@ -46,7 +48,7 @@ The cryptanalytic analogy treats weights as hidden parameters and inputs as chos
 
 ## Open Questions After These Results
 
-- **Unknown general architectures:** no longer untouched for ReLU fully connected models. Mixed operators, residual paths and weak prior knowledge still require separate evidence.
+- **Unknown general architectures:** studied ReLU fully connected and convolution/pooling models now have architecture-recovery results. Mixed operators, residual paths, weak size priors and composition still require separate evidence.
 - **Hard-label max-pooling:** no longer an empty category. Robust full-layer/sign/bias recovery, winner switches and event observability should be evaluated beyond small signature-recovery demonstrations.
 - **Practical precision and cost:** relate numerical stability to query budgets, conditioning, rate limits, abstentions and probability truncation; do not equate real-arithmetic polynomiality with cheap extraction.
 - **Identifiability:** report dead/persistent neurons, equivalent parameterizations and canonicalization explicitly. A failure to recover one parameterization is not automatically security.
