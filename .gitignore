@@ -10,3 +10,8 @@ package-lock.json
 
 # Rendered paper previews should not be published.
 assets/paper_preview/
+
+# Opt-in upstream source snapshots and Python bytecode stay local.
+code/downloads/
+__pycache__/
+*.pyc

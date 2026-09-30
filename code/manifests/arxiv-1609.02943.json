@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-1609.02943",
+  "title": "Stealing Machine Learning Models via Prediction APIs",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/ftramer/Steal-ML",
+  "repository_id": "ftramer/Steal-ML",
+  "status": "author_linked_implementation",
+  "pinned_commit": "e37c67b2f74e42a85370ce431bc9d4e391b0ed8b",
+  "collection_path": "code/upstream/ftramer/Steal-ML",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

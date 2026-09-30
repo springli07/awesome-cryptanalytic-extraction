@@ -6,11 +6,13 @@
 
 A curated bibliography of **cryptanalytic neural-network extraction**, structural and parameter recovery, reproducibility code, limitations, and defenses.
 
-[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [Search audit](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json)
+[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [Search audit](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json) · [Stage comparisons](docs/comparison_en.md) · [Original code collection](code/README.md)
 
 **Updated 2026-09-30 · 52 unique works · 13 categories.** Includes preprints, selected adjacent theory, two surveys, and one explicitly labeled course report. This is a broad, source-checked collection, not a claim of exhaustive coverage of all model stealing.
 
 ## Recent Developments
+
+**Source status:** ePrint 2026/1025 was withdrawn on September 19. Its historical method is retained and labeled. The comparison covers all 52 records and separates stage costs, oracle assumptions and experimental scope.
 
 - **September 30 update:** added three preprints on [limited architecture knowledge](https://eprint.iacr.org/2026/2127), [end-to-end hard-label extraction](https://arxiv.org/abs/2609.21941), and [unknown-architecture CNNs](https://arxiv.org/abs/2609.27427). Existing arXiv:2609.14379 is retained once; ePrint 2026/2161 is an alias, not another work. [Source audit and limitations](docs/update-2026-09-30.md).
 
@@ -60,7 +62,7 @@ The cryptanalytic analogy treats weights as hidden parameters and inputs as chos
 |---|---|---|---|---|---|
 | 2026 | [Navigating the Deep: End-to-End Extraction on Deep Neural Networks](https://eprint.iacr.org/2026/296) · [PDF](https://eprint.iacr.org/2026/296.pdf) | EUROCRYPT 2026 | Raw outputs<br>Deep ReLU MLP | End-to-end extraction with techniques for deeper-layer recovery. | [Official](https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction) |
 | 2026 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Limited Architecture Knowledge Setting](https://eprint.iacr.org/2026/2127) · [PDF](https://eprint.iacr.org/2026/2127.pdf) | Preprint | Raw logits; limited architecture knowledge<br>ReLU MLP; approximate total neuron count assumed | Detects omitted neurons and backtracks parameter recovery; rough size knowledge remains necessary. Overall runtime/query costs are not reported. | [Paper-linked placeholder repository](https://github.com/CryptoAiLi/DNNExtractionLAK) |
-| 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) · [PDF](https://eprint.iacr.org/2026/1025.pdf) | Preprint | Raw outputs<br>ReLU networks | Geometric critical-point screening avoids the clustering stage. | [Official](https://github.com/1983321048/Geometric-Critical-Point-Screening) |
+| 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) · [PDF](https://eprint.iacr.org/2026/1025.pdf) | Withdrawn preprint; 2026-09-19 | Raw outputs<br>ReLU networks | Historical geometric screening of early-layer signatures; withdrawn September 19, 2026. Retained for the historical record, not a current unretracted result. | [Official](https://github.com/1983321048/Geometric-Critical-Point-Screening) |
 | 2026 | [Cryptanalytic Extraction of Neural Networks Without Known Architecture Assumption](https://arxiv.org/abs/2609.14379) · [PDF](https://arxiv.org/pdf/2609.14379) | Preprint | Raw outputs; architecture unknown<br>ReLU fully connected networks | Guess-and-determine jointly recovers architecture and parameters; not arbitrary CNN/Transformer recovery. | Not located |
 | 2024 | [Beyond Slow Signs in High-fidelity Model Extraction](https://arxiv.org/abs/2406.10011) · [PDF](https://arxiv.org/pdf/2406.10011) | NeurIPS 2024 | Raw outputs<br>ReLU MLP | Practical sign-recovery improvements; distinguish runtime from query count. | [Official](https://github.com/hannafoe/cryptanalytical-extraction) |
 | 2023 | [Polynomial Time Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2023/1526) · [PDF](https://eprint.iacr.org/2023/1526.pdf) | EUROCRYPT 2024 | Raw outputs<br>ReLU MLP | Polynomial-time sign recovery improves the original cryptanalytic pipeline. | [Official](https://github.com/Crypto-TII/deti) |
@@ -70,12 +72,12 @@ The cryptanalytic analogy treats weights as hidden parameters and inputs as chos
 
 | Year¹ | Paper and PDF | Venue / status | Oracle / architecture | Recovery target and limits | Code² |
 |---|---|---|---|---|---|
-| 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) · [PDF](https://eprint.iacr.org/2026/1164.pdf) | Preprint | Top-1 label only<br>FCNN / max-pooling CNN | Algebraic signature vectors replace SVD-heavy clustering; experiments include early FC layers and LeNet-5 signatures, not universal full recovery. | Announced; placeholder URL |
+| 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) · [PDF](https://eprint.iacr.org/2026/1164.pdf) | Preprint | Top-1 label only<br>FCNN / max-pooling CNN | NRC/ASV accelerates offline clustering with conditional average and worst-case bounds; experiments recover signatures including CNN kernels, not all signs/biases/output layers. | Announced; placeholder URL |
 | 2026 | [End-to-End Hard-Label Cryptanalytic Model Extraction Using Efficient Sign Recovery](https://arxiv.org/abs/2609.21941) · [PDF](https://arxiv.org/pdf/2609.21941v1) | Preprint | Top-1 label only; known architecture<br>Trained ReLU MLP; width 16, four/six hidden layers | Cosine/projection sign recovery reuses intersection spaces; no dedicated queries applies to that stage. End-to-end sampled label agreement excludes dead/almost-dead neurons and does not certify exact equivalence. | Not located |
 | 2026 | [Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks](https://arxiv.org/abs/2609.18751) · [PDF](https://arxiv.org/pdf/2609.18751) | Preprint | Top-1 label only; sign-recovery stage<br>Deep ReLU MLP | Normal-signature alignment plus eSOE recovers 512/512 and 320/320 signs in the reported models; sign recovery, not a demonstrated complete end-to-end attack. | Announced; placeholder URL |
 | 2025 | [Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?](https://eprint.iacr.org/2025/1868) · [PDF](https://eprint.iacr.org/2025/1868.pdf) | CRYPTO 2026 | Top-1 label only<br>ReLU MLP | Persistent/dead neurons challenge polynomiality claims; cross-layer extraction addresses limitations. | [Paper-linked; 404](https://github.com/ECSIS-lab/hard-label-cross-layer-extraction) |
 | 2025 | [Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2025/1118) · [PDF](https://eprint.iacr.org/2025/1118.pdf) | LATINCRYPT 2025 | Top-1 label only<br>ReLU MLP | Partial/output-layer recovery under structural conditions, not unrestricted end-to-end extraction. | [Official](https://github.com/deividafonso281/hard-label-contract-output) |
-| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | Dual points, signatures and signs; recovery depends on structural and geometric conditions. | [Official](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
+| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | Dual-point signatures/signs; extended version includes a small random-model black-box end-to-end demonstration, distinct from white-box-assisted CIFAR experiments. | [Official](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
 | 2024 | [Hard-Label Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2024/1403) · [PDF](https://eprint.iacr.org/2024/1403.pdf) | ASIACRYPT 2024 | Top-1 label only<br>ReLU MLP | Label-only cryptanalytic extraction from decision-boundary geometry. | [Official](https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction) |
 
 ### CNN and Pooling (5)
@@ -180,6 +182,8 @@ Edit [data/papers.json](data/papers.json), including official title/authors, sou
 ```console
 python scripts/render_catalog.py
 python scripts/render_catalog.py --check
+python scripts/render_comparisons.py
+python scripts/validate_comparisons.py --strict
 ```
 
 Keep preprints and course reports visibly labeled. Prefer primary sources and author-linked code; do not vendor third-party implementations or copyrighted PDFs into this repository. A local `ref` corpus can use the filenames, official PDF URLs and hashes in the catalog. No code release is implied by a paper's promise to publish it.

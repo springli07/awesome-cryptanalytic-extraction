@@ -6,11 +6,13 @@
 
 **神经网络密码分析提取**专题目录：结构与参数恢复、源码、可行性边界及防御。
 
-[English](README.md) · [九月进展](docs/progress-2026-09.md) · [检索审计](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json)
+[English](README.md) · [九月进展](docs/progress-2026-09.md) · [检索审计](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
 
 **更新于 2026-09-30 · 52 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
 
 ## 近期进展
+
+**来源状态：** ePrint 2026/1025 已于9月19日撤回，保留并标注历史方法。对比覆盖52条记录，分别记录阶段成本、预言机假设及实验范围。
 
 - **9 月 30 日更新：** 新增[有限架构知识](https://eprint.iacr.org/2026/2127)、[端到端硬标签提取](https://arxiv.org/abs/2609.21941)和[未知架构 CNN](https://arxiv.org/abs/2609.27427)三篇预印本。已有 arXiv:2609.14379 仅计一次；ePrint 2026/2161 作为别名，不新增计数。[来源审计与边界](docs/update-2026-09-30.md)。
 
@@ -60,7 +62,7 @@
 |---|---|---|---|---|---|
 | 2026 | [Navigating the Deep: End-to-End Extraction on Deep Neural Networks](https://eprint.iacr.org/2026/296) · [PDF](https://eprint.iacr.org/2026/296.pdf) | EUROCRYPT 2026 | Raw outputs<br>Deep ReLU MLP | 针对深层恢复瓶颈的端到端提取。 | [官方](https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction) |
 | 2026 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Limited Architecture Knowledge Setting](https://eprint.iacr.org/2026/2127) · [PDF](https://eprint.iacr.org/2026/2127.pdf) | Preprint | Raw logits; limited architecture knowledge<br>ReLU MLP; approximate total neuron count assumed | 检测遗漏神经元并回溯参数恢复；仍需大致规模先验，未报告总体运行时间与查询成本。 | [论文链接占位仓库](https://github.com/CryptoAiLi/DNNExtractionLAK) |
-| 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) · [PDF](https://eprint.iacr.org/2026/1025.pdf) | Preprint | Raw outputs<br>ReLU networks | 几何临界点筛选，避免聚类阶段。 | [官方](https://github.com/1983321048/Geometric-Critical-Point-Screening) |
+| 2026 | [Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2026/1025) · [PDF](https://eprint.iacr.org/2026/1025.pdf) | Withdrawn preprint; 2026-09-19 | Raw outputs<br>ReLU networks | 历史方法：几何筛选早期层签名；2026年9月19日已撤回，保留历史记录，不作为现行未撤回结果。 | [官方](https://github.com/1983321048/Geometric-Critical-Point-Screening) |
 | 2026 | [Cryptanalytic Extraction of Neural Networks Without Known Architecture Assumption](https://arxiv.org/abs/2609.14379) · [PDF](https://arxiv.org/pdf/2609.14379) | Preprint | Raw outputs; architecture unknown<br>ReLU fully connected networks | 猜测确定法联合恢复结构及参数；不等于任意 CNN 或 Transformer 恢复。 | 未检索到 |
 | 2024 | [Beyond Slow Signs in High-fidelity Model Extraction](https://arxiv.org/abs/2406.10011) · [PDF](https://arxiv.org/pdf/2406.10011) | NeurIPS 2024 | Raw outputs<br>ReLU MLP | 加速实际符号恢复，运行时间与查询量需分别评价。 | [官方](https://github.com/hannafoe/cryptanalytical-extraction) |
 | 2023 | [Polynomial Time Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2023/1526) · [PDF](https://eprint.iacr.org/2023/1526.pdf) | EUROCRYPT 2024 | Raw outputs<br>ReLU MLP | 多项式时间符号恢复，改进原始密码分析提取流程。 | [官方](https://github.com/Crypto-TII/deti) |
@@ -70,12 +72,12 @@
 
 | 年份¹ | 论文与 PDF | 发表状态 | 预言机 / 架构 | 恢复目标与边界 | 代码² |
 |---|---|---|---|---|---|
-| 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) · [PDF](https://eprint.iacr.org/2026/1164.pdf) | Preprint | Top-1 label only<br>FCNN / max-pooling CNN | 代数签名向量替代高代价 SVD 聚类；实验含 FC 前层及 LeNet-5 签名，不是任意网络完整恢复。 | 已宣告；URL 为占位符 |
+| 2026 | [Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks](https://eprint.iacr.org/2026/1164) · [PDF](https://eprint.iacr.org/2026/1164.pdf) | Preprint | Top-1 label only<br>FCNN / max-pooling CNN | NRC/ASV加速离线聚类，平均与最坏复杂度条件分别记录；实验含CNN核签名，非全部符号、偏置和输出层恢复。 | 已宣告；URL 为占位符 |
 | 2026 | [End-to-End Hard-Label Cryptanalytic Model Extraction Using Efficient Sign Recovery](https://arxiv.org/abs/2609.21941) · [PDF](https://arxiv.org/pdf/2609.21941v1) | Preprint | Top-1 label only; known architecture<br>Trained ReLU MLP; width 16, four/six hidden layers | 余弦/投影符号恢复复用交空间；无需专门查询仅指该阶段。端到端采样标签一致率不涵盖死亡/近死亡神经元，也不认证严格等价。 | 未检索到 |
 | 2026 | [Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks](https://arxiv.org/abs/2609.18751) · [PDF](https://arxiv.org/pdf/2609.18751) | Preprint | Top-1 label only; sign-recovery stage<br>Deep ReLU MLP | 法向量与签名对齐结合 eSOE，在报告模型中恢复 512/512、320/320 个符号；属于符号恢复，非已展示的完整端到端攻击。 | 已宣告；URL 为占位符 |
 | 2025 | [Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?](https://eprint.iacr.org/2025/1868) · [PDF](https://eprint.iacr.org/2025/1868.pdf) | CRYPTO 2026 | Top-1 label only<br>ReLU MLP | 持久及死亡神经元限制多项式性论断，并提出跨层提取。 | [论文所链；404](https://github.com/ECSIS-lab/hard-label-cross-layer-extraction) |
 | 2025 | [Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2025/1118) · [PDF](https://eprint.iacr.org/2025/1118.pdf) | LATINCRYPT 2025 | Top-1 label only<br>ReLU MLP | 结构条件下的部分层及输出层恢复，并非无条件端到端提取。 | [官方](https://github.com/deividafonso281/hard-label-contract-output) |
-| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | 双点、签名与符号恢复，依赖结构和几何条件。 | [官方](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
+| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | 双点签名及符号恢复；扩展版含小型随机模型全黑盒端到端演示，与白盒辅助的CIFAR实验分别记述。 | [官方](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
 | 2024 | [Hard-Label Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2024/1403) · [PDF](https://eprint.iacr.org/2024/1403.pdf) | ASIACRYPT 2024 | Top-1 label only<br>ReLU MLP | 从决策边界几何开展仅标签密码分析提取。 | [官方](https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction) |
 
 ### CNN 与池化 (5)
@@ -180,6 +182,8 @@
 ```console
 python scripts/render_catalog.py
 python scripts/render_catalog.py --check
+python scripts/render_comparisons.py
+python scripts/validate_comparisons.py --strict
 ```
 
 明确标注预印本及课程报告，优先使用一手来源和作者代码。不将第三方实现或受版权保护的 PDF 直接打包到本仓库。本地 `ref` 可使用结构化目录中的文件名、官方 PDF 地址和哈希。论文宣称将开源，不代表已经公开可用。

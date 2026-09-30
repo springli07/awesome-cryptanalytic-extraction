@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2026-848",
+  "title": "Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://anonymous.4open.science/r/PPML_Model_Extraction_Attack",
+  "repository_id": null,
+  "status": "anonymous_attachment_access_unverified",
+  "pinned_commit": null,
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

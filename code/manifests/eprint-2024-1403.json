@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2024-1403",
+  "title": "Hard-Label Cryptanalytic Extraction of Neural Network Models",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction",
+  "repository_id": "AI-Lab-Y/NN_cryptanalytic_extraction",
+  "status": "verification_artifact",
+  "pinned_commit": "f363700ff141a8e0f81c68fb18ce703897884fc5",
+  "collection_path": "code/artifacts/AI-Lab-Y/NN_cryptanalytic_extraction",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

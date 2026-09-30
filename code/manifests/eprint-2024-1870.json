@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2024-1870",
+  "title": "A Divide-and-Conquer Strategy for Hard-Label Extraction of Deep Neural Networks via Side-Channel Attacks",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+  "repository_id": "bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+  "status": "simulation_artifact",
+  "pinned_commit": "8a729158d83adf587e2d2444e6587a2f489603b9",
+  "collection_path": "code/artifacts/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

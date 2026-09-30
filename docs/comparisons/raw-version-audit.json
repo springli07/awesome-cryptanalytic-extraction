@@ -1,0 +1,35 @@
+{
+  "checked": "2026-09-30",
+  "policy": "Research versions remain independent of historical catalog checks; no hash inferred from another PDF.",
+  "versions": [
+    {
+      "paper_id": "arxiv-2609.14379",
+      "research_url": "https://arxiv.org/pdf/2609.14379v2",
+      "version": "v2,2026-09-19",
+      "pages": 39,
+      "bytes": 594639,
+      "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3",
+      "historical_catalog_pages": 35,
+      "note": "Parent independently downloaded and verified v2. Comparison locators bind to v2; prior35-page catalog check remains historical."
+    },
+    {
+      "paper_id": "eprint-2026-296",
+      "research_url": "https://arxiv.org/pdf/2506.17047v2",
+      "version": "arXiv v2,2026-02-18",
+      "pages": 42,
+      "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca",
+      "note": "Research locators use author arXiv version, not an asserted matching ePrint fingerprint. v1 only Signature differs from v2 End-to-End."
+    },
+    {
+      "paper_id": "eprint-2026-1025",
+      "research_url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+      "version": "official historical2026-05-22 PDF",
+      "pages": 20,
+      "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81",
+      "publication_state": "withdrawn",
+      "withdrawn_on": "2026-09-19",
+      "status_source": "https://eprint.iacr.org/2026/1025",
+      "note": "Historical full text available and reviewed; results remain historical author claims, not current non-withdrawn results."
+    }
+  ]
+}

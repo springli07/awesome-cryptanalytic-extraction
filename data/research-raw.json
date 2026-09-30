@@ -1,0 +1,2550 @@
+{
+  "schema_version": 1,
+  "checked": "2026-09-30",
+  "scope": "Foundations3+Raw7; primary-text review provided by research team;no code execution",
+  "metric_policy": "NR≠0; point counts≠oracle calls; arithmetic≠bit complexity; runtime scope and hardware retained",
+  "papers": [
+    {
+      "paper_id": "arxiv-1609.02943",
+      "source_url": "https://arxiv.org/pdf/1609.02943v2",
+      "version": "v2",
+      "assumptions": "Invertible scores; independent inputs; known feature representation",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "binary logistic regression",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "d₀+1",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "derived",
+              "value": "O(d₀³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ],
+              "derivation": "Arithmetic is derived only for standard dense Gaussian elimination, not a paper theorem."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Arithmetic is derived only for standard dense Gaussian elimination, not a paper theorem."
+        },
+        {
+          "name": "MLP equation-solving experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "11,125",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "89 seconds (solver only)",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1609.02943v2",
+                  "locator": "§4.1.1–4.1.2 pp.5–6; Table4 p.6",
+                  "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885"
+                }
+              ]
+            }
+          },
+          "notes": "Experimental budget Q=αP is not a theoretical guarantee; nonconvex optimization.",
+          "experiment": {
+            "dimensions": "P=2,225",
+            "precision": "NR",
+            "hardware": "dual-core Intel 3.1GHz;16GB;no GPU",
+            "target": "sample agreement 99.96% test /99.99% uniform"
+          }
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-1909.01838",
+      "source_url": "https://arxiv.org/pdf/1909.01838v2",
+      "version": "v2",
+      "assumptions": "h<d₀; full row rank; chosen continuous inputs;64-bit raw logits",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "critical point acquisition",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(h log h)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": "signature differences",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(d₀h)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": "row signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "3h",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": "output least squares",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "h (may reuse existing calls)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "0 additional queries",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Requires full-rank system; bias handling retained."
+        },
+        {
+          "name": "total shallow recovery",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(h log h+d₀h+h)=O(d₀h)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^17.2 /2^18.2 /2^19.2 /2^20.2",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1909.01838v2",
+                  "locator": "§6 pp.7–12;Appendix D p.18",
+                  "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Paired model rows in Table6; special exponential query examples in Theorem1 prohibit generalization.",
+          "experiment": {
+            "dimensions": "MNIST P≈12.5k /25k /50k /100k",
+            "precision": "64-bit;first-layer mean≈23 bits",
+            "hardware": "NR",
+            "target": "sample label fidelity100/100/100/99.98%"
+          }
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-1910.00744",
+      "source_url": "https://arxiv.org/pdf/1910.00744v2",
+      "version": "v2",
+      "assumptions": "Linear Regions Assumption; connected boundaries intersect; nondegeneracy; sufficient adjacent region coverage",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "first-layer geometric boundary recovery",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(d₀ N log d₁) expected/heuristic",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Bounded biases,long lines,coupon collector and natural random assumptions;not worst-case."
+        },
+        {
+          "name": "deep boundary traversal",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1910.00744v2",
+                  "locator": "§4 pp.6–9;§5.1 p.10;§6 pp.12–13",
+                  "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Intersections determine costs; no uniform end-to-end Q/A table; second-layer experiments leave weights unidentified."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2003.04884",
+      "source_url": "https://arxiv.org/pdf/2003.04884v2",
+      "version": "v2",
+      "assumptions": "Known ReLU architecture;chosen continuous inputs;complete raw outputs",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "first-layer signature at isolated critical point",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "derived",
+              "value": "O(d₀)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "derivation": "Derived from coordinate finite differences; m≫N log N denotes point-pool size under uniform visibility, not Q."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Derived from coordinate finite differences; m≫N log N denotes point-pool size under uniform visibility, not Q."
+        },
+        {
+          "name": "general expanding-layer signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "2^dᵢ configurations × validation cost",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Reuses collected information; exponential local work does not imply exponential Q. Contractive case requires feasible preimages and rank."
+        },
+        {
+          "name": "binary critical-point refinement",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "approximately b calls for b precision bits",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Two-line intersection may avoid bisection only for an isolated verified kink; no general bit-complexity theorem."
+        },
+        {
+          "name": "end-to-end experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^21.5",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "784–128–1;P=100,480",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "worst-case output bound2^-24.7 via true-parameter alignment"
+          }
+        },
+        {
+          "name": "end-to-end experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^18.5",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "80–40–20–1;P=4,020",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "worst-case output bound2^-40.4"
+          }
+        },
+        {
+          "name": "end-to-end experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^17.8",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2003.04884v2",
+                  "locator": "§4.2–4.4 pp.10–19;§5 pp.20–25;Table1 p.4",
+                  "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "40–20–10–10–1",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "functional reconstruction"
+          }
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2023-1526",
+      "source_url": "https://eprint.iacr.org/2023/1526.pdf",
+      "version": "32-page ePrint",
+      "assumptions": "Signatures and correct prefixes given;visibility/statistical signal;rank;controllable projections",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "SOE signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "dᵢ+1",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(dᵢ³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": "Neuron Wiggle signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "3s dᵢ",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(s dᵢ Dᵢ³), Dᵢ=max(d₀,dᵢ)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Excludes signature collection,linearity checks and confidence retries."
+        },
+        {
+          "name": "last hidden layer signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "4dL+1",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(dL DL³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": "parallel sign estimate",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "approximately30 minutes (256-neuron parallel estimate)",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2023/1526.pdf",
+                  "locator": "§4.1 pp.15–16;§4.2 pp.16–19;§4.3 pp.20–21;§5.3 pp.24–27",
+                  "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f"
+                }
+              ]
+            }
+          },
+          "notes": "Not measured single-core end-to-end wall time.",
+          "experiment": {
+            "dimensions": "3072–256^8–10;P=1,249,802",
+            "precision": "float64",
+            "hardware": "256-neuron parallel estimate",
+            "target": "sign recovery with known signatures;s=200"
+          }
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2406.10011",
+      "source_url": "https://arxiv.org/pdf/2406.10011v1",
+      "version": "v1",
+      "assumptions": "Correct prefixes;signature visibility;low-confidence signs may need exponential fallback",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "sign trials",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "5 calls per trial (s=15 experimental choice)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(s dᵢ Dᵢ³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Inherited Wiggle operation expression; s does not give uniform success guarantee."
+        },
+        {
+          "name": "difficult-sign fallback",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "2^k subsequent-layer signature-recovery runs",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Parallelization does not remove exponential total work."
+        },
+        {
+          "name": "second-layer experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "approximately3.05×10^6",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "signature496.2s;sign6.32s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2406.10011v1",
+                  "locator": "§3.1–3.4 pp.4–7;Table1 p.8;Table2 pp.8–10",
+                  "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd"
+                }
+              ]
+            }
+          },
+          "notes": "Another training seed signature4649.95s; layer4/8 of784–16^8–1 only6/16,0/16 after36h.",
+          "experiment": {
+            "dimensions": "MNIST784–64²–1;target layer2",
+            "precision": "precision refinement excluded",
+            "hardware": "Intel Icelake cluster",
+            "target": "layer recovery;seed-specific"
+          }
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-296",
+      "source_url": "https://arxiv.org/pdf/2506.17047v2",
+      "version": "arXiv2506.17047v2,2026-02-18,42 pages",
+      "assumptions": "Known architecture;control/rank/visibility;search box radius10³;finite precision",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "signature filtering/intersection/refinement",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "No complete stage Q/A expression; Table4 independent layers assume correct prefix."
+        },
+        {
+          "name": "output linear layer",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional calls (reuse)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Not zero whole-attack queries."
+        },
+        {
+          "name": "end-to-end signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^29.42",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "19h18m",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "3072–8^8–10",
+            "precision": "floating point",
+            "hardware": "Intel i7-14700F",
+            "target": "effective weights99.90%;coverage73.47%;(ε,δ)=(3.64e−4,.26)"
+          }
+        },
+        {
+          "name": "end-to-end signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^27.68",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "12m36s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "3072–8^8–10",
+            "precision": "floating point",
+            "hardware": "Intel i7-14700F",
+            "target": "effective weights99.90%;coverage73.47%;(ε,δ)=(3.64e−4,.26)"
+          }
+        },
+        {
+          "name": "end-to-end signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^27.44",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "1h43m",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "784–8^8–1",
+            "precision": "floating point",
+            "hardware": "Intel i7-14700F",
+            "target": "effective weights99.68%;coverage74.82%;(ε,δ)=(2.96e−5,.25)"
+          }
+        },
+        {
+          "name": "end-to-end signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^26.77",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "4m2s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.17047v2",
+                  "locator": "§3 pp.14–19;§4 pp.20–22;Table5 p.28;error p.29",
+                  "pdf_sha256": "395cf3c746cfe3b807da068e6e402913f2c030c977948c120d396b7ba157ddca"
+                }
+              ]
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "784–8^8–1",
+            "precision": "floating point",
+            "hardware": "Intel i7-14700F",
+            "target": "effective weights99.68%;coverage74.82%;(ε,δ)=(2.96e−5,.25)"
+          }
+        }
+      ],
+      "limitations": "MNIST784–16^8–1 stopped at layer7;layer8/output not recovered.",
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-1025",
+      "source_url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+      "version": "historical official2026-05-22 PDF,20 pages",
+      "assumptions": "Known architecture;raw continuous outputs;d₀≥d₁ and full row rank;uniform visibility",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "historical geometric screening",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "approximately O(N²)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Assumes constant-time midpoint verification;excludes acquisition,precision,retries,index building,dimension operations."
+        },
+        {
+          "name": "historical selected signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(d₁d₀)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Ideal target-only signature calculation;not total Q. Baseline O(|S|d₀) signature calls and O(|S|²) clustering."
+        },
+        {
+          "name": "historical first-layer signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^16.66",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "3.5s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            }
+          },
+          "notes": "Second layer uses true first-layer parameters;not end-to-end;withdrawn historical result.",
+          "experiment": {
+            "dimensions": "784–8^8–1",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "first-layer signatures"
+          }
+        },
+        {
+          "name": "historical first-layer signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^18.28",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "25s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            }
+          },
+          "notes": "Second layer uses true first-layer parameters;not end-to-end;withdrawn historical result.",
+          "experiment": {
+            "dimensions": "784–16^8–1",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "first-layer signatures"
+          }
+        },
+        {
+          "name": "historical second-layer signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^14.48",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "16s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            }
+          },
+          "notes": "Second layer uses true first-layer parameters;not end-to-end;withdrawn historical result.",
+          "experiment": {
+            "dimensions": "784–8^8–1",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "second-layer signatures"
+          }
+        },
+        {
+          "name": "historical second-layer signatures",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^17.02",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "43s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/archive/2026/1025/1779420008.pdf",
+                  "locator": "§3.3 pp.9–12;§4.3 pp.13–15;Tables1–2 pp.16–18",
+                  "pdf_sha256": "e36ac8cc0ef52bc1469e1ab048578913f80a75ae4aec7a43fdaf7fa8e012ec81"
+                }
+              ]
+            }
+          },
+          "notes": "Second layer uses true first-layer parameters;not end-to-end;withdrawn historical result.",
+          "experiment": {
+            "dimensions": "784–16^8–1",
+            "precision": "floating point",
+            "hardware": "NR",
+            "target": "second-layer signatures"
+          }
+        }
+      ],
+      "publication_state": "withdrawn2026-09-19; historical claims only",
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2609.14379",
+      "source_url": "https://arxiv.org/pdf/2609.14379v2",
+      "version": "v2,2026-09-19,39 pages",
+      "assumptions": "Only input/output dimensions known;raw output;continuous inputs;signature route rank;sign route non-expanding",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "architecture width search",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "§4.3 discusses linear-in-width baseline multiplier;no complete uniform Q/A;critical points may be reused."
+        },
+        {
+          "name": "last-layer candidate fitting",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Proposition2 excludes always-inactive neurons and zero output connections;finite residual not global certificate."
+        },
+        {
+          "name": "signature-route experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^23.7",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "9036.6s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ]
+            }
+          },
+          "notes": "Three other dagger-marked rows use true signs and must not be called full black-box.",
+          "experiment": {
+            "dimensions": "MNIST784–64–64–10",
+            "precision": "64-bit",
+            "hardware": "Xeon Gold6430;120GB",
+            "target": "architecture;SVD bound2^-25.58"
+          }
+        },
+        {
+          "name": "sign-route experiment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^23.0",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "2640.5s",
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.14379v2",
+                  "locator": "§4.3 p.12;Lemma1 p.14;Proposition1 p.15;Table1 pp.21–24",
+                  "pdf_sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+                }
+              ]
+            }
+          },
+          "notes": "",
+          "experiment": {
+            "dimensions": "MNIST784–64–64–10",
+            "precision": "64-bit",
+            "hardware": "Xeon Gold6430;120GB",
+            "target": "architecture;SVD bound2^-26.15"
+          }
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-2127",
+      "source_url": "https://eprint.iacr.org/2026/2127.pdf",
+      "version": "23-page PDF",
+      "assumptions": "Rough total neuron count known;raw logits;continuous inputs;64-bit",
+      "details_document": "docs/comparisons/raw.zh.md",
+      "stages": [
+        {
+          "name": "initial critical-point pool",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "O(N log N) points under sampling strategy is not a proved end-to-end oracle bound."
+        },
+        {
+          "name": "cached rank test",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "derived",
+              "value": "0 additional calls",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "derivation": "Only given H′ and α;building α,resampling,backtracking and total arithmetic NR."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "Only given H′ and α;building α,resampling,backtracking and total arithmetic NR."
+        },
+        {
+          "name": "overall extraction",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/2127.pdf",
+                  "locator": "§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21",
+                  "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
+                }
+              ],
+              "NR_reason": "Reviewed cited method/complexity/experiment sections; no independent value for this stage reported."
+            }
+          },
+          "notes": "§4.4 explicitly omits overall query/runtime costs; inherited polynomial primitives do not bound retries."
+        }
+      ],
+      "limitations": "Table3 specificity1.91–2.03% despite recall100%;derived false-positive97.97–98.09%.Architecture3072–512³–64–10 gives derived2,132,170 dense biased parameters, contradicting≈1.1M and other256³ wording.",
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    }
+  ]
+}

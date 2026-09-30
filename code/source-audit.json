@@ -1,0 +1,2149 @@
+{
+  "schema_version": 1,
+  "checked": "2026-09-30",
+  "scope": "All 52 distinct papers in current catalog; primary paper text and repository metadata/documentation inspection only. No upstream code execution, model queries, dependency installs, system changes, or scientific reproduction.",
+  "summary": {
+    "papers": 52,
+    "unique_github_repositories": 25,
+    "accessible_github_repositories": 22,
+    "status_counts": {
+      "author_linked_implementation": 15,
+      "not_found": 18,
+      "publisher_supplement_access_unverified": 1,
+      "verification_artifact": 1,
+      "supplementary_implementation": 2,
+      "unavailable_404": 3,
+      "announced": 2,
+      "anonymous_attachment_access_unverified": 4,
+      "simulation_artifact": 1,
+      "mentioned": 1,
+      "author_extension_fork": 1,
+      "reading_resource": 2,
+      "placeholder_repository": 1
+    },
+    "declared_project_licenses": {
+      "no_project_license_found": 13,
+      "Apache-2.0": 1,
+      "MIT": 7,
+      "unverified": 3,
+      "GPL-3.0": 1
+    }
+  },
+  "policy": {
+    "default": "References plus opt-in pinned git submodule or clone pointers; no upstream code vendored or automatically executed.",
+    "no_license": "Public visibility is not a redistribution license. Repository pointers are not a claim of permission to redistribute upstream code; no permission inferred from third-party license files or ancestry.",
+    "permissive": "MIT/Apache-2.0 root licenses are candidates for redistribution with preserved notices and full third-party review, not automatic clearance.",
+    "copyleft": "GPL artifact requires separate compliance review; clone/reference by default.",
+    "execution": "Commands are upstream documentation, not validated recommendations; never execute during collection.",
+    "anonymous": "No automatic clone without accessible stable source and explicit pin."
+  },
+  "papers": [
+    {
+      "paper_id": "arxiv-1609.02943",
+      "title": "Stealing Machine Learning Models via Prediction APIs",
+      "paper_url": "https://arxiv.org/abs/1609.02943",
+      "status": "author_linked_implementation",
+      "repository_id": "ftramer/Steal-ML",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/1609.02943",
+          "pdf_sha256": "0140d9ab6257972ae5ce88b5d9ae8978b335083cb1c226e1b995da975d18a885",
+          "code_link_locations": [
+            {
+              "page": 2
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "ftramer/Steal-ML"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-1909.01838",
+      "title": "High Accuracy and High Fidelity Extraction of Neural Networks",
+      "paper_url": "https://arxiv.org/abs/1909.01838",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/1909.01838",
+          "pdf_sha256": "b30e63fd43c3dbf8d9dee7dc8c30d250982c8c911367018f1a1ad084d446ed82",
+          "code_link_locations": [
+            {
+              "page": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-1910.00744",
+      "title": "Reverse-Engineering Deep ReLU Networks",
+      "paper_url": "https://arxiv.org/abs/1910.00744",
+      "status": "publisher_supplement_access_unverified",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": "https://media.icml.cc/Conferences/ICML2020/v119/rolnick20a-supp.zip",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/1910.00744",
+          "pdf_sha256": "5c073d3cb6c38fa993c2bb660948df722533984f5f232000052d23d66a139772",
+          "code_link_locations": []
+        },
+        {
+          "kind": "publisher_link",
+          "url": "https://proceedings.mlr.press/v119/rolnick20a.html",
+          "note": "Other Files link targets supplementary ZIP; HTTP 403 prevented content inspection."
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2003.04884",
+      "title": "Cryptanalytic Extraction of Neural Network Models",
+      "paper_url": "https://arxiv.org/abs/2003.04884",
+      "status": "author_linked_implementation",
+      "repository_id": "google-research/cryptanalytic-model-extraction",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2003.04884",
+          "pdf_sha256": "ee7ba5bd8c3893ab172e5272e1d81f66806fdbdea296a3da9a34561eb323c656",
+          "code_link_locations": [
+            {
+              "page": 1
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "google-research/cryptanalytic-model-extraction"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2023-1526",
+      "title": "Polynomial Time Cryptanalytic Extraction of Neural Network Models",
+      "paper_url": "https://eprint.iacr.org/2023/1526",
+      "status": "author_linked_implementation",
+      "repository_id": "Crypto-TII/deti",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2023/1526.pdf",
+          "pdf_sha256": "bdcbb2a5e1de1b0eeec5618ac4b0086578071806187d8a972a8cfcb21082239f",
+          "code_link_locations": [
+            {
+              "page": 22
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "Crypto-TII/deti"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2406.10011",
+      "title": "Beyond Slow Signs in High-fidelity Model Extraction",
+      "paper_url": "https://arxiv.org/abs/2406.10011",
+      "status": "author_linked_implementation",
+      "repository_id": "hannafoe/cryptanalytical-extraction",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2406.10011",
+          "pdf_sha256": "c385371255cbdc47f0ab82e748ad6fe707b50b9117f3feaa6feebf2349bd1ccd",
+          "code_link_locations": []
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "hannafoe/cryptanalytical-extraction"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-296",
+      "title": "Navigating the Deep: End-to-End Extraction on Deep Neural Networks",
+      "paper_url": "https://eprint.iacr.org/2026/296",
+      "status": "author_linked_implementation",
+      "repository_id": "PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/296.pdf",
+          "pdf_sha256": "b3bdc1253cfcb6f217a32a5403b931c690982280ad9c48f8b6bf54c83f07d73e",
+          "code_link_locations": [
+            {
+              "page": 5
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-1025",
+      "title": "Geometric Critical Point Screening: Clustering-Free Cryptanalytic Extraction of Neural Network Models",
+      "paper_url": "https://eprint.iacr.org/2026/1025",
+      "status": "author_linked_implementation",
+      "repository_id": "1983321048/Geometric-Critical-Point-Screening",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "prior_catalog_provenance_not_freshly_reverified",
+          "url": "https://eprint.iacr.org/2026/1025",
+          "checked": "2026-09-17"
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "1983321048/Geometric-Critical-Point-Screening"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2609.14379",
+      "title": "Cryptanalytic Extraction of Neural Networks Without Known Architecture Assumption",
+      "paper_url": "https://arxiv.org/abs/2609.14379",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2609.14379",
+          "pdf_sha256": "4f62618e85427fbfff5dfc00fc635001404204852a7147685397b5d5372ba452",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2024-1403",
+      "title": "Hard-Label Cryptanalytic Extraction of Neural Network Models",
+      "paper_url": "https://eprint.iacr.org/2024/1403",
+      "status": "verification_artifact",
+      "repository_id": "AI-Lab-Y/NN_cryptanalytic_extraction",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2024/1403.pdf",
+          "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8",
+          "code_link_locations": [
+            {
+              "page": 4
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "AI-Lab-Y/NN_cryptanalytic_extraction"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2024-1580",
+      "title": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)",
+      "paper_url": "https://eprint.iacr.org/2024/1580",
+      "status": "author_linked_implementation",
+      "repository_id": "Jchavezsaab/hard-label-dnn-extraction",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2024/1580.pdf",
+          "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7",
+          "code_link_locations": [
+            {
+              "page": 29
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "Jchavezsaab/hard-label-dnn-extraction"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2025-1118",
+      "title": "Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting",
+      "paper_url": "https://eprint.iacr.org/2025/1118",
+      "status": "supplementary_implementation",
+      "repository_id": "deividafonso281/hard-label-contract-output",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2025/1118.pdf",
+          "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231",
+          "code_link_locations": [
+            {
+              "page": 19
+            },
+            {
+              "page": 20
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "deividafonso281/hard-label-contract-output"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2025-1868",
+      "title": "Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?",
+      "paper_url": "https://eprint.iacr.org/2025/1868",
+      "status": "unavailable_404",
+      "repository_id": "ECSIS-lab/hard-label-cross-layer-extraction",
+      "prior_status": "unavailable_404",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2025/1868.pdf",
+          "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7",
+          "code_link_locations": [
+            {
+              "page": 1
+            },
+            {
+              "page": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-1164",
+      "title": "Algebraic Cryptanalytic Extraction on Hard-Label Neural Networks",
+      "paper_url": "https://eprint.iacr.org/2026/1164",
+      "status": "announced",
+      "repository_id": null,
+      "prior_status": "announced",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/1164.pdf",
+          "pdf_sha256": "0c95c64f994d6ab7ebea85eb77cb5c5f03edb073353192eaf9b6ba90ffea0547",
+          "code_link_locations": [
+            {
+              "page": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-139",
+      "title": "Cryptanalytic Extraction of Convolutional Neural Networks",
+      "paper_url": "https://eprint.iacr.org/2026/139",
+      "status": "anonymous_attachment_access_unverified",
+      "repository_id": null,
+      "prior_status": "expired_410",
+      "source_url": "https://anonymous.4open.science/r/cnn-extraction-93C4",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/139.pdf",
+          "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f",
+          "code_link_locations": [
+            {
+              "page": 4
+            }
+          ]
+        },
+        {
+          "kind": "access_check",
+          "url": "https://anonymous.4open.science/r/cnn-extraction-93C4",
+          "date": "2026-09-30",
+          "note": "Current access unverified; no license or fixed revision claimed."
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-241",
+      "title": "Algebraic Attack on Convolutional Neural Networks with Max Pooling",
+      "paper_url": "https://eprint.iacr.org/2026/241",
+      "status": "unavailable_404",
+      "repository_id": "czr-eric/Algebraic-Attack-on-CNN",
+      "prior_status": "unavailable_404",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/241.pdf",
+          "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea",
+          "code_link_locations": [
+            {
+              "page": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-464",
+      "title": "Model Extraction of Convolutional Neural Networks with Max-Pooling",
+      "paper_url": "https://eprint.iacr.org/2026/464",
+      "status": "author_linked_implementation",
+      "repository_id": "PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/464.pdf",
+          "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5",
+          "code_link_locations": [
+            {
+              "page": 28
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-902",
+      "title": "End-to-End Polynomial-Time Cryptanalytic Extraction of Convolutional Neural Networks in the Hard-Label Setting",
+      "paper_url": "https://eprint.iacr.org/2026/902",
+      "status": "anonymous_attachment_access_unverified",
+      "repository_id": null,
+      "prior_status": "anonymous_attachment",
+      "source_url": "https://anonymous.4open.science/r/cnn_hard_label_extraction-83F4",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/902.pdf",
+          "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e",
+          "code_link_locations": []
+        },
+        {
+          "kind": "access_check",
+          "url": "https://anonymous.4open.science/r/cnn_hard_label_extraction-83F4",
+          "date": "2026-09-30",
+          "note": "Current access unverified; no license or fixed revision claimed."
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2025-1970",
+      "title": "Delving into Cryptanalytic Extraction of PReLU Neural Networks",
+      "paper_url": "https://eprint.iacr.org/2025/1970",
+      "status": "author_linked_implementation",
+      "repository_id": "AI-Lab-Y/Extracting_PReLU_NN",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2025/1970.pdf",
+          "pdf_sha256": "db9a8d51e1093083d3e200d3728c5b2c6a87a7673347e27835d8db62e38e52eb",
+          "code_link_locations": [
+            {
+              "page": 5
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "AI-Lab-Y/Extracting_PReLU_NN"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-178",
+      "title": "Cryptanalytic Extraction of Neural Networks with Various Activation Functions",
+      "paper_url": "https://eprint.iacr.org/2026/178",
+      "status": "author_linked_implementation",
+      "repository_id": "qixiaokang1-stack/cryptanalytic-model-various-functions",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/178.pdf",
+          "pdf_sha256": "27557ffbae790abcba5b8a69a24adbcedd58bf07e32c9309ebe1fb184775f88b",
+          "code_link_locations": [
+            {
+              "page": 28
+            },
+            {
+              "page": 32
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "qixiaokang1-stack/cryptanalytic-model-various-functions"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-253",
+      "title": "Cryptanalytic Extraction of Deep Neural Networks with Non-Linear Activations",
+      "paper_url": "https://eprint.iacr.org/2026/253",
+      "status": "author_linked_implementation",
+      "repository_id": "mstealercryptocrypto-ops/mod_stealer26",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/253.pdf",
+          "pdf_sha256": "ebe4080c30a61c1ce1ca3a1699009c9a07b8194a57ffc2be7ebbab194d8eaf78",
+          "code_link_locations": [
+            {
+              "page": 20
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "mstealercryptocrypto-ops/mod_stealer26"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-1066",
+      "title": "Breaking Slope and Structure Restrictions: Broadening Hard-Label Cryptanalytic Extraction of PReLU Neural Networks",
+      "paper_url": "https://eprint.iacr.org/2026/1066",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/1066.pdf",
+          "pdf_sha256": "f771f5abd060140eed2c0e5daa7003ba2041cea03fcee7bb6aa28fc63d8a0335",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-168",
+      "title": "Cryptanalytic Extraction of Recurrent Neural Network Models",
+      "paper_url": "https://eprint.iacr.org/2026/168",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/168.pdf",
+          "pdf_sha256": "fc39c1f1ffb4c54c83d247b992e65def6b8885699ee3d74547e5fbc10f1a3c18",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-719",
+      "title": "Polynomial-Time Cryptanalytic Extraction of Graph Neural Networks in the Hard-Label Setting",
+      "paper_url": "https://eprint.iacr.org/2026/719",
+      "status": "author_linked_implementation",
+      "repository_id": "springli07/GNN_MP_CEA",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/719.pdf",
+          "pdf_sha256": "b2791b2be9d9fde33c3fb8be5015442a8f922af40a6b162ccdb454ed3e21181c",
+          "code_link_locations": [
+            {
+              "page": 3
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "springli07/GNN_MP_CEA"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2601.16873",
+      "title": "Provably Learning Attention with Queries",
+      "paper_url": "https://arxiv.org/abs/2601.16873",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2601.16873",
+          "pdf_sha256": "e5221682c1da801dbae06aa21ab2d8469839d49cba2f623ae12b770fbe5a76f8",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2608.03294",
+      "title": "Provably Learning Multi-Head Attention with Queries",
+      "paper_url": "https://arxiv.org/abs/2608.03294",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2608.03294",
+          "pdf_sha256": "7d08f64a35f9d3b3268759a8ddd2199c32caaffd5195545dd920d57db25e5bc1",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-1678",
+      "title": "Cryptanalytic Extraction of Multi-Head Softmax Attention Models",
+      "paper_url": "https://eprint.iacr.org/2026/1678",
+      "status": "anonymous_attachment_access_unverified",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": "https://anonymous.4open.science/r/End-to-End-Softmax-Attention-Extraction-632C",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/1678.pdf",
+          "pdf_sha256": "9dcc514494113a6c7135fbb594d364f0c00730c4f671011981b0e95b47ecf45d",
+          "code_link_locations": [
+            {
+              "page": 4
+            }
+          ]
+        },
+        {
+          "kind": "access_check",
+          "url": "https://anonymous.4open.science/r/End-to-End-Softmax-Attention-Extraction-632C",
+          "date": "2026-09-30",
+          "note": "Current access unverified; no license or fixed revision claimed."
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2608.06631",
+      "title": "Cryptanalytic Extraction of Isolated Bias-Free GLU Feed-Forward Blocks by Antipodal Separation",
+      "paper_url": "https://arxiv.org/abs/2608.06631",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2608.06631",
+          "pdf_sha256": "f2a72cd14354a5920165c014bb2f5f637bbfde0f2c111c9eda50c4ebdff797f7",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2403.06634",
+      "title": "Stealing Part of a Production Language Model",
+      "paper_url": "https://arxiv.org/abs/2403.06634",
+      "status": "supplementary_implementation",
+      "repository_id": "dpaleka/stealing-part-lm-supplementary",
+      "prior_status": "supplementary",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2403.06634",
+          "pdf_sha256": "65e2ade24ecefc77ab5eaab511b744a611bbc7efd0ec9ad6d434a3f23003be3c",
+          "code_link_locations": [
+            {
+              "page": 10
+            },
+            {
+              "page": 21
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "dpaleka/stealing-part-lm-supplementary"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2403.09539",
+      "title": "Logits of API-Protected LLMs Leak Proprietary Information",
+      "paper_url": "https://arxiv.org/abs/2403.09539",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2403.09539",
+          "pdf_sha256": "a5a1d06963f2b2cf82faca2589417c5a4cb50f7fd5779b4ce60af1d22e410341",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-848",
+      "title": "Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning",
+      "paper_url": "https://eprint.iacr.org/2026/848",
+      "status": "anonymous_attachment_access_unverified",
+      "repository_id": null,
+      "prior_status": "anonymous_attachment",
+      "source_url": "https://anonymous.4open.science/r/PPML_Model_Extraction_Attack",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/848.pdf",
+          "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1",
+          "code_link_locations": [
+            {
+              "page": 6
+            }
+          ]
+        },
+        {
+          "kind": "access_check",
+          "url": "https://anonymous.4open.science/r/PPML_Model_Extraction_Attack",
+          "date": "2026-09-30",
+          "note": "Current access unverified; no license or fixed revision claimed."
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2024-1870",
+      "title": "A Divide-and-Conquer Strategy for Hard-Label Extraction of Deep Neural Networks via Side-Channel Attacks",
+      "paper_url": "https://eprint.iacr.org/2024/1870",
+      "status": "simulation_artifact",
+      "repository_id": "bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2024/1870.pdf",
+          "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa",
+          "code_link_locations": [
+            {
+              "page": 3
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-1810.09076",
+      "title": "CSI Neural Network: Using Side-channels to Recover Your Artificial Neural Network Information",
+      "paper_url": "https://arxiv.org/abs/1810.09076",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/1810.09076",
+          "pdf_sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2002.11021",
+      "title": "SNIFF: Reverse Engineering of Neural Networks with Fault Attacks",
+      "paper_url": "https://arxiv.org/abs/2002.11021",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2002.11021",
+          "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2503.19142",
+      "title": "Activation Functions Considered Harmful: Recovering Neural Network Weights through Controlled Channels",
+      "paper_url": "https://arxiv.org/abs/2503.19142",
+      "status": "author_linked_implementation",
+      "repository_id": "heavyimage/afch_paper",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2503.19142",
+          "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa",
+          "code_link_locations": [
+            {
+              "page": 2
+            },
+            {
+              "page": 4
+            },
+            {
+              "page": 15
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "heavyimage/afch_paper"
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-1943",
+      "title": "Finite-Precision Error Analysis of Cryptanalytic Model Extraction",
+      "paper_url": "https://eprint.iacr.org/2026/1943",
+      "status": "unavailable_404",
+      "repository_id": "CryptAnalystDesigner/Finite-Precision-Feasibility-of-Cryptanalytic-Model-Extraction",
+      "prior_status": "unavailable_404",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/1943.pdf",
+          "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa",
+          "code_link_locations": [
+            {
+              "page": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2509.16546",
+      "title": "Train to Defend: First Defense Against Cryptanalytic Neural Network Parameter Extraction Attacks",
+      "paper_url": "https://arxiv.org/abs/2509.16546",
+      "status": "author_linked_implementation",
+      "repository_id": "anonymous-123-code/anonymouscode",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2509.16546",
+          "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9",
+          "code_link_locations": [
+            {
+              "page": 13
+            },
+            {
+              "page": 14
+            },
+            {
+              "page": 17
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "anonymous-123-code/anonymouscode"
+        }
+      ]
+    },
+    {
+      "paper_id": "mit-2026-rounding",
+      "title": "Output Rounding Is Not a Free Defense Against Cryptanalytic Neural Network Extraction",
+      "paper_url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+      "status": "mentioned",
+      "repository_id": null,
+      "prior_status": "mentioned",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+          "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-1807.05185",
+      "title": "Model Reconstruction from Model Explanations",
+      "paper_url": "https://arxiv.org/abs/1807.05185",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/1807.05185",
+          "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2105.09673",
+      "title": "An Exact Poly-Time Membership-Queries Algorithm for Extraction a three-Layer ReLU Network",
+      "paper_url": "https://arxiv.org/abs/2105.09673",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2105.09673",
+          "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2211.04589",
+      "title": "Finite Sample Identification of Wide Shallow Neural Networks with Biases",
+      "paper_url": "https://arxiv.org/abs/2211.04589",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2211.04589",
+          "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2304.12794",
+      "title": "Expand-and-Cluster: Parameter Recovery of Neural Networks",
+      "paper_url": "https://arxiv.org/abs/2304.12794",
+      "status": "author_linked_implementation",
+      "repository_id": "flavio-martinelli/expand-and-cluster",
+      "prior_status": "official",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2304.12794",
+          "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f",
+          "code_link_locations": [
+            {
+              "page": 5
+            },
+            {
+              "page": 14
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "flavio-martinelli/expand-and-cluster"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2312.04675",
+      "title": "Reverse Engineering Deep ReLU Networks An Optimization-based Algorithm",
+      "paper_url": "https://arxiv.org/abs/2312.04675",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2312.04675",
+          "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2402.04084",
+      "title": "Provably learning a multi-head attention layer",
+      "paper_url": "https://arxiv.org/abs/2402.04084",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2402.04084",
+          "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2411.07536",
+      "title": "Model Stealing for Any Low-Rank Language Model",
+      "paper_url": "https://arxiv.org/abs/2411.07536",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2411.07536",
+          "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2511.20312",
+      "title": "Data Augmentation Techniques to Reverse-Engineer Neural Network Weights from Input-Output Queries",
+      "paper_url": "https://arxiv.org/abs/2511.20312",
+      "status": "author_extension_fork",
+      "repository_id": "alexl4123/expand-and-cluster",
+      "prior_status": "author_extension_fork",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2511.20312",
+          "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e",
+          "code_link_locations": [
+            {
+              "page": 2
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "alexl4123/expand-and-cluster"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2508.15031",
+      "title": "A Systematic Survey of Model Extraction Attacks and Defenses: State-of-the-Art and Perspectives",
+      "paper_url": "https://arxiv.org/abs/2508.15031",
+      "status": "reading_resource",
+      "repository_id": "kzhao5/ModelExtractionPapers",
+      "prior_status": "reading_resource",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2508.15031",
+          "pdf_sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b",
+          "code_link_locations": [
+            {
+              "page": 1
+            }
+          ]
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "kzhao5/ModelExtractionPapers"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2506.22521",
+      "title": "A Survey on Model Extraction Attacks and Defenses for Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2506.22521",
+      "status": "reading_resource",
+      "repository_id": "kzhao5/ModelExtractionPapers",
+      "prior_status": "reading_resource",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2506.22521",
+          "pdf_sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec",
+          "code_link_locations": []
+        },
+        {
+          "kind": "pinned_repository_readme",
+          "repository_id": "kzhao5/ModelExtractionPapers"
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2609.18751",
+      "title": "Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks",
+      "paper_url": "https://arxiv.org/abs/2609.18751",
+      "status": "announced",
+      "repository_id": null,
+      "prior_status": "announced",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2609.18751",
+          "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b",
+          "code_link_locations": [
+            {
+              "page": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "eprint-2026-2127",
+      "title": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Limited Architecture Knowledge Setting",
+      "paper_url": "https://eprint.iacr.org/2026/2127",
+      "status": "placeholder_repository",
+      "repository_id": "CryptoAiLi/DNNExtractionLAK",
+      "prior_status": "placeholder_repository",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://eprint.iacr.org/2026/2127.pdf",
+          "pdf_sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64",
+          "code_link_locations": [
+            {
+              "page": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2609.21941",
+      "title": "End-to-End Hard-Label Cryptanalytic Model Extraction Using Efficient Sign Recovery",
+      "paper_url": "https://arxiv.org/abs/2609.21941",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2609.21941v1",
+          "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583",
+          "code_link_locations": []
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2609.27427",
+      "title": "Extracting CNNs in the Unknown-Architecture and Feedback-Agnostic Setting",
+      "paper_url": "https://arxiv.org/abs/2609.27427",
+      "status": "not_found",
+      "repository_id": null,
+      "prior_status": "not_found",
+      "source_url": null,
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2609.27427v1",
+          "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3",
+          "code_link_locations": [
+            {
+              "page": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "id": "ftramer/Steal-ML",
+      "url": "https://github.com/ftramer/Steal-ML",
+      "paper_ids": [
+        "arxiv-1609.02943"
+      ],
+      "access": "accessible",
+      "default_branch": "master",
+      "commit": "e37c67b2f74e42a85370ce431bc9d4e391b0ed8b",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [
+          "binary-classifiers/libsvm-3.20/COPYRIGHT"
+        ],
+        "api_detected_spdx": null
+      },
+      "note": "Legacy Python dependencies; some experiments require AWS/BigML accounts. Third-party libsvm COPYRIGHT does not license the whole repository.",
+      "entrypoints_documented": [],
+      "dependency_files": [
+        {
+          "path": "binary-classifiers/requirements.txt",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "neural-nets/requirements.txt",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "regression/requirements.txt",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "trees/requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 130,
+      "tree_truncated": false,
+      "entrypoint_paths": [],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "google-research/cryptanalytic-model-extraction",
+      "url": "https://github.com/google-research/cryptanalytic-model-extraction",
+      "paper_ids": [
+        "arxiv-2003.04884"
+      ],
+      "access": "accessible",
+      "default_branch": "master",
+      "commit": "1093b6212f7018b1c14e24c80edb56ac05c0777c",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": "Apache-2.0",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/google-research/cryptanalytic-model-extraction/blob/1093b6212f7018b1c14e24c80edb56ac05c0777c/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "Apache-2.0"
+      },
+      "note": "Research implementation; accessibility and documentation audited, results not reproduced.",
+      "entrypoints_documented": [
+        "pip install numpy scipy jax jaxlib matplotlib networkx",
+        "python3 train_models.py 10-15-15-1 42",
+        "python3 extract.py 10-15-15-1 42",
+        "python3 check_solution_svd.py 10-15-15-1",
+        "python3 check_solution_milp.py 10-15-15-1",
+        "python extract.py UID 20-10-1"
+      ],
+      "dependency_files": [],
+      "source_files_count": 15,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "Crypto-TII/deti",
+      "url": "https://github.com/Crypto-TII/deti",
+      "paper_ids": [
+        "eprint-2023-1526"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "e411fbc28225a7d627cf2eebd57a92812104bf2b",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/Crypto-TII/deti/blob/e411fbc28225a7d627cf2eebd57a92812104bf2b/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "Sign-recovery experiments; assumes prior signatures and float64. Parallelization described in paper is not fully implemented.",
+      "entrypoints_documented": [
+        "python -m deti.soe --model deti/models/unitary_784_128_1.keras --layerID 1 --runID 'soe'",
+        "python -m deti.lastLayer --model deti/models/unitary_784_128_1.keras --layerID 1 --runID 'lastLayer'",
+        "python -m deti.neuronWiggle --model deti/models/unitary_100_200x3_10.keras --layerID 1 --runID 'neuronWiggle' --tgtNeurons 4 26 30 77 168 ",
+        "python -m deti.neuronWiggle --model deti/models/unitary_100_200x3_10.keras --layerID 2 --runID 'neuronWiggle' --tgtNeurons 4 26 30 77 168 ",
+        "python -m deti.lastLayer --model deti/models/unitary_100_200x3_10.keras --layerID 3 --runID 'lastLayer'",
+        "python -m deti.soe --model deti/models/cifar10_rgb_8x256.keras --layerID 1 --runID 'soe'",
+        "python -m deti.neuronWiggle --model deti/models/cifar10_rgb_8x256.keras --layerID 2 --runID 'neuronWiggle' --dataset 'CIFAR10' --tgtNeurons 4 26 30 77 168 ",
+        "python -m deti.lastLayer --model deti/models/cifar10_rgb_8x256.keras --layerID 8 --runID 'lastLayer'",
+        "conda create -n tf-gpu tensorflow-gpu",
+        "conda activate tf-gpu",
+        "conda install -c nvidia cuda-nvcc",
+        "conda install pandas",
+        "conda install tabulate",
+        "conda install numpy",
+        "python -m deti.soe --model deti/models/cifar10_rgb_8x256.keras --layerID 2 --runID 'soe'",
+        "python -m deti.neuronWiggle --model deti/models/cifar10_rgb_8x256.keras --layerID 2 --runID 'neuronWiggle'"
+      ],
+      "dependency_files": [],
+      "source_files_count": 14,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "hannafoe/cryptanalytical-extraction",
+      "url": "https://github.com/hannafoe/cryptanalytical-extraction",
+      "paper_ids": [
+        "arxiv-2406.10011"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "4280cd6770560fa717e6e8b4d337a29ba8bba77c",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Layer-wise experiments; earlier layers treated as correct by default; CIFAR signature recovery not implemented. Incorporates other upstream code; no project-wide license located.",
+      "entrypoints_documented": [
+        "python -m neuronWiggle --model models/mnist784_16x2_1.keras --layerID 2 --seed 20 --dataset 'mnist' --quantized 2",
+        "python -m neuronWiggle --model models/50_25x2_1_Carlini.keras --layerID 2 --seed 20 --quantized 1",
+        "python .\\models\\make_new_models.py",
+        "pip install tensorflow==2.15.0",
+        "pip install numpy==1.25.2",
+        "pip install pandas==2.1.2",
+        "pip install jax==0.4.30",
+        "pip install optax==0.2.3",
+        "pip install scipy==1.9.3"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 53,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction",
+      "url": "https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction",
+      "paper_ids": [
+        "eprint-2026-296"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "5206db797c123136aad21f69e7e01aeb15c2d9e0",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction/blob/5206db797c123136aad21f69e7e01aeb15c2d9e0/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "README example enables cheat_sign=1 and real_attack=0; users must distinguish diagnostic modes from real attack. MIT root license does not settle licensing of reused third-party snippets.",
+      "entrypoints_documented": [
+        "python main.py --load_json scripts/attack/mnist/MNIST_8x8_1_linear.json --seed 42 --Count 3000 --layerID 2 --cheat_sign 1 --real_attack 0",
+        "pip install -r requirements.txt",
+        "python models/train_new_models_tf.py --load_json &lt;config_file&gt; ",
+        "python main.py --load_json &lt;config_file&gt; --seed &lt;random_seed&gt; --Count &lt;critical_point_number&gt; --layerID &lt;target_layer_id&gt; --cheat_sign &lt;0/1&gt; --real_attack &lt;0/1&gt;",
+        "python visualization/unreachable_weights_test.py --load_json &lt;config_file&gt; --random_points_number &lt;random_point_number&gt;",
+        "python visualization/compute_difference.py --seed &lt;random_seed&gt; --Count &lt;critical_point_number&gt; --delta &lt;random_input_point_number&gt; --load_json &lt;config_file&gt;"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 61,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "1983321048/Geometric-Critical-Point-Screening",
+      "url": "https://github.com/1983321048/Geometric-Critical-Point-Screening",
+      "paper_ids": [
+        "eprint-2026-1025"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "595fce480e82dab009c185e41f233fc477a6cc15",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [
+          "rubbish/LICENSE"
+        ],
+        "api_detected_spdx": null
+      },
+      "note": "README prominently links CRYPTO 2020 ancestor rather than the new paper. Only rubbish/LICENSE found; no project-wide license established.",
+      "entrypoints_documented": [
+        "pip install -r requirements.txt",
+        "pip install numpy scipy jax jaxlib optax matplotlib networkx",
+        "pip install numpy scipy jax jaxlib optax matplotlib networkx tensorflow",
+        "python train_models_mnist.py 784-64-64-1 42",
+        "python train_models_mnist.py 784-8-8-8-8-8-8-8-8-1 42",
+        "python train_models_mnist.py 784-8-8-8-8-8-8-8-8-8-8-8-8-8-8-8-8-1 42",
+        "python train_models_mnist.py 784-128-128-1 42",
+        "python train_models_mnist.py 784-256-256-1 42",
+        "python train_models_cifar10.py 3072-8-8-8-8-8-8-8-8-1 42",
+        "python Geometric_1.py &lt;network_architecture&gt; &lt;random_seed&gt;",
+        "python Geometric_1.py 784-8-8-8-8-8-8-8-8-1 42"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 60,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "AI-Lab-Y/NN_cryptanalytic_extraction",
+      "url": "https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction",
+      "paper_ids": [
+        "eprint-2024-1403"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "f363700ff141a8e0f81c68fb18ce703897884fc5",
+      "kind": "verification_artifact",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction/blob/f363700ff141a8e0f81c68fb18ce703897884fc5/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "README documents verification of stored extracted models/records and error bounds. Do not present it as a complete end-to-end attack implementation.",
+      "entrypoints_documented": [],
+      "dependency_files": [],
+      "source_files_count": 93,
+      "tree_truncated": false,
+      "entrypoint_paths": [
+        "check_solution_svd.py",
+        "verify_1_deep_nn_attack.py",
+        "verify_2_deep_nn_attack.py"
+      ],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file",
+      "dependency_summary": "README declares Python 3.7.0 and NumPy 1.21.5."
+    },
+    {
+      "id": "Jchavezsaab/hard-label-dnn-extraction",
+      "url": "https://github.com/Jchavezsaab/hard-label-dnn-extraction",
+      "paper_ids": [
+        "eprint-2024-1580"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "2a450eb5096d99cb8cf9ac99c00c13f721071890",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/Jchavezsaab/hard-label-dnn-extraction/blob/2a450eb5096d99cb8cf9ac99c00c13f721071890/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "Root calls this supplementary code. full_end_to_end/run.py is documented as black-box; signature_recovery and sign_recovery demos explicitly use white-box shortcuts. Precomputed dual points are separately linked, not automatically downloaded.",
+      "entrypoints_documented": [
+        "cd full_end_to_end &amp;&amp; python3 run.py [num workers]"
+      ],
+      "dependency_files": [],
+      "source_files_count": 47,
+      "tree_truncated": false,
+      "entrypoint_paths": [],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file",
+      "additional_documentation": [
+        {
+          "path": "README.md",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "full_end_to_end/README.md",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "generators/README.md",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "sign_recovery/README.md",
+          "url_template": "pinned_file"
+        },
+        {
+          "path": "signature_recovery/README",
+          "url_template": "pinned_file"
+        }
+      ],
+      "dependency_summary": "sign_recovery README lists numpy, pandas, matplotlib, tabulate and tensorflow."
+    },
+    {
+      "id": "deividafonso281/hard-label-contract-output",
+      "url": "https://github.com/deividafonso281/hard-label-contract-output",
+      "paper_ids": [
+        "eprint-2025-1118"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "0d137df322000eb07d7082497e83f6c07d3f00a8",
+      "kind": "supplementary_implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Supplementary layer-recovery experiments; incorporates deti functions.",
+      "entrypoints_documented": [
+        "python outputLayer.py 0"
+      ],
+      "dependency_files": [],
+      "source_files_count": 101,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "ECSIS-lab/hard-label-cross-layer-extraction",
+      "url": "https://github.com/ECSIS-lab/hard-label-cross-layer-extraction",
+      "paper_ids": [
+        "eprint-2025-1868"
+      ],
+      "access": "unavailable_404",
+      "default_branch": null,
+      "commit": null,
+      "kind": "unavailable",
+      "license": {
+        "spdx_id": null,
+        "status": "unverified",
+        "evidence_url": null
+      },
+      "note": "Read-only GitHub repository API returned HTTP 404 on audit date; this does not prove deletion."
+    },
+    {
+      "id": "czr-eric/Algebraic-Attack-on-CNN",
+      "url": "https://github.com/czr-eric/Algebraic-Attack-on-CNN",
+      "paper_ids": [
+        "eprint-2026-241"
+      ],
+      "access": "unavailable_404",
+      "default_branch": null,
+      "commit": null,
+      "kind": "unavailable",
+      "license": {
+        "spdx_id": null,
+        "status": "unverified",
+        "evidence_url": null
+      },
+      "note": "Read-only GitHub repository API returned HTTP 404 on audit date; this does not prove deletion."
+    },
+    {
+      "id": "PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling",
+      "url": "https://github.com/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling",
+      "paper_ids": [
+        "eprint-2026-464"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "56cb180d255df2a8d8af8766378b2ec490611d3a",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Proof-of-concept CNN extraction; no project-wide license located.",
+      "entrypoints_documented": [
+        "python -u main.py --load_json scripts/attack/VGG-tiny/args.json --layerID 1 --Count 1000 --noise_strategy 2 --efficient_weight_recovery 0",
+        "python -u main.py --load_json scripts/attack/VGG-bad/args.json --layerID 3 --Count 200 --noise_strategy -1",
+        "pip install -r requirements.txt",
+        "python models/train_new_models_tf.py --load_json &lt;config_file&gt; ",
+        "python main.py --load_json &lt;config_file&gt; --layerID &lt;layer_number&gt; --Count &lt;critical_point_number&gt; --noise_strategy &lt;strategy_number&gt; --efficient_weight_recovery &lt;0,1&gt;"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 26,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "AI-Lab-Y/Extracting_PReLU_NN",
+      "url": "https://github.com/AI-Lab-Y/Extracting_PReLU_NN",
+      "paper_ids": [
+        "eprint-2025-1970"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "d724ce37dac9a119ec388f241a9341a7650785d7",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Research implementation; accessibility and documentation audited, results not reproduced.",
+      "entrypoints_documented": [
+        "python comparison.py d0-d1-d2 random_seed",
+        "python end-to-end-k-deep-extraction.py d0-d1-d2 random_seed",
+        "python check_solution_svd d0-d1-d2",
+        "python end-to-end-k-deep-extraction.py d0-d1-d2 file_no topK random_seed",
+        "python check_solution_svd d0-d1-d2 topK"
+      ],
+      "dependency_files": [],
+      "source_files_count": 236,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "qixiaokang1-stack/cryptanalytic-model-various-functions",
+      "url": "https://github.com/qixiaokang1-stack/cryptanalytic-model-various-functions",
+      "paper_ids": [
+        "eprint-2026-178"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "2d3a9dbff314d620fe1e33ac09d0f84ae87149fb",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "README is named READEME.md. Some documented generic filenames differ from actual tree (e.g. ELU/end-to-end.py); verify paths manually. README reports unsuccessful HardTanh S5 end-to-end experiments.",
+      "entrypoints_documented": [
+        "python find_duals.py ARCHITECTURE SEED",
+        "python find_duals_layerwise.py ARCHITECTURE SEED",
+        "python cluster_dual_points.py ARCHITECTURE SEED",
+        "python recover_weights.py ARCHITECTURE SEED",
+        "python extract_end_to_end.py ARCHITECTURE SEED",
+        "python MNIST_end_to_end.py SEED",
+        "python cluster_dual_points.py ARCHITECTURE SEED LAYER_INDEX",
+        "python recover_weights.py ARCHITECTURE SEED LAYER_INDEX",
+        "python extract.py ARCHITECTURE SEED",
+        "python 1_batched_sign_recovery.py",
+        "python create_tables.py",
+        "python additional_parameters_recover.py ARCHITECTURE SEED LAYER_INDEX",
+        "python step_recovery_S5.py ARCHITECTURE SEED",
+        "python step_recovery_S1.py ARCHITECTURE SEED",
+        "python MNIST_step_recovery_S5.py",
+        "python MNIST_step_recovery_S1.py"
+      ],
+      "dependency_files": [],
+      "source_files_count": 2191,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "READEME.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "mstealercryptocrypto-ops/mod_stealer26",
+      "url": "https://github.com/mstealercryptocrypto-ops/mod_stealer26",
+      "paper_ids": [
+        "eprint-2026-253"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "95a5cd29bc23f3ce38a99802e0c6e2891ce3ef2d",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Requires native backend compilation; no code/build executed. Experimental codebase; root README does not name the paper, provenance comes from paper PDF.",
+      "entrypoints_documented": [],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 77,
+      "tree_truncated": false,
+      "entrypoint_paths": [
+        "model_stealer.py"
+      ],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "springli07/GNN_MP_CEA",
+      "url": "https://github.com/springli07/GNN_MP_CEA",
+      "paper_ids": [
+        "eprint-2026-719"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "dde7f7e529a39eaa219924a4ec11e2ceab37c6e7",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Research implementation; accessibility and documentation audited, results not reproduced.",
+      "entrypoints_documented": [
+        "pip install -r requirements.txt",
+        "python .\\train_target.py l4_h32_seed7",
+        "python .\\train_target.py l4_h32_seed7 --dry-run",
+        "python .\\recovery_pipeline\\summarize_activation_regimes.py l4_h32_seed7 --num-samples 20000 --batch-size 512",
+        "python .\\recovery_pipeline\\find_duals.py l4_h32_seed7 2000",
+        "python .\\recovery_pipeline\\find_duals.py l4_h32_seed7 2000 --node 0,1",
+        "python .\\recovery_pipeline\\collect_duals_to_target.py l4_h32_seed7 160000",
+        "python .\\recovery_pipeline\\cluster_dual_points.py l4_h32_seed7 4",
+        "python .\\recovery_pipeline\\class_cluster_all.py l4_h32_seed7",
+        "python .\\recovery_pipeline\\recover_weights_v3.py 0 l4_h32_seed7 --prefix-mode auto --subsample-trials 4",
+        "python .\\recovery_pipeline\\recover_weights_v3.py 1 l4_h32_seed7 --prefix-mode auto --subsample-trials 4",
+        "python .\\recovery_pipeline\\recover_weights_v3.py 2 l4_h32_seed7 --prefix-mode auto --subsample-trials 4",
+        "python .\\recovery_pipeline\\recover_last_layer_refined.py l4_h32_seed7 --source all-duals --max-points-per-node 400 --batch-size 1024",
+        "python .\\recovery_pipeline\\compute_dual_budget.py l4_h32_seed7",
+        "python .\\recovery_pipeline\\summarize_cluster_coverage.py l4_h32_seed7",
+        "python .\\recovery_pipeline\\summarize_recovery.py l4_h32_seed7",
+        "python .\\summarize_structure_generalization.py",
+        "python .\\check_status.py l4_h32_seed7",
+        "python .\\check_status.py l4_h32_seed7 --target-total-per-node 160000",
+        "python .\\run.py train --structure l4_h32_seed7",
+        "python .\\run.py activation-regimes --structure l4_h32_seed7 --num-samples 20000 --batch-size 512",
+        "python .\\run.py duals-to-target --structure l4_h32_seed7 --target-total-per-node 160000",
+        "python .\\run.py cluster --structure l4_h32_seed7 --max-layer 4",
+        "python .\\run.py neuron --structure l4_h32_seed7",
+        "python .\\run.py recover --structure l4_h32_seed7 --all-hidden --prefix-mode auto --subsample-trials 4",
+        "python .\\run.py recover-last-layer --structure l4_h32_seed7 --source all-duals --max-points-per-node 400 --batch-size 1024",
+        "python .\\run.py summarize --structure l4_h32_seed7",
+        "python .\\run.py train --structure l5_h24_seed7",
+        "python .\\run.py train --structure l5_h32_seed7",
+        "python .\\run.py train --structure l6_h16_seed7",
+        "python .\\recovery_pipeline\\recover_weights_v3.py 4 l6_h16_seed7 --cluster-id 15 --prefix-mode auto --subsample-trials 16 --subsample-strategy diversity --diversity-target-points 512"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 56,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "dpaleka/stealing-part-lm-supplementary",
+      "url": "https://github.com/dpaleka/stealing-part-lm-supplementary",
+      "paper_ids": [
+        "arxiv-2403.06634"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "6fa1d1a87b06e00228330711eb661cee58b4740d",
+      "kind": "supplementary_implementation",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/dpaleka/stealing-part-lm-supplementary/blob/6fa1d1a87b06e00228330711eb661cee58b4740d/LICENSE.md",
+        "license_files": [
+          "LICENSE.md"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "Local logit-query attack and API-emulation experiments, not the full production-model extraction pipeline. Old real-API behavior is explicitly obsolete.",
+      "entrypoints_documented": [],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 36,
+      "tree_truncated": false,
+      "entrypoint_paths": [],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+      "url": "https://github.com/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN",
+      "paper_ids": [
+        "eprint-2024-1870"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "8a729158d83adf587e2d2444e6587a2f489603b9",
+      "kind": "simulation_artifact",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Notebooks simulate the side-channel oracle by directly accessing neuron states; no physical side-channel measurements reproduced. README uses a prior paper title.",
+      "entrypoints_documented": [
+        "python -m venv .venv",
+        "pip install -r requirements.txt"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirement.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 618,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "heavyimage/afch_paper",
+      "url": "https://github.com/heavyimage/afch_paper",
+      "paper_ids": [
+        "arxiv-2503.19142"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "1b5d035d1f13de4ded4c1e435de7301f16c3c983",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": "GPL-3.0",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/heavyimage/afch_paper/blob/1b5d035d1f13de4ded4c1e435de7301f16c3c983/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "GPL-3.0"
+      },
+      "note": "Requires SGX-capable hardware, SGX-Step setup and native builds; review GPL and third-party/submodule obligations separately. No system changes performed.",
+      "entrypoints_documented": [
+        "python3 attack.py"
+      ],
+      "dependency_files": [
+        {
+          "path": "app/nn_param_recovery/requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 225,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "CryptAnalystDesigner/Finite-Precision-Feasibility-of-Cryptanalytic-Model-Extraction",
+      "url": "https://github.com/CryptAnalystDesigner/Finite-Precision-Feasibility-of-Cryptanalytic-Model-Extraction",
+      "paper_ids": [
+        "eprint-2026-1943"
+      ],
+      "access": "unavailable_404",
+      "default_branch": null,
+      "commit": null,
+      "kind": "unavailable",
+      "license": {
+        "spdx_id": null,
+        "status": "unverified",
+        "evidence_url": null
+      },
+      "note": "Read-only GitHub repository API returned HTTP 404 on audit date; this does not prove deletion."
+    },
+    {
+      "id": "anonymous-123-code/anonymouscode",
+      "url": "https://github.com/anonymous-123-code/anonymouscode",
+      "paper_ids": [
+        "arxiv-2509.16546"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "2092c04718d81c69dfcba88702f0c6b6dcd70b3f",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Defense code built on Foerster et al. extraction; no project-wide license located.",
+      "entrypoints_documented": [
+        "python -u -m neuronWiggle --model models/mnist784_16x8_1_Seed42.keras --layerID 1 --seed 20 --dataset 'mnist' --quantized 2 2&gt;&amp;1 &gt; .\\results\\mnist784_16x8_1_Seed42.txt              ",
+        "python -u -m neuronWiggle --model models/Secure_mnist784_16x8_1_Seed42.keras --layerID 1 --seed 20 --dataset 'mnist' --quantized 2 2&gt;&amp;1 &gt; .results\\Secure_mnist784_16x8_1_Seed42.txt",
+        "python .\\models\\make_new_models.py",
+        "pip install tensorflow==2.15.0",
+        "pip install numpy==1.25.2",
+        "pip install pandas==2.1.2",
+        "pip install jax==0.4.30",
+        "pip install optax==0.2.3",
+        "pip install scipy==1.9.3"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 65,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "flavio-martinelli/expand-and-cluster",
+      "url": "https://github.com/flavio-martinelli/expand-and-cluster",
+      "paper_ids": [
+        "arxiv-2304.12794"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "231cac970ceef43cb6361cd39917d75e44d7776e",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/flavio-martinelli/expand-and-cluster/blob/231cac970ceef43cb6361cd39917d75e44d7776e/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "Research implementation; accessibility and documentation audited, results not reproduced.",
+      "entrypoints_documented": [
+        "python EC.py",
+        "python EC.py train --default_hparams=mnist_lenet_20 --help",
+        "python EC.py train --default_hparams=mnist_lenet_20",
+        "python EC.py train --default_hparams=mnist_lenet_20 --batch_size=1024 --lr=0.8 --warmup_steps=10ep",
+        "python EC.py extract --help",
+        "python EC.py lottery --help",
+        "python EC.py lottery --default_hparams=cifar_resnet_20 --levels=3",
+        "python EC.py lottery --default_hparams=cifar_resnet_20 --levels=3 --rewinding_steps=500it"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 121,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "alexl4123/expand-and-cluster",
+      "url": "https://github.com/alexl4123/expand-and-cluster",
+      "paper_ids": [
+        "arxiv-2511.20312"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "07edef32b213f7a56a1fd66249e6f6b8207aabbf",
+      "kind": "author_extension_fork",
+      "license": {
+        "spdx_id": "MIT",
+        "status": "declared_license_verified",
+        "evidence_url": "https://github.com/alexl4123/expand-and-cluster/blob/07edef32b213f7a56a1fd66249e6f6b8207aabbf/LICENSE",
+        "license_files": [
+          "LICENSE"
+        ],
+        "api_detected_spdx": "MIT"
+      },
+      "note": "Author-linked extension of flavio-martinelli/expand-and-cluster; keep distinct pinned checkout because changes implement a different paper.",
+      "entrypoints_documented": [
+        "python EC.py",
+        "python EC.py train --default_hparams=mnist_lenet_20 --help",
+        "python EC.py train --default_hparams=mnist_lenet_20",
+        "python EC.py train --default_hparams=mnist_lenet_20 --batch_size=1024 --lr=0.8 --warmup_steps=10ep",
+        "python EC.py extract --help",
+        "python EC.py lottery --help",
+        "python EC.py lottery --default_hparams=cifar_resnet_20 --levels=3",
+        "python EC.py lottery --default_hparams=cifar_resnet_20 --levels=3 --rewinding_steps=500it"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 1357,
+      "tree_truncated": false,
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "kzhao5/ModelExtractionPapers",
+      "url": "https://github.com/kzhao5/ModelExtractionPapers",
+      "paper_ids": [
+        "arxiv-2508.15031",
+        "arxiv-2506.22521"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "8571dde8fede0a27064705348db78e22e4d9b1b7",
+      "kind": "reading_resource",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Bibliographic reading list shared by two survey entries; not attack code.",
+      "entrypoints_documented": [],
+      "dependency_files": [],
+      "source_files_count": 2,
+      "tree_truncated": false,
+      "entrypoint_paths": [],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_path": "README.md",
+      "readme_url_template": "pinned_file"
+    },
+    {
+      "id": "CryptoAiLi/DNNExtractionLAK",
+      "url": "https://github.com/CryptoAiLi/DNNExtractionLAK",
+      "paper_ids": [
+        "eprint-2026-2127"
+      ],
+      "access": "accessible",
+      "default_branch": "master",
+      "commit": "da4fa69cb63bd6868b786db70af455bec7b65344",
+      "kind": "placeholder_repository",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Pinned tree contains only .idea IDE metadata; no implementation, README or license found.",
+      "entrypoints_documented": [],
+      "dependency_files": [],
+      "source_files_count": 6,
+      "tree_truncated": false,
+      "entrypoint_paths": [],
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ],
+      "readme_url": null,
+      "readme_path": null
+    }
+  ],
+  "url_templates": {
+    "repository_metadata": "https://api.github.com/repos/{repository_id}",
+    "pinned_tree": "https://api.github.com/repos/{repository_id}/git/trees/{commit}?recursive=1",
+    "pinned_commit": "https://github.com/{repository_id}/commit/{commit}",
+    "pinned_file": "https://github.com/{repository_id}/blob/{commit}/{path}"
+  },
+  "template_note": "Expand URL templates with repository_id=id from each repository row and its fixed commit. A paper pinned_repository_readme provenance entry references that repository readme_path. Dependency and documentation paths use pinned_file. For papers with repository_id, source_url is the referenced repository url."
+}

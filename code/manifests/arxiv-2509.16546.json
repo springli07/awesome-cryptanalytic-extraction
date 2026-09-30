@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-2509.16546",
+  "title": "Train to Defend: First Defense Against Cryptanalytic Neural Network Parameter Extraction Attacks",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/anonymous-123-code/anonymouscode",
+  "repository_id": "anonymous-123-code/anonymouscode",
+  "status": "author_linked_implementation",
+  "pinned_commit": "2092c04718d81c69dfcba88702f0c6b6dcd70b3f",
+  "collection_path": "code/upstream/anonymous-123-code/anonymouscode",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

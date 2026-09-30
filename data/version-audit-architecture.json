@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "checked": "2026-09-30",
+  "versions": [
+    {
+      "paper_id": "eprint-2025-1970",
+      "version": "2025-10-24 approved；2025-10-21 received",
+      "pages": 32,
+      "pdf_sha256": "db9a8d51e1093083d3e200d3728c5b2c6a87a7673347e27835d8db62e38e52eb",
+      "source_url": "https://eprint.iacr.org/2025/1970.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "eprint-2026-178",
+      "version": "2026-02-06 approved；2026-02-03 received",
+      "pages": 39,
+      "pdf_sha256": "27557ffbae790abcba5b8a69a24adbcedd58bf07e32c9309ebe1fb184775f88b",
+      "source_url": "https://eprint.iacr.org/2026/178.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "eprint-2026-253",
+      "version": "2026-02-16 approved；2026-02-13 received",
+      "pages": 33,
+      "pdf_sha256": "ebe4080c30a61c1ce1ca3a1699009c9a07b8194a57ffc2be7ebbab194d8eaf78",
+      "source_url": "https://eprint.iacr.org/2026/253.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "eprint-2026-1066",
+      "version": "2026-05-31 approved；2026-05-27 received",
+      "pages": 31,
+      "pdf_sha256": "f771f5abd060140eed2c0e5daa7003ba2041cea03fcee7bb6aa28fc63d8a0335",
+      "source_url": "https://eprint.iacr.org/2026/1066.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "eprint-2026-168",
+      "version": "2026-09-18，last of 2 revisions；2026-02-01 received",
+      "pages": 34,
+      "pdf_sha256": "b096d4f6425d19254d0fb4e4ef7653e18ebd4761d4cfa6f0a2fd25ed49b748f2",
+      "source_url": "https://eprint.iacr.org/2026/168.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit",
+      "bytes": 1143269,
+      "previous_catalog_record": {
+        "bytes": 1050687,
+        "pdf_sha256": "fc39c1f1ffb4c54c83d247b992e65def6b8885699ee3d74547e5fbc10f1a3c18"
+      }
+    },
+    {
+      "paper_id": "eprint-2026-719",
+      "version": "2026-04-19 approved；2026-04-13 received",
+      "pages": 20,
+      "pdf_sha256": "b2791b2be9d9fde33c3fb8be5015442a8f922af40a6b162ccdb454ed3e21181c",
+      "source_url": "https://eprint.iacr.org/2026/719.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "arxiv-2601.16873",
+      "version": "v2，2026-05-04",
+      "pages": 18,
+      "pdf_sha256": "e5221682c1da801dbae06aa21ab2d8469839d49cba2f623ae12b770fbe5a76f8",
+      "source_url": "https://arxiv.org/pdf/2601.16873",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "arxiv-2608.03294",
+      "version": "v3，2026-08-24",
+      "pages": 39,
+      "pdf_sha256": "7d08f64a35f9d3b3268759a8ddd2199c32caaffd5195545dd920d57db25e5bc1",
+      "source_url": "https://arxiv.org/pdf/2608.03294",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "eprint-2026-1678",
+      "version": "2026-08-15 revised；2026-08-13 received",
+      "pages": 31,
+      "pdf_sha256": "9dcc514494113a6c7135fbb594d364f0c00730c4f671011981b0e95b47ecf45d",
+      "source_url": "https://eprint.iacr.org/2026/1678.pdf",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "arxiv-2608.06631",
+      "version": "v1，2026-08-06",
+      "pages": 11,
+      "pdf_sha256": "f2a72cd14354a5920165c014bb2f5f637bbfde0f2c111c9eda50c4ebdff797f7",
+      "source_url": "https://arxiv.org/pdf/2608.06631",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "arxiv-2403.06634",
+      "version": "v2，2024-07-09",
+      "pages": 27,
+      "pdf_sha256": "65e2ade24ecefc77ab5eaab511b744a611bbc7efd0ec9ad6d434a3f23003be3c",
+      "source_url": "https://arxiv.org/pdf/2403.06634",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    },
+    {
+      "paper_id": "arxiv-2403.09539",
+      "version": "v3，2024-11-08",
+      "pages": 15,
+      "pdf_sha256": "a5a1d06963f2b2cf82faca2589417c5a4cb50f7fd5779b4ce60af1d22e410341",
+      "source_url": "https://arxiv.org/pdf/2403.09539",
+      "checked": "2026-09-30",
+      "provenance": "User-supplied primary-PDF version audit"
+    }
+  ]
+}

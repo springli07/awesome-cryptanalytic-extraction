@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-2503.19142",
+  "title": "Activation Functions Considered Harmful: Recovering Neural Network Weights through Controlled Channels",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/heavyimage/afch_paper",
+  "repository_id": "heavyimage/afch_paper",
+  "status": "author_linked_implementation",
+  "pinned_commit": "1b5d035d1f13de4ded4c1e435de7301f16c3c983",
+  "collection_path": "code/upstream/heavyimage/afch_paper",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

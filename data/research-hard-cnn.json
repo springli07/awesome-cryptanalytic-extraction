@@ -1,0 +1,3040 @@
+{
+  "schema_version": 1,
+  "checked": "2026-09-30",
+  "source_scope": "Parent-provided full-text research, not independent reproduction",
+  "papers": [
+    {
+      "paper_id": "eprint-2024-1403",
+      "oracle": "top-1 binary label",
+      "target_scope": "正尺度输出函数",
+      "conditions": "已知ReLU FC架构、任意实数输入；n=隐藏神经元总数，k=隐藏层数。",
+      "source": {
+        "url": "https://eprint.iacr.org/2024/1403.pdf",
+        "locator": "§2.2; §4–7; Appendix B pp.27–28",
+        "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "A/B 边界点与局部仿射恢复"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(d₀ 2^n log(1/ϵ))",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ],
+              "NR_reason": "已检查 Appendix B pp.27–28；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ],
+              "NR_reason": "已检查 Appendix B pp.27–28；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ],
+              "NR_reason": "已检查 Appendix B pp.27–28；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "采样预算c_n2^n；不是按参数数计。"
+        },
+        {
+          "name": {
+            "zh": "C/D/E 候选分配、符号猜测、线性求解"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ],
+              "NR_reason": "已检查 Appendix B pp.27–28；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(n·2^(n²+n+k))",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ],
+              "NR_reason": "已检查 Appendix B pp.27–28；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1403.pdf",
+                  "locator": "Appendix B pp.27–28",
+                  "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+                }
+              ],
+              "NR_reason": "已检查 Appendix B pp.27–28；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "作者简化操作计数；忽略线性系统大小差异；不是bit complexity。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "25120-4-1; 100,489 parameters",
+          "precision": "10^-16",
+          "hardware": "NR",
+          "target": "正尺度输出函数",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^26.67",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2024/1403.pdf",
+                "locator": "§7 Table 1",
+                "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2024/1403.pdf",
+                "locator": "§7 Table 1",
+                "pdf_sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+              }
+            ],
+            "NR_reason": "已检查 §7 Table 1；未单列该项实验指标。"
+          },
+          "empirical_metric": "PMR=100%",
+          "notes": "单核数小时为概述；精确硬件/独立阶段时间NR。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2024-1580",
+      "oracle": "top-1 label",
+      "target_scope": "ReLU MLP签名、符号、输出与结构",
+      "conditions": "双点可见性、均匀性、非退化；近死/持久神经元可使采点指数增长。48页扩展版。",
+      "source": {
+        "url": "https://eprint.iacr.org/2024/1580.pdf",
+        "locator": "§4–9; §8 Tables 4–5",
+        "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "A 双点与交空间获取"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§4; §9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9.1–9.2；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§4; §9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9.1–9.2；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§4; §9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9.1–9.2；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§4; §9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9.1–9.2；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "作者条件性poly；双点量不是oracle Q。"
+        },
+        {
+          "name": {
+            "zh": "B/C 朴素聚类与签名"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§5",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §5；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(Q_dp²) consistency tests",
+              "unit": "consistency_tests",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§5",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§5",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §5；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§5",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §5；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "单位是consistency tests，每次另含多项式线性代数，非完整算术阶。"
+        },
+        {
+          "name": {
+            "zh": "D/E Future Toggle与输出层"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§6; §8",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §6; §8；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§6; §8",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §6; §8；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§6; §8",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §6; §8；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§6; §8",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §6; §8；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "独立阶段oracle Big-O NR。"
+        },
+        {
+          "name": {
+            "zh": "F 架构与停止"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §9.1–9.2；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §9.1–9.2；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §9.1–9.2；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1580.pdf",
+                  "locator": "§9.1–9.2",
+                  "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+                }
+              ],
+              "NR_reason": "已检查 §9.1–9.2；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "均匀双点下已知宽度O(d log d)、未知宽度O(d²(log d+log(1/δ)))双点；不是oracle Q。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "32-32-32-32-10",
+          "precision": "NR",
+          "hardware": "32-core machine",
+          "target": "ReLU MLP签名、符号、输出与结构",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "3.97×10^7",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2024/1580.pdf",
+                "locator": "§8 Tables 4–5",
+                "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "74 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2024/1580.pdf",
+                "locator": "§8 Tables 4–5",
+                "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+              }
+            ]
+          },
+          "empirical_metric": "96/96 signatures and signs; max layer relative error 4×10^-14",
+          "notes": "Dual acquisition Q=2.02×10^7; 6,880 duals; 100,000随机及边界两侧输入验证。"
+        },
+        {
+          "dimensions": "3072-256×3-64-10",
+          "precision": "NR",
+          "hardware": "256 cores / GPU support",
+          "target": "辅助符号梯度的概念验证",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2024/1580.pdf",
+                "locator": "§7",
+                "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+              }
+            ],
+            "NR_reason": "已检查 §7；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "signature ≈16 h; sign ≈8.5 h",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2024/1580.pdf",
+                "locator": "§7",
+                "pdf_sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": "省略大规模聚类计时，不是全黑盒端到端。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2025-1118",
+      "oracle": "top-1 label",
+      "target_scope": "给定前缀与无符号签名后的sign/输出层",
+      "conditions": "第一层满行秩或深层局部前缀秩≥dᵢ，扰动不切换已恢复层；q_T/t_T为transition point成本。",
+      "source": {
+        "url": "https://eprint.iacr.org/2025/1118.pdf",
+        "locator": "§3.2–3.3; §4.2–4.3; §5 Table 1",
+        "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "D freeze"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "dᵢ(q_T+2)",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.2",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.2",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.2；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.2",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.2；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.2",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.2；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "T=dᵢ(t_T+t₁)是含采点时间的混合时间公式，不能当纯算术。",
+          "mixed_time_formula": {
+            "value": "T=dᵢ(t_T+t₁)",
+            "unit": "time_with_transition_acquisition",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§4.2",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ]
+          }
+        },
+        {
+          "name": {
+            "zh": "D SOE"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "(dᵢ+1)q_T",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.3；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.3；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.3；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "T=(dᵢ+1)t_T+t₁；已有法向量m时新增Q=0，伪逆与矩阵向量乘仍需本地计算。",
+          "mixed_time_formula": {
+            "value": "T=(dᵢ+1)t_T+t₁",
+            "unit": "time_with_transition_acquisition",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§4.3",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ]
+          }
+        },
+        {
+          "name": {
+            "zh": "D SOE复用已知m"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.3；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.3；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§4.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §4.3；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "仅新增查询；不含上游采点。"
+        },
+        {
+          "name": {
+            "zh": "E 输出层"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§3.2–3.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §3.2–3.3；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§3.2–3.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §3.2–3.3；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§3.2–3.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §3.2–3.3；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1118.pdf",
+                  "locator": "§3.2–3.3",
+                  "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+                }
+              ],
+              "NR_reason": "已检查 §3.2–3.3；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "作者给poly；最大秩K(d_r+1)−(d_r+2)，有共同平移/尺度规范。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "3072-256×3-64-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "已恢复隐层后的输出层",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§5 Table 1",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ],
+            "NR_reason": "已检查 §5 Table 1；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "equation acquisition 6.5 h; solve <1 s",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§5 Table 1",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ]
+          },
+          "empirical_metric": "5,000 U(-1,1) label agreement 100%",
+          "notes": ""
+        },
+        {
+          "dimensions": "3072-256×3-64-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "第一层sign",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§5 Table 1",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ],
+            "NR_reason": "已检查 §5 Table 1；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "freeze 33.41 s; SOE reconstruct normals 358.27 s; reuse m <1 s",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§5 Table 1",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": ""
+        },
+        {
+          "dimensions": "3072-1000-350-100-30-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "sign与输出分阶段；非完整攻击",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§5 Table 1",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ],
+            "NR_reason": "已检查 §5 Table 1；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "SOE with m: 0.50/0.30/0.23/0.22 s; output equations ≈13 h",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1118.pdf",
+                "locator": "§5 Table 1",
+                "pdf_sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": ""
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2025-1868",
+      "oracle": "top-1 label / noiseless intersection spaces",
+      "target_scope": "persistent方向或span及等价表示",
+      "conditions": "ε-dead/persistent相对输入分布；ε<1/N在预算N下通常不可见；交点无噪声假设。",
+      "source": {
+        "url": "https://eprint.iacr.org/2025/1868.pdf",
+        "locator": "Definition 5; §4.2–4.4 Theorem 1; §5.1–5.3; §6",
+        "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "A 可观察性"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§4.2–4.4",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §4.2–4.4；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§4.2–4.4",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §4.2–4.4；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§4.2–4.4",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §4.2–4.4；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§4.2–4.4",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §4.2–4.4；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "深度切换稀少为训练网络实证，不是所有自适应算法指数下界。"
+        },
+        {
+          "name": {
+            "zh": "B/C 初始三元搜索"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.1",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.1；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(n³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.1",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.1",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.1；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.1",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.1；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "n=候选交空间数；完整特征问题维度及全流程界NR。"
+        },
+        {
+          "name": {
+            "zh": "D/E 等价线性贡献吸收"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.2–5.3; §6",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.2–5.3; §6；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.2–5.3; §6",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.2–5.3; §6；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.2–5.3; §6",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.2–5.3; §6；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2025/1868.pdf",
+                  "locator": "§5.2–5.3; §6",
+                  "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+                }
+              ],
+              "NR_reason": "已检查 §5.2–5.3; §6；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "多个persistent只辨span不辨原基；分类概率≥1−(n+m)ε有分布限定。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "width 64/128/256; layer 4 has 1/2/13 persistent neurons",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "借第5层交空间验证局部span",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1868.pdf",
+                "locator": "§5–6",
+                "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+              }
+            ],
+            "NR_reason": "已检查 §5–6；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2025/1868.pdf",
+                "locator": "§5–6",
+                "pdf_sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+              }
+            ],
+            "NR_reason": "已检查 §5–6；未单列该项实验指标。"
+          },
+          "empirical_metric": "max principal angle ≈10^-8",
+          "notes": "20×256 MNIST/FMNIST仅切换稀少分析，不是全网恢复。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-1164",
+      "oracle": "hard-label normals; 部分黑盒辅助实验",
+      "target_scope": "NRC/ASV签名聚类",
+      "conditions": "n=已采双点数；d=目标维度；平均界要求均匀d簇，false-negative可补采。",
+      "source": {
+        "url": "https://eprint.iacr.org/2026/1164.pdf",
+        "locator": "§3.2 Eq18; §4.4–4.5 pp.18–20; §5–6 Tables1–3",
+        "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "B 原rank-check基线"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§3.2 Eq18",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §3.2 Eq18；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(n²d³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§3.2 Eq18",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§3.2 Eq18",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §3.2 Eq18；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§3.2 Eq18",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §3.2 Eq18；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": {
+            "zh": "B 局部求解预处理"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §4.4；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(nd³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §4.4；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §4.4；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": ""
+        },
+        {
+          "name": {
+            "zh": "B NRC/ASV匹配（含预处理）"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional calls with cached normals",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4–4.5",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "average O(nd³+nd²); worst O(nd³+n²d)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4–4.5",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4–4.5",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §4.4–4.5；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1164.pdf",
+                  "locator": "§4.4–4.5",
+                  "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+                }
+              ],
+              "NR_reason": "已检查 §4.4–4.5；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "匹配O(d)/次；均匀簇平均O(nd²)，最坏O(n²d)。深层约1.2×点保持覆盖，总Q可增。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "64-64×4-10; F1",
+          "precision": "NR",
+          "hardware": "RTX5080 16GB",
+          "target": "F1 signature",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^24.30",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/1164.pdf",
+                "locator": "§6 Tables1–3",
+                "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "0.05 h",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/1164.pdf",
+                "locator": "§6 Tables1–3",
+                "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": "基线0.92h。"
+        },
+        {
+          "dimensions": "64-64×4-10; F2",
+          "precision": "NR",
+          "hardware": "RTX5080 16GB",
+          "target": "F2 signature",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^30.76",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/1164.pdf",
+                "locator": "§6 Tables1–3",
+                "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "4.22 h",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/1164.pdf",
+                "locator": "§6 Tables1–3",
+                "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": "基线1478.55h是外推；F3仅26/64。"
+        },
+        {
+          "dimensions": "max-pool LeNet-5 convolution block",
+          "precision": "NR",
+          "hardware": "RTX5080 16GB",
+          "target": "卷积签名",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^30.96",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/1164.pdf",
+                "locator": "§6 Tables1–3",
+                "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "12.65 h",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/1164.pdf",
+                "locator": "§6 Tables1–3",
+                "pdf_sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": ""
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2609.18751",
+      "oracle": "hard-label;部分实验真参数法向量",
+      "target_scope": "给定双点/签名/前缀后的sign",
+      "conditions": "后缀分布/投影；eSOE需正确非活跃删除、非零活跃系数、rank |U|−1。",
+      "source": {
+        "url": "https://arxiv.org/pdf/2609.18751",
+        "locator": "§4 Propositions1–5; §5 Proposition6; §6 Table1; Appendix A",
+        "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "D normal alignment与eSOE"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.18751",
+                  "locator": "§4–5",
+                  "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.18751",
+                  "locator": "§4–5",
+                  "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.18751",
+                  "locator": "§4–5",
+                  "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.18751",
+                  "locator": "§4–5",
+                  "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "普通alignment复用法向量；eSOE需兼容transition points；可能exhaustive fallback；统一整网Q界NR。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "192-64×8-10 CIFAR",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "512/512 signs with true-parameter normals",
+          "experimental_queries": {
+            "status": "derived",
+            "value": "2^31.13",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.18751",
+                "locator": "§6 Table1",
+                "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+              }
+            ],
+            "premises": "论文估算Q，非实际黑盒计数；每神经元200尝试。",
+            "derivation": "作者报告的估算，保留原文估算性质；不是本索引独立测得。"
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "≈2^10.73 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.18751",
+                "locator": "§6 Table1",
+                "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+              }
+            ]
+          },
+          "empirical_metric": "512/512 signs",
+          "notes": "论文估算Q，非实际黑盒计数；每神经元200尝试。"
+        },
+        {
+          "dimensions": "64-96×3-32-10 MNIST",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "hard-label sign recovery",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^28.71",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.18751",
+                "locator": "§6 Table1",
+                "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "≈2^11.20 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.18751",
+                "locator": "§6 Table1",
+                "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+              }
+            ]
+          },
+          "empirical_metric": "320/320 signs",
+          "notes": ""
+        },
+        {
+          "dimensions": "3072-256×3-64-10",
+          "precision": "NR",
+          "hardware": "8 CPU cores; no neuron-level parallelism",
+          "target": "true-normal sign proof of concept",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.18751",
+                "locator": "§6; Appendix A",
+                "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+              }
+            ],
+            "NR_reason": "已检查 §6; Appendix A；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "1 h 43 m",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.18751",
+                "locator": "§6; Appendix A",
+                "pdf_sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+              }
+            ]
+          },
+          "empirical_metric": "832/832 signs",
+          "notes": ""
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2609.21941",
+      "oracle": "top-1 hard label",
+      "target_scope": "小型已知架构ReLU MLP端到端",
+      "conditions": "Proposition1需包含全部活跃竞争者、竞争span秩小于前缀秩、目标不落其span；实验排除死/近死。",
+      "source": {
+        "url": "https://arxiv.org/pdf/2609.21941v1v1",
+        "locator": "§3; §4.1–4.3 Table3; Appendix H",
+        "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "A/B/C 交空间获取、伪组筛除与签名"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§4.1–4.3; Appendix H",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §4.1–4.3; Appendix H；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§4.1–4.3; Appendix H",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §4.1–4.3; Appendix H；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§4.1–4.3; Appendix H",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §4.1–4.3; Appendix H；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§4.1–4.3; Appendix H",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §4.1–4.3; Appendix H；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "4层20,000、6层400,000交空间不是Q；预收集占主要总查询。"
+        },
+        {
+          "name": {
+            "zh": "D cosine/projection signs"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional calls",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§3 Proposition1",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§3 Proposition1",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §3 Proposition1；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§3 Proposition1",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §3 Proposition1；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                  "locator": "§3 Proposition1",
+                  "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+                }
+              ],
+              "NR_reason": "已检查 §3 Proposition1；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "复用已给交空间/签名；其余条件用统计判别与span-violation纠错。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "MNIST 784-16×4-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "小型已知架构ReLU MLP端到端",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^32.31",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ],
+            "NR_reason": "已检查 §4 Table3；未单列该项实验指标。"
+          },
+          "empirical_metric": "100,000 standard Gaussian label agreement 98.477%",
+          "notes": "预收集墙钟NR；不能把signature/sign相加当完整总时间。max signature L2 error 9.34×10^-6；未测试persistent恢复。"
+        },
+        {
+          "dimensions": "MNIST 784-16×6-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "小型已知架构ReLU MLP端到端",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^36.62",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "signature 1h05m36s; sign 26m34s",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ]
+          },
+          "empirical_metric": "100,000 standard Gaussian label agreement 99.948%",
+          "notes": "预收集墙钟NR；不能把signature/sign相加当完整总时间。max signature L2 error 9.34×10^-6；未测试persistent恢复。"
+        },
+        {
+          "dimensions": "FMNIST 784-16×4-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "小型已知架构ReLU MLP端到端",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^32.30",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ],
+            "NR_reason": "已检查 §4 Table3；未单列该项实验指标。"
+          },
+          "empirical_metric": "100,000 standard Gaussian label agreement 100.000%",
+          "notes": "预收集墙钟NR；不能把signature/sign相加当完整总时间。max signature L2 error 9.34×10^-6；未测试persistent恢复。"
+        },
+        {
+          "dimensions": "FMNIST 784-16×6-10",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "小型已知架构ReLU MLP端到端",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^36.62",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "signature 47m04s; sign 30m16s",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.21941v1v1",
+                "locator": "§4 Table3",
+                "pdf_sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+              }
+            ]
+          },
+          "empirical_metric": "100,000 standard Gaussian label agreement 99.744%",
+          "notes": "预收集墙钟NR；不能把signature/sign相加当完整总时间。max signature L2 error 9.34×10^-6；未测试persistent恢复。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-139",
+      "oracle": "top-1 hard label",
+      "target_scope": "已知平均池化CNN单层签名",
+      "conditions": "kernel均匀采样才有coupon-collector设计指导；r=3,δ=.02；非均匀98%不是保证。",
+      "source": {
+        "url": "https://eprint.iacr.org/2026/139.pdf",
+        "locator": "§3.3 Algorithm1 Eq10; §3.4 Eq11; §4.2 Tables1–2",
+        "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "B kernel-centric clustering"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.3 Algorithm1 Eq10",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.3 Algorithm1 Eq10；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.3 Algorithm1 Eq10",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.3 Algorithm1 Eq10；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.3 Algorithm1 Eq10",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.3 Algorithm1 Eq10；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.3 Algorithm1 Eq10",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.3 Algorithm1 Eq10；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "单次搜索线性，整流程还乘簇数、rank tests/refinement；m≥C_out[ln C_out+(r−1)ln ln C_out+ln(1/δ)]为覆盖设计点数。"
+        },
+        {
+          "name": {
+            "zh": "C 协方差特征分解"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.4 Eq11",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.4 Eq11；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.4 Eq11",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.4 Eq11；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.4 Eq11",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.4 Eq11；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§3.4 Eq11",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §3.4 Eq11；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "n×p矩阵改DᵀD的p×p分解并分块累积；不改变采点Q。"
+        },
+        {
+          "name": {
+            "zh": "D/E sign与输出"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§4.2 Tables1–2",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §4.2 Tables1–2；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§4.2 Tables1–2",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §4.2 Tables1–2；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§4.2 Tables1–2",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §4.2 Tables1–2；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/139.pdf",
+                  "locator": "§4.2 Tables1–2",
+                  "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+                }
+              ],
+              "NR_reason": "已检查 §4.2 Tables1–2；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "完整端到端证据及独立公式NR。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "LeNet-5 average pooling target layer",
+          "precision": "NR",
+          "hardware": "Intel i7;16GB;RTX3060",
+          "target": "single-layer signature",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^32.34",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/139.pdf",
+                "locator": "§4.2 Tables1–2",
+                "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "2^19.39 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/139.pdf",
+                "locator": "§4.2 Tables1–2",
+                "pdf_sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+              }
+            ]
+          },
+          "empirical_metric": "error 2^-17.75",
+          "notes": "≈190.84h；最大2^9.26 speedup含外推基线。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-241",
+      "oracle": "raw real outputs",
+      "target_scope": "max-pool CNN卷积块/reduced全网/partial Full LeNet",
+      "conditions": "RPCP与PSP分开；PSP不泄漏共享bias，每核至少一个RPCP。",
+      "source": {
+        "url": "https://eprint.iacr.org/2026/241.pdf",
+        "locator": "§4–7; §6 Table2; Supplement C.1 Table3 p.49",
+        "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "B/C RPCP/PSP签名核系统"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§4–5",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§4–5",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§4–5",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§4–5",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §4–5；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "RPCP d^(k)变量，PSP l_c变量；作者poly但完整展开NR。"
+        },
+        {
+          "name": {
+            "zh": "D/E bias与定向"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§6.1; §7",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §6.1; §7；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§6.1; §7",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §6.1; §7；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§6.1; §7",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §6.1; §7；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/241.pdf",
+                  "locator": "§6.1; §7",
+                  "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+                }
+              ],
+              "NR_reason": "已检查 §6.1; §7；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "10,000第二层点仅15 RPCP与1548 PSP；稀少RPCP仍瓶颈。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "LeNet convolution block 2572 parameters",
+          "precision": "NR",
+          "hardware": "most experiments RTX5080 16GB",
+          "target": "convolution block",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^27.29",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/241.pdf",
+                "locator": "§6 Table2; Supplement C.1 Table3",
+                "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "2^17.21 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/241.pdf",
+                "locator": "§6 Table2; Supplement C.1 Table3",
+                "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+              }
+            ]
+          },
+          "empirical_metric": "max parameter error 2^-27.31",
+          "notes": "Full LeNet行不能称全部参数恢复。"
+        },
+        {
+          "dimensions": "Reduced LeNet 400-20-10;10772 parameters",
+          "precision": "NR",
+          "hardware": "most experiments RTX5080 16GB",
+          "target": "complete reduced network",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^27.65",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/241.pdf",
+                "locator": "§6 Table2; Supplement C.1 Table3",
+                "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "2^17.38 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/241.pdf",
+                "locator": "§6 Table2; Supplement C.1 Table3",
+                "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+              }
+            ]
+          },
+          "empirical_metric": "max parameter error 2^-27.14",
+          "notes": "Full LeNet行不能称全部参数恢复。"
+        },
+        {
+          "dimensions": "Full LeNet 61706 parameters",
+          "precision": "NR",
+          "hardware": "most experiments RTX5080 16GB",
+          "target": "complete conv block + FC1 93.33% weights",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^27.31",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/241.pdf",
+                "locator": "§6 Table2; Supplement C.1 Table3",
+                "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "2^18.46 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/241.pdf",
+                "locator": "§6 Table2; Supplement C.1 Table3",
+                "pdf_sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": "Full LeNet行不能称全部参数恢复。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-464",
+      "oracle": "raw-output / soft-label finite differences",
+      "target_scope": "max-pool CNN逐层权重与sign",
+      "conditions": "前层正确已知；ERF/CRF定位排不安全CP；CP与存储字节不是Q。",
+      "source": {
+        "url": "https://eprint.iacr.org/2026/464.pdf",
+        "locator": "§3–5; §6 Tables2–8 pp.29–34",
+        "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "A/B/C 感受野定位与核恢复"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "完整Q/T Big-O NR。"
+        },
+        {
+          "name": {
+            "zh": "D/E sign与bias"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/464.pdf",
+                  "locator": "§3–5",
+                  "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+                }
+              ],
+              "NR_reason": "已检查 §3–5；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "Conv2沿用Wiggle；bias需ReLU CP。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "CIFAR small VGG 4 conv layers channels4/8/8/16",
+          "precision": "float64 stored query results",
+          "hardware": "Intel i7-14700F",
+          "target": "逐层；前缀已知",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/464.pdf",
+                "locator": "§6 Table4",
+                "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+              }
+            ],
+            "NR_reason": "已检查 §6 Table4；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/464.pdf",
+                "locator": "§6 Table4",
+                "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+              }
+            ],
+            "NR_reason": "已检查 §6 Table4；未单列该项实验指标。"
+          },
+          "empirical_metric": "Conv1 4/4;Conv2 7/8;Conv3 99.49% weights;Conv4 98.52%",
+          "notes": "Conv1 44CP；Conv3/4 10,000CP；Conv4 sign11/12 discovered；4/16 always-off，非全网100%。"
+        },
+        {
+          "dimensions": "localized CP systems",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "同求解器局部线性系统",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/464.pdf",
+                "locator": "§6 Table6",
+                "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+              }
+            ],
+            "NR_reason": "已检查 §6 Table6；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/464.pdf",
+                "locator": "§6 Table6",
+                "pdf_sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+              }
+            ],
+            "NR_reason": "已检查 §6 Table6；未单列该项实验指标。"
+          },
+          "empirical_metric": "memory reduction75.40%–93.80%;runtime reduction73.73%–93.36%",
+          "notes": "不是总攻击Q/T同百分比降幅。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-902",
+      "oracle": "top-1 hard label",
+      "target_scope": "已知架构平均池化受控ReLU CNN端到端",
+      "conditions": "m_max含channel×空间预算；非发现保证；sign正确候选保留且B_i受控才有poly。",
+      "source": {
+        "url": "https://eprint.iacr.org/2026/902.pdf",
+        "locator": "§IV-C–G Eqs36–41; §V TablesIII–VIII; §VI; AppendixB",
+        "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "A dual acquisition"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(L m_max κ log(1/ε))",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq36",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq36",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq36；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq36",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq36；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq36",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq36；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "原文T_dual实为query count。"
+        },
+        {
+          "name": {
+            "zh": "C SVD signatures"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs37–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eqs37–40；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(min(m,p)²max(m,p)); conditional total O(L_conv C_max p³)",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs37–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs37–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eqs37–40；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs37–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eqs37–40；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "p=C_in k²；总简式需m≈p与良好条件。"
+        },
+        {
+          "name": {
+            "zh": "D voting/candidate verification"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq38",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq38；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq38",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq38；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq38",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq38；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eq38",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eq38；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "O(Σ C_out^(i)n_patches^(i)m_vote+Σ B_i V_i)为混合预算，不填纯Q/FLOPs；未筛选2^|C_low|。"
+        },
+        {
+          "name": {
+            "zh": "E FC least squares"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs39–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eqs39–40；未给该阶段独立可引用界或数值。"
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(N_FC d²) per output; O(Kd³) if N_FC≈d",
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs39–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs39–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eqs39–40；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/902.pdf",
+                  "locator": "§IV Eqs39–40",
+                  "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+                }
+              ],
+              "NR_reason": "已检查 §IV Eqs39–40；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": ""
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "1D MNIST Conv(8-8-4)-FC10",
+          "precision": "NR",
+          "hardware": "RTX4090",
+          "target": "已知架构平均池化受控ReLU CNN端到端",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2,371,020",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/902.pdf",
+                "locator": "§V TablesIII–VIII",
+                "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/902.pdf",
+                "locator": "§V TablesIII–VIII",
+                "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+              }
+            ],
+            "NR_reason": "已检查 §V TablesIII–VIII；未单列该项实验指标。"
+          },
+          "empirical_metric": "21/21 signs;100% test prediction fidelity",
+          "notes": "Dual2,363,020; sign8,000; candidate combinations8/2/4；非全域等价。"
+        },
+        {
+          "dimensions": "2D variants",
+          "precision": "NR",
+          "hardware": "RTX4090",
+          "target": "已知架构平均池化受控ReLU CNN端到端",
+          "experimental_queries": {
+            "status": "reported",
+            "value": ".39M/.76M/1.54M",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/902.pdf",
+                "locator": "§V TablesIII–VIII",
+                "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/902.pdf",
+                "locator": "§V TablesIII–VIII",
+                "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+              }
+            ],
+            "NR_reason": "已检查 §V TablesIII–VIII；未单列该项实验指标。"
+          },
+          "empirical_metric": "100% test prediction fidelity",
+          "notes": ""
+        },
+        {
+          "dimensions": "RGB LeNet(6-16-120)",
+          "precision": "NR",
+          "hardware": "RTX4090",
+          "target": "已知架构平均池化受控ReLU CNN端到端",
+          "experimental_queries": {
+            "status": "derived",
+            "value": "≈4.03M",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/902.pdf",
+                "locator": "§V TablesIII–VIII",
+                "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+              }
+            ],
+            "premises": "作者按实测单位率×8,662可恢复单元缩放估算，非完整计数。",
+            "derivation": "作者报告的估算，保留原文估算性质；不是本索引独立测得。"
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://eprint.iacr.org/2026/902.pdf",
+                "locator": "§V TablesIII–VIII",
+                "pdf_sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+              }
+            ],
+            "NR_reason": "已检查 §V TablesIII–VIII；未单列该项实验指标。"
+          },
+          "empirical_metric": "100% test prediction fidelity",
+          "notes": "作者按实测单位率×8,662可恢复单元缩放估算，非完整计数。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2609.27427",
+      "oracle": "raw-output or hard-label upstream",
+      "target_scope": "CNN architecture from recovered sparse vectors",
+      "conditions": "继承上游满秩、可观察点和签名；不解决任意hard-label稀有事件。",
+      "source": {
+        "url": "https://arxiv.org/pdf/2609.27427v1v1",
+        "locator": "§4; §5–8; §9",
+        "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+      },
+      "detail_document": "docs/comparisons/hard-cnn.zh.md",
+      "stages": [
+        {
+          "name": {
+            "zh": "F geometry architecture"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "constant relative to (k^(L))² kernel parameters; shared subset of upstream queries",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                  "locator": "§4; §9",
+                  "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                  "locator": "§4; §9",
+                  "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9；未给该阶段独立可引用界或数值。"
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                  "locator": "§4; §9",
+                  "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9；未给该阶段独立可引用界或数值。"
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                  "locator": "§4; §9",
+                  "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+                }
+              ],
+              "NR_reason": "已检查 §4; §9；未给该阶段独立可引用界或数值。"
+            }
+          },
+          "notes": "非整网O(1)；没有所有稀有点分布统一常数证明。"
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "two-conv (2+1), raw-output",
+          "precision": "NR",
+          "hardware": "dual Xeon Gold5318Y@2.10GHz;503GB",
+          "target": "total parameter recovery",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^20.48",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                "locator": "§9",
+                "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "27.31 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                "locator": "§9",
+                "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": ""
+        },
+        {
+          "dimensions": "same two-conv (2+1), raw-output",
+          "precision": "NR",
+          "hardware": "dual Xeon Gold5318Y@2.10GHz;503GB",
+          "target": "architecture subset",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "2^17.71",
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                "locator": "§9",
+                "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "reported",
+            "value": "24.08 seconds",
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                "locator": "§9",
+                "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+              }
+            ]
+          },
+          "empirical_metric": null,
+          "notes": "与total不可相加重复计费。"
+        },
+        {
+          "dimensions": "three conv NoPool/AvgPool/MaxPool kernels3/5/3 strides1/1/2",
+          "precision": "NR",
+          "hardware": "NR",
+          "target": "layerwise raw-output geometry",
+          "experimental_queries": {
+            "status": "NR",
+            "value": null,
+            "unit": "oracle_calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                "locator": "§9",
+                "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+              }
+            ],
+            "NR_reason": "已检查 §9；未单列该项实验指标。"
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": "wall_time",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2609.27427v1v1",
+                "locator": "§9",
+                "pdf_sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+              }
+            ],
+            "NR_reason": "已检查 §9；未单列该项实验指标。"
+          },
+          "empirical_metric": null,
+          "notes": "每层700CP；非全黑盒hard-label端到端。"
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    }
+  ]
+}

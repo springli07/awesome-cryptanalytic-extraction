@@ -1,0 +1,79 @@
+[submodule "code/upstream/ftramer/Steal-ML"]
+	path = code/upstream/ftramer/Steal-ML
+	url = https://github.com/ftramer/Steal-ML.git
+
+[submodule "code/upstream/google-research/cryptanalytic-model-extraction"]
+	path = code/upstream/google-research/cryptanalytic-model-extraction
+	url = https://github.com/google-research/cryptanalytic-model-extraction.git
+
+[submodule "code/upstream/Crypto-TII/deti"]
+	path = code/upstream/Crypto-TII/deti
+	url = https://github.com/Crypto-TII/deti.git
+
+[submodule "code/upstream/hannafoe/cryptanalytical-extraction"]
+	path = code/upstream/hannafoe/cryptanalytical-extraction
+	url = https://github.com/hannafoe/cryptanalytical-extraction.git
+
+[submodule "code/upstream/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction"]
+	path = code/upstream/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction
+	url = https://github.com/PsyduckLiu/End-to-End-Deep-Neural-Network-Extraction.git
+
+[submodule "code/upstream/1983321048/Geometric-Critical-Point-Screening"]
+	path = code/upstream/1983321048/Geometric-Critical-Point-Screening
+	url = https://github.com/1983321048/Geometric-Critical-Point-Screening.git
+
+[submodule "code/artifacts/AI-Lab-Y/NN_cryptanalytic_extraction"]
+	path = code/artifacts/AI-Lab-Y/NN_cryptanalytic_extraction
+	url = https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction.git
+
+[submodule "code/upstream/Jchavezsaab/hard-label-dnn-extraction"]
+	path = code/upstream/Jchavezsaab/hard-label-dnn-extraction
+	url = https://github.com/Jchavezsaab/hard-label-dnn-extraction.git
+
+[submodule "code/upstream/deividafonso281/hard-label-contract-output"]
+	path = code/upstream/deividafonso281/hard-label-contract-output
+	url = https://github.com/deividafonso281/hard-label-contract-output.git
+
+[submodule "code/upstream/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling"]
+	path = code/upstream/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling
+	url = https://github.com/PsyduckLiu/Model-Extraction-of-CNNs-with-Max-Pooling.git
+
+[submodule "code/upstream/AI-Lab-Y/Extracting_PReLU_NN"]
+	path = code/upstream/AI-Lab-Y/Extracting_PReLU_NN
+	url = https://github.com/AI-Lab-Y/Extracting_PReLU_NN.git
+
+[submodule "code/upstream/qixiaokang1-stack/cryptanalytic-model-various-functions"]
+	path = code/upstream/qixiaokang1-stack/cryptanalytic-model-various-functions
+	url = https://github.com/qixiaokang1-stack/cryptanalytic-model-various-functions.git
+
+[submodule "code/upstream/mstealercryptocrypto-ops/mod_stealer26"]
+	path = code/upstream/mstealercryptocrypto-ops/mod_stealer26
+	url = https://github.com/mstealercryptocrypto-ops/mod_stealer26.git
+
+[submodule "code/upstream/springli07/GNN_MP_CEA"]
+	path = code/upstream/springli07/GNN_MP_CEA
+	url = https://github.com/springli07/GNN_MP_CEA.git
+
+[submodule "code/upstream/dpaleka/stealing-part-lm-supplementary"]
+	path = code/upstream/dpaleka/stealing-part-lm-supplementary
+	url = https://github.com/dpaleka/stealing-part-lm-supplementary.git
+
+[submodule "code/artifacts/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN"]
+	path = code/artifacts/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN
+	url = https://github.com/bcoqueret/Side_channel_cryptanalytic_extraction_of_DNN.git
+
+[submodule "code/upstream/heavyimage/afch_paper"]
+	path = code/upstream/heavyimage/afch_paper
+	url = https://github.com/heavyimage/afch_paper.git
+
+[submodule "code/upstream/anonymous-123-code/anonymouscode"]
+	path = code/upstream/anonymous-123-code/anonymouscode
+	url = https://github.com/anonymous-123-code/anonymouscode.git
+
+[submodule "code/upstream/flavio-martinelli/expand-and-cluster"]
+	path = code/upstream/flavio-martinelli/expand-and-cluster
+	url = https://github.com/flavio-martinelli/expand-and-cluster.git
+
+[submodule "code/upstream/alexl4123/expand-and-cluster"]
+	path = code/upstream/alexl4123/expand-and-cluster
+	url = https://github.com/alexl4123/expand-and-cluster.git

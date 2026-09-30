@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2026-2127",
+  "title": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Limited Architecture Knowledge Setting",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/CryptoAiLi/DNNExtractionLAK",
+  "repository_id": "CryptoAiLi/DNNExtractionLAK",
+  "status": "placeholder_repository",
+  "pinned_commit": "da4fa69cb63bd6868b786db70af455bec7b65344",
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

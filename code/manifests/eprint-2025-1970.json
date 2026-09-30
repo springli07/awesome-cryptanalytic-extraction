@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2025-1970",
+  "title": "Delving into Cryptanalytic Extraction of PReLU Neural Networks",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/AI-Lab-Y/Extracting_PReLU_NN",
+  "repository_id": "AI-Lab-Y/Extracting_PReLU_NN",
+  "status": "author_linked_implementation",
+  "pinned_commit": "d724ce37dac9a119ec388f241a9341a7650785d7",
+  "collection_path": "code/upstream/AI-Lab-Y/Extracting_PReLU_NN",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

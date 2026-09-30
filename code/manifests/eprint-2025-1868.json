@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2025-1868",
+  "title": "Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/ECSIS-lab/hard-label-cross-layer-extraction",
+  "repository_id": "ECSIS-lab/hard-label-cross-layer-extraction",
+  "status": "unavailable_404",
+  "pinned_commit": null,
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

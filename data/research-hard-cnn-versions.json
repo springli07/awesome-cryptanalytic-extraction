@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "versions": [
+    {
+      "paper_id": "eprint-2024-1403",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2024/1403.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2024-1403_Hard_Label_Cryptanalytic_Extraction_of_Neural_Network_Models.pdf",
+        "pages": 30,
+        "bytes": 617820,
+        "sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2024-1403_Hard_Label_Cryptanalytic_Extraction_of_Neural_Network_Models.pdf",
+        "pages": 30,
+        "bytes": 617820,
+        "sha256": "ef85d32b23c0dc621d8249e0ed7e14f1a39ae11dd66997289379b2fe4d2ac4f8"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2024-1580",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2024/1580.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2024-1580_Polynomial_Time_Cryptanalytic_Extraction_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 48,
+        "bytes": 1817048,
+        "sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2024-1580_Polynomial_Time_Cryptanalytic_Extraction_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 48,
+        "bytes": 1817048,
+        "sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2025-1118",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2025/1118.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2025-1118_Extracting_Some_Layers_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 24,
+        "bytes": 526284,
+        "sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2025-1118_Extracting_Some_Layers_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 24,
+        "bytes": 526284,
+        "sha256": "74fc73b26656671e7016455ff7de0a2d7c674b0586af1c87368940c8b9168231"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2025-1868",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2025/1868.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2025-1868_Is_the_Hard_Label_Cryptanalytic_Model_Extraction_Really_Polynomial.pdf",
+        "pages": 35,
+        "bytes": 2712670,
+        "sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2025-1868_Is_the_Hard_Label_Cryptanalytic_Model_Extraction_Really_Polynomial.pdf",
+        "pages": 35,
+        "bytes": 2712670,
+        "sha256": "4f932596ffdce2bbee20e11ef7991170969b650ca6de0fb31b3c63d6908291a7"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2026-1164",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2026/1164.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2026-1164_Algebraic_Cryptanalytic_Extraction_on_Hard_Label_Neural_Networks.pdf",
+        "pages": 50,
+        "bytes": null,
+        "sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-1164_Algebraic_Cryptanalytic_Extraction_on_Hard_Label_Neural_Networks.pdf",
+        "pages": 47,
+        "bytes": 1144696,
+        "sha256": "0c95c64f994d6ab7ebea85eb77cb5c5f03edb073353192eaf9b6ba90ffea0547"
+      },
+      "changed": true
+    },
+    {
+      "paper_id": "arxiv-2609.18751",
+      "checked": "2026-09-30",
+      "source_url": "https://arxiv.org/pdf/2609.18751",
+      "current_reviewed_pdf": {
+        "filename": "2026-arxiv-2609.18751_Normal_Alignment_Improved_Cryptanalytic_Sign_Recovery_on_Hard_Label_Networks.pdf",
+        "pages": 34,
+        "bytes": 782984,
+        "sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-arxiv-2609.18751_Normal_Alignment_Improved_Cryptanalytic_Sign_Recovery_on_Hard_Label_Networks.pdf",
+        "pages": 34,
+        "bytes": 782984,
+        "sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "arxiv-2609.21941",
+      "checked": "2026-09-30",
+      "source_url": "https://arxiv.org/pdf/2609.21941v1v1",
+      "current_reviewed_pdf": {
+        "filename": "2026-arxiv-2609.21941.pdf",
+        "pages": 41,
+        "bytes": 4901755,
+        "sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-arxiv-2609.21941.pdf",
+        "pages": 41,
+        "bytes": 4901755,
+        "sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2026-139",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2026/139.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2026-139_Cryptanalytic_Extraction_of_Convolutional_Neural_Networks.pdf",
+        "pages": 25,
+        "bytes": 780926,
+        "sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-139_Cryptanalytic_Extraction_of_Convolutional_Neural_Networks.pdf",
+        "pages": 25,
+        "bytes": 780926,
+        "sha256": "8821dcf1019b718cdd53da1594c04b53e1c702c5fbb169c58c11fa7f8de7ac5f"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2026-241",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2026/241.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2026-241_Algebraic_Attack_on_Convolutional_Neural_Network_with_Max_Pooling.pdf",
+        "pages": 59,
+        "bytes": 1068531,
+        "sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-241_Algebraic_Attack_on_Convolutional_Neural_Network_with_Max_Pooling.pdf",
+        "pages": 59,
+        "bytes": 1068531,
+        "sha256": "3cde3403d6973aedd36eb83434746b815e0fb55cc440f64866273027fbef37ea"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2026-464",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2026/464.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2026-464_Model_Extraction_of_Convolutional_Neural_Networks_with_Max_Pooling.pdf",
+        "pages": 42,
+        "bytes": 772746,
+        "sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-464_Model_Extraction_of_Convolutional_Neural_Networks_with_Max_Pooling.pdf",
+        "pages": 42,
+        "bytes": 772746,
+        "sha256": "6128c62c2def3827feb981a9f16105870c0e71a38dc876fd1cf504a766c5dfc5"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "eprint-2026-902",
+      "checked": "2026-09-30",
+      "source_url": "https://eprint.iacr.org/2026/902.pdf",
+      "current_reviewed_pdf": {
+        "filename": "2026-902_End_to_End_Polynomial_Time_Cryptanalytic_Extraction_of_Convolutional_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 24,
+        "bytes": 3873156,
+        "sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-902_End_to_End_Polynomial_Time_Cryptanalytic_Extraction_of_Convolutional_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 24,
+        "bytes": 3873156,
+        "sha256": "d65ddea75a3961dfd3b83e2fa5bdf1e9d3a0a090c17cc09db451e11ce92f778e"
+      },
+      "changed": false
+    },
+    {
+      "paper_id": "arxiv-2609.27427",
+      "checked": "2026-09-30",
+      "source_url": "https://arxiv.org/pdf/2609.27427v1v1",
+      "current_reviewed_pdf": {
+        "filename": "2026-arxiv-2609.27427.pdf",
+        "pages": 31,
+        "bytes": 1909458,
+        "sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+      },
+      "prior_catalog_pdf": {
+        "filename": "2026-arxiv-2609.27427.pdf",
+        "pages": 31,
+        "bytes": 1909458,
+        "sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+      },
+      "changed": false
+    }
+  ]
+}

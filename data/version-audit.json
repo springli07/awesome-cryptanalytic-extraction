@@ -1,0 +1,57 @@
+{
+  "checked": "2026-09-30",
+  "policy": "Prior fingerprints retain their original evidence locators; code audit snapshots are not rewritten as latest.",
+  "changes": [
+    {
+      "paper_id": "eprint-2026-1164",
+      "prior_pdf": {
+        "filename": "2026-1164_Algebraic_Cryptanalytic_Extraction_on_Hard_Label_Neural_Networks.pdf",
+        "pages": 47,
+        "bytes": 1144696,
+        "sha256": "0c95c64f994d6ab7ebea85eb77cb5c5f03edb073353192eaf9b6ba90ffea0547"
+      },
+      "prior_version_history": "2026-06-08: approved 2026-06-04: received",
+      "checked": "2026-09-30",
+      "current_pdf": {
+        "pages": 50,
+        "bytes": 937619,
+        "sha256": "a80f14261bed87930036dedfb95d89a2410db995d0becb930f6a256ba52bc7fe"
+      },
+      "source_url": "https://eprint.iacr.org/2026/1164.pdf?download=1"
+    },
+    {
+      "paper_id": "eprint-2026-168",
+      "prior_pdf": {
+        "filename": "2026-168_Cryptanalytic_Extraction_of_Recurrent_Neural_Network_Models.pdf",
+        "pages": 34,
+        "bytes": 1050687,
+        "sha256": "fc39c1f1ffb4c54c83d247b992e65def6b8885699ee3d74547e5fbc10f1a3c18"
+      },
+      "prior_version_history": "2026-02-04: approved 2026-02-01: received",
+      "checked": "2026-09-30",
+      "current_pdf": {
+        "pages": 34,
+        "bytes": 1143269,
+        "sha256": "b096d4f6425d19254d0fb4e4ef7653e18ebd4761d4cfa6f0a2fd25ed49b748f2"
+      },
+      "source_url": "https://eprint.iacr.org/2026/168.pdf?download=1"
+    },
+    {
+      "paper_id": "arxiv-2609.14379",
+      "prior_pdf": {
+        "filename": "2026-arxiv-2609.14379_Cryptanalytic_Extraction_of_Neural_Networks_Without_Known_Architecture_Assumption.pdf",
+        "pages": 35,
+        "bytes": 557590,
+        "sha256": "4f62618e85427fbfff5dfc00fc635001404204852a7147685397b5d5372ba452"
+      },
+      "prior_version_history": "[v1] Sun, 13 Sep 2026 08:28:34 UTC (250 KB) ",
+      "checked": "2026-09-30",
+      "current_pdf": {
+        "pages": 39,
+        "bytes": 594639,
+        "sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
+      },
+      "source_url": "https://arxiv.org/pdf/2609.14379v2"
+    }
+  ]
+}

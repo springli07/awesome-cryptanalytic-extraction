@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-1910.00744",
+  "title": "Reverse-Engineering Deep ReLU Networks",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://media.icml.cc/Conferences/ICML2020/v119/rolnick20a-supp.zip",
+  "repository_id": null,
+  "status": "publisher_supplement_access_unverified",
+  "pinned_commit": null,
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

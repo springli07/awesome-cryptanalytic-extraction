@@ -6,11 +6,13 @@
 
 **神经网络密码分析提取**专题目录：结构与参数恢复、源码、可行性边界及防御。
 
-[English](README.md) · [九月进展](docs/progress-2026-09.md) · [检索审计](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json)
+[English](README.md) · [九月进展](docs/progress-2026-09.md) · [检索审计](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
 
 **更新于 {{DATE}} · {{COUNT}} 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
 
 ## 近期进展
+
+**来源状态：** ePrint 2026/1025 已于9月19日撤回，保留并标注历史方法。对比覆盖52条记录，分别记录阶段成本、预言机假设及实验范围。
 
 - **9 月 30 日更新：** 新增[有限架构知识](https://eprint.iacr.org/2026/2127)、[端到端硬标签提取](https://arxiv.org/abs/2609.21941)和[未知架构 CNN](https://arxiv.org/abs/2609.27427)三篇预印本。已有 arXiv:2609.14379 仅计一次；ePrint 2026/2161 作为别名，不新增计数。[来源审计与边界](docs/update-2026-09-30.md)。
 
@@ -62,6 +64,8 @@
 ```console
 python scripts/render_catalog.py
 python scripts/render_catalog.py --check
+python scripts/render_comparisons.py
+python scripts/validate_comparisons.py --strict
 ```
 
 明确标注预印本及课程报告，优先使用一手来源和作者代码。不将第三方实现或受版权保护的 PDF 直接打包到本仓库。本地 `ref` 可使用结构化目录中的文件名、官方 PDF 地址和哈希。论文宣称将开源，不代表已经公开可用。

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-2312.04675",
+  "title": "Reverse Engineering Deep ReLU Networks An Optimization-based Algorithm",
+  "audit_ref": "../source-audit.json",
+  "source_url": null,
+  "repository_id": null,
+  "status": "not_found",
+  "pinned_commit": null,
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

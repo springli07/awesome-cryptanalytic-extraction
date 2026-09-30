@@ -1,0 +1,3837 @@
+{
+  "schema_version": 1,
+  "checked": "2026-09-30",
+  "group": "context",
+  "document": "docs/comparisons/context.zh.md",
+  "papers": [
+    {
+      "paper_id": "eprint-2026-848",
+      "oracle": "finite-ring wraparound; raw outputs or top-1 probability",
+      "target_scope": "layerwise signatures and signs",
+      "assumptions": "observable wraparound; local nondegeneracy; previous layers perfect; cleartext MPC simulation M=2^64,S=2^6",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1",
+      "stages": [
+        {
+          "name": "wraparound discovery / local normal / aggregation",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Alg.5; §4; Table5 pp.24–25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "Alg.5; §4; Table5 pp.24–25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Alg.5; §4; Table5 pp.24–25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "Alg.5; §4; Table5 pp.24–25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Alg.5; §4; Table5 pp.24–25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "Alg.5; §4; Table5 pp.24–25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Alg.5; §4; Table5 pp.24–25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "Alg.5; §4; Table5 pp.24–25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            }
+          },
+          "dimensions": "3072-256×4-10 / 100-200×4-10",
+          "precision": "fixed-point; ReLU ~14 bits, smooth activations ~7–10 bits",
+          "hardware": null,
+          "target": "layerwise signatures and signs",
+          "notes": "1 point/neuron first layer, ~9–28 deeper. Point counts are not oracle calls. Expanded LeakyReLU only first two layers; sigmoid/tanh no later wraparound."
+        },
+        {
+          "name": "naive multi-point combination (not implemented)",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §6.1 p.25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§6.1 p.25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "O(N^m)",
+              "unit": "operations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§6.1 p.25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §6.1 p.25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§6.1 p.25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §6.1 p.25; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§6.1 p.25",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures and signs",
+          "notes": "Naive alternative not experimentally evaluated; not total pipeline complexity."
+        },
+        {
+          "name": "pseudoinverse direction and sign voting",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Theorems5–7; Table7 p.27; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§5 Theorems5–7; Table7 p.27",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Theorems5–7; Table7 p.27; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§5 Theorems5–7; Table7 p.27",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Theorems5–7; Table7 p.27; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§5 Theorems5–7; Table7 p.27",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Theorems5–7; Table7 p.27; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/848.pdf",
+                  "locator": "§5 Theorems5–7; Table7 p.27",
+                  "pdf_sha256": "9aba9810291a1478f03993fea74caf163dd1cdafb606635e8e0dbe3042a0d6d1"
+                }
+              ]
+            }
+          },
+          "dimensions": "1024 hidden neurons",
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures and signs",
+          "notes": "Mean wraparound point counts ReLU24.82→6.61, LeakyReLU7.25→5.09, nonlinear14.58→5.22; 100% signs in this benchmark. Independent Gaussian / wide-limit stability assumptions; no full Q/T bound."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2503.19142",
+      "oracle": "SGX-Step instruction-granularity page traces",
+      "target_scope": "first-layer weights/biases; deeper unsigned sets",
+      "assumptions": "controllable inputs; input-dependent activation branches; physical trace capabilities",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa",
+      "stages": [
+        {
+          "name": "input-center calibration",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "C=(P−1)D",
+              "unit": "trace-bearing inference calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A p.9",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A p.9",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A p.9",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A p.9",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "first-layer weights/biases; deeper unsigned sets",
+          "notes": "P unknowns per neuron; D exponential calibration increments; separate from Q=PNS."
+        },
+        {
+          "name": "activation threshold bisection",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "Q=P·N·S",
+              "unit": "trace-bearing inference calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§IV-C p.7; §V-A pp.9–10",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §IV-C p.7; §V-A pp.9–10; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§IV-C p.7; §V-A pp.9–10",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §IV-C p.7; §V-A pp.9–10; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§IV-C p.7; §V-A pp.9–10",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "~10 seconds/input trace",
+              "unit": "seconds per input trace",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§IV-C p.7; §V-A pp.9–10",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            }
+          },
+          "dimensions": "insurance first layer 1200 parameters",
+          "precision": "55 bisection steps ≥3 decimal digits; ~20 steps mean error <1%",
+          "hardware": "SGX-Step setup",
+          "target": "first-layer weights/biases; deeper unsigned sets",
+          "notes": "P unknowns/neuron,N neurons,S bisection depth; excludes general physical failure costs. MNIST100480 parameters /1180765 calls is extrapolation, not completed recovery."
+        },
+        {
+          "name": "linear solve / deeper convergence sets",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A–B pp.9–11",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A–B pp.9–11",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A–B pp.9–11",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2503.19142",
+                  "locator": "§V-A–B pp.9–11",
+                  "pdf_sha256": "127dbe082ac0ca3a0e9549b254a4c88544ceebcb886a2b8a41abf23a8aa3ddaa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "first-layer weights/biases; deeper unsigned sets",
+          "notes": "Deeper layers not fully solved; no general end-to-end exact recovery theorem."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2024-1870",
+      "oracle": "top-1 plus neuron-state EM side channel",
+      "target_scope": "layerwise signatures/signs and final classifier",
+      "assumptions": "perfect previous layers; full-rank equations; main extraction assumes perfect states from one trace",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa",
+      "stages": [
+        {
+          "name": "critical point bisection",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(log₂(L₀/Δ))",
+              "unit": "state-oracle calls per critical point",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.1 p.13",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.1 p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.1 p.13",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.1 p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.1 p.13",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.1 p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.1 p.13",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": null
+        },
+        {
+          "name": "signature least squares / alignment",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.2 pp.14–17; §4.3; §5.2 p.21; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.2 pp.14–17; §4.3; §5.2 p.21",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.2 pp.14–17; §4.3; §5.2 p.21; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.2 pp.14–17; §4.3; §5.2 p.21",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.2 pp.14–17; §4.3; §5.2 p.21; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.2 pp.14–17; §4.3; §5.2 p.21",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.2 pp.14–17; §4.3; §5.2 p.21; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.2 pp.14–17; §4.3; §5.2 p.21",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": "Rare states/input-off increase discovery cost; state accuracy85.9% single trace,7/13 voting >99%/>99.9%. Actual physical trace budget needs repetitions."
+        },
+        {
+          "name": "sign alignment using cached traces",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional",
+              "unit": "state-oracle calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.3; §5.2",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.3; §5.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.3; §5.2",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.3; §5.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.3; §5.2",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.3; §5.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "§4.3; §5.2",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": null
+        },
+        {
+          "name": "reported model extraction MLP-a",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^17.12",
+              "unit": "perfect neuron-state oracle calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": "MLP-a",
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": "99.5% sampled label agreement; final-layer errors exceed hidden-layer errors; no all-parameter precision guarantee."
+        },
+        {
+          "name": "reported model extraction MLP-b",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^26.2",
+              "unit": "perfect neuron-state oracle calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": "MLP-b",
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": "97.2% sampled label agreement; final-layer errors exceed hidden-layer errors; no all-parameter precision guarantee."
+        },
+        {
+          "name": "reported model extraction MLP-c 1.72M parameters",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^26",
+              "unit": "perfect neuron-state oracle calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": "MLP-c 1.72M parameters",
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": "93.2% sampled label agreement; final-layer errors exceed hidden-layer errors; no all-parameter precision guarantee."
+        },
+        {
+          "name": "reported model extraction truncated MobileNetv1 5234 parameters",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "2^18.6",
+              "unit": "perfect neuron-state oracle calls",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table3 p.23; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2024/1870.pdf",
+                  "locator": "Table3 p.23",
+                  "pdf_sha256": "6864a3e9250cee35b85db003e52545fa9deedc8536b048b702a62c8ff12ef2aa"
+                }
+              ]
+            }
+          },
+          "dimensions": "truncated MobileNetv1 5234 parameters",
+          "precision": null,
+          "hardware": null,
+          "target": "layerwise signatures/signs and final classifier",
+          "notes": "88.4% sampled label agreement; final-layer errors exceed hidden-layer errors; no all-parameter precision guarantee."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2002.11021",
+      "oracle": "targeted sign-bit faults plus normal/fault outputs",
+      "target_scope": "unknown last layer with known frozen feature extractor",
+      "assumptions": "fault localization; selected features nonzero; physical retries/search excluded",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c",
+      "stages": [
+        {
+          "name": "bias algebraic recovery",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "m faults; 2m network executions",
+              "unit": "faults and network executions",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem1 p.5; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.5; Corollary1–2 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem1 p.5; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.5; Corollary1–2 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem1 p.5; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.5; Corollary1–2 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem1 p.5; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            }
+          },
+          "dimensions": "m biases",
+          "precision": "Keras float64 experiments ~10^-13 error",
+          "hardware": null,
+          "target": "unknown last layer with known frozen feature extractor",
+          "notes": null
+        },
+        {
+          "name": "weight algebraic recovery",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "nm faults; 2nm network executions",
+              "unit": "faults and network executions",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem2; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem2; Corollary1–2 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem2; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem2; Corollary1–2 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem2; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem2; Corollary1–2 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "Theorem2; Corollary1–2 p.6",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            }
+          },
+          "dimensions": "n×m weights",
+          "precision": "Keras float64 experiments ~10^-13 error",
+          "hardware": null,
+          "target": "unknown last layer with known frozen feature extractor",
+          "notes": null
+        },
+        {
+          "name": "nonzero input search / physical fault localization",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §IV–V; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "§IV–V",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §IV–V; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "§IV–V",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §IV–V; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "§IV–V",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §IV–V; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2002.11021",
+                  "locator": "§IV–V",
+                  "pdf_sha256": "b4da32e135b1e19114f48c81797cc8bb24bd17738f317257ca02d6d8d02fa04c"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "unknown last layer with known frozen feature extractor",
+          "notes": "Not included in algebraic execution counts."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-1810.09076",
+      "oracle": "embedded power/EM traces",
+      "target_scope": "architecture, activation, floating-point weights",
+      "assumptions": "candidate range/precision and hardware-dependent leakage",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba",
+      "stages": [
+        {
+          "name": "timing structure / correlation weight search / layer propagation",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §III; §V pp.5–12; §VII p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1810.09076",
+                  "locator": "§III; §V pp.5–12; §VII p.13",
+                  "pdf_sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §III; §V pp.5–12; §VII p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1810.09076",
+                  "locator": "§III; §V pp.5–12; §VII p.13",
+                  "pdf_sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §III; §V pp.5–12; §VII p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1810.09076",
+                  "locator": "§III; §V pp.5–12; §VII p.13",
+                  "pdf_sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §III; §V pp.5–12; §VII p.13; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1810.09076",
+                  "locator": "§III; §V pp.5–12; §VII p.13",
+                  "pdf_sha256": "5912cf57bd630325b9af898b680450de6c69b2e5ac43aa2f81f8242bd7fc9cba"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "architecture, activation, floating-point weights",
+          "notes": "p.8 example1000 traces/group reused across weights. §VII implementation scaling linear in size and ~20s additional measurement discussion are not universal full-model runtime. Single-trace input recovery is separate."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "eprint-2026-1943",
+      "oracle": "finite-precision numeric oracle",
+      "target_scope": "local error analysis; not new end-to-end extraction",
+      "assumptions": "single switch; accurate prefix/recovery matrices; conditioning and downstream sensitivity",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa",
+      "stages": [
+        {
+          "name": "local four-evaluation directional difference",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "4 evaluations/direction; 4m evaluation terms for m directions",
+              "unit": "oracle evaluations",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1 pp.14–15",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 pp.14–15; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1 pp.14–15",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 pp.14–15; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1 pp.14–15",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 pp.14–15; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1 pp.14–15",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "local error analysis; not new end-to-end extraction",
+          "notes": "Reuse separate; not critical point search/full attack. Relative error ≤ S_Q μ_R κ₂(M̃) u_O/h; μ_R=1/|cᵣη|."
+        },
+        {
+          "name": "finite precision evaluation",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 pp.20–24; §5.1 Proposition3 p.26; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "§4 pp.20–24; §5.1 Proposition3 p.26",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 pp.20–24; §5.1 Proposition3 p.26; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "§4 pp.20–24; §5.1 Proposition3 p.26",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 pp.20–24; §5.1 Proposition3 p.26; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "§4 pp.20–24; §5.1 Proposition3 p.26",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 pp.20–24; §5.1 Proposition3 p.26; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "§4 pp.20–24; §5.1 Proposition3 p.26",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": "float32/float64",
+          "hardware": null,
+          "target": "local error analysis; not new end-to-end extraction",
+          "notes": "κ₂=√((1+|cosθ|)/(1−|cosθ|)); no universal bit threshold; larger h trades rounding vs multiple crossings."
+        },
+        {
+          "name": "new sign/output-layer extraction",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1; §4–5",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1; §4–5",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1; §4–5",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://eprint.iacr.org/2026/1943.pdf",
+                  "locator": "Theorem1; §4–5",
+                  "pdf_sha256": "218e87337001ee029343e2395dc9066195460bd69269e9da9fd344dd873a36fa"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "local error analysis; not new end-to-end extraction",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2509.16546",
+      "oracle": "training defense plus existing extraction evaluator",
+      "target_scope": "neuron similarity regularization; measured attack resistance",
+      "assumptions": "geometric sampling model; secure operationally means attack failed within48h, not universal safety",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9",
+      "stages": [
+        {
+          "name": "regularized training / tuning",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2 Theorem1 p.5; §3.3 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3.2 Theorem1 p.5; §3.3 p.7",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2 Theorem1 p.5; §3.3 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3.2 Theorem1 p.5; §3.3 p.7",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2 Theorem1 p.5; §3.3 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3.2 Theorem1 p.5; §3.3 p.7",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2 Theorem1 p.5; §3.3 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3.2 Theorem1 p.5; §3.3 p.7",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "neuron similarity regularization; measured attack resistance",
+          "notes": "Measured inference overhead0; training cost independent and NR; selected configurations accuracy change<1%."
+        },
+        {
+          "name": "baseline attack evaluation",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.8; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "Table1 p.8",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.8; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "Table1 p.8",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "5.65×10^6",
+              "unit": "numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "Table1 p.8",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "signature 1.12×10^4 s; sign80.37 s",
+              "unit": "seconds",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "Table1 p.8",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ]
+            }
+          },
+          "dimensions": "MNIST784-16×8-1(s2)",
+          "precision": null,
+          "hardware": null,
+          "target": "neuron similarity regularization; measured attack resistance",
+          "notes": "4 extraction seeds; accuracy drop0.92 percentage points for associated defense;48h cutoff is not proof."
+        },
+        {
+          "name": "new critical-point/signature/sign extraction algorithm",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3; Table1",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3; Table1",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3; Table1",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2509.16546",
+                  "locator": "§3; Table1",
+                  "pdf_sha256": "93ea74db23b07de5d76bcbe6c8d1c6bb5c53a43ec45d7829b89ec1cb34f8eea9"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "neuron similarity regularization; measured attack resistance",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "mit-2026-rounding",
+      "oracle": "known-spacing rounded numeric outputs",
+      "target_scope": "useful approximate extraction of small ReLU models",
+      "assumptions": "course report; relative loss<0.5 on20000 held-out Gaussian probes",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4",
+      "stages": [
+        {
+          "name": "quantization crossing / derivatives / clustering / final least squares",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 Alg.1 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4 Alg.1 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 Alg.1 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4 Alg.1 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 Alg.1 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4 Alg.1 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4 Alg.1 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4 Alg.1 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "No independent stage bounds."
+        },
+        {
+          "name": "exhaustive / meet-in-middle signs",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.3 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4.3 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "exponential sign search (no explicit exponent given)",
+              "unit": "operations",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4.3 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.3 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4.3 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §4.3 pp.5–7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "§4.3 pp.5–7",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": null
+        },
+        {
+          "name": "single-seed rounded model N=32",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "7.7M",
+              "unit": "rounded numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": "80-40-1",
+          "precision": "rounding N=32",
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "Relative output error 0.12; query growth does not imply improvement."
+        },
+        {
+          "name": "single-seed rounded model N=20",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "9.0M",
+              "unit": "rounded numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": "80-40-1",
+          "precision": "rounding N=20",
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "Relative output error 0.11; query growth does not imply improvement."
+        },
+        {
+          "name": "single-seed rounded model N=18",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "12.2M",
+              "unit": "rounded numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": "80-40-1",
+          "precision": "rounding N=18",
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "Relative output error 0.35; query growth does not imply improvement."
+        },
+        {
+          "name": "single-seed rounded model N=16",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "31.5M",
+              "unit": "rounded numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": "80-40-1",
+          "precision": "rounding N=16",
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "Relative output error 0.68; query growth does not imply improvement."
+        },
+        {
+          "name": "single-seed rounded model N=8",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "47.8M",
+              "unit": "rounded numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": "80-40-1",
+          "precision": "rounding N=8",
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "Relative output error 0.74; query growth does not imply improvement."
+        },
+        {
+          "name": "single-seed rounded model N=4",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "46.1M",
+              "unit": "rounded numeric oracle calls",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table2 p.9; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf",
+                  "locator": "Table2 p.9",
+                  "pdf_sha256": "71c2e278e5b0a58509c44d1a3d63c29e85940cdc5a8ea791dd3a7f62889d65f4"
+                }
+              ]
+            }
+          },
+          "dimensions": "80-40-1",
+          "precision": "rounding N=4",
+          "hardware": null,
+          "target": "useful approximate extraction of small ReLU models",
+          "notes": "Relative output error FAIL; query growth does not imply improvement."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-1807.05185",
+      "oracle": "function plus input gradient; alternative membership simulation",
+      "target_scope": "bias-free shallow ReLU equivalent function",
+      "assumptions": "h≤d; independent weight rows; probability≥1−δ; failure reported",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd",
+      "stages": [
+        {
+          "name": "gradient jumps / signs linear system: total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(h log(h/δ))",
+              "unit": "function-and-gradient oracle calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Theorem1 p.3; §3 pp.4–5",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.3; §3 pp.4–5; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Theorem1 p.3; §3 pp.4–5",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.3; §3 pp.4–5; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Theorem1 p.3; §3 pp.4–5",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.3; §3 pp.4–5; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Theorem1 p.3; §3 pp.4–5",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "bias-free shallow ReLU equivalent function",
+          "notes": "Alg.1a random line bisection,Alg.1b rank-h matrix/2h system; not arbitrary deep theorem."
+        },
+        {
+          "name": "gradient simulated via values: total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(dh log(h/δ))",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Appendix C",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Appendix C; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Appendix C",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Appendix C; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Appendix C",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Appendix C; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/1807.05185",
+                  "locator": "Appendix C",
+                  "pdf_sha256": "00f7ed79f1fc1bc747388969c08094a84a361f4111b277a20243f49e7c4ef1dd"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "bias-free shallow ReLU equivalent function",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2105.09673",
+      "oracle": "exact real membership queries",
+      "target_scope": "depth2/depth3 equivalent function including possible affine term",
+      "assumptions": "δ-regular; depth3 d1≤d; nonzero relevant top derivatives; real arithmetic",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b",
+      "stages": [
+        {
+          "name": "single critical point",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(log(1/δ))",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": null
+        },
+        {
+          "name": "local affine",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "d+1",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": null
+        },
+        {
+          "name": "hyperplane",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(d)",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": null
+        },
+        {
+          "name": "convexity / critical test",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(1)",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3.2; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§3.2",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": null
+        },
+        {
+          "name": "depth2 total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(d₁log(1/δ)+d₁d)",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "T=O((d₁log(1/δ)+d₁d)C_Q+d²d₁)",
+              "unit": "mixed oracle time + local arithmetic",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §2 Theorems1–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §2 Theorems1–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": "C_Q oracle latency; mixed T kept distinct from pure operation count."
+        },
+        {
+          "name": "positive-orthant restriction total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(dd₁log(1/δ)+d₁d)",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "T includes d²d₁² plus oracle time",
+              "unit": "mixed oracle time + local arithmetic",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §2 Theorems1–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §2 Theorems1–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": null
+        },
+        {
+          "name": "depth3 total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "poly(d,d₁,d₂,log(1/δ))",
+              "unit": "membership calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3; §3.5",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "poly(d,d₁,d₂,log(1/δ)) time",
+              "unit": "conditional real-arithmetic time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3; §3.5",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §2 Theorems1–3; §3.5; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3; §3.5",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §2 Theorems1–3; §3.5; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2105.09673",
+                  "locator": "§2 Theorems1–3; §3.5",
+                  "pdf_sha256": "9dc8aca93a50168af5c3898b7c13645b048d89e18198c39b9a597b6ac94aa80b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "depth2/depth3 equivalent function including possible affine term",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2211.04589",
+      "oracle": "function values / finite differences",
+      "target_scope": "known-width shallow parameters",
+      "assumptions": "sphere-random weights; bounded bias; M1–M3 learnability; m log²m=O(D²)",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b",
+      "stages": [
+        {
+          "name": "finite-difference Hessian",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "derived",
+              "value": "O(Nh D²)",
+              "unit": "function calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "G2 p.5; Alg.1 p.6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ],
+              "premises": "Derived composition: Nh Hessians and O(D^n) order-n derivative primitive, n=2; not new theorem."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed G2 p.5; Alg.1 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "G2 p.5; Alg.1 p.6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed G2 p.5; Alg.1 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "G2 p.5; Alg.1 p.6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed G2 p.5; Alg.1 p.6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "G2 p.5; Alg.1 p.6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "known-width shallow parameters",
+          "notes": "Derived composition: Nh Hessians and O(D^n) order-n derivative primitive, n=2; not new theorem."
+        },
+        {
+          "name": "direction/sign/bias initialization and refinement: total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "O(Dm²log²m)",
+              "unit": "function calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "Theorem1 p.2; Theorem2 pp.5–6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "polynomial only in m=O(D) regime (no explicit exponent)",
+              "unit": "operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "Theorem1 p.2; Theorem2 pp.5–6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.2; Theorem2 pp.5–6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "Theorem1 p.2; Theorem2 pp.5–6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1 p.2; Theorem2 pp.5–6; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "Theorem1 p.2; Theorem2 pp.5–6",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "known-width shallow parameters",
+          "notes": "Wider D<m<D² global convergence is not uniform efficient polynomial runtime; numerical/α conditioning and propagated direction errors retained."
+        },
+        {
+          "name": "random tanh empirical phases",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 pp.10–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "§5 pp.10–11",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 pp.10–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "§5 pp.10–11",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 pp.10–11; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "§5 pp.10–11",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "Hessian+weights max112s; bias max180s; each total<5min",
+              "unit": "seconds / minutes",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2211.04589",
+                  "locator": "§5 pp.10–11",
+                  "pdf_sha256": "03a30b2fb844ff723cc24b8d6ebf54cb3a513e773dba71fe5faf729f33690e3b"
+                }
+              ]
+            }
+          },
+          "dimensions": "D50,m1000",
+          "precision": null,
+          "hardware": "Tesla P100",
+          "target": "random tanh shallow parameters",
+          "notes": "Reported maxima/total bound, not sum of maxima for a single run."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2304.12794",
+      "oracle": "numeric input/output / teacher logits",
+      "target_scope": "parameter recovery under activation symmetries",
+      "assumptions": "overparameterized students; population identifiability ≠ finite sample optimization guarantee",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f",
+      "stages": [
+        {
+          "name": "expansion selection / student training / layer freeze / fine-tune",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Fig.3 p.5; Appendix A.6.2–3 p.17; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3 p.17",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Fig.3 p.5; Appendix A.6.2–3 p.17; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3 p.17",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Fig.3 p.5; Appendix A.6.2–3 p.17; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3 p.17",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "reported",
+              "value": "synthetic budget3h gradient flow +6–12h BFGS; up to60min fine-tune",
+              "unit": "protocol budget hours/minutes",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3 p.17",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": "V10032G",
+          "target": "parameter recovery under activation symmetries",
+          "notes": "Not actual per-model elapsed time. Applied budgets25k epochs,10k per layer,15k deep fine-tune;150 synthetic teachers,ρ4 succeeded118; application logits RMSE~10^-4."
+        },
+        {
+          "name": "cluster cached student vectors",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional",
+              "unit": "teacher calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Fig.3 p.5; Appendix A.6.2–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Fig.3 p.5; Appendix A.6.2–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §5 Fig.3 p.5; Appendix A.6.2–3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2304.12794",
+                  "locator": "§5 Fig.3 p.5; Appendix A.6.2–3",
+                  "pdf_sha256": "ff7a888a5b2774b6d7aa77097ab28400c48b579ae7e0bd3f3b9655b6e387b78f"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "parameter recovery under activation symmetries",
+          "notes": "Reuses dataset; complete local operation bound NR."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2312.04675",
+      "oracle": "numeric input/output samples",
+      "target_scope": "exploratory local hyperplane optimization / architecture conjecture",
+      "assumptions": "§5 main conjecture; detailed experiments deferred; higher-order convexity unresolved",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b",
+      "stages": [
+        {
+          "name": "sampling / local functions / weight optimization / structure",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3–5; §5 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5; §5 p.7",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3–5; §5 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5; §5 p.7",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3–5; §5 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5; §5 p.7",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed §3–5; §5 p.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5; §5 p.7",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "exploratory local hyperplane optimization / architecture conjecture",
+          "notes": "All Q/T and full runtime/model size/success statistics NR; convexity alone does not prove unique minimum."
+        },
+        {
+          "name": "independent sign recovery",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2312.04675",
+                  "locator": "§3–5",
+                  "pdf_sha256": "560f27fc825a389ff88b55239a52ade72454dd92e336294a966f55c54843c85b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "exploratory local hyperplane optimization / architecture conjecture",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2402.04084",
+      "oracle": "independent uniform {±1}^{k×d} samples plus real layer outputs",
+      "target_scope": "attention/output composite matrices with distributional squared-error guarantee",
+      "assumptions": "m heads; §4 nondegeneracy; fixed m polynomial in k,d; no unique Q/K/V factor recovery",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064",
+      "stages": [
+        {
+          "name": "attention learning total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "N=(kd)^{Θ(m)}+poly(m,k,d)√log(1/δ)",
+              "unit": "random samples",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "Theorem1.2; §2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "T=(kd)^{O(m³)}log(1/δ)",
+              "unit": "algorithm time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "Theorem1.2; §2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1.2; §2; §5–10; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "Theorem1.2; §2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1.2; §2; §5–10; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "Theorem1.2; §2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "attention/output composite matrices with distributional squared-error guarantee",
+          "notes": "Mean Frobenius squared error≤(kd)^−Ω(m); no phase allocation. Theorem1.3/§11 lower-bound construction has different nondegeneracy conditions."
+        },
+        {
+          "name": "ReLU critical/signature/sign/last-linear stages",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "§2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "§2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "§2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2402.04084",
+                  "locator": "§2; §5–10",
+                  "pdf_sha256": "effb88320b0ec766311a3a3dd7995decbebd2ded8ff645cdd2a66ae89e3f5064"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "attention/output composite matrices with distributional squared-error guarantee",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2411.07536",
+      "oracle": "conditional random continuation samples at arbitrary history",
+      "target_scope": "rank-S sequence distribution TV approximation",
+      "assumptions": "alphabet O,length T,TV≤η with probability≥1−η; not Transformer weights",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453",
+      "stages": [
+        {
+          "name": "conditional sampling / bases / KL projection: total",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "poly(S,O,T,1/η)",
+              "unit": "conditional sampling queries",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Definition1.2; Theorem1.3 pp.3–4; §3",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "poly(S,O,T,1/η)",
+              "unit": "algorithm time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Definition1.2; Theorem1.3 pp.3–4; §3",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Definition1.2; Theorem1.3 pp.3–4; §3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Definition1.2; Theorem1.3 pp.3–4; §3",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Definition1.2; Theorem1.3 pp.3–4; §3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Definition1.2; Theorem1.3 pp.3–4; §3",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "rank-S sequence distribution TV approximation",
+          "notes": null
+        },
+        {
+          "name": "representation primitive",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "poly(S,O,T,1/γ)",
+              "unit": "conditional sampling queries",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Lemma3.7",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "poly(S,O,T,1/γ)",
+              "unit": "algorithm time",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Lemma3.7",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Lemma3.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Lemma3.7",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Lemma3.7; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Lemma3.7",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "rank-S sequence distribution TV approximation",
+          "notes": null
+        },
+        {
+          "name": "generation after learned description",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional",
+              "unit": "original-model calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Theorem1.3 pp.3–4",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "reported",
+              "value": "poly(S,O,T,log(1/η))",
+              "unit": "time per generated sample",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Theorem1.3 pp.3–4",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1.3 pp.3–4; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Theorem1.3 pp.3–4",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Theorem1.3 pp.3–4; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "Theorem1.3 pp.3–4",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ]
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "rank-S sequence distribution TV approximation",
+          "notes": null
+        },
+        {
+          "name": "ReLU signature/sign/output-layer recovery",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "§3 and subsequent proof",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "§3 and subsequent proof",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "§3 and subsequent proof",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2411.07536",
+                  "locator": "§3 and subsequent proof",
+                  "pdf_sha256": "f6178620d5d86f983258ad4abcdb0a287159e9acd6af9fdcc0c84fb2db8a7453"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "rank-S sequence distribution TV approximation",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2511.20312",
+      "oracle": "teacher numeric responses to augmented input",
+      "target_scope": "training/Expand-and-Cluster recovery of512-hidden teacher",
+      "assumptions": "softplus(x)+sigmoid(4x); empirical only;1024 hidden stopped due RAM, not impossibility",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e",
+      "stages": [
+        {
+          "name": "augmentation collection: original MNIST failed",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "60000",
+              "unit": "teacher numeric calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            }
+          },
+          "dimensions": "512 hidden,~407k parameters",
+          "precision": null,
+          "hardware": null,
+          "target": "training/Expand-and-Cluster recovery of512-hidden teacher",
+          "notes": "original MNIST failed"
+        },
+        {
+          "name": "augmentation collection: appropriate noise: mean/max input-vector cosine distances2.53×10^-8/3.34×10^-7",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "180000",
+              "unit": "teacher numeric calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            }
+          },
+          "dimensions": "512 hidden,~407k parameters",
+          "precision": null,
+          "hardware": null,
+          "target": "training/Expand-and-Cluster recovery of512-hidden teacher",
+          "notes": "appropriate noise: mean/max input-vector cosine distances2.53×10^-8/3.34×10^-7"
+        },
+        {
+          "name": "augmentation collection: rotation/flip/wrong-amplitude noise failed",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "180000",
+              "unit": "teacher numeric calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Table1 p.3; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Table1 p.3",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            }
+          },
+          "dimensions": "512 hidden,~407k parameters",
+          "precision": null,
+          "hardware": null,
+          "target": "training/Expand-and-Cluster recovery of512-hidden teacher",
+          "notes": "rotation/flip/wrong-amplitude noise failed"
+        },
+        {
+          "name": "cached student training / clustering / fine-tune",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "0 additional",
+              "unit": "teacher calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Appendix p.8",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Appendix p.8; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Appendix p.8",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Appendix p.8; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Appendix p.8",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Reviewed Appendix p.8; no independent bound/value reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2511.20312",
+                  "locator": "Appendix p.8",
+                  "pdf_sha256": "5b388bf4bc4dcb99b13b2d7e22563f0a8a8f6a4b14c5a6a8848964d498dc142e"
+                }
+              ]
+            }
+          },
+          "dimensions": "N30 students",
+          "precision": null,
+          "hardware": "V100/A100;512GB RAM limit",
+          "target": "training/Expand-and-Cluster recovery of512-hidden teacher",
+          "notes": "Local cost remains; steps=epochs×dataset/batch; unified wall-clock NR."
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2508.15031",
+      "oracle": "survey; no original attack oracle",
+      "target_scope": "terminology / literature navigation",
+      "assumptions": "Shared reading repository is not an executable attack",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b",
+      "stages": [
+        {
+          "name": "original extraction / theoretical and empirical performance",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2508.15031",
+                  "locator": "survey scope and referenced attacks/defenses",
+                  "pdf_sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2508.15031",
+                  "locator": "survey scope and referenced attacks/defenses",
+                  "pdf_sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2508.15031",
+                  "locator": "survey scope and referenced attacks/defenses",
+                  "pdf_sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2508.15031",
+                  "locator": "survey scope and referenced attacks/defenses",
+                  "pdf_sha256": "b26663e14103465e6d9d0ce53acb0c3fbab28ef7be9b76600676c9b48e98a75b"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "terminology / literature navigation",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2506.22521",
+      "oracle": "survey; no original attack oracle",
+      "target_scope": "terminology / literature navigation",
+      "assumptions": "Shared reading repository is not an executable attack",
+      "source_document": "docs/comparisons/context.zh.md",
+      "pdf_sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec",
+      "stages": [
+        {
+          "name": "original extraction / theoretical and empirical performance",
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.22521",
+                  "locator": "§4 attacks; §5 defenses; §6 evaluation",
+                  "pdf_sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "arithmetic": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.22521",
+                  "locator": "§4 attacks; §5 defenses; §6 evaluation",
+                  "pdf_sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "experimental_queries": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.22521",
+                  "locator": "§4 attacks; §5 defenses; §6 evaluation",
+                  "pdf_sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            },
+            "runtime": {
+              "status": "NA",
+              "value": null,
+              "unit": null,
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2506.22521",
+                  "locator": "§4 attacks; §5 defenses; §6 evaluation",
+                  "pdf_sha256": "9deb5e321e741bdb653904175932a9b446a8105618050c3e0f726e89e8b6aeec"
+                }
+              ],
+              "reason": "This work does not introduce this extraction stage."
+            }
+          },
+          "dimensions": null,
+          "precision": null,
+          "hardware": null,
+          "target": "terminology / literature navigation",
+          "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    }
+  ],
+  "notes": [
+    "No upstream code executed.",
+    "NR checked relevant sections but independent value not reported; NA absent algorithm stage.",
+    "Units distinguish traces, faults, conditional samples and numeric calls.",
+    "See full document for all empirical metrics and boundaries; do not rank mixed units."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2026-1678",
+  "title": "Cryptanalytic Extraction of Multi-Head Softmax Attention Models",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://anonymous.4open.science/r/End-to-End-Softmax-Attention-Extraction-632C",
+  "repository_id": null,
+  "status": "anonymous_attachment_access_unverified",
+  "pinned_commit": null,
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

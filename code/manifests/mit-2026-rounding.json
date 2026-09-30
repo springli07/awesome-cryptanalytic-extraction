@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "mit-2026-rounding",
+  "title": "Output Rounding Is Not a Free Defense Against Cryptanalytic Neural Network Extraction",
+  "audit_ref": "../source-audit.json",
+  "source_url": null,
+  "repository_id": null,
+  "status": "mentioned",
+  "pinned_commit": null,
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

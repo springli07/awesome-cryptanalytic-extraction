@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2026-253",
+  "title": "Cryptanalytic Extraction of Deep Neural Networks with Non-Linear Activations",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/mstealercryptocrypto-ops/mod_stealer26",
+  "repository_id": "mstealercryptocrypto-ops/mod_stealer26",
+  "status": "author_linked_implementation",
+  "pinned_commit": "95a5cd29bc23f3ce38a99802e0c6e2891ce3ef2d",
+  "collection_path": "code/upstream/mstealercryptocrypto-ops/mod_stealer26",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

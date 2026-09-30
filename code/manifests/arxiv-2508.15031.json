@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-2508.15031",
+  "title": "A Systematic Survey of Model Extraction Attacks and Defenses: State-of-the-Art and Perspectives",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/kzhao5/ModelExtractionPapers",
+  "repository_id": "kzhao5/ModelExtractionPapers",
+  "status": "reading_resource",
+  "pinned_commit": "8571dde8fede0a27064705348db78e22e4d9b1b7",
+  "collection_path": null,
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

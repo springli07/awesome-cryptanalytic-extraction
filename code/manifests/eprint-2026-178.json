@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "eprint-2026-178",
+  "title": "Cryptanalytic Extraction of Neural Networks with Various Activation Functions",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/qixiaokang1-stack/cryptanalytic-model-various-functions",
+  "repository_id": "qixiaokang1-stack/cryptanalytic-model-various-functions",
+  "status": "author_linked_implementation",
+  "pinned_commit": "2d3a9dbff314d620fe1e33ac09d0f84ae87149fb",
+  "collection_path": "code/upstream/qixiaokang1-stack/cryptanalytic-model-various-functions",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}

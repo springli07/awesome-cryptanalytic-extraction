@@ -6,11 +6,13 @@
 
 A curated bibliography of **cryptanalytic neural-network extraction**, structural and parameter recovery, reproducibility code, limitations, and defenses.
 
-[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [Search audit](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json)
+[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [Search audit](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json) · [Stage comparisons](docs/comparison_en.md) · [Original code collection](code/README.md)
 
 **Updated {{DATE}} · {{COUNT}} unique works · 13 categories.** Includes preprints, selected adjacent theory, two surveys, and one explicitly labeled course report. This is a broad, source-checked collection, not a claim of exhaustive coverage of all model stealing.
 
 ## Recent Developments
+
+**Source status:** ePrint 2026/1025 was withdrawn on September 19. Its historical method is retained and labeled. The comparison covers all 52 records and separates stage costs, oracle assumptions and experimental scope.
 
 - **September 30 update:** added three preprints on [limited architecture knowledge](https://eprint.iacr.org/2026/2127), [end-to-end hard-label extraction](https://arxiv.org/abs/2609.21941), and [unknown-architecture CNNs](https://arxiv.org/abs/2609.27427). Existing arXiv:2609.14379 is retained once; ePrint 2026/2161 is an alias, not another work. [Source audit and limitations](docs/update-2026-09-30.md).
 
@@ -62,6 +64,8 @@ Edit [data/papers.json](data/papers.json), including official title/authors, sou
 ```console
 python scripts/render_catalog.py
 python scripts/render_catalog.py --check
+python scripts/render_comparisons.py
+python scripts/validate_comparisons.py --strict
 ```
 
 Keep preprints and course reports visibly labeled. Prefer primary sources and author-linked code; do not vendor third-party implementations or copyrighted PDFs into this repository. A local `ref` corpus can use the filenames, official PDF URLs and hashes in the catalog. No code release is implied by a paper's promise to publish it.

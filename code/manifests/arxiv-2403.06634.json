@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "paper_id": "arxiv-2403.06634",
+  "title": "Stealing Part of a Production Language Model",
+  "audit_ref": "../source-audit.json",
+  "source_url": "https://github.com/dpaleka/stealing-part-lm-supplementary",
+  "repository_id": "dpaleka/stealing-part-lm-supplementary",
+  "status": "supplementary_implementation",
+  "pinned_commit": "6fa1d1a87b06e00228330711eb661cee58b4740d",
+  "collection_path": "code/upstream/dpaleka/stealing-part-lm-supplementary",
+  "code_executed": false,
+  "scientifically_reproduced": false
+}
