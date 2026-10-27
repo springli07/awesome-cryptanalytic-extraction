@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked": "2026-09-30",
+  "checked": "2026-10-28",
   "group": "context",
   "document": "docs/comparisons/context.zh.md",
   "papers": [
@@ -3822,6 +3822,139 @@
           "hardware": null,
           "target": "terminology / literature navigation",
           "notes": null
+        }
+      ],
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2610.33671",
+      "source_url": "https://arxiv.org/pdf/2610.33671v1",
+      "version": "arXiv v1; bytes verified 2026-10-28",
+      "oracle": "Labels plus privileged logits/gradients, hidden activations and victim parameters in evaluated pipeline",
+      "scope": "Combines assisted partial direction recovery with label-based reconstruction. Privileged prefixes, scaling/acceptance and sign walks remain; a complete reconstructed classifier and high sampled agreement do not establish label-only end-to-end or exact parameter extraction. / 将有内部信息辅助的部分方向恢复与标签学习重建组合；仍使用真实前缀、缩放/验收及符号游走信息。得到完整分类器和较高采样一致率不证明仅标签端到端或精确参数提取。",
+      "assumptions": "Known architecture and activation; evaluated pipeline retains privileged true prefixes, acceptance/scaling and sign-walk information. Six synthetic victims and two CIFAR-10 models; evaluation protocols kept separate.",
+      "details_document": "docs/comparisons/context.zh.md",
+      "stages": [
+        {
+          "name": {
+            "en": "Assisted direction acquisition (phase 1)",
+            "zh": "有内部信息辅助的方向获取（阶段 1）"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§3.4 Table 1, pp.13–14; §7.8, pp.35–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ],
+              "NR_reason": "No independent cost for this stage reported in the cited methods/results; null is not zero."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§3.4 Table 1, pp.13–14; §7.8, pp.35–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ],
+              "NR_reason": "No independent cost for this stage reported in the cited methods/results; null is not zero."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "704,964–12,027,750 labels per seeded run",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§3.4 Table 1, pp.13–14; §7.8, pp.35–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§3.4 Table 1, pp.13–14; §7.8, pp.35–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ],
+              "NR_reason": "No independent cost for this stage reported in the cited methods/results; null is not zero."
+            }
+          },
+          "notes": "Range over 48 seeded synthetic-victim runs; privileged margins, gradients, activations and scalar parameter reads are additional, heterogeneous channels. Never a total hard-label-only attack budget."
+        },
+        {
+          "name": {
+            "en": "Label-based reconstruction (phase 3)",
+            "zh": "标签学习重建（阶段 3）"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "NR",
+              "value": null,
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§7 pp.24–26; §7.7–7.8 pp.32–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ],
+              "NR_reason": "No independent cost for this stage reported in the cited methods/results; null is not zero."
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": "arithmetic_operations",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§7 pp.24–26; §7.7–7.8 pp.32–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ],
+              "NR_reason": "No independent cost for this stage reported in the cited methods/results; null is not zero."
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": "57,000–211,024 joint-fit; 29,024–96,024 split-fit label requests",
+              "unit": "oracle_calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§7 pp.24–26; §7.7–7.8 pp.32–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": "wall_clock",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2610.33671v1",
+                  "locator": "§7 pp.24–26; §7.7–7.8 pp.32–36",
+                  "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+                }
+              ],
+              "NR_reason": "No independent cost for this stage reported in the cited methods/results; null is not zero."
+            }
+          },
+          "notes": "Phase-3 repeated per-input requests over the six synthetic victims; 15 batch calls is not 15 queries. Uses assisted extraction artifacts; agreement is not parameter identity. The §7 six-victim batch duration of 14 min 19 s includes both search arms and reporting, not full extraction runtime or a controlled speedup."
         }
       ],
       "review_status": "source-reviewed",

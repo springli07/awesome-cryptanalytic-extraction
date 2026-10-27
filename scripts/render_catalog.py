@@ -34,7 +34,9 @@ def catalog(data, zh):
             code = p["code"]
             label = LABELS[code["status"]][int(zh)]
             code_cell = f"[{label}]({code['url']})" if code.get("url") else label
-            out.append(f"| {p['year']} | [{esc(p['title'])}]({p['url']}) · [PDF]({p['pdf_url']}) | {esc(p['venue_status'])} | {esc(p['oracle'])}<br>{esc(p['architecture'])} | {esc(p['summary_' + lang])} | {code_cell} |")
+            alias_label = '别名' if zh else 'Alias'
+            aliases = ''.join(f" · [{alias_label} {i}]({url})" for i, url in enumerate(p['aliases'], 1))
+            out.append(f"| {p['year']} | [{esc(p['title'])}]({p['url']}) · [PDF]({p['pdf_url']}){aliases} | {esc(p['venue_status'])} | {esc(p['oracle'])}<br>{esc(p['architecture'])} | {esc(p['summary_' + lang])} | {code_cell} |")
         out.append("")
     return "\n".join(out)
 
@@ -46,7 +48,10 @@ def bibtex(data):
         return s
     result = ["% Archive-oriented records. Year refers to the archive/report year, not necessarily the venue year.", "% Venue/status is retained in note; no unverified proceedings pages or DOIs are invented.", ""]
     for p in data["papers"]:
-        result += ["@misc{" + p["id"].replace("-", "") + ",", "  title = {{" + tex(p["title"]) + "}},", "  author = {" + " and ".join(tex(a) for a in p["authors"]) + "},", f"  year = {{{p['year']}}},", f"  url = {{{p['url']}}},", "  note = {" + tex(p["venue_status"]) + "}", "}", ""]
+        note = p['venue_status']
+        if p['aliases']:
+            note += '; Archive aliases: ' + ', '.join(p['aliases'])
+        result += ["@misc{" + p["id"].replace("-", "") + ",", "  title = {{" + tex(p["title"]) + "}},", "  author = {" + " and ".join(tex(a) for a in p["authors"]) + "},", f"  year = {{{p['year']}}},", f"  url = {{{p['url']}}},", "  note = {" + tex(note) + "}", "}", ""]
     return "\n".join(result)
 
 

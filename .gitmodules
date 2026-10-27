@@ -77,3 +77,7 @@
 [submodule "code/upstream/alexl4123/expand-and-cluster"]
 	path = code/upstream/alexl4123/expand-and-cluster
 	url = https://github.com/alexl4123/expand-and-cluster.git
+
+[submodule "code/upstream/biprakode/Hard_Label_Work"]
+	path = code/upstream/biprakode/Hard_Label_Work
+	url = https://github.com/biprakode/Hard_Label_Work.git

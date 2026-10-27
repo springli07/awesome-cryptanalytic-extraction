@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+from catalog_common import validate_identities
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -18,9 +19,12 @@ def main():
     subprocess.run([sys.executable, str(ROOT / "scripts/render_catalog.py"), "--check"], check=True)
     data = json.loads((ROOT / "data/papers.json").read_text(encoding="utf-8"))
     papers = data["papers"]
+    validate_identities(papers)
     identities = [u for p in papers for u in [p["url"], *p["aliases"]]]
     assert len(identities) == len(set(identities)), "Alias duplicates another work"
-    for name in ["README.md", "README_zh-CN.md", "docs/progress-2026-09.md", "docs/search-audit-2026-09-17.md", "docs/update-2026-09-18.md", "docs/update-2026-09-30.md", "docs/readme_en.template.md", "docs/readme_zh.template.md"]:
+    documents = ["README.md", "README_zh-CN.md", "docs/readme_en.template.md", "docs/readme_zh.template.md"]
+    documents += [str(path.relative_to(ROOT)) for pattern in ("progress-*.md", "search-audit-*.md", "update-*.md") for path in sorted((ROOT / "docs").glob(pattern))]
+    for name in documents:
         file = ROOT / name
         text = file.read_text(encoding="utf-8")
         link_base = ROOT if name.endswith(".template.md") else file.parent

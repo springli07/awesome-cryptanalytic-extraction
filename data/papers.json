@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30",
+  "updated": "2026-10-28",
   "scope": "Core cryptanalytic extraction plus explicitly separated related work, surveys and one course report",
   "categories": [
     {
@@ -374,24 +374,34 @@
       "venue_status": "Preprint",
       "oracle": "Raw outputs; architecture unknown",
       "architecture": "ReLU fully connected networks",
-      "summary_en": "Guess-and-determine jointly recovers architecture and parameters; not arbitrary CNN/Transformer recovery.",
-      "summary_zh": "猜测确定法联合恢复结构及参数；不等于任意 CNN 或 Transformer 恢复。",
+      "summary_en": "v2: zero-suffix signature and equality-pattern sign routes infer hidden widths; fixed output coefficients and a global linear relation handle the second-to-last layer. Raw-output ReLU MLP experiments include dagger-marked true-sign-assisted rows; not general CNN/Transformer recovery.",
+      "summary_zh": "v2：签名零后缀与符号等值模式推断隐藏宽度；固定输出系数及全局线性关系处理倒数第二层。原始输出 ReLU MLP 实验中 † 行使用真实符号辅助，非一般 CNN/Transformer 恢复。",
       "url": "https://arxiv.org/abs/2609.14379",
-      "pdf_url": "https://arxiv.org/pdf/2609.14379",
-      "aliases": [],
+      "pdf_url": "https://arxiv.org/pdf/2609.14379v2",
+      "aliases": [
+        "https://eprint.iacr.org/2026/2095"
+      ],
       "code": {
         "status": "not_found",
         "note": "No author-linked implementation located; not proof that none exists."
       },
-      "checked": "2026-09-30",
+      "checked": "2026-10-28",
       "archive_date": "2026/09/13",
-      "version_history": "v2: 2026-09-19; current PDF independently verified 2026-09-30.",
+      "version_history": "arXiv v1: 2026-09-13; v2: 2026-09-19 13:48:41 UTC; v2 bytes reverified 2026-10-28, unchanged from the September 30 fingerprint. ePrint 2026/2095 received 2026-09-18, approved 2026-09-22; alias metadata verified only.",
       "pdf": {
         "filename": "2026-arxiv-2609.14379_Cryptanalytic_Extraction_of_Neural_Networks_Without_Known_Architecture_Assumption.pdf",
         "pages": 39,
         "bytes": 594639,
         "sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
-      }
+      },
+      "alias_evidence": [
+        {
+          "url": "https://eprint.iacr.org/2026/2095",
+          "checked": "2026-10-28",
+          "locator": "Official title, complete author list and History; matched to arXiv metadata",
+          "note": "Identity verification only; no ePrint PDF fingerprint inferred from the arXiv copy."
+        }
+      ]
     },
     {
       "id": "eprint-2024-1403",
@@ -1789,7 +1799,9 @@
       "venue_status": "Preprint",
       "oracle": "Top-1 label only; sign-recovery stage",
       "architecture": "Deep ReLU MLP",
-      "aliases": [],
+      "aliases": [
+        "https://eprint.iacr.org/2026/2061"
+      ],
       "title": "Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks",
       "authors": [
         "Tang, Shi",
@@ -1800,12 +1812,12 @@
         "Dong, Xiaoyang"
       ],
       "url": "https://arxiv.org/abs/2609.18751",
-      "pdf_url": "https://arxiv.org/pdf/2609.18751",
-      "checked": "2026-09-18",
+      "pdf_url": "https://arxiv.org/pdf/2609.18751v1",
+      "checked": "2026-10-28",
       "summary_en": "Normal-signature alignment plus eSOE recovers 512/512 and 320/320 signs in the reported models; sign recovery, not a demonstrated complete end-to-end attack.",
       "summary_zh": "法向量与签名对齐结合 eSOE，在报告模型中恢复 512/512、320/320 个符号；属于符号恢复，非已展示的完整端到端攻击。",
       "archive_date": "2026/09/16",
-      "version_history": "v1: 2026-09-16 14:42:58 UTC",
+      "version_history": "v1: 2026-09-16 14:42:58 UTC; ePrint 2026/2061 received 2026-09-16, approved 2026-09-19; alias metadata verified 2026-10-28.",
       "code": {
         "status": "announced",
         "checked": "2026-09-18",
@@ -1817,7 +1829,15 @@
         "pages": 34,
         "bytes": 782984,
         "sha256": "975b97dbe759c8e80f44b96e84da0626c6bd056aa2cad50f26f88fc826f4760b"
-      }
+      },
+      "alias_evidence": [
+        {
+          "url": "https://eprint.iacr.org/2026/2061",
+          "checked": "2026-10-28",
+          "locator": "Official title, complete author list and History; matched to arXiv metadata",
+          "note": "Identity verification only; no ePrint PDF fingerprint inferred from the arXiv copy."
+        }
+      ]
     },
     {
       "id": "eprint-2026-2127",
@@ -1829,13 +1849,13 @@
       "category": "raw",
       "oracle": "Raw logits; limited architecture knowledge",
       "architecture": "ReLU MLP; approximate total neuron count assumed",
-      "summary_en": "Detects omitted neurons and backtracks parameter recovery; rough size knowledge remains necessary. Overall runtime/query costs are not reported.",
-      "summary_zh": "检测遗漏神经元并回溯参数恢复；仍需大致规模先验，未报告总体运行时间与查询成本。",
+      "summary_en": "Withdrawn October 1, 2026; retained historically. Omission detection/backtracking used raw logits and approximate total neuron scale; overall runtime/query costs were not reported.",
+      "summary_zh": "2026 年 10 月 1 日已撤回，保留历史记录。原方法以原始 logits 检测遗漏并回溯，仍需大致神经元规模；未报告总体时间与查询成本。",
       "url": "https://eprint.iacr.org/2026/2127",
       "pdf_url": "https://eprint.iacr.org/2026/2127.pdf",
       "aliases": [],
       "archive_date": "2026/09/20",
-      "version_history": "Received 2026-09-20; approved 2026-09-22; PDF downloaded 2026-09-30.",
+      "version_history": "Received 2026-09-20; approved 2026-09-22; PDF downloaded 2026-09-30. Withdrawn 2026-10-01 per official History, verified 2026-10-28. Fingerprint describes the historical copy reviewed 2026-09-30, not newly retrieved bytes.",
       "code": {
         "status": "placeholder_repository",
         "url": "https://github.com/CryptoAiLi/DNNExtractionLAK",
@@ -1844,14 +1864,16 @@
         "note": "Paper-linked repository reachable; HEAD da4fa69cb63bd6868b786db70af455bec7b65344 contains only .idea metadata, no attack implementation located."
       },
       "year": 2026,
-      "venue_status": "Preprint",
-      "checked": "2026-09-30",
+      "venue_status": "Withdrawn preprint; 2026-10-01",
+      "checked": "2026-10-28",
       "pdf": {
         "filename": "2026-eprint-2026-2127.pdf",
         "pages": 23,
         "bytes": 526372,
         "sha256": "c7fe321aa1e708f81e1fc956bcb37411aabdcf122884b8307940a556515aac64"
-      }
+      },
+      "publication_state": "withdrawn",
+      "withdrawn_date": "2026-10-01"
     },
     {
       "id": "arxiv-2609.21941",
@@ -1868,9 +1890,11 @@
       "summary_zh": "余弦/投影符号恢复复用交空间；无需专门查询仅指该阶段。端到端采样标签一致率不涵盖死亡/近死亡神经元，也不认证严格等价。",
       "url": "https://arxiv.org/abs/2609.21941",
       "pdf_url": "https://arxiv.org/pdf/2609.21941v1",
-      "aliases": [],
+      "aliases": [
+        "https://eprint.iacr.org/2026/2097"
+      ],
       "archive_date": "2026/09/18",
-      "version_history": "v1: 2026-09-18 15:56:29 UTC",
+      "version_history": "v1: 2026-09-18 15:56:29 UTC; ePrint 2026/2097 received 2026-09-18, revised 2026-09-25. Catalog fingerprint remains the verified arXiv v1; ePrint revision bytes not obtained.",
       "code": {
         "status": "not_found",
         "checked": "2026-09-30",
@@ -1879,13 +1903,21 @@
       },
       "year": 2026,
       "venue_status": "Preprint",
-      "checked": "2026-09-30",
+      "checked": "2026-10-28",
       "pdf": {
         "filename": "2026-arxiv-2609.21941.pdf",
         "pages": 41,
         "bytes": 4901755,
         "sha256": "23b82be460837123e7330a5fb1887e67e62bb2bad41515e3401f58416857f583"
-      }
+      },
+      "alias_evidence": [
+        {
+          "url": "https://eprint.iacr.org/2026/2097",
+          "checked": "2026-10-28",
+          "locator": "Official title, complete author list and History; matched to arXiv metadata",
+          "note": "Identity verification only; no ePrint PDF fingerprint inferred from the arXiv copy."
+        }
+      ]
     },
     {
       "id": "arxiv-2609.27427",
@@ -1908,7 +1940,7 @@
         "https://eprint.iacr.org/2026/2161"
       ],
       "archive_date": "2026/09/23",
-      "version_history": "arXiv v1: 2026-09-23 06:45:53 UTC; cross-listed as ePrint 2026/2161.",
+      "version_history": "arXiv v1: 2026-09-23 06:45:53 UTC; cross-listed as ePrint 2026/2161. arXiv v1 bytes unchanged on 2026-10-28; ePrint identity reconfirmed.",
       "code": {
         "status": "not_found",
         "checked": "2026-09-30",
@@ -1917,13 +1949,108 @@
       },
       "year": 2026,
       "venue_status": "Preprint",
-      "checked": "2026-09-30",
+      "checked": "2026-10-28",
       "pdf": {
         "filename": "2026-arxiv-2609.27427.pdf",
         "pages": 31,
         "bytes": 1909458,
         "sha256": "f5525b59df0457e0bb268f1262df03e41139b883a5d10f076adfd3c1fb8ac4b3"
+      },
+      "alias_evidence": [
+        {
+          "url": "https://eprint.iacr.org/2026/2161",
+          "checked": "2026-10-28",
+          "locator": "Official title, complete author list and History; matched to arXiv metadata",
+          "note": "Identity verification only; no ePrint PDF fingerprint inferred from the arXiv copy."
+        }
+      ]
+    },
+    {
+      "id": "arxiv-2609.35487",
+      "title": "Beyond Scalar Probes: Exploiting Vector-Valued Outputs in ReLU Networks For Signature Extraction",
+      "authors": [
+        "Abad, Gorka",
+        "Carlet, Claude",
+        "Franch, Ermes",
+        "Picek, Stjepan",
+        "Rijmen, Vincent"
+      ],
+      "year": 2026,
+      "category": "raw",
+      "venue_status": "Preprint",
+      "oracle": "Raw vector-valued outputs; signature-estimation stage",
+      "architecture": "ReLU networks; experiments on one hidden layer, input 784, widths 8/32",
+      "summary_en": "Rank-one Jacobian differences expose row and column signatures; SVD pooling improves float32 estimates. Experiments isolate signature/normalized-bias estimation after critical-point acquisition; no sign resolution, backward extraction or complete model attack.",
+      "summary_zh": "秩一 Jacobian 差揭示行列签名，SVD 汇聚改善 float32 估计。实验隔离临界点获取之后的签名及归一化偏置估计；未完成符号定向、反向提取或完整模型攻击。",
+      "url": "https://arxiv.org/abs/2609.35487",
+      "pdf_url": "https://arxiv.org/pdf/2609.35487v1",
+      "aliases": [],
+      "code": {
+        "status": "anonymous_attachment",
+        "url": "https://anonymous.4open.science/r/relu-signature-leakage-BE51/README.md",
+        "checked": "2026-10-28",
+        "evidence": "https://arxiv.org/pdf/2609.35487v1",
+        "note": "Paper p.1 footnote 6. Service returned an HTML application shell; source contents, stable pin and license not verified. No code executed."
+      },
+      "checked": "2026-10-28",
+      "archive_date": "2026/09/28",
+      "version_history": "arXiv v1: 2026-09-28; PDF bytes verified 2026-10-28.",
+      "pdf": {
+        "filename": "2026-arxiv-2609.35487.pdf",
+        "pages": 27,
+        "bytes": 431630,
+        "sha256": "0c180801822f269cc8f2df20b7513c3f1b4788a25ab88e52bc4f1bec7bd77be9"
       }
+    },
+    {
+      "id": "arxiv-2610.33671",
+      "title": "Extraction meets Distillation - cryptanalytic techniques to recover parameters from a Deep Neural Network",
+      "authors": [
+        "Biswas, Biprarshi",
+        "Ojha, Arya Anshuman",
+        "Das, Yubaraj",
+        "Khosla, Devansh",
+        "Rais, Kamran",
+        "Samanta, Saankhya",
+        "Maitra, Subhamoy",
+        "Stanica, Pantelimon"
+      ],
+      "year": 2026,
+      "category": "systems",
+      "venue_status": "Preprint",
+      "oracle": "Labels plus privileged logits/gradients, hidden activations and victim parameters in evaluated pipeline",
+      "architecture": "Known-architecture fully connected ReLU / Leaky ReLU networks",
+      "summary_en": "Combines assisted partial direction recovery with label-based reconstruction. Privileged prefixes, scaling/acceptance and sign walks remain; a complete reconstructed classifier and high sampled agreement do not establish label-only end-to-end or exact parameter extraction.",
+      "summary_zh": "将有内部信息辅助的部分方向恢复与标签学习重建组合；仍使用真实前缀、缩放/验收及符号游走信息。得到完整分类器和较高采样一致率不证明仅标签端到端或精确参数提取。",
+      "url": "https://arxiv.org/abs/2610.33671",
+      "pdf_url": "https://arxiv.org/pdf/2610.33671v1",
+      "aliases": [
+        "https://eprint.iacr.org/2026/2628"
+      ],
+      "code": {
+        "status": "official",
+        "url": "https://github.com/biprakode/Hard_Label_Work",
+        "checked": "2026-10-28",
+        "evidence": "https://arxiv.org/pdf/2610.33671v1",
+        "note": "Paper p.37 reference [1] links reviewer_readme.md; source tree and documentation inspected at 35fe98e3185dba7b346baad98438d537e3c06fca. No project license located, no code executed or results reproduced."
+      },
+      "checked": "2026-10-28",
+      "archive_date": "2026/10/24",
+      "version_history": "arXiv v1: 2026-10-24; PDF bytes verified 2026-10-28. ePrint 2026/2628 received 2026-10-24, approved 2026-10-26. First-page note describes an expanded CSCML 2026 conference paper; no proceedings identity/DOI verified, so this record cites the current working preprint.",
+      "pdf": {
+        "filename": "2026-arxiv-2610.33671.pdf",
+        "pages": 39,
+        "bytes": 769148,
+        "sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325"
+      },
+      "alias_evidence": [
+        {
+          "url": "https://eprint.iacr.org/2026/2628",
+          "checked": "2026-10-28",
+          "locator": "Official title, eight authors and History: received October 24, approved October 26",
+          "note": "ePrint PDF bytes not inferred from arXiv."
+        }
+      ]
     }
   ]
 }

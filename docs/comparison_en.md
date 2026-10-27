@@ -2,7 +2,7 @@
 
 [English](comparison_en.md) · [中文](comparison_zh.md) · [Catalog](../README.md) · [原代码 / Original code](../code/README.md)
 
-**52 papers / 篇 · 13 categories / 类 · checked 2026-09-30.**
+**54 papers / 篇 · 13 categories / 类 · checked 2026-10-28.**
 
 NR = reviewed but not reported / 已核查未报告；NA = not applicable / 不适用；Derived = explicit inference / 明示推导。
 
@@ -63,7 +63,7 @@ Assumptions / 假设: Linear Regions Assumption; connected boundaries intersect;
 | first-layer geometric boundary recovery<br>notes: Bounded biases,long lines,coupon collector and natural random assumptions;not worst-case. | O(d₀ N log d₁) expected/heuristic [oracle_calls]<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) | NR [arithmetic_operations]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) | NR [wall_clock]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) |
 | deep boundary traversal<br>notes: Intersections determine costs; no uniform end-to-end Q/A table; second-layer experiments leave weights unidentified. | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) | NR [arithmetic_operations]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) | NR [wall_clock]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§4 pp.6–9;§5.1 p.10;§6 pp.12–13](https://arxiv.org/pdf/1910.00744v2) |
 
-## Raw-Output ReLU Extraction (7)
+## Raw-Output ReLU Extraction (8)
 
 ### arxiv-2003.04884: [Cryptanalytic Extraction of Neural Network Models](https://arxiv.org/abs/2003.04884)
 
@@ -151,7 +151,7 @@ Assumptions / 假设: Known architecture;raw continuous outputs;d₀≥d₁ and 
 
 Oracle / 预言机: Raw outputs; architecture unknown.
 
-Scope / 范围: Guess-and-determine jointly recovers architecture and parameters; not arbitrary CNN/Transformer recovery.
+Scope / 范围: v2: zero-suffix signature and equality-pattern sign routes infer hidden widths; fixed output coefficients and a global linear relation handle the second-to-last layer. Raw-output ReLU MLP experiments include dagger-marked true-sign-assisted rows; not general CNN/Transformer recovery. / v2：签名零后缀与符号等值模式推断隐藏宽度；固定输出系数及全局线性关系处理倒数第二层。原始输出 ReLU MLP 实验中 † 行使用真实符号辅助，非一般 CNN/Transformer 恢复。
 
 Assumptions / 假设: Only input/output dimensions known;raw output;continuous inputs;signature route rank;sign route non-expanding
 
@@ -166,7 +166,9 @@ Assumptions / 假设: Only input/output dimensions known;raw output;continuous i
 
 Oracle / 预言机: Raw logits; limited architecture knowledge.
 
-Scope / 范围: Detects omitted neurons and backtracks parameter recovery; rough size knowledge remains necessary. Overall runtime/query costs are not reported.
+Scope / 范围: Withdrawn October 1, 2026; retained historically. Omission detection/backtracking used raw logits and approximate total neuron scale; overall runtime/query costs were not reported. / 2026 年 10 月 1 日已撤回，保留历史记录。原方法以原始 logits 检测遗漏并回溯，仍需大致神经元规模；未报告总体时间与查询成本。
+
+**WITHDRAWN 2026-10-01 / 已撤回；以下仅为历史版本声明。**
 
 Assumptions / 假设: Rough total neuron count known;raw logits;continuous inputs;64-bit
 
@@ -175,6 +177,18 @@ Assumptions / 假设: Rough total neuron count known;raw logits;continuous input
 | initial critical-point pool<br>notes: O(N log N) points under sampling strategy is not a proved end-to-end oracle bound. | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [arithmetic_operations]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [wall_clock]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) |
 | cached rank test<br>notes: Only given H′ and α;building α,resampling,backtracking and total arithmetic NR. | Derived / 推导: 0 additional calls [oracle_calls]<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [arithmetic_operations]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [wall_clock]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) |
 | overall extraction<br>notes: §4.4 explicitly omits overall query/runtime costs; inherited polynomial primitives do not bound retries. | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [arithmetic_operations]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [oracle_calls]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) | NR [wall_clock]<br>Reviewed cited method/complexity/experiment sections; no independent value for this stage reported.<br>[§3.2 p.14;Algorithm1 p.17;§4.1 p.18;Table3 pp.19–20;§4.4 p.21](https://eprint.iacr.org/2026/2127.pdf) |
+
+### arxiv-2609.35487: [Beyond Scalar Probes: Exploiting Vector-Valued Outputs in ReLU Networks For Signature Extraction](https://arxiv.org/abs/2609.35487)
+
+Oracle / 预言机: Raw vector-valued outputs; signature-estimation stage.
+
+Scope / 范围: Rank-one Jacobian differences expose row and column signatures; SVD pooling improves float32 estimates. Experiments isolate signature/normalized-bias estimation after critical-point acquisition; no sign resolution, backward extraction or complete model attack. / 秩一 Jacobian 差揭示行列签名，SVD 汇聚改善 float32 估计。实验隔离临界点获取之后的签名及归一化偏置估计；未完成符号定向、反向提取或完整模型攻击。
+
+Assumptions / 假设: Adjacent affine cells with one nonzero visible neuron transition; raw vector outputs; critical point already acquired; adaptive cell tests are heuristic.
+
+| Stage / 阶段 | Theoretical Q / 理论查询 | Arithmetic / 算术 | Experimental Q / 实验查询 | Runtime / 时间 |
+|---|---|---|---|---|
+| J-vector-fixed signature and normalized-bias estimation<br>dimensions: 784 input; one hidden layer of width 8 or 32; raw vector output<br>precision: simulated float64/float32/float16 in forward pass and finite differences<br>target: signature direction and normalized hyperplane offset, not physical bias or oriented weights<br>notes: Full-vector oracle calls after a supplied estimated critical point; median across widths 8/32 in Table 1. Does not include critical-point search or complete extraction. SVD row pooling leaves global sign/scale ambiguity. Float16 usable-transition rate is only 2.4% random / 1.1% trained; conditional accepted-trial medians are not whole-attack success rates. | NR [oracle_calls]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§4, pp.15–22; §5.1–5.2, Tables 1–2, pp.22–26](https://arxiv.org/pdf/2609.35487v1) | NR [arithmetic_operations]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§4, pp.15–22; §5.1–5.2, Tables 1–2, pp.22–26](https://arxiv.org/pdf/2609.35487v1) | 1,570 [oracle_calls]<br>[§4, pp.15–22; §5.1–5.2, Tables 1–2, pp.22–26](https://arxiv.org/pdf/2609.35487v1) | NR [wall_clock]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§4, pp.15–22; §5.1–5.2, Tables 1–2, pp.22–26](https://arxiv.org/pdf/2609.35487v1) |
 
 ## Hard-Label Extraction (7)
 
@@ -612,7 +626,7 @@ Assumptions / 假设: oracle/目标：logprob+logit_bias API，softmax bottlenec
 | precomputed image后边际输出<br>notes: 另本地线性重构；不是首次image成本。 | O(d) with k treated constant [api_calls]<br>[§4, p.6; Algorithm 2, p.7](https://arxiv.org/pdf/2403.09539) | NR [arithmetic_operations]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§4, p.6; Algorithm 2, p.7](https://arxiv.org/pdf/2403.09539) | NR [api_calls]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§4, p.6; Algorithm 2, p.7](https://arxiv.org/pdf/2403.09539) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§4, p.6; Algorithm 2, p.7](https://arxiv.org/pdf/2403.09539) |
 | 说明性成本示例<br>notes: v100000,d4096,k5,n4,ε1e−6,βmax100：20k/25k/133k，image费用$410/$512/$2724、缓存后800calls均back-of-envelope非实付。GPT3.5维数4096≤d≤4650非exact4096。 | NR [api_calls]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 1, p.5; §4/Fig.2, p.7](https://arxiv.org/pdf/2403.09539) | NR [arithmetic_operations]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 1, p.5; §4/Fig.2, p.7](https://arxiv.org/pdf/2403.09539) | NR [api_calls]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 1, p.5; §4/Fig.2, p.7](https://arxiv.org/pdf/2403.09539) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 1, p.5; §4/Fig.2, p.7](https://arxiv.org/pdf/2403.09539) |
 
-## PPML and Stronger Side-Channel Oracles (5)
+## PPML and Stronger Side-Channel Oracles (6)
 
 ### eprint-2026-848: [Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning](https://eprint.iacr.org/2026/848)
 
@@ -685,6 +699,19 @@ Assumptions / 假设: controllable inputs; input-dependent activation branches; 
 | input-center calibration<br>target: first-layer weights/biases; deeper unsigned sets<br>notes: P unknowns per neuron; D exponential calibration increments; separate from Q=PNS. | C=(P−1)D [trace-bearing inference calls]<br>[§V-A p.9](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §V-A p.9; no independent bound/value reported for this stage.<br>[§V-A p.9](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §V-A p.9; no independent bound/value reported for this stage.<br>[§V-A p.9](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §V-A p.9; no independent bound/value reported for this stage.<br>[§V-A p.9](https://arxiv.org/pdf/2503.19142) |
 | activation threshold bisection<br>dimensions: insurance first layer 1200 parameters<br>precision: 55 bisection steps ≥3 decimal digits; ~20 steps mean error <1%<br>hardware: SGX-Step setup<br>target: first-layer weights/biases; deeper unsigned sets<br>notes: P unknowns/neuron,N neurons,S bisection depth; excludes general physical failure costs. MNIST100480 parameters /1180765 calls is extrapolation, not completed recovery. | Q=P·N·S [trace-bearing inference calls]<br>[§IV-C p.7; §V-A pp.9–10](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §IV-C p.7; §V-A pp.9–10; no independent bound/value reported for this stage.<br>[§IV-C p.7; §V-A pp.9–10](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §IV-C p.7; §V-A pp.9–10; no independent bound/value reported for this stage.<br>[§IV-C p.7; §V-A pp.9–10](https://arxiv.org/pdf/2503.19142) | ~10 seconds/input trace [seconds per input trace]<br>[§IV-C p.7; §V-A pp.9–10](https://arxiv.org/pdf/2503.19142) |
 | linear solve / deeper convergence sets<br>target: first-layer weights/biases; deeper unsigned sets<br>notes: Deeper layers not fully solved; no general end-to-end exact recovery theorem. | NR<br>Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.<br>[§V-A–B pp.9–11](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.<br>[§V-A–B pp.9–11](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.<br>[§V-A–B pp.9–11](https://arxiv.org/pdf/2503.19142) | NR<br>Reviewed §V-A–B pp.9–11; no independent bound/value reported for this stage.<br>[§V-A–B pp.9–11](https://arxiv.org/pdf/2503.19142) |
+
+### arxiv-2610.33671: [Extraction meets Distillation - cryptanalytic techniques to recover parameters from a Deep Neural Network](https://arxiv.org/abs/2610.33671)
+
+Oracle / 预言机: Labels plus privileged logits/gradients, hidden activations and victim parameters in evaluated pipeline.
+
+Scope / 范围: Combines assisted partial direction recovery with label-based reconstruction. Privileged prefixes, scaling/acceptance and sign walks remain; a complete reconstructed classifier and high sampled agreement do not establish label-only end-to-end or exact parameter extraction. / 将有内部信息辅助的部分方向恢复与标签学习重建组合；仍使用真实前缀、缩放/验收及符号游走信息。得到完整分类器和较高采样一致率不证明仅标签端到端或精确参数提取。
+
+Assumptions / 假设: Known architecture and activation; evaluated pipeline retains privileged true prefixes, acceptance/scaling and sign-walk information. Six synthetic victims and two CIFAR-10 models; evaluation protocols kept separate.
+
+| Stage / 阶段 | Theoretical Q / 理论查询 | Arithmetic / 算术 | Experimental Q / 实验查询 | Runtime / 时间 |
+|---|---|---|---|---|
+| Assisted direction acquisition (phase 1)<br>notes: Range over 48 seeded synthetic-victim runs; privileged margins, gradients, activations and scalar parameter reads are additional, heterogeneous channels. Never a total hard-label-only attack budget. | NR [oracle_calls]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§3.4 Table 1, pp.13–14; §7.8, pp.35–36](https://arxiv.org/pdf/2610.33671v1) | NR [arithmetic_operations]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§3.4 Table 1, pp.13–14; §7.8, pp.35–36](https://arxiv.org/pdf/2610.33671v1) | 704,964–12,027,750 labels per seeded run [oracle_calls]<br>[§3.4 Table 1, pp.13–14; §7.8, pp.35–36](https://arxiv.org/pdf/2610.33671v1) | NR [wall_clock]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§3.4 Table 1, pp.13–14; §7.8, pp.35–36](https://arxiv.org/pdf/2610.33671v1) |
+| Label-based reconstruction (phase 3)<br>notes: Phase-3 repeated per-input requests over the six synthetic victims; 15 batch calls is not 15 queries. Uses assisted extraction artifacts; agreement is not parameter identity. The §7 six-victim batch duration of 14 min 19 s includes both search arms and reporting, not full extraction runtime or a controlled speedup. | NR [oracle_calls]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§7 pp.24–26; §7.7–7.8 pp.32–36](https://arxiv.org/pdf/2610.33671v1) | NR [arithmetic_operations]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§7 pp.24–26; §7.7–7.8 pp.32–36](https://arxiv.org/pdf/2610.33671v1) | 57,000–211,024 joint-fit; 29,024–96,024 split-fit label requests [oracle_calls]<br>[§7 pp.24–26; §7.7–7.8 pp.32–36](https://arxiv.org/pdf/2610.33671v1) | NR [wall_clock]<br>No independent cost for this stage reported in the cited methods/results; null is not zero.<br>[§7 pp.24–26; §7.7–7.8 pp.32–36](https://arxiv.org/pdf/2610.33671v1) |
 
 ## Finite Precision and Feasibility (1)
 

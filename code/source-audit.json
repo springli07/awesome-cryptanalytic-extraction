@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "checked": "2026-09-30",
-  "scope": "All 52 distinct papers in current catalog; primary paper text and repository metadata/documentation inspection only. No upstream code execution, model queries, dependency installs, system changes, or scientific reproduction.",
+  "checked": "2026-10-28",
+  "scope": "All 54 distinct catalog papers; prior September 30 source audits retained, two additions reviewed 2026-10-28. Primary text and repository metadata/documentation only; no upstream code executed or results reproduced.",
   "summary": {
-    "papers": 52,
-    "unique_github_repositories": 25,
-    "accessible_github_repositories": 22,
+    "papers": 54,
+    "unique_github_repositories": 26,
+    "accessible_github_repositories": 23,
     "status_counts": {
-      "author_linked_implementation": 15,
+      "author_linked_implementation": 16,
       "not_found": 18,
       "publisher_supplement_access_unverified": 1,
       "verification_artifact": 1,
       "supplementary_implementation": 2,
       "unavailable_404": 3,
       "announced": 2,
-      "anonymous_attachment_access_unverified": 4,
+      "anonymous_attachment_access_unverified": 5,
       "simulation_artifact": 1,
       "mentioned": 1,
       "author_extension_fork": 1,
@@ -22,7 +22,7 @@
       "placeholder_repository": 1
     },
     "declared_project_licenses": {
-      "no_project_license_found": 13,
+      "no_project_license_found": 14,
       "Apache-2.0": 1,
       "MIT": 7,
       "unverified": 3,
@@ -1158,6 +1158,50 @@
           ]
         }
       ]
+    },
+    {
+      "paper_id": "arxiv-2609.35487",
+      "title": "Beyond Scalar Probes: Exploiting Vector-Valued Outputs in ReLU Networks For Signature Extraction",
+      "paper_url": "https://arxiv.org/abs/2609.35487",
+      "status": "anonymous_attachment_access_unverified",
+      "repository_id": null,
+      "prior_status": "anonymous_attachment",
+      "source_url": "https://anonymous.4open.science/r/relu-signature-leakage-BE51/README.md",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2609.35487v1",
+          "pdf_sha256": "0c180801822f269cc8f2df20b7513c3f1b4788a25ab88e52bc4f1bec7bd77be9",
+          "locator": "p.1 footnote 6",
+          "code_link_locations": [
+            {
+              "page": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "paper_id": "arxiv-2610.33671",
+      "title": "Extraction meets Distillation - cryptanalytic techniques to recover parameters from a Deep Neural Network",
+      "paper_url": "https://arxiv.org/abs/2610.33671",
+      "status": "author_linked_implementation",
+      "repository_id": "biprakode/Hard_Label_Work",
+      "prior_status": "official",
+      "source_url": "https://github.com/biprakode/Hard_Label_Work",
+      "provenance": [
+        {
+          "kind": "reviewed_paper_text",
+          "url": "https://arxiv.org/pdf/2610.33671v1",
+          "pdf_sha256": "339cf692bd2a0504491185cd46037fc77df5ca1a7064b624f291ac50b4766325",
+          "locator": "p.37 reference [1]",
+          "code_link_locations": [
+            {
+              "page": 37
+            }
+          ]
+        }
+      ]
     }
   ],
   "repositories": [
@@ -2137,6 +2181,43 @@
       ],
       "readme_url": null,
       "readme_path": null
+    },
+    {
+      "id": "biprakode/Hard_Label_Work",
+      "url": "https://github.com/biprakode/Hard_Label_Work",
+      "paper_ids": [
+        "arxiv-2610.33671"
+      ],
+      "access": "accessible",
+      "default_branch": "main",
+      "commit": "35fe98e3185dba7b346baad98438d537e3c06fca",
+      "kind": "implementation",
+      "license": {
+        "spdx_id": null,
+        "status": "no_project_license_found",
+        "evidence_url": null,
+        "license_files": [],
+        "api_detected_spdx": null
+      },
+      "note": "Paper-linked assisted extraction/reconstruction implementation. Pinned reviewer documentation predates the current manuscript and contains broader hard-label claims; manuscript §3.4 and §7.8 disclose privileged accesses. Reference pointer only; no license inferred and no code executed.",
+      "entrypoints_documented": [],
+      "entrypoint_paths": [
+        "analysis/run_extraction.py"
+      ],
+      "dependency_files": [
+        {
+          "path": "requirements.txt",
+          "url_template": "pinned_file"
+        }
+      ],
+      "source_files_count": 50,
+      "tree_truncated": false,
+      "readme_path": "reviewer_readme.md",
+      "readme_url_template": "pinned_file",
+      "evidence_templates": [
+        "repository_metadata",
+        "pinned_tree"
+      ]
     }
   ],
   "url_templates": {

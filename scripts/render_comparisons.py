@@ -53,7 +53,7 @@ def comparison(data, catalog, lang):
                      f'Oracle / 预言机: {esc(row.get("oracle", paper["oracle"]))}.', '',
                      f'Scope / 范围: {esc(row.get("scope", row.get("target_scope", paper["summary_" + lang])))}', '']
             if paper.get('publication_state') == 'withdrawn':
-                text += ['**WITHDRAWN 2026-09-19 / 已撤回；以下仅为历史版本声明。**', '']
+                text += [f'**WITHDRAWN {paper["withdrawn_date"]} / 已撤回；以下仅为历史版本声明。**', '']
             assumptions = row.get('assumptions', row.get('conditioning_assumptions', row.get('conditions')))
             if assumptions:
                 text += ['Assumptions / 假设: ' + esc(assumptions), '']

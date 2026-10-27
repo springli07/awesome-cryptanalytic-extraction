@@ -6,19 +6,21 @@
 
 **神经网络密码分析提取**专题目录：结构与参数恢复、源码、可行性边界及防御。
 
-[English](README.md) · [九月进展](docs/progress-2026-09.md) · [检索审计](docs/search-audit-2026-09-17.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
+[English](README.md) · [九月进展](docs/progress-2026-09.md) · [十月进展](docs/progress-2026-10.md) · [检索审计](docs/search-audit-2026-10-28.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
 
 **更新于 {{DATE}} · {{COUNT}} 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
 
 ## 近期进展
 
-**来源状态：** ePrint 2026/1025 已于9月19日撤回，保留并标注历史方法。对比覆盖52条记录，分别记录阶段成本、预言机假设及实验范围。
+**来源状态：** ePrint 2026/1025 已于 9 月 19 日撤回，2026/2127 已于 10 月 1 日撤回；均作为历史记录保留。对比覆盖 {{COUNT}} 条记录，分别记录阶段成本、预言机假设及实验范围。
 
-- **9 月 30 日更新：** 新增[有限架构知识](https://eprint.iacr.org/2026/2127)、[端到端硬标签提取](https://arxiv.org/abs/2609.21941)和[未知架构 CNN](https://arxiv.org/abs/2609.27427)三篇预印本。已有 arXiv:2609.14379 仅计一次；ePrint 2026/2161 作为别名，不新增计数。[来源审计与边界](docs/update-2026-09-30.md)。
+- **10 月 28 日核对：** 新增 [Beyond Scalar Probes](https://arxiv.org/abs/2609.35487) 的向量输出签名估计及 [Extraction meets Distillation](https://arxiv.org/abs/2610.33671) 的内部信息辅助部分恢复与重建。后者使用额外内部信息，两者均不确立新的完整黑盒参数攻击。已有记录补入 ePrint [2097](https://eprint.iacr.org/2026/2097)、[2095](https://eprint.iacr.org/2026/2095)、[2061](https://eprint.iacr.org/2026/2061) 别名，并明确未知架构 MLP 的 v2 内容。[一手来源审计](docs/search-audit-2026-10-28.md)。
+
+- **9 月 30 日更新：** 新增[有限架构知识（10 月 1 日撤回）](https://eprint.iacr.org/2026/2127)、[端到端硬标签提取](https://arxiv.org/abs/2609.21941)和[未知架构 CNN](https://arxiv.org/abs/2609.27427)三篇预印本。已有 arXiv:2609.14379 仅计一次；ePrint 2026/2161 作为别名，不新增计数。[来源审计与边界](docs/update-2026-09-30.md)。
 
 - **9 月 18 日更新：** 新增仅标签符号恢复论文 [Normal Alignment](https://arxiv.org/abs/2609.18751)，更新 [ePrint 2026/848](https://eprint.iacr.org/2026/848)，后者现题为 *Cryptanalytic Extraction of Neural Networks for Privacy-Preserving Machine Learning*。这是 1 篇新增和 1 篇重大修订，不重复计数。[结果、代码状态及边界](docs/update-2026-09-18.md)。
 
-- **未知结构：** [猜测确定法](https://arxiv.org/abs/2609.14379)与[有限知识恢复](https://eprint.iacr.org/2026/2127)在不同先验下处理 ReLU 全连接网络；[CNN 空间几何](https://arxiv.org/abs/2609.27427)将架构恢复扩展到研究的卷积/池化网络，并继承参数攻击的假设。尚不代表任意混合网络或 Transformer 恢复。
+- **未知结构：** [猜测确定法](https://arxiv.org/abs/2609.14379)与[有限知识历史方案（已撤回）](https://eprint.iacr.org/2026/2127)在不同先验下处理 ReLU 全连接网络；[CNN 空间几何](https://arxiv.org/abs/2609.27427)将架构恢复扩展到研究的卷积/池化网络，并继承参数攻击的假设。尚不代表任意混合网络或 Transformer 恢复。
 - **数值可行性：** [有限精度误差分析](https://eprint.iacr.org/2026/1943)研究提取原语的数值误差；[输出舍入报告](https://65610.csail.mit.edu/2026/reports/cryptanalytic_nn_extract.pdf)评价适应舍入后的攻击。二者均不能给出所有网络通用的安全精度阈值。
 - **超越 ReLU MLP：** 已纳入 [softmax 注意力](https://eprint.iacr.org/2026/1678)、[多头注意力查询学习](https://arxiv.org/abs/2608.03294)、[孤立 GLU 模块](https://arxiv.org/abs/2608.06631)、RNN、GNN、CNN 池化及光滑激活。模块级恢复不是完整 LLM 提取。
 - **仅标签的进展与限制：** [代数签名](https://eprint.iacr.org/2026/1164)已包含 max-pooling CNN 实验；[跨层提取与多项式性分析](https://eprint.iacr.org/2025/1868)指出持久及死亡神经元问题。签名、符号及端到端可执行模型恢复必须分别陈述。
@@ -42,6 +44,8 @@
 
 ## 目录约定
 
+PDF 指纹仅指明实际核验的副本，包括保留的历史 PDF；核验别名及修订日期不代表已核验另一归档的 PDF 字节。单行中的别名链接不增加论文计数。
+
 **¹ 年份**采用归档/报告年份，发表年份另列。改题及 ePrint/arXiv 交叉版本只算一篇。链接 PDF 为归档版本，不保证采用出版社终稿排版。已核对副本的版本信息、页数及 SHA-256 在 JSON 中。
 
 **² 代码**默认指作者或论文明确链接的仓库。`404` 仅表示核查时不可访问，不等于确认删除；匿名附件的 `410` 表示服务明确报告过期。补充代码、作者扩展分支和阅读清单均单独标注，不冒充完整攻击实现。“未检索到”不等于代码不存在。可访问性核查**不等于执行代码或复现结果**。
@@ -64,8 +68,10 @@
 ```console
 python scripts/render_catalog.py
 python scripts/render_catalog.py --check
+python scripts/validate_catalog.py
 python scripts/render_comparisons.py
 python scripts/validate_comparisons.py --strict
+python scripts/test_collection.py
 ```
 
 明确标注预印本及课程报告，优先使用一手来源和作者代码。不将第三方实现或受版权保护的 PDF 直接打包到本仓库。本地 `ref` 可使用结构化目录中的文件名、官方 PDF 地址和哈希。论文宣称将开源，不代表已经公开可用。

@@ -2,6 +2,14 @@
 
 Snapshot: **2026-09-17**, with a **September 18 targeted addendum**. This synthesis distinguishes published papers, preprints and a course report. It reports the scope of the cited work, not independent reproduction. See the [complete catalog](../README.md) and [Chinese catalog](../README_zh-CN.md).
 
+## Late-September reconciliation / 九月下旬补漏
+
+Reconciled October 28 against the September 30 repository state. The three September preprints in the [September 30 audit](update-2026-09-30.md) were already present. Added the missed September 28 [Beyond Scalar Probes](https://arxiv.org/abs/2609.35487), bringing the September works represented by that snapshot from 52 to 53; the separate [October addition](progress-2026-10.md) brings the current catalog to 54. / 三篇九月论文已存在；补漏一篇九月论文，另增一篇十月论文，保留 13 类。
+
+Beyond Scalar Probes uses full-vector Jacobian differences for row/column signature estimation and normalized hyperplane offsets. Its one-hidden-layer finite-precision experiments isolate the estimation primitive after critical-point acquisition. They do not resolve signs or establish complete end-to-end extraction. / 有限精度签名及归一化偏置估计不等于符号定向与全模型恢复。
+
+Added verified ePrint aliases 2026/2097, 2026/2095 and 2026/2061 to existing records; reconfirmed 2026/2161. The unknown-architecture MLP record now makes v2's zero-suffix/equality routes, second-to-last-layer criteria and true-sign-assisted table rows explicit. **ePrint 2026/2127 was withdrawn October 1**, so its historical method must be read with that status. See the [current primary-source audit](search-audit-2026-10-28.md). / 别名与 v2 不新增计数；2026/2127 已撤回，历史结论须带撤回标记阅读。
+
 ## September 18 Addendum / 9 月 18 日增补
 
 Added Normal Alignment (hard-label sign recovery) and replaced the existing PPML entry with its September 17 revision and new title. Sign-stage success is not complete model extraction; the PPML query reduction is benchmark- and stage-specific. See the [bilingual update with sources and code status](update-2026-09-18.md).
