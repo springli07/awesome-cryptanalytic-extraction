@@ -455,7 +455,7 @@
       ],
       "year": 2024,
       "category": "hard",
-      "venue_status": "EUROCRYPT 2025; extended version",
+      "venue_status": "Journal of Cryptology 39, article 32 (2026); EUROCRYPT 2025 extended version",
       "oracle": "Top-1 label only",
       "architecture": "Deep ReLU MLP",
       "summary_en": "Dual-point signatures/signs; extended version includes a small random-model black-box end-to-end demonstration, distinct from white-box-assisted CIFAR experiments.",
@@ -463,7 +463,8 @@
       "url": "https://eprint.iacr.org/2024/1580",
       "pdf_url": "https://eprint.iacr.org/2024/1580.pdf",
       "aliases": [
-        "https://arxiv.org/abs/2410.05750"
+        "https://arxiv.org/abs/2410.05750",
+        "https://doi.org/10.1007/s00145-026-09586-5"
       ],
       "code": {
         "status": "official",
@@ -472,14 +473,67 @@
         "evidence": "https://eprint.iacr.org/2024/1580",
         "note": "Repository availability checked, code not executed or scientifically reproduced."
       },
-      "checked": "2026-09-17",
+      "checked": "2026-10-28",
       "archive_date": null,
-      "version_history": "2026-09-07: last of 2 revisions 2024-10-07: received",
+      "version_history": "2026-09-07: last of 2 revisions 2024-10-07: received; Journal of Cryptology publication verified 2026-10-28: published 2026-10-01, volume 39 article 32, DOI 10.1007/s00145-026-09586-5. Reviewed ePrint fingerprint retained unchanged; no journal-PDF fingerprint inferred.",
       "pdf": {
         "filename": "2024-1580_Polynomial_Time_Cryptanalytic_Extraction_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
         "pages": 48,
         "bytes": 1817048,
         "sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+      },
+      "doi": "10.1007/s00145-026-09586-5",
+      "publication_date": "2026-10-01",
+      "publication_evidence": {
+        "url": "https://link.springer.com/article/10.1007/s00145-026-09586-5",
+        "checked": "2026-10-28",
+        "locator": "Publisher title, authors, published date, volume/article number, DOI and author-information metadata",
+        "note": "Publication-status update only. Publisher full text is subscription-gated; no claim that journal PDF bytes or technical changes relative to the reviewed 48-page ePrint were verified."
+      },
+      "alias_evidence": [
+        {
+          "url": "https://doi.org/10.1007/s00145-026-09586-5",
+          "checked": "2026-10-28",
+          "locator": "Publisher exact title and same five authors; ePrint 2024/1580 extended-version note",
+          "note": "Journal publication of the existing work, not a new catalog item."
+        }
+      ],
+      "affiliations": [
+        {
+          "author": "Nicholas Carlini",
+          "institutions": [
+            "Google DeepMind, London, United Kingdom"
+          ]
+        },
+        {
+          "author": "Jorge Chávez-Saab",
+          "institutions": [
+            "Cryptography Research Center, Technology Innovation Institute, Abu Dhabi, United Arab Emirates"
+          ]
+        },
+        {
+          "author": "Anna Hambitzer",
+          "institutions": [
+            "Cryptography Research Center, Technology Innovation Institute, Abu Dhabi, United Arab Emirates"
+          ]
+        },
+        {
+          "author": "Francisco Rodríguez-Henríquez",
+          "institutions": [
+            "Cryptography Research Center, Technology Innovation Institute, Abu Dhabi, United Arab Emirates"
+          ]
+        },
+        {
+          "author": "Adi Shamir",
+          "institutions": [
+            "Weizmann Institute, Rehovot, Israel"
+          ]
+        }
+      ],
+      "affiliation_evidence": {
+        "url": "https://link.springer.com/article/10.1007/s00145-026-09586-5",
+        "locator": "Publisher citation_author / citation_author_institution metadata",
+        "checked": "2026-10-28"
       }
     },
     {
@@ -894,7 +948,7 @@
     },
     {
       "id": "eprint-2026-168",
-      "title": "Cryptanalytic Extraction of Recurrent Neural Network Models",
+      "title": "Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs",
       "authors": [
         "Longxiang Wei",
         "Hao Lei",
@@ -927,6 +981,15 @@
         "pages": 34,
         "bytes": 1143269,
         "sha256": "b096d4f6425d19254d0fb4e4ef7653e18ebd4761d4cfa6f0a2fd25ed49b748f2"
+      },
+      "former_titles": [
+        "Cryptanalytic Extraction of Recurrent Neural Network Models"
+      ],
+      "metadata_evidence": {
+        "url": "https://eprint.iacr.org/2026/168",
+        "checked": "2026-10-28",
+        "locator": "Official title, same eight authors, unchanged identifier and September 18 revision date",
+        "note": "Title correction only; not a new work or newly established substantive revision. Current PDF requests returned 403; the September 30 fingerprint and its review date remain historical."
       }
     },
     {
@@ -2051,6 +2114,62 @@
           "note": "ePrint PDF bytes not inferred from arXiv."
         }
       ]
+    },
+    {
+      "id": "arxiv-2608.28843",
+      "title": "Curvature Cryptanalysis of Smooth Transformer Feed-Forward Networks",
+      "authors": [
+        "Hasan, Munawar",
+        "Vassilev, Apostol"
+      ],
+      "year": 2026,
+      "category": "attention",
+      "venue_status": "Preprint",
+      "oracle": "Chosen representation-space inputs; raw vector outputs of a post-LayerNorm FFN branch",
+      "architecture": "Known two-layer GELU/SiLU FFN; evaluated in CIFAR-10 vision transformers",
+      "summary_en": "Shared finite-difference Hessians estimate first-layer directions up to sign/permutation. Subsequent fitting gives an approximate FFN replacement; classifier tests retain all other victim parameters. Not complete Transformer or exact-parameter extraction.",
+      "summary_zh": "复用有限差分Hessian估计首层方向，保留符号及排列歧义；后续拟合近似FFN。分类器实验保留其余原模型参数，不是完整Transformer或精确参数提取。",
+      "url": "https://arxiv.org/abs/2608.28843",
+      "pdf_url": "https://arxiv.org/pdf/2608.28843v2",
+      "aliases": [],
+      "arxiv_id": "2608.28843",
+      "doi": "10.48550/arXiv.2608.28843",
+      "code": {
+        "status": "official",
+        "url": "https://github.com/mhasan08/curvature-cryptanalysis",
+        "checked": "2026-10-28",
+        "evidence": "https://arxiv.org/pdf/2608.28843v2",
+        "note": "PDF p.1 footnote 1 links the repository. MIT license and source tree inspected at 2d9dd4f2bf1e8ca2939794ef1f3b8cdb93ea5534; optimized/ contains shared-stencil documentation. README opening numbers differ from its detailed tables; paper v2 Table 2 is used for manuscript results. No upstream code executed or results reproduced."
+      },
+      "checked": "2026-10-28",
+      "archive_date": "2026/08/28",
+      "version_history": "arXiv v1: 2026-08-28; v2: 2026-09-16. Added as a previously uncataloged work on 2026-10-28, not as a newly released October paper. Actual v2 PDF bytes verified; archive DOI is not a peer-reviewed venue.",
+      "pdf": {
+        "filename": "2026-arxiv-2608.28843v2.pdf",
+        "pages": 25,
+        "bytes": 1188439,
+        "sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+      },
+      "affiliations": [
+        {
+          "author": "Munawar Hasan",
+          "institutions": [
+            "National Institute of Standards and Technology, USA",
+            "Michigan Technological University, USA"
+          ]
+        },
+        {
+          "author": "Apostol Vassilev",
+          "institutions": [
+            "National Institute of Standards and Technology, USA"
+          ]
+        }
+      ],
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/pdf/2608.28843v2",
+        "locator": "PDF p.1 author affiliation superscripts",
+        "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+      }
     }
   ]
 }

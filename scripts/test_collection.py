@@ -22,6 +22,8 @@ class CollectionChecks(unittest.TestCase):
             {'id': 'two', 'title': 'FIRST TITLE!', 'url': 'https://example.org/other'},
             {'id': 'two', 'title': 'Other title', 'url': 'https://example.org/other',
              'aliases': ['https://arxiv.org/pdf/2609.35487v1']},
+            {'id': 'two', 'title': 'Revised title', 'url': 'https://example.org/other',
+             'former_titles': ['First TITLE!']},
         ):
             with self.assertRaises(AssertionError):
                 validate_identities([paper, duplicate])

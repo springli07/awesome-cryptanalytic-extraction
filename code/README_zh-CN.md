@@ -2,7 +2,7 @@
 
 [English](README.md) · [中文](README_zh-CN.md) · [Comparisons / 对比](../docs/comparison_en.md)
 
-**54 papers; 26 unique GitHub sources.** Checked 2026-10-28.
+**55 papers; 27 unique GitHub sources.** Checked 2026-10-28.
 
 Fixed gitlinks under `upstream/` and `artifacts/` point to original authors’ commits; source code is not copied into this repository’s history. Reading lists, placeholders, inaccessible sources and unverified anonymous attachments are indexed separately. Repository availability does not imply reproduction. / 固定gitlink指向原作者提交，不复制源码进主历史；阅读清单、占位、失效和匿名来源另行标记，代码存在不等于复现。
 
@@ -66,6 +66,7 @@ Git submodules remain browseable source pointers. A full recursive clone may bri
 | arxiv-2609.27427 | not_found | Not located / 未找到 | unverified |
 | arxiv-2609.35487 | anonymous_attachment_access_unverified | [https://anonymous.4open.science/r/relu-signature-leakage-BE51/README.md](https://anonymous.4open.science/r/relu-signature-leakage-BE51/README.md) | unverified |
 | arxiv-2610.33671 | author_linked_implementation | [biprakode/Hard_Label_Work](https://github.com/biprakode/Hard_Label_Work/tree/35fe98e3185dba7b346baad98438d537e3c06fca) | no_project_license_found |
+| arxiv-2608.28843 | author_linked_implementation | [mhasan08/curvature-cryptanalysis](https://github.com/mhasan08/curvature-cryptanalysis/tree/2d9dd4f2bf1e8ca2939794ef1f3b8cdb93ea5534) | MIT |
 
 ## Upstream notes / 原始实现边界
 
@@ -286,4 +287,14 @@ Commit: `35fe98e3185dba7b346baad98438d537e3c06fca` · implementation
 Paper-linked assisted extraction/reconstruction implementation. Pinned reviewer documentation predates the current manuscript and contains broader hard-label claims; manuscript §3.4 and §7.8 disclose privileged accesses. Reference pointer only; no license inferred and no code executed.
 
 [Upstream documentation / 上游文档](https://github.com/biprakode/Hard_Label_Work/blob/35fe98e3185dba7b346baad98438d537e3c06fca/reviewer_readme.md)
+
+### mhasan08/curvature-cryptanalysis
+
+Commit: `2d9dd4f2bf1e8ca2939794ef1f3b8cdb93ea5534` · implementation
+
+Paper-linked FFN extraction code. optimized/ documents the shared-stencil pipeline; root retains separate-stencil code. README opening numbers differ from detailed tables, so manuscript v2 Table 2 supplies quoted results. Training script not supplied; checkpoint files indexed but not downloaded. No dependencies installed, code executed or results reproduced.
+
+[Pinned license / 固定版本许可证](https://github.com/mhasan08/curvature-cryptanalysis/blob/2d9dd4f2bf1e8ca2939794ef1f3b8cdb93ea5534/LICENSE)
+
+[Upstream documentation / 上游文档](https://github.com/mhasan08/curvature-cryptanalysis/blob/2d9dd4f2bf1e8ca2939794ef1f3b8cdb93ea5534/README.md)
 

@@ -81,3 +81,7 @@
 [submodule "code/upstream/biprakode/Hard_Label_Work"]
 	path = code/upstream/biprakode/Hard_Label_Work
 	url = https://github.com/biprakode/Hard_Label_Work.git
+
+[submodule "code/upstream/mhasan08/curvature-cryptanalysis"]
+	path = code/upstream/mhasan08/curvature-cryptanalysis
+	url = https://github.com/mhasan08/curvature-cryptanalysis.git

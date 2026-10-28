@@ -40,7 +40,8 @@ def normalized_identity(value):
 def identity_keys(paper):
     values = [paper['url'], *paper.get('aliases', [])]
     values += [paper[key] for key in ('doi', 'arxiv_id', 'eprint_id', 'canonical_url') if paper.get(key)]
-    return {'title:' + normalized_title(paper['title']), *(normalized_identity(v) for v in values)}
+    titles = [paper['title'], *paper.get('former_titles', [])]
+    return {*('title:' + normalized_title(t) for t in titles), *(normalized_identity(v) for v in values)}
 
 
 def validate_identities(papers):

@@ -6,13 +6,15 @@
 
 A curated bibliography of **cryptanalytic neural-network extraction**, structural and parameter recovery, reproducibility code, limitations, and defenses.
 
-[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [October progress](docs/progress-2026-10.md) · [Search audit](docs/search-audit-2026-10-28.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json) · [Stage comparisons](docs/comparison_en.md) · [Original code collection](code/README.md)
+[中文版](README_zh-CN.md) · [September progress](docs/progress-2026-09.md) · [October progress](docs/progress-2026-10.md) · [Search audit](docs/search-audit-2026-10-28-followup.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [Machine-readable catalog](data/papers.json) · [Stage comparisons](docs/comparison_en.md) · [Original code collection](code/README.md)
 
 **Updated {{DATE}} · {{COUNT}} unique works · 13 categories.** Includes preprints, selected adjacent theory, two surveys, and one explicitly labeled course report. This is a broad, source-checked collection, not a claim of exhaustive coverage of all model stealing.
 
 ## Recent Developments
 
 **Source status:** ePrint 2026/1025 was withdrawn on September 19 and ePrint 2026/2127 on October 1. Both are retained as historical records. The comparison covers all {{COUNT}} records and separates stage costs, oracle assumptions and experimental scope.
+
+- **October 28 monitoring follow-up:** added the missed August/September [Curvature Cryptanalysis](https://arxiv.org/abs/2608.28843) preprint: approximate GELU/SiLU FFN directions from a direct branch oracle, followed by fitted replacement with the rest of the victim classifier retained. This is not full Transformer extraction. Existing [ePrint 2024/1580](https://eprint.iacr.org/2024/1580) gained its [Journal of Cryptology publication](https://doi.org/10.1007/s00145-026-09586-5), not another paper. Corrected the existing RNN title to *Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs*. [Search coverage, identity decisions and limitations](docs/search-audit-2026-10-28-followup.md).
 
 - **October 28 reconciliation:** added [Beyond Scalar Probes](https://arxiv.org/abs/2609.35487) for vector-output signature estimation and [Extraction meets Distillation](https://arxiv.org/abs/2610.33671) for assisted partial recovery plus reconstruction. The latter uses privileged internal information; neither establishes a new complete black-box parameter attack. Added ePrint aliases [2097](https://eprint.iacr.org/2026/2097), [2095](https://eprint.iacr.org/2026/2095), and [2061](https://eprint.iacr.org/2026/2061) to existing records, and clarified the unknown-architecture MLP v2. [Primary-source audit](docs/search-audit-2026-10-28.md).
 

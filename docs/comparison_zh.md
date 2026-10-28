@@ -2,7 +2,7 @@
 
 [English](comparison_en.md) · [中文](comparison_zh.md) · [Catalog](../README.md) · [原代码 / Original code](../code/README.md)
 
-**54 papers / 篇 · 13 categories / 类 · checked 2026-10-28.**
+**55 papers / 篇 · 13 categories / 类 · checked 2026-10-28.**
 
 NR = reviewed but not reported / 已核查未报告；NA = not applicable / 不适用；Derived = explicit inference / 明示推导。
 
@@ -490,7 +490,7 @@ Assumptions / 假设: oracle/范围：top-1 label，联合signature+slope，resi
 
 ## RNN 与 GNN (2)
 
-### eprint-2026-168: [Cryptanalytic Extraction of Recurrent Neural Network Models](https://eprint.iacr.org/2026/168)
+### eprint-2026-168: [Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs](https://eprint.iacr.org/2026/168)
 
 Oracle / 预言机: oracle/范围：raw outputs或hard labels；ReLU recurrent，隐藏态不可见，可控制整段连续输入；构造等价FCN，复用时间权重，τ是时间步、n是recurrent layers，二者必须分列。.
 
@@ -524,7 +524,7 @@ Assumptions / 假设: oracle/范围：message-passing ReLU GNN固定局部查询
 | signature/sign与scale-chain后处理<br>notes: N=Σ_(l=0)^(L−1)d_l recovered neurons；K accepted coverage/neuron；K_sign probes/neuron；postprocessing不含发现阶段。 | NR [node_queries]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Theorem 4.1, p.12; Proposition 4.4, Eq.32, p.13](https://eprint.iacr.org/2026/719.pdf) | O(N K d²+N K_sign) [arithmetic_operations]<br>[Theorem 4.1, p.12; Proposition 4.4, Eq.32, p.13](https://eprint.iacr.org/2026/719.pdf) | NR [node_queries]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Theorem 4.1, p.12; Proposition 4.4, Eq.32, p.13](https://eprint.iacr.org/2026/719.pdf) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Theorem 4.1, p.12; Proposition 4.4, Eq.32, p.13](https://eprint.iacr.org/2026/719.pdf) |
 | dedicated32–32^4–4 checkpoint<br>notes: RTX4090；train/test/random fidelity100%；random为10,000 standard-normal two-node queries；不可绑定最大10,660参数模型。 | NR [node_queries]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 4, p.16](https://eprint.iacr.org/2026/719.pdf) | NR [arithmetic_operations]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 4, p.16](https://eprint.iacr.org/2026/719.pdf) | 48.68 million [node_queries]<br>[Table 4, p.16](https://eprint.iacr.org/2026/719.pdf) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Table 4, p.16](https://eprint.iacr.org/2026/719.pdf) |
 
-## 注意力与 GLU 模块 (4)
+## 注意力与 GLU 模块 (5)
 
 ### arxiv-2601.16873: [Provably Learning Attention with Queries](https://arxiv.org/abs/2601.16873)
 
@@ -591,6 +591,25 @@ Assumptions / 假设: 直接full-vector isolated bias-free GLU f:R^n→R^n_out�
 | Stage2 refinement/residual及factor polish<br>notes: factor-polish selector另4,096；final disjoint evaluation4,096不计攻击；无优化收敛或统一算术界。 | 0 additional calls for observation-reusing refinement/repairs/factor polish [block_vector_queries]<br>[§3, pp.3–6; §5, p.7](https://arxiv.org/pdf/2608.06631) | NR [arithmetic_operations]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§3, pp.3–6; §5, p.7](https://arxiv.org/pdf/2608.06631) | NR [block_vector_queries]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§3, pp.3–6; §5, p.7](https://arxiv.org/pdf/2608.06631) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§3, pp.3–6; §5, p.7](https://arxiv.org/pdf/2608.06631) |
 | full-input extension<br>notes: M8,K64，Qwen192→384→576→768→960→1024；直接n1024 Hessian268,435,456；额外polish training/guard477k–986k分列。 | 4MK n_i per endpoint step [block_vector_queries]<br>[§5, p.7](https://arxiv.org/pdf/2608.06631) | NR [arithmetic_operations]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§5, p.7](https://arxiv.org/pdf/2608.06631) | 7,602,176 additional; 17,483,456 pre-polish total [block_vector_queries]<br>[§5, p.7](https://arxiv.org/pdf/2608.06631) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[§5, p.7](https://arxiv.org/pdf/2608.06631) |
 | 有限精度block评估<br>notes: Qwen192输入128输出/扩至1024仍128输出；Gemma1152全block非整模型；BF16 median4.6269%、p90 7.7392%，仅2.19% storage exact；27h–33天是假定10–100ms说明性估计，非实测墙钟。 | NR [block_vector_queries]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Tables 4–5, p.8; §6.3, p.8; §6.6–7, pp.9–10](https://arxiv.org/pdf/2608.06631) | NR [arithmetic_operations]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Tables 4–5, p.8; §6.3, p.8; §6.6–7, pp.9–10](https://arxiv.org/pdf/2608.06631) | NR [block_vector_queries]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Tables 4–5, p.8; §6.3, p.8; §6.6–7, pp.9–10](https://arxiv.org/pdf/2608.06631) | NR [seconds]<br>在上述定位的方法/复杂度/实验内容未报告该阶段独立可引用值；完整限制见 details 与分组文档。<br>[Tables 4–5, p.8; §6.3, p.8; §6.6–7, pp.9–10](https://arxiv.org/pdf/2608.06631) |
+
+### arxiv-2608.28843: [Curvature Cryptanalysis of Smooth Transformer Feed-Forward Networks](https://arxiv.org/abs/2608.28843)
+
+Oracle / 预言机: Chosen representation-space inputs; raw vector outputs of a post-LayerNorm FFN branch.
+
+Scope / 范围: Approximate normalized W1 directions up to sign/permutation in one smooth FFN; optional fitted branch replacement. Full-classifier evaluation reuses all other victim parameters; not complete Transformer extraction.
+
+Assumptions / 假设: Known d,k,m,activation and target block; chosen post-normalization real-valued inputs and full-vector branch outputs; sufficient curvature/projection diversity and local restricted-Jacobian injectivity. Nonconvex optimization has no global recovery guarantee. Natural branch inputs and the remaining classifier are additionally available for replacement evaluation.
+
+| Stage / 阶段 | Theoretical Q / 理论查询 | Arithmetic / 算术 | Experimental Q / 实验查询 | Runtime / 时间 |
+|---|---|---|---|---|
+| 共享差分模板获取Hessian<br>dimensions: d=k=64,m=128; P=1,T=16<br>precision: h=0.01; numeric dtype not explicitly specified in manuscript<br>target: Projected branch Hessians; not yet directions or parameters<br>notes: All 16 projections reuse one vector stencil. P counts distinct probes, not projections; additional probes or step-search trials require additional stencils. | P(2d^2+1) [full-vector FFN oracle calls]<br>[§5.1 Eq.(20), Algorithm 1, PDF pp.12–14](https://arxiv.org/pdf/2608.28843v2) | NR<br>Methods reviewed; no independent total arithmetic bound reported for this stage.<br>[§5.1, Algorithm 1, §6 protocol, PDF pp.10–18](https://arxiv.org/pdf/2608.28843v2) | 8193 [full-vector FFN oracle calls]<br>[§6 protocol, Table 2, PDF pp.16–18](https://arxiv.org/pdf/2608.28843v2) | NR<br>No stage wall-clock measurement reported; hardware and optimizer settings do not supply a runtime.<br>[§5.1, Algorithm 1, §6 protocol, PDF pp.10–18](https://arxiv.org/pdf/2608.28843v2) |
+| 离线共享方向字典分解<br>target: Normalized W1 directions up to sign/permutation<br>notes: Three random restarts; selection by Hessian reconstruction loss. Theorem 1 is conditional/local; the T>=5 dimension count at d=64,m=128 is necessary, not sufficient. Zero extra calls does not remove acquisition costs. | 0 [additional oracle calls after Hessian acquisition]<br>[§5.2 Algorithm 1, PDF pp.12–14](https://arxiv.org/pdf/2608.28843v2) | NR<br>Methods reviewed; no independent total arithmetic bound reported for this stage.<br>[§4.4–4.5, §5.2, §6.1, PDF pp.8–19](https://arxiv.org/pdf/2608.28843v2) | 0 [additional oracle calls after Hessian acquisition]<br>[§5.2, §6 extraction protocol, PDF pp.13–16](https://arxiv.org/pdf/2608.28843v2) | NR<br>No stage wall-clock measurement reported; hardware and optimizer settings do not supply a runtime.<br>[§4.4–4.5, §5.2, §6.1, PDF pp.8–19](https://arxiv.org/pdf/2608.28843v2) |
+| 可选固定方向FFN拟合<br>target: Fitted signed scales, biases and W2 with directions fixed<br>notes: 1500 AdamW steps reuse the acquired 12000 pairs. Total default budget 20193 vector calls. This is empirical approximation, not exact recovery of all original FFN parameters. | N_fit [additional full-vector FFN oracle calls]<br>[§5.3 Eq.(25), Algorithm 2, PDF pp.13–15](https://arxiv.org/pdf/2608.28843v2) | NR<br>Methods reviewed; no independent total arithmetic bound reported for this stage.<br>[§5.3, Algorithm 2, §6.3, PDF pp.13–21](https://arxiv.org/pdf/2608.28843v2) | 12000 [additional full-vector FFN oracle calls]<br>[§6 Eq.(26), Table 2, PDF pp.16–18](https://arxiv.org/pdf/2608.28843v2) | NR<br>No stage wall-clock measurement reported; hardware and optimizer settings do not supply a runtime.<br>[§5.3, Algorithm 2, §6.3, PDF pp.13–21](https://arxiv.org/pdf/2608.28843v2) |
+
+| Experiment context / 实验设置 | Q | Runtime / 时间 | Metric and limits / 指标及边界 |
+|---|---|---|---|
+| dimensions: One final-block FFN, 64–128–64, in a four-block/four-head CIFAR-10 ViT; 3 independently trained victims per activation; precision: Finite-difference h=0.01; target dtype not explicitly reported; hardware: Intel Core Ultra 9; 64 GB RAM; RTX 4070 8 GB; PyTorch 2.5.1 / CUDA 12.4; target: FFN structural extraction + optional single-branch replacement | 20193 [full-vector FFN oracle calls (8193 structural + 12000 completion)]<br>[§6 Eq.(26), Table 2, PDF pp.16–18](https://arxiv.org/pdf/2608.28843v2) | NR<br>Hardware is stated but no end-to-end wall-clock runtime is reported.<br>[§6 experimental protocol and Table 2, PDF pp.15–18](https://arxiv.org/pdf/2608.28843v2) | Table 2 mean±sample SD: direction alignment GELU 0.9187±0.0138, SiLU 0.9402±0.0119; Hit_0.90 0.8672±0.0234 / 0.9115±0.0325; classifier agreement 92.81±0.22% / 94.97±0.36%.<br>Held-out classifier evaluation retains the remainder of the original model. Exact-Hessian/parameter-based diagnostics are privileged evaluation, not the finite-difference attack oracle. Other blocks tested separately do not establish joint extraction/composition of a full Transformer. |
+| dimensions: One GELU FFN, d=64,m=128,T=16; fixed attack seed; target: Adaptive structural recovery under four-decimal rounding / Gaussian noise SD 1e-4 | 8193 per tested h; l*8193 for l fresh stencils [full-vector FFN oracle calls]<br>[§6.4, Table 8, PDF pp.21–22](https://arxiv.org/pdf/2608.28843v2) | NR<br>No adaptive-search wall-clock runtime reported.<br>[§6.4, Table 8, PDF pp.21–22](https://arxiv.org/pdf/2608.28843v2) | At h=0.30, alignment 0.9188 under rounding / 0.9081 under noise; at h=0.01, 0.3255 / 0.3295.<br>Fresh finite-difference step trials cost new queries. Single-target results do not prove a universal failure of rounding/noise defenses. |
 
 ## LLM 部分结构与输出空间提取 (2)
 

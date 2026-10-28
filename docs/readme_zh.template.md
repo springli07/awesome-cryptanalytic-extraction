@@ -6,13 +6,15 @@
 
 **神经网络密码分析提取**专题目录：结构与参数恢复、源码、可行性边界及防御。
 
-[English](README.md) · [九月进展](docs/progress-2026-09.md) · [十月进展](docs/progress-2026-10.md) · [检索审计](docs/search-audit-2026-10-28.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
+[English](README.md) · [九月进展](docs/progress-2026-09.md) · [十月进展](docs/progress-2026-10.md) · [检索审计](docs/search-audit-2026-10-28-followup.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
 
 **更新于 {{DATE}} · {{COUNT}} 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
 
 ## 近期进展
 
 **来源状态：** ePrint 2026/1025 已于 9 月 19 日撤回，2026/2127 已于 10 月 1 日撤回；均作为历史记录保留。对比覆盖 {{COUNT}} 条记录，分别记录阶段成本、预言机假设及实验范围。
+
+- **10 月 28 日监测补查：** 补入八月提交、九月修订的 [Curvature Cryptanalysis](https://arxiv.org/abs/2608.28843) 预印本：直接查询 GELU/SiLU FFN 模块，估计首层方向，再拟合替换该模块；分类器实验保留其余原模型参数，不是完整 Transformer 提取。已有 [ePrint 2024/1580](https://eprint.iacr.org/2024/1580) 补记 [Journal of Cryptology 正式发表](https://doi.org/10.1007/s00145-026-09586-5)，不新增计数。已有 RNN 条目更正为官方现题 *Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs*。[检索覆盖、去重与限制](docs/search-audit-2026-10-28-followup.md)。
 
 - **10 月 28 日核对：** 新增 [Beyond Scalar Probes](https://arxiv.org/abs/2609.35487) 的向量输出签名估计及 [Extraction meets Distillation](https://arxiv.org/abs/2610.33671) 的内部信息辅助部分恢复与重建。后者使用额外内部信息，两者均不确立新的完整黑盒参数攻击。已有记录补入 ePrint [2097](https://eprint.iacr.org/2026/2097)、[2095](https://eprint.iacr.org/2026/2095)、[2061](https://eprint.iacr.org/2026/2061) 别名，并明确未知架构 MLP 的 v2 内容。[一手来源审计](docs/search-audit-2026-10-28.md)。
 

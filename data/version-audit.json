@@ -1,5 +1,5 @@
 {
-  "checked": "2026-09-30",
+  "checked": "2026-10-28",
   "policy": "Prior fingerprints retain their original evidence locators; code audit snapshots are not rewritten as latest.",
   "changes": [
     {
@@ -52,6 +52,39 @@
         "sha256": "9100e366c0ce8f6b0d5b2ec114e39aa16046d4d5b55c506b9d7cc7537837c7a3"
       },
       "source_url": "https://arxiv.org/pdf/2609.14379v2"
+    }
+  ],
+  "metadata_changes": [
+    {
+      "paper_id": "eprint-2024-1580",
+      "checked": "2026-10-28",
+      "kind": "publication_status",
+      "prior_venue_status": "EUROCRYPT 2025; extended version",
+      "current_venue_status": "Journal of Cryptology 39, article 32 (2026); EUROCRYPT 2025 extended version",
+      "added_doi": "10.1007/s00145-026-09586-5",
+      "source_url": "https://link.springer.com/article/10.1007/s00145-026-09586-5",
+      "retained_pdf": {
+        "filename": "2024-1580_Polynomial_Time_Cryptanalytic_Extraction_of_Deep_Neural_Networks_in_the_Hard_Label_Setting.pdf",
+        "pages": 48,
+        "bytes": 1817048,
+        "sha256": "0477e78329fd227b51735c0fe05bc19fd2e5aefe980a4b662f795d81157067a7"
+      },
+      "note": "No PDF replacement; no technical revision inferred from publication."
+    },
+    {
+      "paper_id": "eprint-2026-168",
+      "checked": "2026-10-28",
+      "kind": "official_title_correction",
+      "prior_title": "Cryptanalytic Extraction of Recurrent Neural Network Models",
+      "current_title": "Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs",
+      "source_url": "https://eprint.iacr.org/2026/168",
+      "retained_pdf": {
+        "filename": "2026-168_Cryptanalytic_Extraction_of_Recurrent_Neural_Network_Models.pdf",
+        "pages": 34,
+        "bytes": 1143269,
+        "sha256": "b096d4f6425d19254d0fb4e4ef7653e18ebd4761d4cfa6f0a2fd25ed49b748f2"
+      },
+      "note": "Same work and revision date. Not counted as a substantive new version; current PDF retrieval blocked."
     }
   ]
 }

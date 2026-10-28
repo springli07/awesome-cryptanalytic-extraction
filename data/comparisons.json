@@ -13373,6 +13373,267 @@
       ],
       "review_status": "source-reviewed",
       "scientifically_reproduced": false
+    },
+    {
+      "paper_id": "arxiv-2608.28843",
+      "checked": "2026-10-28",
+      "review_status": "source-reviewed",
+      "scientifically_reproduced": false,
+      "oracle": "Chosen representation-space inputs; raw vector outputs of a post-LayerNorm FFN branch",
+      "scope": "Approximate normalized W1 directions up to sign/permutation in one smooth FFN; optional fitted branch replacement. Full-classifier evaluation reuses all other victim parameters; not complete Transformer extraction.",
+      "assumptions": "Known d,k,m,activation and target block; chosen post-normalization real-valued inputs and full-vector branch outputs; sufficient curvature/projection diversity and local restricted-Jacobian injectivity. Nonconvex optimization has no global recovery guarantee. Natural branch inputs and the remaining classifier are additionally available for replacement evaluation.",
+      "source_document": "docs/comparisons/architecture.zh.md",
+      "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2",
+      "stages": [
+        {
+          "name": {
+            "en": "Shared-stencil Hessian acquisition",
+            "zh": "共享差分模板获取Hessian"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "P(2d^2+1)",
+              "unit": "full-vector FFN oracle calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.1 Eq.(20), Algorithm 1, PDF pp.12–14",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Methods reviewed; no independent total arithmetic bound reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.1, Algorithm 1, §6 protocol, PDF pp.10–18",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": 8193,
+              "unit": "full-vector FFN oracle calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§6 protocol, Table 2, PDF pp.16–18",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "No stage wall-clock measurement reported; hardware and optimizer settings do not supply a runtime.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.1, Algorithm 1, §6 protocol, PDF pp.10–18",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            }
+          },
+          "dimensions": "d=k=64,m=128; P=1,T=16",
+          "precision": "h=0.01; numeric dtype not explicitly specified in manuscript",
+          "target": "Projected branch Hessians; not yet directions or parameters",
+          "notes": "All 16 projections reuse one vector stencil. P counts distinct probes, not projections; additional probes or step-search trials require additional stencils."
+        },
+        {
+          "name": {
+            "en": "Offline shared dictionary factorization",
+            "zh": "离线共享方向字典分解"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": 0,
+              "unit": "additional oracle calls after Hessian acquisition",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.2 Algorithm 1, PDF pp.12–14",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Methods reviewed; no independent total arithmetic bound reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§4.4–4.5, §5.2, §6.1, PDF pp.8–19",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": 0,
+              "unit": "additional oracle calls after Hessian acquisition",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.2, §6 extraction protocol, PDF pp.13–16",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "No stage wall-clock measurement reported; hardware and optimizer settings do not supply a runtime.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§4.4–4.5, §5.2, §6.1, PDF pp.8–19",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            }
+          },
+          "target": "Normalized W1 directions up to sign/permutation",
+          "notes": "Three random restarts; selection by Hessian reconstruction loss. Theorem 1 is conditional/local; the T>=5 dimension count at d=64,m=128 is necessary, not sufficient. Zero extra calls does not remove acquisition costs."
+        },
+        {
+          "name": {
+            "en": "Optional fixed-direction branch completion",
+            "zh": "可选固定方向FFN拟合"
+          },
+          "metrics": {
+            "theoretical_queries": {
+              "status": "reported",
+              "value": "N_fit",
+              "unit": "additional full-vector FFN oracle calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.3 Eq.(25), Algorithm 2, PDF pp.13–15",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "arithmetic": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "Methods reviewed; no independent total arithmetic bound reported for this stage.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.3, Algorithm 2, §6.3, PDF pp.13–21",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "experimental_queries": {
+              "status": "reported",
+              "value": 12000,
+              "unit": "additional full-vector FFN oracle calls",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§6 Eq.(26), Table 2, PDF pp.16–18",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            },
+            "runtime": {
+              "status": "NR",
+              "value": null,
+              "unit": null,
+              "reason": "No stage wall-clock measurement reported; hardware and optimizer settings do not supply a runtime.",
+              "evidence": [
+                {
+                  "url": "https://arxiv.org/pdf/2608.28843v2",
+                  "locator": "§5.3, Algorithm 2, §6.3, PDF pp.13–21",
+                  "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+                }
+              ]
+            }
+          },
+          "target": "Fitted signed scales, biases and W2 with directions fixed",
+          "notes": "1500 AdamW steps reuse the acquired 12000 pairs. Total default budget 20193 vector calls. This is empirical approximation, not exact recovery of all original FFN parameters."
+        }
+      ],
+      "experiments": [
+        {
+          "dimensions": "One final-block FFN, 64–128–64, in a four-block/four-head CIFAR-10 ViT; 3 independently trained victims per activation",
+          "precision": "Finite-difference h=0.01; target dtype not explicitly reported",
+          "hardware": "Intel Core Ultra 9; 64 GB RAM; RTX 4070 8 GB; PyTorch 2.5.1 / CUDA 12.4",
+          "target": "FFN structural extraction + optional single-branch replacement",
+          "experimental_queries": {
+            "status": "reported",
+            "value": 20193,
+            "unit": "full-vector FFN oracle calls (8193 structural + 12000 completion)",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2608.28843v2",
+                "locator": "§6 Eq.(26), Table 2, PDF pp.16–18",
+                "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": null,
+            "reason": "Hardware is stated but no end-to-end wall-clock runtime is reported.",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2608.28843v2",
+                "locator": "§6 experimental protocol and Table 2, PDF pp.15–18",
+                "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+              }
+            ]
+          },
+          "empirical_metric": "Table 2 mean±sample SD: direction alignment GELU 0.9187±0.0138, SiLU 0.9402±0.0119; Hit_0.90 0.8672±0.0234 / 0.9115±0.0325; classifier agreement 92.81±0.22% / 94.97±0.36%.",
+          "notes": "Held-out classifier evaluation retains the remainder of the original model. Exact-Hessian/parameter-based diagnostics are privileged evaluation, not the finite-difference attack oracle. Other blocks tested separately do not establish joint extraction/composition of a full Transformer."
+        },
+        {
+          "dimensions": "One GELU FFN, d=64,m=128,T=16; fixed attack seed",
+          "target": "Adaptive structural recovery under four-decimal rounding / Gaussian noise SD 1e-4",
+          "experimental_queries": {
+            "status": "reported",
+            "value": "8193 per tested h; l*8193 for l fresh stencils",
+            "unit": "full-vector FFN oracle calls",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2608.28843v2",
+                "locator": "§6.4, Table 8, PDF pp.21–22",
+                "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+              }
+            ]
+          },
+          "runtime": {
+            "status": "NR",
+            "value": null,
+            "unit": null,
+            "reason": "No adaptive-search wall-clock runtime reported.",
+            "evidence": [
+              {
+                "url": "https://arxiv.org/pdf/2608.28843v2",
+                "locator": "§6.4, Table 8, PDF pp.21–22",
+                "pdf_sha256": "8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2"
+              }
+            ]
+          },
+          "empirical_metric": "At h=0.30, alignment 0.9188 under rounding / 0.9081 under noise; at h=0.01, 0.3255 / 0.3295.",
+          "notes": "Fresh finite-difference step trials cost new queries. Single-target results do not prove a universal failure of rounding/noise defenses."
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "paper_id": "eprint-2026-168",
-  "title": "Cryptanalytic Extraction of Recurrent Neural Network Models",
+  "title": "Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs",
   "audit_ref": "../source-audit.json",
   "source_url": null,
   "repository_id": null,

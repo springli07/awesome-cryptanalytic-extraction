@@ -6,13 +6,15 @@
 
 **神经网络密码分析提取**专题目录：结构与参数恢复、源码、可行性边界及防御。
 
-[English](README.md) · [九月进展](docs/progress-2026-09.md) · [十月进展](docs/progress-2026-10.md) · [检索审计](docs/search-audit-2026-10-28.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
+[English](README.md) · [九月进展](docs/progress-2026-09.md) · [十月进展](docs/progress-2026-10.md) · [检索审计](docs/search-audit-2026-10-28-followup.md) · [BibTeX](bib/cryptanalytic_extraction.bib) · [结构化目录](data/papers.json) · [阶段对比](docs/comparison_zh.md) · [原代码统一入口](code/README_zh-CN.md)
 
-**更新于 2026-10-28 · 54 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
+**更新于 2026-10-28 · 55 篇独立文献 · 13 类。** 包含预印本、明确单列的相关理论、两篇综述及一篇课程报告。已广泛检索并核对来源，但不宣称覆盖所有模型窃取论文。
 
 ## 近期进展
 
-**来源状态：** ePrint 2026/1025 已于 9 月 19 日撤回，2026/2127 已于 10 月 1 日撤回；均作为历史记录保留。对比覆盖 54 条记录，分别记录阶段成本、预言机假设及实验范围。
+**来源状态：** ePrint 2026/1025 已于 9 月 19 日撤回，2026/2127 已于 10 月 1 日撤回；均作为历史记录保留。对比覆盖 55 条记录，分别记录阶段成本、预言机假设及实验范围。
+
+- **10 月 28 日监测补查：** 补入八月提交、九月修订的 [Curvature Cryptanalysis](https://arxiv.org/abs/2608.28843) 预印本：直接查询 GELU/SiLU FFN 模块，估计首层方向，再拟合替换该模块；分类器实验保留其余原模型参数，不是完整 Transformer 提取。已有 [ePrint 2024/1580](https://eprint.iacr.org/2024/1580) 补记 [Journal of Cryptology 正式发表](https://doi.org/10.1007/s00145-026-09586-5)，不新增计数。已有 RNN 条目更正为官方现题 *Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs*。[检索覆盖、去重与限制](docs/search-audit-2026-10-28-followup.md)。
 
 - **10 月 28 日核对：** 新增 [Beyond Scalar Probes](https://arxiv.org/abs/2609.35487) 的向量输出签名估计及 [Extraction meets Distillation](https://arxiv.org/abs/2610.33671) 的内部信息辅助部分恢复与重建。后者使用额外内部信息，两者均不确立新的完整黑盒参数攻击。已有记录补入 ePrint [2097](https://eprint.iacr.org/2026/2097)、[2095](https://eprint.iacr.org/2026/2095)、[2061](https://eprint.iacr.org/2026/2061) 别名，并明确未知架构 MLP 的 v2 内容。[一手来源审计](docs/search-audit-2026-10-28.md)。
 
@@ -82,7 +84,7 @@ PDF 指纹仅指明实际核验的副本，包括保留的历史 PDF；核验别
 | 2026 | [Normal Alignment: Improved Cryptanalytic Sign Recovery on Hard-Label Networks](https://arxiv.org/abs/2609.18751) · [PDF](https://arxiv.org/pdf/2609.18751v1) · [别名 1](https://eprint.iacr.org/2026/2061) | Preprint | Top-1 label only; sign-recovery stage<br>Deep ReLU MLP | 法向量与签名对齐结合 eSOE，在报告模型中恢复 512/512、320/320 个符号；属于符号恢复，非已展示的完整端到端攻击。 | 已宣告；URL 为占位符 |
 | 2025 | [Is the Hard-Label Cryptanalytic Model Extraction Really Polynomial?](https://eprint.iacr.org/2025/1868) · [PDF](https://eprint.iacr.org/2025/1868.pdf) · [别名 1](https://arxiv.org/abs/2510.06692) | CRYPTO 2026 | Top-1 label only<br>ReLU MLP | 持久及死亡神经元限制多项式性论断，并提出跨层提取。 | [论文所链；404](https://github.com/ECSIS-lab/hard-label-cross-layer-extraction) |
 | 2025 | [Extracting Some Layers of Deep Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2025/1118) · [PDF](https://eprint.iacr.org/2025/1118.pdf) | LATINCRYPT 2025 | Top-1 label only<br>ReLU MLP | 结构条件下的部分层及输出层恢复，并非无条件端到端提取。 | [官方](https://github.com/deividafonso281/hard-label-contract-output) |
-| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) · [别名 1](https://arxiv.org/abs/2410.05750) | EUROCRYPT 2025; extended version | Top-1 label only<br>Deep ReLU MLP | 双点签名及符号恢复；扩展版含小型随机模型全黑盒端到端演示，与白盒辅助的CIFAR实验分别记述。 | [官方](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
+| 2024 | [Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting (Extended Version)](https://eprint.iacr.org/2024/1580) · [PDF](https://eprint.iacr.org/2024/1580.pdf) · [别名 1](https://arxiv.org/abs/2410.05750) · [别名 2](https://doi.org/10.1007/s00145-026-09586-5) | Journal of Cryptology 39, article 32 (2026); EUROCRYPT 2025 extended version | Top-1 label only<br>Deep ReLU MLP | 双点签名及符号恢复；扩展版含小型随机模型全黑盒端到端演示，与白盒辅助的CIFAR实验分别记述。 | [官方](https://github.com/Jchavezsaab/hard-label-dnn-extraction) |
 | 2024 | [Hard-Label Cryptanalytic Extraction of Neural Network Models](https://eprint.iacr.org/2024/1403) · [PDF](https://eprint.iacr.org/2024/1403.pdf) · [别名 1](https://arxiv.org/abs/2409.11646) | ASIACRYPT 2024 | Top-1 label only<br>ReLU MLP | 从决策边界几何开展仅标签密码分析提取。 | [官方](https://github.com/AI-Lab-Y/NN_cryptanalytic_extraction) |
 
 ### CNN 与池化 (5)
@@ -109,13 +111,14 @@ PDF 指纹仅指明实际核验的副本，包括保留的历史 PDF；核验别
 | 年份¹ | 论文与 PDF | 发表状态 | 预言机 / 架构 | 恢复目标与边界 | 代码² |
 |---|---|---|---|---|---|
 | 2026 | [Polynomial-Time Cryptanalytic Extraction of Graph Neural Networks in the Hard-Label Setting](https://eprint.iacr.org/2026/719) · [PDF](https://eprint.iacr.org/2026/719.pdf) | Preprint | Top-1 label only<br>Message-passing GNN | 在文中模型下利用图与消息传递结构开展提取。 | [官方](https://github.com/springli07/GNN_MP_CEA) |
-| 2026 | [Cryptanalytic Extraction of Recurrent Neural Network Models](https://eprint.iacr.org/2026/168) · [PDF](https://eprint.iacr.org/2026/168.pdf) | Preprint | Raw outputs / top-1 labels<br>RNN | 利用循环结构；长展开序列共享权重，不能等同于独立深层。 | 未检索到 |
+| 2026 | [Beyond Feedforward Networks: Cryptanalytic Extraction of RNNs](https://eprint.iacr.org/2026/168) · [PDF](https://eprint.iacr.org/2026/168.pdf) | Preprint | Raw outputs / top-1 labels<br>RNN | 利用循环结构；长展开序列共享权重，不能等同于独立深层。 | 未检索到 |
 
-### 注意力与 GLU 模块 (4)
+### 注意力与 GLU 模块 (5)
 
 | 年份¹ | 论文与 PDF | 发表状态 | 预言机 / 架构 | 恢复目标与边界 | 代码² |
 |---|---|---|---|---|---|
 | 2026 | [Cryptanalytic Extraction of Multi-Head Softmax Attention Models](https://eprint.iacr.org/2026/1678) · [PDF](https://eprint.iacr.org/2026/1678.pdf) | Preprint | Raw outputs / chosen continuous inputs<br>Multi-head softmax attention | 恢复规范等价表示；Q/K/V 分解存在规范自由度。 | 未检索到 |
+| 2026 | [Curvature Cryptanalysis of Smooth Transformer Feed-Forward Networks](https://arxiv.org/abs/2608.28843) · [PDF](https://arxiv.org/pdf/2608.28843v2) | Preprint | Chosen representation-space inputs; raw vector outputs of a post-LayerNorm FFN branch<br>Known two-layer GELU/SiLU FFN; evaluated in CIFAR-10 vision transformers | 复用有限差分Hessian估计首层方向，保留符号及排列歧义；后续拟合近似FFN。分类器实验保留其余原模型参数，不是完整Transformer或精确参数提取。 | [官方](https://github.com/mhasan08/curvature-cryptanalysis) |
 | 2026 | [Cryptanalytic Extraction of Isolated Bias-Free GLU Feed-Forward Blocks by Antipodal Separation](https://arxiv.org/abs/2608.06631) · [PDF](https://arxiv.org/pdf/2608.06631) | Preprint | Direct queries to an isolated block<br>Bias-free GLU FFN | 对孤立无偏置模块做对踵分离，不是经 token API 提取完整 LLM。 | 未检索到 |
 | 2026 | [Provably Learning Multi-Head Attention with Queries](https://arxiv.org/abs/2608.03294) · [PDF](https://arxiv.org/pdf/2608.03294) | Preprint | Chosen real-valued queries<br>Multi-head attention / restricted one-layer Transformer | 恢复规范化注意力头；单层 Transformer 扩展有额外假设。 | 未检索到 |
 | 2026 | [Provably Learning Attention with Queries](https://arxiv.org/abs/2601.16873) · [PDF](https://arxiv.org/pdf/2601.16873) | ICML 2026 | Chosen real-valued queries<br>Attention | 注意力模型假设下的查询学习保证。 | 未检索到 |

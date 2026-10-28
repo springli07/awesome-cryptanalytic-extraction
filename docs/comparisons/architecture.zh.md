@@ -1,4 +1,6 @@
-# 扩展架构与部分LLM提取：12篇逐项证据核查
+# 扩展架构与部分LLM提取：12篇历史核查与1篇后续增补
+
+当前共13篇。第13节为2026-10-28直接核验增补；以下2026-09-30时间、版本表及前12节保留原核查快照，不代表本轮重新下载全部历史PDF。
 
 核查时间：2026-09-30。目录来源：springli07/awesome-cryptanalytic-extraction 当前 main/data/papers.json（updated=2026-09-30）。全部12篇原始PDF已正常公开下载并全文提取检查；没有运行论文代码。下面页码均为所下载PDF从1计数的物理页，便于URL追加 #page=N 定位。NR=查阅对应方法/复杂度/实验章节后未报告该项；“poly”仅保留作者条件性主张，不补造指数。查询次数、采样次数、实数运算、bit complexity、墙钟时间分列理解。
 
@@ -173,6 +175,19 @@ Logits of API-Protected LLMs Leak Proprietary Information
 - §4 p.6 preprocessing收集d个独立输出，O(vd)API calls（忽略k）；Algorithm2 p.7缓存后写O(vd/k)，只dimension O(d²/k)。之后每新完整输出O(d)queries（保留k常数省略约定），还需本地解线性重构；本地算术显式阶/实测墙钟NR。不能把O(d)当首次恢复image成本。
 - Table1 p.5示例v100000,d4096,k5,n4,ε1e−6,βmax100：单output20k/25k/133k API calls；image估计$410/$512/$2724；precomputed-image边际800calls。均back-of-envelope for gpt3.5-like API，不全是实付成本。
 - §4/图2 p.7：Pythia70m/160m/410m维数512/768/1024，gpt3.5-turbo估计4096≤d≤4650（不要硬写exact4096）。通过image可以重建输出/识别变化，不意味着得到隐层权重或跨prompt生成完全等价的LLM。
+
+## 13. arxiv-2608.28843 — 2026-10-28 直接核验增补
+
+[Curvature Cryptanalysis of Smooth Transformer Feed-Forward Networks](https://arxiv.org/abs/2608.28843)，Munawar Hasan（NIST、Michigan Technological University）与 Apostol Vassilev（NIST）。8 月 28 日 v1、9 月 16 日 v2；预印本。本节为本轮实际下载的 [v2](https://arxiv.org/pdf/2608.28843v2) 核查，不改变前 12 条 9 月 30 日来源快照。25 页、1,188,439 字节，SHA-256 `8ee0b4ae84a3e960bdd4d6208d6d01dc4e4d18c0a7b2925869e64b302dcfd6d2`。
+
+- **接口与对象**：§3 pp.4–6 为已知结构的两层 GELU/SiLU FFN，直接选择 post-LayerNorm 表示空间输入并获得完整模块向量输出，已知 d/k/m、激活与模块位置。非普通 token、仅标签或全网末端 logits 接口。
+- **结构恢复**：§4 pp.6–10 将投影输入 Hessian 分解为共享对称秩一因子，估计 W1 单位方向，保留符号与排列歧义；尚无尺度、偏置、W2 或定向符号。Theorem 1 条件为 restricted Jacobian 单射，局部稳定性还受最小奇异值约束。d=64,m=128 时 T>=5 只是必要维数界，不是充分条件或全局优化保证。
+- **阶段成本**：§5.1 Eq.(20) pp.11–12、Algorithm 1 p.14：P 个不同探测位置需 `P(2d^2+1)` 次完整向量模块调用。d=k=64,m=128,P=1,T=16 时只需 **8,193** 次；16 个投影在共享向量响应上离线计算，不是 16 份独立 stencil。§5.2 三次随机重启、按 Hessian 重建损失选择，无新增预言机调用但保留获取和离线优化代价。§5.3、Algorithm 2、§6 Eq.(26) 用 **12,000** 对自然模块输入/输出固定方向拟合其余参数，1,500 AdamW 步不再查询；默认合计 **20,193** 次，不是全分类器 API 预算。
+- **实验**：§6 pp.15–18：CIFAR-10 ViT，4 blocks、4 heads、embedding64、FFN128，每种激活 3 个独立训练 victim。Table 2 均值±样本标准差：GELU/SiLU 方向绝对余弦 **0.9187±0.0138 / 0.9402±0.0119**；Hit_0.90 **0.8672±0.0234 / 0.9115±0.0325**；分类器一致率 **92.81±0.22% / 94.97±0.36%**；准确率下降 **1.24±0.23 / 0.57±0.09** 个百分点。另一个固定 victim 的攻击种子、每个 block 的测试与 privileged exact-Hessian ablation 分别报告，不拼接最佳行。
+- **恢复边界**：§5.3、§6.3 仅替换一个拟合 FFN，保留完整分类器其余原参数，另有自然中间输入访问。逐 block 测试不代表联合提取和组合全 Transformer。近似方向与采样保真不认证严格函数等价、唯一原参数或完整参数恢复。§4.1 pre-LayerNorm 接口会多出归一化曲率；§7 gated/SwiGLU 需要更丰富分解，仍属后续工作。
+- **精度与防御**：§6 clean h=0.01；全文未明确 numeric dtype，不能从硬件推断 float32/64。Table 8 pp.21–22 一个 GELU victim：四位小数舍入及高斯噪声 SD1e-4，在 h=0.01 时方向分数0.3255/0.3295，h=0.30 时0.9188/0.9081。每个 fresh h 重新花8,193次，l个需l×8,193；并非无额外预算或普遍防御失效证明。
+- **时间/算术**：§5–6 给定优化器及硬件（Core Ultra9、64GB RAM、RTX4070 8GB、PyTorch2.5.1/CUDA12.4），未报告各阶段总算术界或独立墙钟时间，记 NR 而非零。结构阶段的“0额外query”只在 Hessian 已获得后成立。
+- **代码**：p.1 footnote1 链接 [官方仓库固定版本](https://github.com/mhasan08/curvature-cryptanalysis/tree/2d9dd4f2bf1e8ca2939794ef1f3b8cdb93ea5534)，MIT 许可证已核；root 保留 separate-stencil 实现，optimized/ 对应共享模板。README 开头数字与其详细表不一致，因此论文数值取 v2 Table2。未安装依赖、收集权重或执行/复现代码。
 
 ## 页面实现建议
 

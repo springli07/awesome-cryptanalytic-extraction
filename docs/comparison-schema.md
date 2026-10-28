@@ -27,7 +27,7 @@ Point/sample budgets retain their units. Query and arithmetic bounds do not impl
 
 Source locators refer to the actual reviewed PDF. `data/version-audit.json` preserves prior catalog fingerprints when a current record changes. A code audit can legitimately refer to an older paper snapshot: its hash/page is preserved, not silently relabeled as latest. / 页码绑定实际读取版本；更新指纹时保留旧记录，代码审计的旧快照不改称新版。
 
-`code/source-audit.json` records all 54 papers, 26 upstream repositories, commit pins, provenance, license evidence and documented entrypoints. Gitlinks point to upstream authors' history, without bundling their source, datasets or models. Unknown licenses remain references; this index grants no redistribution rights. Reading lists and placeholders do not count as attack implementations. / gitlink保留原作者来源，不将源码/数据/权重写入主库；无明确许可证保留引用，阅读清单与占位仓库不冒充实现。
+`code/source-audit.json` records all 55 papers, 27 upstream repositories, commit pins, provenance, license evidence and documented entrypoints. Gitlinks point to upstream authors' history, without bundling their source, datasets or models. Unknown licenses remain references; this index grants no redistribution rights. Reading lists and placeholders do not count as attack implementations. / gitlink保留原作者来源，不将源码/数据/权重写入主库；无明确许可证保留引用，阅读清单与占位仓库不冒充实现。
 
 From the repository root:
 
@@ -44,3 +44,5 @@ python scripts/fetch_code.py --paper arxiv-2003.04884
 The final command previews the selected fixed source without network calls or writes. `--fetch` opts into a source-only local snapshot for a verified licensed upstream, with preserved LICENSE, Git blob verification, size limits and a receipt. No dependencies or upstream code are executed. / 最后一条默认离线预览；明确加`--fetch`才下载合许可源码快照，保留许可证并核验Git blob，不执行上游代码。
 
 The October 28 reconciliation adds two reviewed records without changing schema version 1. Existing alias identities and withdrawn dates live in the bibliography. Comparison rendering reads each withdrawn date instead of assuming one date for all works. Code manifests and original-source pins cover all 54 records; previous paper/code snapshots retain their original dates and fingerprints. / 10 月 28 日核对新增两条，不改变 schema v1；撤回日期按论文读取，代码清单逐条覆盖，历史证据不改称新版。
+
+The [later October 28 monitoring pass](search-audit-2026-10-28-followup.md) backfills one smooth-FFN work, bringing coverage to 55 records, 27 sources and 22 pinned gitlinks. Its direct v2 review is appended to the architecture group; the 12 earlier architecture reviews retain their original supplied-report provenance. A journal DOI updates an existing hard-label record. `former_titles` now participates in normalized identity validation; title corrections do not create new works. / 后续补查新增一篇光滑 FFN，旧记录的发表与改题在原条目更新；旧证据版本保持不变。
